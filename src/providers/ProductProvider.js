@@ -38,6 +38,9 @@ const ProductProvider = ({ children }) => {
     if (productId) getProduct(productId);
   }, [productId]);
 
+  console.log('productId: ', productId);
+  console.log('product: ', product);
+
   return (
     <ProductContext.Provider value={{ products, selectProduct, product }}>
       {children}
