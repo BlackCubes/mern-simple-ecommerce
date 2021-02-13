@@ -7,7 +7,6 @@ import { getProductsAPI, getProductAPI } from '../utils';
 
 const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState(null);
-  // const [productId, setProductId] = useState(null);
   const [product, setProduct] = useState(null);
 
   const getProducts = async () => {
@@ -23,8 +22,6 @@ const ProductProvider = ({ children }) => {
     getProducts();
   }, []);
 
-  // const selectProduct = (id) => setProductId(id);
-
   const getProduct = async (id) => {
     try {
       const data = await getProductAPI(id);
@@ -33,13 +30,6 @@ const ProductProvider = ({ children }) => {
       console.log(err);
     }
   };
-
-  // useEffect(() => {
-  //   if (productId) getProduct(productId);
-  // }, [productId]);
-
-  // console.log('productId: ', productId);
-  console.log('product: ', product);
 
   return (
     <ProductContext.Provider value={{ products, getProduct, product }}>
