@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 import { useProductContext } from '../context/ProductContext';
 
 const ProductDetailsPage = () => {
   const { id } = useParams();
-  const { setProductId, product } = useProductContext();
+  const { getProduct, product } = useProductContext();
 
-  setProductId(id);
+  useEffect(() => {
+    if (id) getProduct(id);
+  }, [id]);
 
   return (
     <>
