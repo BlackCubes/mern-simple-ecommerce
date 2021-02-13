@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { ProductContext } from '../context';
 
-import getProductsAPI from '../utils';
+import { getProductsAPI } from '../utils';
 
 const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState(null);

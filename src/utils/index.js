@@ -21,7 +21,4 @@ const getProductAPI = async (id) => {
   }
 };
 
-export default {
-  getProductsAPI,
-  getProductAPI,
-};
+export { getProductsAPI, getProductAPI };
