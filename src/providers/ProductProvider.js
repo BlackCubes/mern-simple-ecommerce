@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import ProductContext from '../context';
+import { ProductContext } from '../context';
 
 import getProductsAPI from '../utils';
 

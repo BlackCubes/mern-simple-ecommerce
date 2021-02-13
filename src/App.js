@@ -4,7 +4,7 @@ import React from 'react';
 
 import ProductsPage from './Components/ProductsPage';
 
-import ProductProvider from './providers';
+import { ProductProvider } from './providers';
 
 function App() {
   return (
