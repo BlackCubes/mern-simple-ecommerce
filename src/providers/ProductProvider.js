@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 
 import { ProductContext } from '../context';
 
-import { getProductsAPI } from '../utils';
+import { getProductsAPI, getProductAPI } from '../utils';
 
 const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState(null);
+  const [productId, setProductId] = useState(null);
+  const [product, setProduct] = useState(null);
 
   const getProducts = async () => {
     try {
@@ -21,8 +23,23 @@ const ProductProvider = ({ children }) => {
     getProducts();
   }, []);
 
+  const selectProduct = (id) => setProductId(id);
+
+  const getProduct = async (id) => {
+    try {
+      const data = await getProductAPI(id);
+      setProduct(data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    if (productId) getProduct(productId);
+  }, [productId]);
+
   return (
-    <ProductContext.Provider value={{ products }}>
+    <ProductContext.Provider value={{ products, selectProduct, product }}>
       {children}
     </ProductContext.Provider>
   );
