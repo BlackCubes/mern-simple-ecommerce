@@ -23,7 +23,7 @@ const ProductProvider = ({ children }) => {
     getProducts();
   }, []);
 
-  const selectProduct = (id) => setProductId(id);
+  // const selectProduct = (id) => setProductId(id);
 
   const getProduct = async (id) => {
     try {
@@ -42,7 +42,7 @@ const ProductProvider = ({ children }) => {
   console.log('product: ', product);
 
   return (
-    <ProductContext.Provider value={{ products, selectProduct, product }}>
+    <ProductContext.Provider value={{ products, setProductId, product }}>
       {children}
     </ProductContext.Provider>
   );

@@ -5,9 +5,9 @@ import { useProductContext } from '../context/ProductContext';
 
 const ProductDetailsPage = () => {
   const { id } = useParams();
-  const { selectProduct, product } = useProductContext();
+  const { setProductId, product } = useProductContext();
 
-  selectProduct(id);
+  setProductId(id);
 
   return (
     <>
