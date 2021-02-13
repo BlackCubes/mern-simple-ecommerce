@@ -14,8 +14,8 @@ function App() {
       <ProductProvider>
         <Switch>
           <Route exact path="/" render={() => <div>Homepage</div>} />
-          <Route path="/products" component={ProductsPage} />
-          <Route path="/products/:id" component={ProductDetailsPage} />
+          <Route exact path="/products" component={ProductsPage} />
+          <Route exact path="/products/:id" component={ProductDetailsPage} />
         </Switch>
       </ProductProvider>
     </Router>
