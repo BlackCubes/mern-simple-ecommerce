@@ -8,8 +8,20 @@ const ProductsPage = () => {
   console.log(products);
 
   return (
-    <div className="products-page--wrapper">
-      <h1>Hello!!!</h1>
+    <div className="product--wrapper">
+      {!products.length ? (
+        <div>Hello!</div>
+      ) : (
+        products.map((prop) => (
+          <div key={prop.id} className="product">
+            <div className="product__title">{prop.title}</div>
+
+            <div className="product__price">{prop.price}</div>
+
+            <div className="product__image">{prop.image}</div>
+          </div>
+        ))
+      )}
     </div>
   );
 };
