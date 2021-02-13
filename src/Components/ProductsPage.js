@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useProductContext } from '../context/ProductContext';
 
 const ProductsPage = () => {
-  const { products, selectProduct } = useProductContext();
+  const { products } = useProductContext();
 
   return (
     <div className="product--wrapper">
@@ -12,13 +12,7 @@ const ProductsPage = () => {
         <div>Hello!</div>
       ) : (
         products.map((prop) => (
-          <div
-            key={prop.id}
-            className="product"
-            onClick={() => selectProduct(prop.id)}
-            onKeyDown={() => selectProduct(prop.id)}
-            role="presentation"
-          >
+          <div key={prop.id} className="product">
             <div className="product__title">
               <Link to={`/products/${prop.id}`}>{prop.title}</Link>
             </div>
