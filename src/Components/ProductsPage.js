@@ -3,9 +3,7 @@ import React from 'react';
 import { useProductContext } from '../context/ProductContext';
 
 const ProductsPage = () => {
-  const { products } = useProductContext();
-
-  console.log(products);
+  const { products, selectProduct } = useProductContext();
 
   return (
     <div className="product--wrapper">
@@ -13,7 +11,13 @@ const ProductsPage = () => {
         <div>Hello!</div>
       ) : (
         products.map((prop) => (
-          <div key={prop.id} className="product">
+          <div
+            key={prop.id}
+            className="product"
+            onClick={() => selectProduct(prop.id)}
+            onKeyDown={() => selectProduct(prop.id)}
+            role="presentation"
+          >
             <div className="product__title">{prop.title}</div>
 
             <div className="product__price">{prop.price}</div>
