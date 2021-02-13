@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // API
-const getProducts = async () => {
+const getProductsAPI = async () => {
   try {
     const apiUrl = 'https://fakestoreapi.com/products';
     const res = await axios.get(apiUrl);
@@ -11,7 +11,7 @@ const getProducts = async () => {
   }
 };
 
-const getProduct = async (id) => {
+const getProductAPI = async (id) => {
   try {
     const apiUrl = `https://fakestoreapi.com/products/${id}`;
     const res = await axios.get(apiUrl);
@@ -22,6 +22,6 @@ const getProduct = async (id) => {
 };
 
 export default {
-  getProducts,
-  getProduct,
+  getProductsAPI,
+  getProductAPI,
 };
