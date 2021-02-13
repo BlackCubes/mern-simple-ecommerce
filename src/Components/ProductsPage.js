@@ -9,7 +9,7 @@ const ProductsPage = () => {
 
   return (
     <div className="product--wrapper">
-      {!products.length ? (
+      {!products ? (
         <div>Hello!</div>
       ) : (
         products.map((prop) => (
