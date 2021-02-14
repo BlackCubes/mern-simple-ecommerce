@@ -14,18 +14,19 @@ const ProductsPage = () => {
         <div>Hello!</div>
       ) : (
         products.map((prop, key) => (
-          <div
-            key={prop.id}
-            className="product"
-            onClick={() => addProduct(products[key])}
-            onKeyDown={() => addProduct(products[key])}
-            role="presentation"
-          >
+          <div key={prop.id} className="product">
             <div className="product__title">
               <Link to={`/products/${prop.id}`}>{prop.title}</Link>
             </div>
 
-            <div className="product__price">{prop.price}</div>
+            <div
+              className="product__price"
+              onClick={() => addProduct(products[key])}
+              onKeyDown={() => addProduct(products[key])}
+              role="presentation"
+            >
+              {prop.price}
+            </div>
 
             <div className="product__image">
               <Link to={`/products/${prop.id}`}>
