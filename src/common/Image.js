@@ -7,12 +7,10 @@ const ImageStyled = styled.img`
   height: 100%;
 `;
 
-const Image = ({ children, rest }) => (
-  <ImageStyled {...rest}>{children}</ImageStyled>
-);
+const Image = ({ rest }) => <ImageStyled {...rest} />;
 
 Image.propTypes = {
-  children: PropTypes.node.isRequired,
+  // children: PropTypes.node.isRequired,
   rest: PropTypes.shape({
     src: PropTypes.string.isRequired,
     alt: PropTypes.string.isRequired,
