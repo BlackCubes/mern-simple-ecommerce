@@ -11,17 +11,31 @@ export const ProductsCard = styled.div`
 `;
 
 export const ProductsCardImage = styled.div`
+  display: inline-block;
   width: 16%;
+  padding-right: 2rem;
+  vertical-align: top;
+
+  & a {
+    display: block;
+  }
 `;
 
 export const ProductsCardRightColumn = styled.div`
+  display: inline-block;
   width: 84%;
+  vertical-align: top;
 `;
 
 export const ProductsCardInfo = styled.div`
+  display: inline-block;
   width: 60%;
+  padding-left: 2rem;
+  padding-right: 2rem;
 `;
 
 export const ProductsCardPriceCart = styled.div`
+  display: inline-block;
   width: 40%;
+  padding-left: 2rem;
 `;
