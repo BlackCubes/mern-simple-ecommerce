@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // import './App.css';
 
 import CartPage from './Components/CartPage';
+import Navbar from './Components/Navbar';
 import ProductsPage from './Components/ProductsPage';
 import ProductDetailsPage from './Components/ProductDetailsPage';
 
@@ -13,6 +14,7 @@ import ProductProvider from './providers/ProductProvider';
 function App() {
   return (
     <Router>
+      <Navbar />
       <ProductProvider>
         <CartProvider>
           <Switch>
