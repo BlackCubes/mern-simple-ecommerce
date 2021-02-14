@@ -42,7 +42,7 @@ const ProductsPage = () => {
                 onKeyDown={() => addProduct(products[key])}
                 role="presentation"
               >
-                <Paragraph>{prop.price}</Paragraph>
+                <Paragraph>{`$${prop.price}`}</Paragraph>
               </ProductsStyled.ProductsCardPriceCart>
             </ProductsStyled.ProductsCardRightColumn>
           </ProductsStyled.ProductsCard>
