@@ -41,7 +41,9 @@ export const ProductsCardPriceCart = styled.div`
 `;
 
 export const ProductsCardPrice = styled.div`
-  font-weight: 600;
+  & h4 {
+    font-weight: 600;
+  }
 `;
 
 export const ProductsCardCartBtn = styled.div`
