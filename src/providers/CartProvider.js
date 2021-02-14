@@ -10,17 +10,17 @@ const CartProvider = ({ children }) => {
   const cartQuantity = (items, newItem) => {
     if (!items.length) return [{ ...newItem, quantity: 1 }];
 
-    let quantity = 0;
+    // let quantity = 0;
     let itemsObj = {};
 
     items.forEach((item) => {
       if (item.id !== newItem.id) {
-        quantity = 1;
-        itemsObj = { ...newItem, quantity };
+        // quantity = 1;
+        itemsObj = { ...newItem, quantity: 1 };
         items.push(itemsObj);
       } else if (item.id === newItem.id) {
-        quantity += 1;
-        itemsObj = { ...item, quantity: item.quantity + quantity };
+        // quantity += 1;
+        itemsObj = { ...item, quantity: item.quantity + 1 };
         Object.assign(item, itemsObj);
       }
     });
