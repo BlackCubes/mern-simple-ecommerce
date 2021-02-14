@@ -5,8 +5,8 @@ import { useCartContext } from '../context/CartContext';
 import { useProductContext } from '../context/ProductContext';
 
 const ProductsPage = () => {
-  const { products } = useProductContext();
   const { addProduct } = useCartContext();
+  const { products } = useProductContext();
 
   return (
     <div className="product--wrapper">
