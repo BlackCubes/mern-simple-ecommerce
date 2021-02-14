@@ -10,7 +10,6 @@ const ImageStyled = styled.img`
 const Image = ({ rest }) => <ImageStyled {...rest} />;
 
 Image.propTypes = {
-  // children: PropTypes.node.isRequired,
   rest: PropTypes.shape({
     src: PropTypes.string.isRequired,
     alt: PropTypes.string.isRequired,
