@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import {
+  Button,
   HeadingQuaternary,
   HeadingSecondary,
   Image,
@@ -43,6 +44,15 @@ const ProductsPage = () => {
                 role="presentation"
               >
                 <HeadingQuaternary>{`$${prop.price}`}</HeadingQuaternary>
+
+                <Button
+                  rest={{
+                    type: 'button',
+                    onClick: () => addProduct(products[key]),
+                  }}
+                >
+                  Add to Cart
+                </Button>
               </ProductsStyled.ProductsCardPriceCart>
             </ProductsStyled.ProductsCardRightColumn>
           </ProductsStyled.ProductsCard>
