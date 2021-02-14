@@ -13,17 +13,27 @@ const CartProvider = ({ children }) => {
     // let quantity = 0;
     let itemsObj = {};
 
-    items.forEach((item) => {
+    for (let item = 0; item < items.length; item += 1) {
       if (item.id !== newItem.id) {
-        // quantity = 1;
         itemsObj = { ...newItem, quantity: 1 };
         items.push(itemsObj);
-      } else if (item.id === newItem.id) {
-        // quantity += 1;
-        itemsObj = { ...item, quantity: item.quantity + 1 };
-        Object.assign(item, itemsObj);
+        return items;
       }
-    });
+      itemsObj = { ...item, quantity: item.quantity + 1 };
+      Object.assign(item, itemsObj);
+    }
+
+    // items.forEach((item) => {
+    //   if (item.id !== newItem.id) {
+    //     // quantity = 1;
+    //     itemsObj = { ...newItem, quantity: 1 };
+    //     items.push(itemsObj);
+    //   } else if (item.id === newItem.id) {
+    //     // quantity += 1;
+    //     itemsObj = { ...item, quantity: item.quantity + 1 };
+    //     Object.assign(item, itemsObj);
+    //   }
+    // });
 
     return items;
   };
