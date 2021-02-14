@@ -1,0 +1,31 @@
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyles = createGlobalStyle`
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    /* Defines what 1rem is i.e. 1rem = 10px (10/16 = 62.5%) */
+    font-size: 62.5%;
+  }
+
+  body {
+    font-family: 'Poppins', 'Open Sans', 'Roboto', 'Lato', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    position: relative;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+`;
+
+export default GlobalStyles;
