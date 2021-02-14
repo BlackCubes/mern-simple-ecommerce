@@ -22,6 +22,11 @@ const CartPage = () => {
 
             <div className="cart__product-category">{prop.category}</div>
 
+            <div className="cart__product-quantity">
+              Quantity:&nbsp;
+              {prop.quantity}
+            </div>
+
             <div className="cart__product-remove">
               <button
                 type="button"
