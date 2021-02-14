@@ -39,3 +39,12 @@ export const ProductsCardPriceCart = styled.div`
   width: 40%;
   padding-left: 2rem;
 `;
+
+export const ProductsCardPrice = styled.div`
+  font-weight: 600;
+`;
+
+export const ProductsCardCartBtn = styled.div`
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+`;
