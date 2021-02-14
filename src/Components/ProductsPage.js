@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { HeadingQuaternary, HeadingSecondary } from '../common';
+import { HeadingQuaternary, HeadingSecondary, Paragraph } from '../common';
 
 import { useCartContext } from '../context/CartContext';
 import { useProductContext } from '../context/ProductContext';
@@ -27,7 +27,7 @@ const ProductsPage = () => {
               onKeyDown={() => addProduct(products[key])}
               role="presentation"
             >
-              {prop.price}
+              <Paragraph>{prop.price}</Paragraph>
             </div>
 
             <div className="product__image">
