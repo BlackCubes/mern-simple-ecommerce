@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { HeadingSecondary } from '../common';
+import { HeadingQuaternary, HeadingSecondary } from '../common';
 
 import { useCartContext } from '../context/CartContext';
 import { useProductContext } from '../context/ProductContext';
@@ -17,9 +17,9 @@ const ProductsPage = () => {
       ) : (
         products.map((prop, key) => (
           <div key={prop.id} className="product">
-            <HeadingSecondary>
+            <HeadingQuaternary>
               <Link to={`/products/${prop.id}`}>{prop.title}</Link>
-            </HeadingSecondary>
+            </HeadingQuaternary>
 
             <div
               className="product__price"
