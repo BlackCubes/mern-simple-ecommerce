@@ -6,6 +6,7 @@ import {
   HeadingSecondary,
   Image,
   Paragraph,
+  ProductsStyled,
 } from '../common';
 
 import { useCartContext } from '../context/CartContext';
@@ -16,36 +17,38 @@ const ProductsPage = () => {
   const { products } = useProductContext();
 
   return (
-    <div className="product--wrapper">
+    <ProductsStyled.Products>
       {!products ? (
         <HeadingSecondary>Hello!</HeadingSecondary>
       ) : (
         products.map((prop, key) => (
-          <div key={prop.id} className="product">
-            <div className="product__image">
+          <ProductsStyled.ProductsCard key={prop.id}>
+            <ProductsStyled.ProductsCardImage>
               <Link to={`/products/${prop.id}`}>
                 <Image rest={{ src: prop.image, alt: prop.title }} />
               </Link>
-            </div>
+            </ProductsStyled.ProductsCardImage>
 
-            <div className="product-title">
-              <HeadingQuaternary>
-                <Link to={`/products/${prop.id}`}>{prop.title}</Link>
-              </HeadingQuaternary>
-            </div>
+            <ProductsStyled.ProductsCardRightColumn>
+              <ProductsStyled.ProductsCardInfo>
+                <HeadingQuaternary>
+                  <Link to={`/products/${prop.id}`}>{prop.title}</Link>
+                </HeadingQuaternary>
+              </ProductsStyled.ProductsCardInfo>
 
-            <div
-              className="product__price"
-              onClick={() => addProduct(products[key])}
-              onKeyDown={() => addProduct(products[key])}
-              role="presentation"
-            >
-              <Paragraph>{prop.price}</Paragraph>
-            </div>
-          </div>
+              <ProductsStyled.ProductsCardPriceCart
+                className="product__price"
+                onClick={() => addProduct(products[key])}
+                onKeyDown={() => addProduct(products[key])}
+                role="presentation"
+              >
+                <Paragraph>{prop.price}</Paragraph>
+              </ProductsStyled.ProductsCardPriceCart>
+            </ProductsStyled.ProductsCardRightColumn>
+          </ProductsStyled.ProductsCard>
         ))
       )}
-    </div>
+    </ProductsStyled.Products>
   );
 };
 
