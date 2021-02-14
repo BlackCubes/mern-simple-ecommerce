@@ -22,6 +22,12 @@ const ProductsPage = () => {
       ) : (
         products.map((prop, key) => (
           <div key={prop.id} className="product">
+            <div className="product__image">
+              <Link to={`/products/${prop.id}`}>
+                <Image rest={{ src: prop.image, alt: prop.title }} />
+              </Link>
+            </div>
+
             <HeadingQuaternary>
               <Link to={`/products/${prop.id}`}>{prop.title}</Link>
             </HeadingQuaternary>
@@ -33,12 +39,6 @@ const ProductsPage = () => {
               role="presentation"
             >
               <Paragraph>{prop.price}</Paragraph>
-            </div>
-
-            <div className="product__image">
-              <Link to={`/products/${prop.id}`}>
-                <Image rest={{ src: prop.image, alt: prop.title }} />
-              </Link>
             </div>
           </div>
         ))
