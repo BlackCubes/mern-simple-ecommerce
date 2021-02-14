@@ -28,9 +28,11 @@ const ProductsPage = () => {
               </Link>
             </div>
 
-            <HeadingQuaternary>
-              <Link to={`/products/${prop.id}`}>{prop.title}</Link>
-            </HeadingQuaternary>
+            <div className="product-title">
+              <HeadingQuaternary>
+                <Link to={`/products/${prop.id}`}>{prop.title}</Link>
+              </HeadingQuaternary>
+            </div>
 
             <div
               className="product__price"
