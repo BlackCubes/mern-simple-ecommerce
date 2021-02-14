@@ -5,7 +5,7 @@ import {
   HeadingQuaternary,
   HeadingSecondary,
   Image,
-  Paragraph,
+  // Paragraph,
   ProductsStyled,
 } from '../common';
 
@@ -42,7 +42,7 @@ const ProductsPage = () => {
                 onKeyDown={() => addProduct(products[key])}
                 role="presentation"
               >
-                <Paragraph>{`$${prop.price}`}</Paragraph>
+                <HeadingQuaternary>{`$${prop.price}`}</HeadingQuaternary>
               </ProductsStyled.ProductsCardPriceCart>
             </ProductsStyled.ProductsCardRightColumn>
           </ProductsStyled.ProductsCard>
