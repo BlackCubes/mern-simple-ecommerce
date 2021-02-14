@@ -9,7 +9,12 @@ const CheckoutProvider = ({ children }) => {
   const [finalTotal, setFinalTotal] = useState(0);
 
   const calcOrder = (items) => {
-    if (!items.length) return;
+    if (!items.length) {
+      setSubTotal(0);
+      setSalesTax(0);
+      setFinalTotal(0);
+      return;
+    }
 
     let subTotalAmount = 0;
 
