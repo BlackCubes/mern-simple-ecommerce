@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { useCartContext } from '../context/CartContext';
+import { useCheckoutContext } from '../context/CheckoutContext';
 
 const CartPage = () => {
   const { cart, removeProduct } = useCartContext();
+  const { calcOrder } = useCheckoutContext();
+
+  useEffect(() => {
+    calcOrder(cart);
+  }, [cart]);
 
   return (
     <div className="cart">
