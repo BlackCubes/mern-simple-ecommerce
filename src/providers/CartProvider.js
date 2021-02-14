@@ -7,29 +7,34 @@ const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   console.log('cart: ', cart);
 
-  const cartQuantity = (items, newItem) => {
-    if (!items.length) return [{ ...newItem, quantity: 1 }];
+  // const cartQuantity = (items, newItem) => {
+  //   if (!items.length) return [{ ...newItem, quantity: 1 }];
 
-    // let quantity = 0;
-    let itemsObj = {};
+  //   let itemsObj = {};
 
-    items.forEach((item) => {
-      if (item.id !== newItem.id) {
-        // quantity = 1;
-        itemsObj = { ...newItem, quantity: 1 };
-        items.push(itemsObj);
-      } else if (item.id === newItem.id) {
-        // quantity += 1;
-        itemsObj = { ...item, quantity: item.quantity + 1 };
-        Object.assign(item, itemsObj);
-      }
-    });
+  //   items.forEach((item) => {
+  //     if (item.id !== newItem.id) {
+  //       itemsObj = { ...newItem, quantity: 1 };
+  //       items.push(itemsObj);
+  //     }
+  //   });
 
-    return items;
+  //   return items;
+  // };
+  const addToCart = (items, newItem) => {
+    const existingItem = items.find((item) => item.id === newItem.id);
+    if (existingItem)
+      return items.map((item) =>
+        item.id === newItem.id
+          ? { ...newItem, quantity: item.quantity + 1 }
+          : item
+      );
+
+    return [...items, { ...newItem, quantity: 1 }];
   };
 
   const addProduct = (newProduct) =>
-    setCart((items) => cartQuantity(items, newProduct));
+    setCart((items) => addToCart(items, newProduct));
 
   const removeProduct = (removeId) =>
     setCart(cart.filter((obj) => obj.id !== removeId));
