@@ -21,9 +21,8 @@ Button.propTypes = {
   children: PropTypes.node.isRequired,
   rest: PropTypes.shape({
     as: PropTypes.string,
+    type: PropTypes.string,
     onClick: PropTypes.func,
-    onKeyDown: PropTypes.func,
-    role: PropTypes.string,
   }),
 };
 
