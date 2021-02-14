@@ -7,7 +7,7 @@ const CartPage = () => {
 
   return (
     <div className="cart">
-      {!cart ? (
+      {!cart.length ? (
         <div className="cart__empty">Empty</div>
       ) : (
         cart.map((prop) => <pre>{JSON.stringify(prop, null, 2)}</pre>)
