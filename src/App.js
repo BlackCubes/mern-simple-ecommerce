@@ -9,6 +9,7 @@ import ProductsPage from './Components/ProductsPage';
 import ProductDetailsPage from './Components/ProductDetailsPage';
 
 import CartProvider from './providers/CartProvider';
+import CheckoutProvider from './providers/CheckoutProvider';
 import ProductProvider from './providers/ProductProvider';
 
 function App() {
@@ -17,12 +18,18 @@ function App() {
       <Navbar />
       <ProductProvider>
         <CartProvider>
-          <Switch>
-            <Route exact path="/" render={() => <div>Homepage</div>} />
-            <Route exact path="/products" component={ProductsPage} />
-            <Route exact path="/products/:id" component={ProductDetailsPage} />
-            <Route exact path="/cart" component={CartPage} />
-          </Switch>
+          <CheckoutProvider>
+            <Switch>
+              <Route exact path="/" render={() => <div>Homepage</div>} />
+              <Route exact path="/products" component={ProductsPage} />
+              <Route
+                exact
+                path="/products/:id"
+                component={ProductDetailsPage}
+              />
+              <Route exact path="/cart" component={CartPage} />
+            </Switch>
+          </CheckoutProvider>
         </CartProvider>
       </ProductProvider>
     </Router>
