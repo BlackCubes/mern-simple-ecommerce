@@ -43,16 +43,20 @@ const ProductsPage = () => {
                 onKeyDown={() => addProduct(products[key])}
                 role="presentation"
               >
-                <HeadingQuaternary>{`$${prop.price}`}</HeadingQuaternary>
+                <ProductsStyled.ProductsCardPrice>
+                  <HeadingQuaternary>{`$${prop.price}`}</HeadingQuaternary>
+                </ProductsStyled.ProductsCardPrice>
 
-                <Button
-                  rest={{
-                    type: 'button',
-                    onClick: () => addProduct(products[key]),
-                  }}
-                >
-                  Add to Cart
-                </Button>
+                <ProductsStyled.ProductsCardCartBtn>
+                  <Button
+                    rest={{
+                      type: 'button',
+                      onClick: () => addProduct(products[key]),
+                    }}
+                  >
+                    Add to Cart
+                  </Button>
+                </ProductsStyled.ProductsCardCartBtn>
               </ProductsStyled.ProductsCardPriceCart>
             </ProductsStyled.ProductsCardRightColumn>
           </ProductsStyled.ProductsCard>
