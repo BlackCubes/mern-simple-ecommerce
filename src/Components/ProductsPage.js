@@ -1,7 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { HeadingQuaternary, HeadingSecondary, Paragraph } from '../common';
+import {
+  HeadingQuaternary,
+  HeadingSecondary,
+  Image,
+  Paragraph,
+} from '../common';
 
 import { useCartContext } from '../context/CartContext';
 import { useProductContext } from '../context/ProductContext';
@@ -32,7 +37,8 @@ const ProductsPage = () => {
 
             <div className="product__image">
               <Link to={`/products/${prop.id}`}>
-                <img src={prop.image} alt={prop.title} />
+                <Image src={prop.image} alt={prop.title} />
+                {/* <img src={prop.image} alt={prop.title} /> */}
               </Link>
             </div>
           </div>
