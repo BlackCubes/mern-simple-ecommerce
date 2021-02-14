@@ -3,7 +3,7 @@ import React from 'react';
 import { useCartContext } from '../context/CartContext';
 
 const CartPage = () => {
-  const { cart } = useCartContext();
+  const { cart, removeProduct } = useCartContext();
 
   return (
     <div className="cart">
@@ -21,6 +21,16 @@ const CartPage = () => {
             <div className="cart__product-image">{prop.image}</div>
 
             <div className="cart__product-category">{prop.category}</div>
+
+            <div className="cart__product-remove">
+              <button
+                type="button"
+                className="btn"
+                onClick={() => removeProduct(prop.id)}
+              >
+                Remove
+              </button>
+            </div>
           </div>
         ))
       )}
