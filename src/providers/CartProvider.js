@@ -5,6 +5,7 @@ import { CartContext } from '../context';
 
 const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
+  console.log('cart: ', cart);
 
   const addProduct = (newProduct) => setCart((items) => [...items, newProduct]);
 
