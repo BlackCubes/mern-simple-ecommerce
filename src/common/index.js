@@ -1,3 +1,4 @@
+import Button from './Button';
 import GlobalStyles from './GlobalStyles';
 import HeadingPrimary from './HeadingPrimary';
 import HeadingQuaternary from './HeadingQuaternary';
@@ -7,6 +8,7 @@ import Paragraph from './Paragraph';
 import * as ProductsStyled from './ProductsStyled';
 
 export {
+  Button,
   GlobalStyles,
   HeadingPrimary,
   HeadingQuaternary,
