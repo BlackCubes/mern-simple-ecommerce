@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { HeadingSecondary } from '../common';
+
 import { useCartContext } from '../context/CartContext';
 import { useProductContext } from '../context/ProductContext';
 
@@ -11,13 +13,13 @@ const ProductsPage = () => {
   return (
     <div className="product--wrapper">
       {!products ? (
-        <div>Hello!</div>
+        <HeadingSecondary>Hello!</HeadingSecondary>
       ) : (
         products.map((prop, key) => (
           <div key={prop.id} className="product">
-            <div className="product__title">
+            <HeadingSecondary>
               <Link to={`/products/${prop.id}`}>{prop.title}</Link>
-            </div>
+            </HeadingSecondary>
 
             <div
               className="product__price"
