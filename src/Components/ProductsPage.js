@@ -37,7 +37,7 @@ const ProductsPage = () => {
 
             <div className="product__image">
               <Link to={`/products/${prop.id}`}>
-                <Image src={prop.image} alt={prop.title} />
+                <Image rest={{ src: prop.image, alt: prop.title }} />
                 {/* <img src={prop.image} alt={prop.title} /> */}
               </Link>
             </div>
