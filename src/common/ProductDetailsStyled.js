@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+export const ProductDetailsContainer = styled.div`
+  padding-left: 3rem;
+  padding-right: 3rem;
+`;
+
 export const ProductDetails = styled.div`
   width: 75%;
 `;
