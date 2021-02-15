@@ -11,7 +11,7 @@ const ButtonStyled = styled.button`
     props.colortype
       ? props.theme.colors[props.colortype]
       : props.theme.colors.vivid_pink};
-  padding: 1.5rem 4rem;
+  padding: 1.5rem;
   border: none;
   border-radius: 1rem;
   -webkit-transition: all 0.3s ease-out 0s;
