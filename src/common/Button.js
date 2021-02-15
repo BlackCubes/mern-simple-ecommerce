@@ -4,9 +4,12 @@ import styled from 'styled-components';
 
 const ButtonStyled = styled.button`
   display: inline-block;
-  width: 90%;
+  width: ${({ duobtn }) => (duobtn ? '40%' : '90%')};
   font-size: 1.6rem;
-  background-color: ${(props) => props.theme.colors.vivid_pink};
+  background-color: ${(props) =>
+    props.colortype
+      ? props.theme.colors[props.colortype]
+      : props.theme.colors.vivid_pink};
   padding: 1.5rem 4rem;
   border: none;
   border-radius: 1rem;
@@ -29,9 +32,13 @@ Button.propTypes = {
     as: PropTypes.string,
     type: PropTypes.string,
     onClick: PropTypes.func,
+    duobtn: PropTypes.bool,
+    colortype: PropTypes.string,
   }),
 };
 
-Button.defaultProps = { rest: null };
+Button.defaultProps = {
+  rest: { as: null, type: null, onClick: null, duobtn: false, colortype: null },
+};
 
 export default Button;
