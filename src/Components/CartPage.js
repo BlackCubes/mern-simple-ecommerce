@@ -18,7 +18,7 @@ import { useCheckoutContext } from '../context/CheckoutContext';
 import { daysFromNow, dateTimeFormat } from '../utils';
 
 const CartPage = () => {
-  const { cart, addProduct, removeProduct } = useCartContext();
+  const { cart, addProduct, decreaseProduct, removeProduct } = useCartContext();
   const { calcOrder } = useCheckoutContext();
 
   useEffect(() => {
@@ -82,6 +82,7 @@ const CartPage = () => {
                   <Button
                     rest={{
                       type: 'button',
+                      onClick: () => decreaseProduct(prop),
                       duobtn: true,
                     }}
                   >
