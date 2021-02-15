@@ -77,29 +77,35 @@ const CartPage = () => {
                     <span>{prop.quantity}</span>
                   </Paragraph>
                 </CartStyled.CartCardQuantity>
-                <Button
-                  rest={{
-                    type: 'button',
-                  }}
-                >
-                  -
-                </Button>
-                <Button
-                  rest={{
-                    type: 'button',
-                    onClick: () => addProduct(prop),
-                  }}
-                >
-                  +
-                </Button>
-                <Button
-                  rest={{
-                    type: 'button',
-                    onClick: () => removeProduct(prop.id),
-                  }}
-                >
-                  Remove
-                </Button>
+
+                <CartStyled.CartCardRaiseLower>
+                  <Button
+                    rest={{
+                      type: 'button',
+                    }}
+                  >
+                    -
+                  </Button>
+                  <Button
+                    rest={{
+                      type: 'button',
+                      onClick: () => addProduct(prop),
+                    }}
+                  >
+                    +
+                  </Button>
+                </CartStyled.CartCardRaiseLower>
+
+                <CartStyled.CartCardRemove>
+                  <Button
+                    rest={{
+                      type: 'button',
+                      onClick: () => removeProduct(prop.id),
+                    }}
+                  >
+                    Remove
+                  </Button>
+                </CartStyled.CartCardRemove>
               </CartStyled.CartCardAction>
 
               <CartStyled.CartCardPrice>
