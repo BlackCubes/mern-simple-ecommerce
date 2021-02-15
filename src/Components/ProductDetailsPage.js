@@ -4,8 +4,8 @@ import { Link as RouterLink, useParams } from 'react-router-dom';
 import {
   Button,
   HeadingQuaternary,
-  // HeadingSecondary,
-  HeadingTertiary,
+  HeadingSecondary,
+  // HeadingTertiary,
   Image,
   ProductDetailsStyled,
   Small,
@@ -55,7 +55,7 @@ const ProductDetailsPage = () => {
 
               <ProductDetailsStyled.ProductDetailsPriceShippingCart>
                 <ProductDetailsStyled.ProductDetailsPrice>
-                  <HeadingTertiary>{`$${product.price}`}</HeadingTertiary>
+                  <HeadingSecondary>{`$${product.price}`}</HeadingSecondary>
                 </ProductDetailsStyled.ProductDetailsPrice>
 
                 <ProductDetailsStyled.ProductDetailsPriceShippingCartRow>
