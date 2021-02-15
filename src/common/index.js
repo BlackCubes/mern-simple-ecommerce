@@ -1,5 +1,5 @@
 import Button from './Button';
-import CartStyled from './CartStyled';
+import * as CartStyled from './CartStyled';
 import GlobalStyles from './GlobalStyles';
 import HeadingPrimary from './HeadingPrimary';
 import HeadingQuaternary from './HeadingQuaternary';
