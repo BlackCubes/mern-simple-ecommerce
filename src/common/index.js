@@ -6,6 +6,7 @@ import HeadingSecondary from './HeadingSecondary';
 import Image from './Image';
 import Link from './Link';
 import Paragraph from './Paragraph';
+import * as ProductDetailsStyled from './ProductDetailsStyled';
 import * as ProductsStyled from './ProductsStyled';
 import Small from './Small';
 import Theme from './theme';
@@ -19,6 +20,7 @@ export {
   Image,
   Link,
   Paragraph,
+  ProductDetailsStyled,
   ProductsStyled,
   Small,
   Theme,
