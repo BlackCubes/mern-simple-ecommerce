@@ -71,6 +71,8 @@ const CartPage = () => {
               </CartStyled.CartCardShipping>
 
               <CartStyled.CartCardAction>
+                <Small>Quantity:</Small>
+                <Small tagType="string">{prop.quantity}</Small>
                 <Button
                   rest={{
                     type: 'button',
@@ -78,7 +80,6 @@ const CartPage = () => {
                 >
                   -
                 </Button>
-                {prop.quantity}
                 <Button
                   rest={{
                     type: 'button',
