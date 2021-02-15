@@ -30,7 +30,7 @@ export const CartCardDetails = styled.div`
 `;
 
 export const CartCardDetailsImage = styled.div`
-  width: 8rem;
+  width: 10rem;
 
   & > a {
     display: block;
@@ -38,7 +38,7 @@ export const CartCardDetailsImage = styled.div`
 `;
 
 export const CartCardDetailsTitle = styled.div`
-  width: calc(100% - 8rem);
+  width: calc(100% - 10rem);
   padding-left: 3rem;
   padding-right: 3rem;
 `;
