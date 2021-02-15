@@ -16,7 +16,7 @@ export const ProductDetailsHeaderTitle = styled.div`
 export const ProductDetailsHeaderData = styled.div`
   padding-top: 1rem;
 
-  & span::nth-child(2) {
+  & small::nth-child(2) {
     text-transform: capitalize;
   }
 `;
