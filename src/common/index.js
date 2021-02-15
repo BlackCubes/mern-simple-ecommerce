@@ -4,6 +4,7 @@ import HeadingPrimary from './HeadingPrimary';
 import HeadingQuaternary from './HeadingQuaternary';
 import HeadingSecondary from './HeadingSecondary';
 import Image from './Image';
+import Link from './Link';
 import Paragraph from './Paragraph';
 import * as ProductsStyled from './ProductsStyled';
 import Small from './Small';
@@ -16,6 +17,7 @@ export {
   HeadingQuaternary,
   HeadingSecondary,
   Image,
+  Link,
   Paragraph,
   ProductsStyled,
   Small,
