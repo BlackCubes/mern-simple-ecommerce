@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
 import {
-  // Button,
+  Button,
   CartStyled,
   HeadingPrimary,
   HeadingSecondary,
@@ -18,8 +18,7 @@ import { useCheckoutContext } from '../context/CheckoutContext';
 import { daysFromNow, dateTimeFormat } from '../utils';
 
 const CartPage = () => {
-  // const { cart, addProduct, removeProduct } = useCartContext();
-  const { cart } = useCartContext();
+  const { cart, addProduct, removeProduct } = useCartContext();
   const { calcOrder } = useCheckoutContext();
 
   useEffect(() => {
@@ -72,8 +71,30 @@ const CartPage = () => {
               </CartStyled.CartCardShipping>
 
               <CartStyled.CartCardAction>
-                Quantity:&nbsp;
+                <Button
+                  rest={{
+                    type: 'button',
+                  }}
+                >
+                  -
+                </Button>
                 {prop.quantity}
+                <Button
+                  rest={{
+                    type: 'button',
+                    onClick: () => addProduct(prop),
+                  }}
+                >
+                  +
+                </Button>
+                <Button
+                  rest={{
+                    type: 'button',
+                    onClick: () => removeProduct(prop.id),
+                  }}
+                >
+                  Remove
+                </Button>
               </CartStyled.CartCardAction>
 
               <CartStyled.CartCardPrice>
