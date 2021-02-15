@@ -82,6 +82,7 @@ const CartPage = () => {
                   <Button
                     rest={{
                       type: 'button',
+                      duobtn: true,
                     }}
                   >
                     -
@@ -90,6 +91,7 @@ const CartPage = () => {
                     rest={{
                       type: 'button',
                       onClick: () => addProduct(prop),
+                      duobtn: true,
                     }}
                   >
                     +
