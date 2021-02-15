@@ -19,21 +19,23 @@ const LinkStyled = styled(RouterLink)`
   }
 `;
 
-const Link = ({ children, rest }) => (
-  <LinkStyled {...rest}>{children}</LinkStyled>
+const Link = ({ children, href, rest }) => (
+  <LinkStyled to={href} {...rest}>
+    {children}
+  </LinkStyled>
 );
 
 Link.propTypes = {
   children: PropTypes.node.isRequired,
+  href: PropTypes.string.isRequired,
   rest: PropTypes.shape({
-    to: PropTypes.string.isRequired,
     colorType: PropTypes.string,
     hoverColorType: PropTypes.string,
   }),
 };
 
 Link.defaultProps = {
-  rest: { to: '/#', colorType: null, hoverColorType: null },
+  rest: { colorType: null, hoverColorType: null },
 };
 
 export default Link;
