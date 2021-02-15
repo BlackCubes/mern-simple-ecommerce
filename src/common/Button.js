@@ -6,7 +6,7 @@ const ButtonStyled = styled.button`
   display: inline-block;
   width: 90%;
   font-size: 1.6rem;
-  background-color: #ff1e5e;
+  background-color: ${(props) => props.theme.colors.vivid_pink};
   padding: 1.5rem 4rem;
   border: none;
   border-radius: 1rem;
