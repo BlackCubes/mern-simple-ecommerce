@@ -4,7 +4,10 @@ import styled, { css } from 'styled-components';
 
 const SmallStyled = styled.small`
   font-size: 1.3rem;
-  color: #505cc1;
+  color: ${(props) =>
+    props.colorType
+      ? props.theme.colors[props.colorType]
+      : props.theme.colors.black};
 
   ${({ tagType }) =>
     tagType &&
@@ -13,17 +16,21 @@ const SmallStyled = styled.small`
     `}
 `;
 
-const Small = ({ children, tagType }) => (
-  <SmallStyled tagType={tagType}>{children}</SmallStyled>
+const Small = ({ children, tagType, colorType }) => (
+  <SmallStyled tagType={tagType} colorType={colorType}>
+    {children}
+  </SmallStyled>
 );
 
 Small.propTypes = {
   children: PropTypes.node.isRequired,
   tagType: PropTypes.string,
+  colorType: PropTypes.string,
 };
 
 Small.defaultProps = {
   tagType: null,
+  colorType: 'black',
 };
 
 export default Small;
