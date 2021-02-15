@@ -33,7 +33,7 @@ Link.propTypes = {
 };
 
 Link.defaultProps = {
-  rest: { to: '#', colorType: null, hoverColorType: null },
+  rest: { to: '/#', colorType: null, hoverColorType: null },
 };
 
 export default Link;
