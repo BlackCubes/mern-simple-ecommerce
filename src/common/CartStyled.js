@@ -47,6 +47,14 @@ export const CartCardShipping = styled.div`
   width: 13%;
 `;
 
+export const CartCardShippingType = styled.div`
+  margin-bottom: 1rem;
+`;
+
+export const CartCardShippingInfo = styled.div`
+  margin-left: 1rem;
+`;
+
 export const CartCardAction = styled.div`
   width: 25%;
 `;
