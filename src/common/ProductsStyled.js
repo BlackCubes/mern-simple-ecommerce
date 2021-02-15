@@ -32,6 +32,7 @@ export const ProductsCardInfo = styled.div`
   width: 60%;
   padding-left: 2rem;
   padding-right: 2rem;
+  vertical-align: top;
 `;
 
 export const ProductsCardPriceCart = styled.div`
