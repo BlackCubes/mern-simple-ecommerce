@@ -1,10 +1,25 @@
 import React, { useEffect } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
+
+import {
+  // Button,
+  CartStyled,
+  HeadingPrimary,
+  HeadingSecondary,
+  Image,
+  Link,
+  Paragraph,
+  Small,
+} from '../common';
 
 import { useCartContext } from '../context/CartContext';
 import { useCheckoutContext } from '../context/CheckoutContext';
 
+import { daysFromNow, dateTimeFormat } from '../utils';
+
 const CartPage = () => {
-  const { cart, removeProduct } = useCartContext();
+  // const { cart, addProduct, removeProduct } = useCartContext();
+  const { cart } = useCartContext();
   const { calcOrder } = useCheckoutContext();
 
   useEffect(() => {
@@ -12,36 +27,72 @@ const CartPage = () => {
   }, [cart]);
 
   return (
-    <div className="cart">
-      {!cart.length ? (
-        <div className="cart__empty">Empty</div>
-      ) : (
-        cart.map((prop) => (
-          <div key={prop.id} className="cart__product">
-            <div className="cart__product-title">{prop.title}</div>
+    <CartStyled.Cart>
+      <CartStyled.CartLeftContainer>
+        <CartStyled.CartTitlePage>
+          <HeadingPrimary>Your Cart</HeadingPrimary>
+        </CartStyled.CartTitlePage>
+        {!cart.length ? (
+          <HeadingSecondary>Empty</HeadingSecondary>
+        ) : (
+          cart.map((prop) => (
+            <CartStyled.CartCard key={prop.id}>
+              <CartStyled.CartCardDetails>
+                <CartStyled.CartCardDetailsImage>
+                  <RouterLink to={`/products/${prop.id}`}>
+                    <Image rest={{ src: prop.image, alt: prop.title }} />
+                  </RouterLink>
+                </CartStyled.CartCardDetailsImage>
 
-            <div className="cart__product-price">{prop.price}</div>
+                <CartStyled.CartCardDetailsTitle>
+                  <Small>
+                    <Link href={`/products/${prop.id}`}>{prop.title}</Link>
+                  </Small>
+                </CartStyled.CartCardDetailsTitle>
 
-            <div className="cart__product-image">{prop.image}</div>
+                <CartStyled.CartCardShipping>
+                  <Small tagType="strong">
+                    {prop.price >= 50 ? 'FREE Shipping:' : '3-DAY Shipping:'}
+                  </Small>
+                  &nbsp;
+                  <Small>
+                    Get it by&nbsp;
+                    {dateTimeFormat(
+                      'en-US',
+                      { weekday: 'short' },
+                      daysFromNow(3)
+                    )}
+                  </Small>
+                </CartStyled.CartCardShipping>
 
-            <div className="cart__product-quantity">
-              Quantity:&nbsp;
-              {prop.quantity}
-            </div>
+                <CartStyled.CartCardAction>
+                  Quantity:&nbsp;
+                  {prop.quantity}
+                </CartStyled.CartCardAction>
 
-            <div className="cart__product-remove">
-              <button
-                type="button"
-                className="btn"
-                onClick={() => removeProduct(prop.id)}
-              >
-                Remove
-              </button>
-            </div>
-          </div>
-        ))
-      )}
-    </div>
+                <CartStyled.CartCardPrice>
+                  <Paragraph>{prop.price}</Paragraph>
+                </CartStyled.CartCardPrice>
+                {/* <div className="cart__product-quantity">
+                  Quantity:&nbsp;
+                  {prop.quantity}
+                </div> */}
+
+                {/* <div className="cart__product-remove">
+                  <button
+                    type="button"
+                    className="btn"
+                    onClick={() => removeProduct(prop.id)}
+                  >
+                    Remove
+                  </button>
+                </div> */}
+              </CartStyled.CartCardDetails>
+            </CartStyled.CartCard>
+          ))
+        )}
+      </CartStyled.CartLeftContainer>
+    </CartStyled.Cart>
   );
 };
 
