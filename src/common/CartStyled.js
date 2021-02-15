@@ -26,11 +26,11 @@ export const CartCard = styled.div`
 
 export const CartCardDetails = styled.div`
   display: flex;
-  width: 25%;
+  width: 42%;
 `;
 
 export const CartCardDetailsImage = styled.div`
-  width: 10rem;
+  width: 8rem;
 
   & > a {
     display: block;
@@ -38,11 +38,12 @@ export const CartCardDetailsImage = styled.div`
 `;
 
 export const CartCardDetailsTitle = styled.div`
-  width: calc(100% - 10rem);
+  width: calc(100% - 8rem);
+  padding-left: 8rem;
 `;
 
 export const CartCardShipping = styled.div`
-  width: 25%;
+  width: 13%;
 `;
 
 export const CartCardAction = styled.div`
@@ -50,5 +51,5 @@ export const CartCardAction = styled.div`
 `;
 
 export const CartCardPrice = styled.div`
-  width: 25%;
+  width: 13%;
 `;
