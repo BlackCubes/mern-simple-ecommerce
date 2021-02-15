@@ -35,6 +35,22 @@ export const ProductsCardInfo = styled.div`
   vertical-align: top;
 `;
 
+export const ProductsCardInfoTitle = styled.div`
+  margin-bottom: 1rem;
+`;
+
+export const ProductsCardInfoShipping = styled.div`
+  margin-top: 1rem;
+`;
+
+export const ProductsCardInfoShippingBuy = styled.div`
+  margin-bottom: 1rem;
+`;
+
+export const ProductsCardInfoShippingOption = styled.div`
+  margin-top: 1rem;
+`;
+
 export const ProductsCardPriceCart = styled.div`
   display: inline-block;
   width: 40%;
