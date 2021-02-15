@@ -38,6 +38,8 @@ export const ProductDetailsInfo = styled.div`
 
 export const ProductDetailsInfoImage = styled.div`
   width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 export const ProductDetailsPriceShippingCart = styled.div`
