@@ -29,7 +29,7 @@ const ProductsPage = () => {
         products.map((prop, key) => (
           <ProductsStyled.ProductsCard key={prop.id}>
             <ProductsStyled.ProductsCardImage>
-              <RouterLink href={`/products/${prop.id}`}>
+              <RouterLink to={`/products/${prop.id}`}>
                 <Image rest={{ src: prop.image, alt: prop.title }} />
               </RouterLink>
             </ProductsStyled.ProductsCardImage>
