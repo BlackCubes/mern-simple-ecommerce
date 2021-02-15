@@ -1,4 +1,5 @@
 import Button from './Button';
+import CartStyled from './CartStyled';
 import GlobalStyles from './GlobalStyles';
 import HeadingPrimary from './HeadingPrimary';
 import HeadingQuaternary from './HeadingQuaternary';
@@ -14,6 +15,7 @@ import Theme from './theme';
 
 export {
   Button,
+  CartStyled,
   GlobalStyles,
   HeadingPrimary,
   HeadingQuaternary,
