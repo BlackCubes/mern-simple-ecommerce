@@ -49,45 +49,45 @@ const CartPage = () => {
                     <Link href={`/products/${prop.id}`}>{prop.title}</Link>
                   </Small>
                 </CartStyled.CartCardDetailsTitle>
-
-                <CartStyled.CartCardShipping>
-                  <Small tagType="strong">
-                    {prop.price >= 50 ? 'FREE Shipping:' : '3-DAY Shipping:'}
-                  </Small>
-                  &nbsp;
-                  <Small>
-                    Get it by&nbsp;
-                    {dateTimeFormat(
-                      'en-US',
-                      { weekday: 'short' },
-                      daysFromNow(3)
-                    )}
-                  </Small>
-                </CartStyled.CartCardShipping>
-
-                <CartStyled.CartCardAction>
-                  Quantity:&nbsp;
-                  {prop.quantity}
-                </CartStyled.CartCardAction>
-
-                <CartStyled.CartCardPrice>
-                  <Paragraph>{prop.price}</Paragraph>
-                </CartStyled.CartCardPrice>
-                {/* <div className="cart__product-quantity">
-                  Quantity:&nbsp;
-                  {prop.quantity}
-                </div> */}
-
-                {/* <div className="cart__product-remove">
-                  <button
-                    type="button"
-                    className="btn"
-                    onClick={() => removeProduct(prop.id)}
-                  >
-                    Remove
-                  </button>
-                </div> */}
               </CartStyled.CartCardDetails>
+
+              <CartStyled.CartCardShipping>
+                <Small tagType="strong">
+                  {prop.price >= 50 ? 'FREE Shipping:' : '3-DAY Shipping:'}
+                </Small>
+                &nbsp;
+                <Small>
+                  Get it by&nbsp;
+                  {dateTimeFormat(
+                    'en-US',
+                    { weekday: 'short' },
+                    daysFromNow(3)
+                  )}
+                </Small>
+              </CartStyled.CartCardShipping>
+
+              <CartStyled.CartCardAction>
+                Quantity:&nbsp;
+                {prop.quantity}
+              </CartStyled.CartCardAction>
+
+              <CartStyled.CartCardPrice>
+                <Paragraph>{prop.price}</Paragraph>
+              </CartStyled.CartCardPrice>
+              {/* <div className="cart__product-quantity">
+                Quantity:&nbsp;
+                {prop.quantity}
+              </div> */}
+
+              {/* <div className="cart__product-remove">
+                <button
+                  type="button"
+                  className="btn"
+                  onClick={() => removeProduct(prop.id)}
+                >
+                  Remove
+                </button>
+              </div> */}
             </CartStyled.CartCard>
           ))
         )}
