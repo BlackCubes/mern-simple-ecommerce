@@ -5,7 +5,9 @@ import styled from 'styled-components';
 
 const LinkStyled = styled(RouterLink)`
   color: ${(props) =>
-    props.colorType ? props.theme.colors[props.colorType] : '#5067c1'};
+    props.colorType
+      ? props.theme.colors[props.colorType]
+      : props.theme.colors.moderate_blue_2};
   text-decoration: none;
   background-color: transparent;
 
@@ -13,7 +15,7 @@ const LinkStyled = styled(RouterLink)`
     color: ${(props) =>
       props.hoverColorType
         ? props.theme.colors[props.hoverColorType]
-        : '#425bbb'};
+        : props.theme.colors.moderate_blue_dark};
     text-decoration: underline;
     outline: 0;
   }
