@@ -7,6 +7,7 @@ import Image from './Image';
 import Paragraph from './Paragraph';
 import * as ProductsStyled from './ProductsStyled';
 import Small from './Small';
+import Theme from './theme';
 
 export {
   Button,
@@ -18,4 +19,5 @@ export {
   Paragraph,
   ProductsStyled,
   Small,
+  Theme,
 };
