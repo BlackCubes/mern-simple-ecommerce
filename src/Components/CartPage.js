@@ -71,10 +71,12 @@ const CartPage = () => {
               </CartStyled.CartCardShipping>
 
               <CartStyled.CartCardAction>
-                <Paragraph>
-                  Quantity:&nbsp;
-                  <span>{prop.quantity}</span>
-                </Paragraph>
+                <CartStyled.CartCardQuantity>
+                  <Paragraph>
+                    Quantity:&nbsp;
+                    <span>{prop.quantity}</span>
+                  </Paragraph>
+                </CartStyled.CartCardQuantity>
                 <Button
                   rest={{
                     type: 'button',
