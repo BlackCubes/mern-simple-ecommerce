@@ -49,7 +49,7 @@ const ProductDetailsPage = () => {
               Get it in 3 days
             </Small>
             <Small tagType="strong">
-              {product.price >= 50 ? 'FREE Shipping' : '3-DAY Shipping:'}
+              {product.price >= 50 ? 'FREE Shipping:' : '3-DAY Shipping:'}
             </Small>
             &nbsp;
             <Small>
