@@ -67,6 +67,14 @@ export const CartCardQuantity = styled.div`
   }
 `;
 
+export const CartCardRaiseLower = styled.div`
+  margin-bottom: 1rem;
+`;
+
+export const CartCardRemove = styled.div`
+  margin-top: 1rem;
+`;
+
 export const CartCardPrice = styled.div`
   width: 13%;
 `;
