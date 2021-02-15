@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
 const SmallStyled = styled.small`
-  font-size: 1.3rem;
+  font-size: ${({ sizetype }) => (sizetype ? '1.1rem' : '1.3rem')};
   color: ${(props) =>
     props.colorType
       ? props.theme.colors[props.colorType]
@@ -16,8 +16,8 @@ const SmallStyled = styled.small`
     `}
 `;
 
-const Small = ({ children, tagType, colorType }) => (
-  <SmallStyled tagType={tagType} colorType={colorType}>
+const Small = ({ children, tagType, colorType, sizetype }) => (
+  <SmallStyled tagType={tagType} colorType={colorType} sizetype={sizetype}>
     {children}
   </SmallStyled>
 );
@@ -26,11 +26,13 @@ Small.propTypes = {
   children: PropTypes.node.isRequired,
   tagType: PropTypes.string,
   colorType: PropTypes.string,
+  sizetype: PropTypes.string,
 };
 
 Small.defaultProps = {
   tagType: null,
   colorType: 'black',
+  sizetype: null,
 };
 
 export default Small;
