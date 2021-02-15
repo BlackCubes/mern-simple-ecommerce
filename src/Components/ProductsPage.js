@@ -66,12 +66,7 @@ const ProductsPage = () => {
                 </ProductsStyled.ProductsCardInfoShipping>
               </ProductsStyled.ProductsCardInfo>
 
-              <ProductsStyled.ProductsCardPriceCart
-                className="product__price"
-                onClick={() => addProduct(products[key])}
-                onKeyDown={() => addProduct(products[key])}
-                role="presentation"
-              >
+              <ProductsStyled.ProductsCardPriceCart>
                 <ProductsStyled.ProductsCardPrice>
                   <HeadingQuaternary>{`$${prop.price}`}</HeadingQuaternary>
                 </ProductsStyled.ProductsCardPrice>
