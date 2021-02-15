@@ -8,10 +8,13 @@ import {
   Image,
   // Paragraph,
   ProductsStyled,
+  Small,
 } from '../common';
 
 import { useCartContext } from '../context/CartContext';
 import { useProductContext } from '../context/ProductContext';
+
+import { daysFromNow, dateTimeFormat } from '../utils';
 
 const ProductsPage = () => {
   const { addProduct } = useCartContext();
@@ -32,9 +35,34 @@ const ProductsPage = () => {
 
             <ProductsStyled.ProductsCardRightColumn>
               <ProductsStyled.ProductsCardInfo>
-                <HeadingQuaternary>
-                  <Link to={`/products/${prop.id}`}>{prop.title}</Link>
-                </HeadingQuaternary>
+                <ProductsStyled.ProductsCardInfoTitle>
+                  <HeadingQuaternary>
+                    <Link to={`/products/${prop.id}`}>{prop.title}</Link>
+                  </HeadingQuaternary>
+                </ProductsStyled.ProductsCardInfoTitle>
+
+                <ProductsStyled.ProductsCardInfoShipping>
+                  <ProductsStyled.ProductsCardInfoShippingBuy>
+                    <Small tagType="strong" colorType="moderate_blue">
+                      Buy it today
+                    </Small>
+                  </ProductsStyled.ProductsCardInfoShippingBuy>
+
+                  <ProductsStyled.ProductsCardInfoShippingOption>
+                    <Small tagType="strong">
+                      {prop.price >= 200 ? 'FREE Shipping:' : '3-DAY Shipping:'}
+                    </Small>
+                    &nbsp;
+                    <Small>
+                      Get it by&nbsp;
+                      {dateTimeFormat(
+                        'en-US',
+                        { weekday: 'short' },
+                        daysFromNow(3)
+                      )}
+                    </Small>
+                  </ProductsStyled.ProductsCardInfoShippingOption>
+                </ProductsStyled.ProductsCardInfoShipping>
               </ProductsStyled.ProductsCardInfo>
 
               <ProductsStyled.ProductsCardPriceCart
