@@ -5,16 +5,16 @@ import styled from 'styled-components';
 
 const LinkStyled = styled(RouterLink)`
   color: ${(props) =>
-    props.colorType
-      ? props.theme.colors[props.colorType]
+    props.colortype
+      ? props.theme.colors[props.colortype]
       : props.theme.colors.moderate_blue_2};
   text-decoration: none;
   background-color: transparent;
 
   &:hover {
     color: ${(props) =>
-      props.hoverColorType
-        ? props.theme.colors[props.hoverColorType]
+      props.hovercolortype
+        ? props.theme.colors[props.hovercolortype]
         : props.theme.colors.moderate_blue_dark};
     text-decoration: underline;
     outline: 0;
@@ -31,13 +31,13 @@ Link.propTypes = {
   children: PropTypes.node.isRequired,
   href: PropTypes.string.isRequired,
   rest: PropTypes.shape({
-    colorType: PropTypes.string,
-    hoverColorType: PropTypes.string,
+    colortype: PropTypes.string,
+    hovercolortype: PropTypes.string,
   }),
 };
 
 Link.defaultProps = {
-  rest: { colorType: null, hoverColorType: null },
+  rest: { colortype: null, hovercolortype: null },
 };
 
 export default Link;
