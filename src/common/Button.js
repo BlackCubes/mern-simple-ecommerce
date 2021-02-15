@@ -4,7 +4,8 @@ import styled from 'styled-components';
 
 const ButtonStyled = styled.button`
   display: inline-block;
-  width: ${({ duobtn }) => (duobtn ? '40%' : '90%')};
+  width: ${({ duobtn, fullbtn }) =>
+    duobtn ? '40%' : fullbtn ? '100%' : '90%'};
   font-size: 1.6rem;
   background-color: ${(props) =>
     props.colortype
@@ -33,12 +34,20 @@ Button.propTypes = {
     type: PropTypes.string,
     onClick: PropTypes.func,
     duobtn: PropTypes.bool,
+    fullbtn: PropTypes.bool,
     colortype: PropTypes.string,
   }),
 };
 
 Button.defaultProps = {
-  rest: { as: null, type: null, onClick: null, duobtn: false, colortype: null },
+  rest: {
+    as: null,
+    type: null,
+    onClick: null,
+    duobtn: false,
+    fullbtn: false,
+    colortype: null,
+  },
 };
 
 export default Button;
