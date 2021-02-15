@@ -43,7 +43,7 @@ const ProductDetailsPage = () => {
               <Image rest={{ src: product.image, alt: product.title }} />
             </div>
             <div className="product-details__price">
-              <HeadingQuaternary>{product.price}</HeadingQuaternary>
+              <HeadingQuaternary>{`$${product.price}`}</HeadingQuaternary>
             </div>
             <Small tagType="strong" colorType="lime_green">
               Get it in 3 days
