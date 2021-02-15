@@ -37,7 +37,7 @@ export const CartCardDetailsImage = styled.div`
   }
 `;
 
-export const CartDardDetailsTitle = styled.div`
+export const CartCardDetailsTitle = styled.div`
   width: calc(100% - 10rem);
 `;
 
