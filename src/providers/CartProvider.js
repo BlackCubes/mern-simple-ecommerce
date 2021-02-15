@@ -33,14 +33,35 @@ const CartProvider = ({ children }) => {
     return [...items, { ...newItem, quantity: 1 }];
   };
 
+  const decreaseToCart = (items, selectedItem) => {
+    const existingItem = items.find((item) => item.id === selectedItem.id);
+    if (existingItem)
+      return items.map((item) =>
+        item.id === existingItem.id
+          ? { ...existingItem, quantity: item.quantity - 1 }
+          : item
+      );
+    return items;
+  };
+
   const addProduct = (newProduct) =>
     setCart((items) => addToCart(items, newProduct));
+
+  const decreaseProduct = (product) =>
+    setCart((items) => decreaseToCart(items, product));
 
   const removeProduct = (removeId) =>
     setCart(cart.filter((obj) => obj.id !== removeId));
 
   return (
-    <CartContext.Provider value={{ cart, addProduct, removeProduct }}>
+    <CartContext.Provider
+      value={{
+        cart,
+        addProduct,
+        decreaseProduct,
+        removeProduct,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );
