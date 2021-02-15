@@ -39,7 +39,8 @@ export const CartCardDetailsImage = styled.div`
 
 export const CartCardDetailsTitle = styled.div`
   width: calc(100% - 8rem);
-  padding-left: 8rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
 `;
 
 export const CartCardShipping = styled.div`
