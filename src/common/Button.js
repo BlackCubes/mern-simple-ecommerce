@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const ButtonStyled = styled.button`
   display: inline-block;
@@ -17,6 +17,13 @@ const ButtonStyled = styled.button`
   -webkit-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
   cursor: pointer;
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      opacity: 0.6;
+      cursor: not-allowed;
+    `}
 
   &:hover {
     background-color: ${(props) => props.theme.colors.vivid_pink_tone};
