@@ -10,7 +10,13 @@ const ButtonStyled = styled.button`
   padding: 1.5rem 4rem;
   border: none;
   border-radius: 1rem;
+  -webkit-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
   cursor: pointer;
+
+  &:hover {
+    background-color: #ff1e84;
+  }
 `;
 
 const Button = ({ children, rest }) => (
