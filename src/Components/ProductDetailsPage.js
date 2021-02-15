@@ -36,7 +36,7 @@ const ProductDetailsPage = () => {
           <ProductDetailsStyled.ProductDetails>
             <ProductDetailsStyled.ProductDetailsHeader>
               <ProductDetailsStyled.ProductDetailsHeaderTitle>
-                <HeadingSecondary>{product.title}</HeadingSecondary>
+                <HeadingQuaternary>{product.title}</HeadingQuaternary>
               </ProductDetailsStyled.ProductDetailsHeaderTitle>
 
               <ProductDetailsStyled.ProductDetailsHeaderData>
