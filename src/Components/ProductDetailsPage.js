@@ -4,7 +4,7 @@ import { Link as RouterLink, useParams } from 'react-router-dom';
 import {
   Button,
   HeadingQuaternary,
-  HeadingSecondary,
+  // HeadingSecondary,
   HeadingTertiary,
   Image,
   ProductDetailsStyled,
