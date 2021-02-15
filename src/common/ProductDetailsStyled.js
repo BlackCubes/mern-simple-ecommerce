@@ -4,22 +4,23 @@ export const ProductDetails = styled.div`
   width: 75%;
 `;
 
+export const ProductDetailsHeader = styled.div`
+  width: 100%;
+  margin-bottom: 2rem;
+`;
+
+export const ProductDetailsHeaderTitle = styled.div`
+  margin-bottom: 1rem;
+`;
+
+export const ProductDetailsHeaderData = styled.div`
+  padding-top: 1rem;
+`;
+
 export const ProductDetailsInfo = styled.div`
   width: 65%;
   padding-left: 2rem;
   padding-right: 2rem;
-`;
-
-export const ProductDetailsInfoHeader = styled.div`
-  margin-bottom: 2rem;
-`;
-
-export const ProductDetailsInfoHeaderTitle = styled.div`
-  margin-bottom: 1rem;
-`;
-
-export const ProductDetailsInfoHeaderData = styled.div`
-  padding-top: 1rem;
 `;
 
 export const ProductDetailsInfoImage = styled.div`

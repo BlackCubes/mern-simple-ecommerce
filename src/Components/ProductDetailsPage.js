@@ -33,19 +33,19 @@ const ProductDetailsPage = () => {
           <RouterLink to="/products">Back</RouterLink>
 
           <ProductDetailsStyled.ProductDetails>
+            <ProductDetailsStyled.ProductDetailsHeader>
+              <ProductDetailsStyled.ProductDetailsHeaderTitle>
+                <HeadingSecondary>{product.title}</HeadingSecondary>
+              </ProductDetailsStyled.ProductDetailsHeaderTitle>
+
+              <ProductDetailsStyled.ProductDetailsHeaderData>
+                <Small tagType="strong">Type:</Small>
+                &nbsp;
+                <Small>{product.category}</Small>
+              </ProductDetailsStyled.ProductDetailsHeaderData>
+            </ProductDetailsStyled.ProductDetailsHeader>
+
             <ProductDetailsStyled.ProductDetailsInfo>
-              <ProductDetailsStyled.ProductDetailsInfoHeader>
-                <ProductDetailsStyled.ProductDetailsInfoHeaderTitle>
-                  <HeadingSecondary>{product.title}</HeadingSecondary>
-                </ProductDetailsStyled.ProductDetailsInfoHeaderTitle>
-
-                <ProductDetailsStyled.ProductDetailsInfoHeaderData>
-                  <Small tagType="strong">Type:</Small>
-                  &nbsp;
-                  <Small>{product.category}</Small>
-                </ProductDetailsStyled.ProductDetailsInfoHeaderData>
-              </ProductDetailsStyled.ProductDetailsInfoHeader>
-
               <ProductDetailsStyled.ProductDetailsInfoImage>
                 <Image rest={{ src: product.image, alt: product.title }} />
               </ProductDetailsStyled.ProductDetailsInfoImage>
