@@ -6,6 +6,7 @@ import HeadingSecondary from './HeadingSecondary';
 import Image from './Image';
 import Paragraph from './Paragraph';
 import * as ProductsStyled from './ProductsStyled';
+import Small from './Small';
 
 export {
   Button,
@@ -16,4 +17,5 @@ export {
   Image,
   Paragraph,
   ProductsStyled,
+  Small,
 };
