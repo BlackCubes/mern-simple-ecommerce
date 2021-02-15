@@ -52,18 +52,23 @@ const CartPage = () => {
               </CartStyled.CartCardDetails>
 
               <CartStyled.CartCardShipping>
-                <Small tagType="strong">
-                  {prop.price >= 50 ? 'FREE Shipping:' : '3-DAY Shipping:'}
-                </Small>
-                &nbsp;
-                <Small>
-                  Get it by&nbsp;
-                  {dateTimeFormat(
-                    'en-US',
-                    { weekday: 'short' },
-                    daysFromNow(3)
-                  )}
-                </Small>
+                <CartStyled.CartCardShippingType>
+                  <Small tagType="strong">
+                    {prop.price >= 50 ? 'FREE Shipping' : '3-DAY Shipping'}
+                  </Small>
+                </CartStyled.CartCardShippingType>
+
+                <CartStyled.CartCardShippingInfo>
+                  <Small sizetype="xsmall">Get it by</Small>
+                  &nbsp;
+                  <Small tagType="strong" sizetype="xsmall">
+                    {dateTimeFormat(
+                      'en-US',
+                      { weekday: 'short' },
+                      daysFromNow(3)
+                    )}
+                  </Small>
+                </CartStyled.CartCardShippingInfo>
               </CartStyled.CartCardShipping>
 
               <CartStyled.CartCardAction>
@@ -72,7 +77,7 @@ const CartPage = () => {
               </CartStyled.CartCardAction>
 
               <CartStyled.CartCardPrice>
-                <Paragraph>{prop.price}</Paragraph>
+                <Paragraph tagtype="strong">{`$${prop.price}`}</Paragraph>
               </CartStyled.CartCardPrice>
               {/* <div className="cart__product-quantity">
                 Quantity:&nbsp;
