@@ -17,6 +17,10 @@ export const ProductDetailsHeaderData = styled.div`
   padding-top: 1rem;
 `;
 
+export const ProductDetailsBottomContainer = styled.div`
+  display: flex;
+`;
+
 export const ProductDetailsInfo = styled.div`
   width: 65%;
   padding-left: 2rem;
