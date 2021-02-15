@@ -31,73 +31,75 @@ const ProductDetailsPage = () => {
         <HeadingQuaternary>Loading...</HeadingQuaternary>
       ) : (
         <>
-          <RouterLink to="/products">Back</RouterLink>
+          <ProductDetailsStyled.ProductDetailsContainer>
+            <RouterLink to="/products">Back</RouterLink>
 
-          <ProductDetailsStyled.ProductDetails>
-            <ProductDetailsStyled.ProductDetailsHeader>
-              <ProductDetailsStyled.ProductDetailsHeaderTitle>
-                <HeadingQuaternary>{product.title}</HeadingQuaternary>
-              </ProductDetailsStyled.ProductDetailsHeaderTitle>
+            <ProductDetailsStyled.ProductDetails>
+              <ProductDetailsStyled.ProductDetailsHeader>
+                <ProductDetailsStyled.ProductDetailsHeaderTitle>
+                  <HeadingQuaternary>{product.title}</HeadingQuaternary>
+                </ProductDetailsStyled.ProductDetailsHeaderTitle>
 
-              <ProductDetailsStyled.ProductDetailsHeaderData>
-                <Small tagType="strong">Type:</Small>
-                &nbsp;
-                <Small>{product.category}</Small>
-              </ProductDetailsStyled.ProductDetailsHeaderData>
-            </ProductDetailsStyled.ProductDetailsHeader>
+                <ProductDetailsStyled.ProductDetailsHeaderData>
+                  <Small tagType="strong">Type:</Small>
+                  &nbsp;
+                  <Small>{product.category}</Small>
+                </ProductDetailsStyled.ProductDetailsHeaderData>
+              </ProductDetailsStyled.ProductDetailsHeader>
 
-            <ProductDetailsStyled.ProductDetailsBottomContainer>
-              <ProductDetailsStyled.ProductDetailsInfo>
-                <ProductDetailsStyled.ProductDetailsInfoImage>
-                  <Image rest={{ src: product.image, alt: product.title }} />
-                </ProductDetailsStyled.ProductDetailsInfoImage>
-              </ProductDetailsStyled.ProductDetailsInfo>
+              <ProductDetailsStyled.ProductDetailsBottomContainer>
+                <ProductDetailsStyled.ProductDetailsInfo>
+                  <ProductDetailsStyled.ProductDetailsInfoImage>
+                    <Image rest={{ src: product.image, alt: product.title }} />
+                  </ProductDetailsStyled.ProductDetailsInfoImage>
+                </ProductDetailsStyled.ProductDetailsInfo>
 
-              <ProductDetailsStyled.ProductDetailsPriceShippingCart>
-                <ProductDetailsStyled.ProductDetailsPrice>
-                  <HeadingSecondary>{`$${product.price}`}</HeadingSecondary>
-                </ProductDetailsStyled.ProductDetailsPrice>
+                <ProductDetailsStyled.ProductDetailsPriceShippingCart>
+                  <ProductDetailsStyled.ProductDetailsPrice>
+                    <HeadingSecondary>{`$${product.price}`}</HeadingSecondary>
+                  </ProductDetailsStyled.ProductDetailsPrice>
 
-                <ProductDetailsStyled.ProductDetailsPriceShippingCartRow>
-                  <ProductDetailsStyled.ProductDetailsShippingBuy>
-                    <Small tagType="strong" colorType="lime_green">
-                      Get it in 3 days
-                    </Small>
-                  </ProductDetailsStyled.ProductDetailsShippingBuy>
+                  <ProductDetailsStyled.ProductDetailsPriceShippingCartRow>
+                    <ProductDetailsStyled.ProductDetailsShippingBuy>
+                      <Small tagType="strong" colorType="lime_green">
+                        Get it in 3 days
+                      </Small>
+                    </ProductDetailsStyled.ProductDetailsShippingBuy>
 
-                  <ProductDetailsStyled.ProductDetailsShippingOption>
-                    <Small tagType="strong">
-                      {product.price >= 50
-                        ? 'FREE Shipping:'
-                        : '3-DAY Shipping:'}
-                    </Small>
-                    &nbsp;
-                    <Small>
-                      Get it by&nbsp;
-                      {dateTimeFormat(
-                        'en-US',
-                        { weekday: 'short' },
-                        daysFromNow(3)
-                      )}
-                    </Small>
-                  </ProductDetailsStyled.ProductDetailsShippingOption>
-                </ProductDetailsStyled.ProductDetailsPriceShippingCartRow>
+                    <ProductDetailsStyled.ProductDetailsShippingOption>
+                      <Small tagType="strong">
+                        {product.price >= 50
+                          ? 'FREE Shipping:'
+                          : '3-DAY Shipping:'}
+                      </Small>
+                      &nbsp;
+                      <Small>
+                        Get it by&nbsp;
+                        {dateTimeFormat(
+                          'en-US',
+                          { weekday: 'short' },
+                          daysFromNow(3)
+                        )}
+                      </Small>
+                    </ProductDetailsStyled.ProductDetailsShippingOption>
+                  </ProductDetailsStyled.ProductDetailsPriceShippingCartRow>
 
-                <ProductDetailsStyled.ProductDetailsPriceShippingCartRow>
-                  <div className="product-details__cart-add">
-                    <Button
-                      rest={{
-                        type: 'button',
-                        onClick: () => addProduct(product),
-                      }}
-                    >
-                      Add to Cart
-                    </Button>
-                  </div>
-                </ProductDetailsStyled.ProductDetailsPriceShippingCartRow>
-              </ProductDetailsStyled.ProductDetailsPriceShippingCart>
-            </ProductDetailsStyled.ProductDetailsBottomContainer>
-          </ProductDetailsStyled.ProductDetails>
+                  <ProductDetailsStyled.ProductDetailsPriceShippingCartRow>
+                    <div className="product-details__cart-add">
+                      <Button
+                        rest={{
+                          type: 'button',
+                          onClick: () => addProduct(product),
+                        }}
+                      >
+                        Add to Cart
+                      </Button>
+                    </div>
+                  </ProductDetailsStyled.ProductDetailsPriceShippingCartRow>
+                </ProductDetailsStyled.ProductDetailsPriceShippingCart>
+              </ProductDetailsStyled.ProductDetailsBottomContainer>
+            </ProductDetailsStyled.ProductDetails>
+          </ProductDetailsStyled.ProductDetailsContainer>
           <div className="product-details__description">
             {product.description}
           </div>
