@@ -59,6 +59,14 @@ export const CartCardAction = styled.div`
   width: 25%;
 `;
 
+export const CartCardQuantity = styled.div`
+  margin-bottom: 1rem;
+
+  & span {
+    font-weight: 600;
+  }
+`;
+
 export const CartCardPrice = styled.div`
   width: 13%;
 `;
