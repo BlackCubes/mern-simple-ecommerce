@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 
 import {
   Button,
@@ -28,9 +29,9 @@ const ProductsPage = () => {
         products.map((prop, key) => (
           <ProductsStyled.ProductsCard key={prop.id}>
             <ProductsStyled.ProductsCardImage>
-              <Link href={`/products/${prop.id}`}>
+              <RouterLink href={`/products/${prop.id}`}>
                 <Image rest={{ src: prop.image, alt: prop.title }} />
-              </Link>
+              </RouterLink>
             </ProductsStyled.ProductsCardImage>
 
             <ProductsStyled.ProductsCardRightColumn>
