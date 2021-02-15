@@ -52,7 +52,7 @@ export const CartCardShippingType = styled.div`
 `;
 
 export const CartCardShippingInfo = styled.div`
-  margin-left: 1rem;
+  margin-left: 0.5rem;
 `;
 
 export const CartCardAction = styled.div`
