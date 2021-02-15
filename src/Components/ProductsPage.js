@@ -31,9 +31,6 @@ const ProductsPage = () => {
               <Link href={`/products/${prop.id}`}>
                 <Image rest={{ src: prop.image, alt: prop.title }} />
               </Link>
-              {/* <Link to={`/products/${prop.id}`}>
-                <Image rest={{ src: prop.image, alt: prop.title }} />
-              </Link> */}
             </ProductsStyled.ProductsCardImage>
 
             <ProductsStyled.ProductsCardRightColumn>
@@ -41,7 +38,6 @@ const ProductsPage = () => {
                 <ProductsStyled.ProductsCardInfoTitle>
                   <HeadingQuaternary>
                     <Link href={`/products/${prop.id}`}>{prop.title}</Link>
-                    {/* <Link to={`/products/${prop.id}`}>{prop.title}</Link> */}
                   </HeadingQuaternary>
                 </ProductsStyled.ProductsCardInfoTitle>
 
