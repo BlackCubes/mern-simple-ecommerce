@@ -12,7 +12,7 @@ import {
 import { useCartContext } from '../context/CartContext';
 import { useProductContext } from '../context/ProductContext';
 
-import { daysFromNow, dateTimeFormat } from '../utls';
+import { daysFromNow, dateTimeFormat } from '../utils';
 
 const ProductDetailsPage = () => {
   const { id } = useParams();
