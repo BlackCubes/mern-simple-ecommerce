@@ -103,6 +103,7 @@ const CartPage = () => {
                     rest={{
                       type: 'button',
                       onClick: () => removeProduct(prop.id),
+                      fullbtn: true,
                     }}
                   >
                     Remove
