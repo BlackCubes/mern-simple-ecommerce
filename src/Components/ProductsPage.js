@@ -50,7 +50,7 @@ const ProductsPage = () => {
 
                   <ProductsStyled.ProductsCardInfoShippingOption>
                     <Small tagType="strong">
-                      {prop.price >= 200 ? 'FREE Shipping:' : '3-DAY Shipping:'}
+                      {prop.price >= 50 ? 'FREE Shipping:' : '3-DAY Shipping:'}
                     </Small>
                     &nbsp;
                     <Small>
