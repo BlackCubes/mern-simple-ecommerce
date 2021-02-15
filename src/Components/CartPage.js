@@ -83,6 +83,7 @@ const CartPage = () => {
                     rest={{
                       type: 'button',
                       onClick: () => decreaseProduct(prop),
+                      disabled: prop.quantity > 0,
                       duobtn: true,
                     }}
                   >
