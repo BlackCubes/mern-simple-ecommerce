@@ -47,7 +47,7 @@ const ProductsPage = () => {
 
                 <ProductsStyled.ProductsCardInfoShipping>
                   <ProductsStyled.ProductsCardInfoShippingBuy>
-                    <Small tagType="strong" colorType="moderate_blue">
+                    <Small tagType="strong" colorType="lime_green">
                       Buy it today
                     </Small>
                   </ProductsStyled.ProductsCardInfoShippingBuy>
