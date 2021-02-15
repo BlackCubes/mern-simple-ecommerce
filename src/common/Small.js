@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components';
 
 const SmallStyled = styled.small`
   font-size: 1.3rem;
+  color: #505cc1;
 
   ${({ tagType }) =>
     tagType &&
