@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import {
   Button,
   HeadingQuaternary,
   HeadingSecondary,
   Image,
+  Link,
   // Paragraph,
   ProductsStyled,
   Small,
@@ -28,16 +28,20 @@ const ProductsPage = () => {
         products.map((prop, key) => (
           <ProductsStyled.ProductsCard key={prop.id}>
             <ProductsStyled.ProductsCardImage>
-              <Link to={`/products/${prop.id}`}>
+              <Link href={`/products/${prop.id}`}>
                 <Image rest={{ src: prop.image, alt: prop.title }} />
               </Link>
+              {/* <Link to={`/products/${prop.id}`}>
+                <Image rest={{ src: prop.image, alt: prop.title }} />
+              </Link> */}
             </ProductsStyled.ProductsCardImage>
 
             <ProductsStyled.ProductsCardRightColumn>
               <ProductsStyled.ProductsCardInfo>
                 <ProductsStyled.ProductsCardInfoTitle>
                   <HeadingQuaternary>
-                    <Link to={`/products/${prop.id}`}>{prop.title}</Link>
+                    <Link href={`/products/${prop.id}`}>{prop.title}</Link>
+                    {/* <Link to={`/products/${prop.id}`}>{prop.title}</Link> */}
                   </HeadingQuaternary>
                 </ProductsStyled.ProductsCardInfoTitle>
 
