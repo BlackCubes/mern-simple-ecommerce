@@ -5,6 +5,7 @@ import {
   Button,
   HeadingQuaternary,
   HeadingSecondary,
+  HeadingTertiary,
   Image,
   ProductDetailsStyled,
   Small,
@@ -54,7 +55,7 @@ const ProductDetailsPage = () => {
 
               <ProductDetailsStyled.ProductDetailsPriceShippingCart>
                 <ProductDetailsStyled.ProductDetailsPrice>
-                  <HeadingQuaternary>{`$${product.price}`}</HeadingQuaternary>
+                  <HeadingTertiary>{`$${product.price}`}</HeadingTertiary>
                 </ProductDetailsStyled.ProductDetailsPrice>
 
                 <ProductDetailsStyled.ProductDetailsPriceShippingCartRow>
