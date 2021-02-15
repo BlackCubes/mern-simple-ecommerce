@@ -43,7 +43,7 @@ export const ProductDetailsPriceShippingCartRow = styled.div`
 `;
 
 export const ProductDetailsPrice = styled.div`
-  & h4 {
+  & h3 {
     font-weight: 600;
   }
 `;
