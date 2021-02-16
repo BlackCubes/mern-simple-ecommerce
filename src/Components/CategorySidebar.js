@@ -13,12 +13,12 @@ import { useProductContext } from '../context/ProductContext';
 
 const CategorySidebar = () => {
   const [similarProducts, setSimilarProducts] = useState(null);
-  const { products, category } = useProductContext();
+  const { products, product, category } = useProductContext();
 
   const categoryProducts = (productCategory) => {
     if (products) {
       const similar = products.filter(
-        (product) => product.category === productCategory
+        (prod) => prod.category === productCategory && prod.id !== product.id
       );
       setSimilarProducts(similar);
     }
