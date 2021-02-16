@@ -10,6 +10,7 @@ import Link from './Link';
 import Paragraph from './Paragraph';
 import * as ProductDetailsStyled from './ProductDetailsStyled';
 import * as ProductsStyled from './ProductsStyled';
+import * as Sidebar from './Sidebar';
 import Small from './Small';
 import Theme from './theme';
 
@@ -26,6 +27,7 @@ export {
   Paragraph,
   ProductDetailsStyled,
   ProductsStyled,
+  Sidebar,
   Small,
   Theme,
 };
