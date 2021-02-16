@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // API
-const getProductsAPI = async () => {
+export const getProductsAPI = async () => {
   try {
     const apiUrl = 'https://fakestoreapi.com/products';
     const res = await axios.get(apiUrl);
@@ -11,9 +11,29 @@ const getProductsAPI = async () => {
   }
 };
 
-const getProductAPI = async (id) => {
+export const getProductAPI = async (id) => {
   try {
     const apiUrl = `https://fakestoreapi.com/products/${id}`;
+    const res = await axios.get(apiUrl);
+    if (res.status === 200) return res.data;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const getCategoriesAPI = async () => {
+  try {
+    const apiUrl = 'https://fakestoreapi.com/products/categories';
+    const res = await axios.get(apiUrl);
+    if (res.status === 200) return res.data;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const getCategoryAPI = async (category) => {
+  try {
+    const apiUrl = `https://fakestoreapi.com/products/category/${category}`;
     const res = await axios.get(apiUrl);
     if (res.status === 200) return res.data;
   } catch (err) {
@@ -29,5 +49,3 @@ export const daysFromNow = (days) => {
 
 export const dateTimeFormat = (language, options, format) =>
   new Intl.DateTimeFormat(language, options).format(format);
-
-export { getProductsAPI, getProductAPI };
