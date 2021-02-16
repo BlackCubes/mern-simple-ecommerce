@@ -3,11 +3,18 @@ import PropTypes from 'prop-types';
 
 import { ProductContext } from '../context';
 
-import { getProductsAPI, getProductAPI } from '../utils';
+import {
+  getCategoriesAPI,
+  getCategoryAPI,
+  getProductsAPI,
+  getProductAPI,
+} from '../utils';
 
 const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState(null);
   const [product, setProduct] = useState(null);
+  const [categories, setCategories] = useState(null);
+  console.log('categories: ', categories);
 
   const getProducts = async () => {
     try {
@@ -18,8 +25,18 @@ const ProductProvider = ({ children }) => {
     }
   };
 
+  const getCategories = async () => {
+    try {
+      const data = await getCategoriesAPI();
+      setCategories(data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   useEffect(() => {
     getProducts();
+    getCategories();
   }, []);
 
   const getProduct = async (id) => {
@@ -31,8 +48,19 @@ const ProductProvider = ({ children }) => {
     }
   };
 
+  const getCategory = async (category) => {
+    try {
+      const data = await getCategoryAPI(category);
+      setProduct(data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
-    <ProductContext.Provider value={{ products, getProduct, product }}>
+    <ProductContext.Provider
+      value={{ products, product, categories, getProduct, getCategory }}
+    >
       {children}
     </ProductContext.Provider>
   );
