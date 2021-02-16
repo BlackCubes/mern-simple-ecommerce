@@ -16,10 +16,12 @@ const CategorySidebar = () => {
   const { products, category } = useProductContext();
 
   const categoryProducts = (productCategory) => {
-    const similar = products.filter(
-      (product) => product.category === productCategory
-    );
-    setSimilarProducts(similar);
+    if (products) {
+      const similar = products.filter(
+        (product) => product.category === productCategory
+      );
+      setSimilarProducts(similar);
+    }
   };
 
   useEffect(() => {
