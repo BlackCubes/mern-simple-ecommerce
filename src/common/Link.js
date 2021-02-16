@@ -31,6 +31,7 @@ Link.propTypes = {
   children: PropTypes.node.isRequired,
   href: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).isRequired,
   rest: PropTypes.shape({
+    onClick: PropTypes.func,
     colortype: PropTypes.string,
     hovercolortype: PropTypes.string,
   }),
