@@ -2,6 +2,7 @@ import Button from './Button';
 import * as CartStyled from './CartStyled';
 import * as CategorySidebarStyled from './CategorySidebarStyled';
 import * as CheckoutSidebarStyled from './CheckoutSidebarStyled';
+import * as CheckoutStyled from './CheckoutStyled';
 import GlobalStyles from './GlobalStyles';
 import HeadingPrimary from './HeadingPrimary';
 import HeadingQuaternary from './HeadingQuaternary';
@@ -21,6 +22,7 @@ export {
   CartStyled,
   CategorySidebarStyled,
   CheckoutSidebarStyled,
+  CheckoutStyled,
   GlobalStyles,
   HeadingPrimary,
   HeadingQuaternary,
