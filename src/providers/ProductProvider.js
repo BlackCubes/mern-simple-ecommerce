@@ -36,7 +36,7 @@ const ProductProvider = ({ children }) => {
 
   useEffect(() => {
     getProducts();
-    getCategories();
+    // getCategories();
   }, []);
 
   const getProduct = async (id) => {
@@ -59,7 +59,14 @@ const ProductProvider = ({ children }) => {
 
   return (
     <ProductContext.Provider
-      value={{ products, product, categories, getProduct, getCategory }}
+      value={{
+        products,
+        product,
+        categories,
+        getProduct,
+        getCategory,
+        getCategories,
+      }}
     >
       {children}
     </ProductContext.Provider>
