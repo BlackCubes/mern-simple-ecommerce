@@ -19,7 +19,7 @@ const CheckoutSidebar = () => {
 
   return (
     <SidebarStyled.Sidebar>
-      <SidebarStyled.SidebarContent>
+      <SidebarStyled.SidebarContainer>
         <CheckoutSidebarStyled.CheckoutSidebar>
           <CheckoutSidebarStyled.CheckoutSidebarHeader>
             <HeadingSecondary>Checkout Summary</HeadingSecondary>
@@ -58,7 +58,7 @@ const CheckoutSidebar = () => {
             </Button>
           </CheckoutSidebarStyled.CheckoutSidebarButton>
         </CheckoutSidebarStyled.CheckoutSidebar>
-      </SidebarStyled.SidebarContent>
+      </SidebarStyled.SidebarContainer>
     </SidebarStyled.Sidebar>
   );
 };

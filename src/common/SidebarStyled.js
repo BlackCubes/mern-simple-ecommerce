@@ -5,6 +5,6 @@ export const Sidebar = styled.div`
   padding-left: 4rem;
 `;
 
-export const SidebarContent = styled.div`
+export const SidebarContainer = styled.div`
   height: 100%;
 `;
