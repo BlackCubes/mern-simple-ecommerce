@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
+import CheckoutSidebar from './CheckoutSidebar';
+
 import {
   Button,
   CartStyled,
@@ -120,6 +122,8 @@ const CartPage = () => {
           ))
         )}
       </CartStyled.CartLeftContainer>
+
+      <CheckoutSidebar />
     </CartStyled.Cart>
   );
 };
