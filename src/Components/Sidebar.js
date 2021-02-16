@@ -6,9 +6,9 @@ import { Link, Paragraph, SidebarStyled, Small } from '../common';
 import { useProductContext } from '../context/ProductContext';
 
 const Sidebar = () => {
-  const { categories, getCategory } = useProductContext();
+  const { categories } = useProductContext();
 
-  const handleClick = (selectedCategory) => getCategory(selectedCategory);
+  // const handleClick = (selectedCategory) => getCategory(selectedCategory);
 
   return (
     <SidebarStyled.Sidebar>
@@ -23,7 +23,7 @@ const Sidebar = () => {
               categories.map((prop) => (
                 <SidebarStyled.SidebarFacetListItem key={uuidv4()}>
                   <Small>
-                    <Link href={() => handleClick(prop)}>{prop}</Link>
+                    <Link href="/">{prop}</Link>
                   </Small>
                 </SidebarStyled.SidebarFacetListItem>
               ))}
