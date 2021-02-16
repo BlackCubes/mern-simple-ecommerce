@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Sidebar = styled.div`
-  width: 15%;
+  width: 20%;
   padding-left: 4rem;
   padding-right: 2rem;
 `;
