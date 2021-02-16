@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // import './App.css';
 
 import CartPage from './Components/CartPage';
+import CheckoutPage from './Components/CheckoutPage';
 import Navbar from './Components/Navbar';
 import ProductsPage from './Components/ProductsPage';
 import ProductDetailsPage from './Components/ProductDetailsPage';
@@ -32,6 +33,7 @@ function App() {
                 component={ProductDetailsPage}
               />
               <Route exact path="/cart" component={CartPage} />
+              <Route exact path="/checkout" component={CheckoutPage} />
             </Switch>
           </CheckoutProvider>
         </CartProvider>
