@@ -23,7 +23,7 @@ function App() {
               <Route exact path="/" render={() => <div>Homepage</div>} />
               <Route exact path="/products" component={ProductsPage} />
               <Route
-                path="/products/categories/:category"
+                path="/products/category/:category"
                 component={ProductsPage}
               />
               <Route
