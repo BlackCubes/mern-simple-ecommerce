@@ -21,8 +21,13 @@ export const CheckoutSidebarSummaryLine = styled.div`
   margin-bottom: 0.5rem;
 `;
 
-export const CheckoutSidebarSummaryTotal = styled(CheckoutSidebarSummaryLine)`
+export const CheckoutSidebarSummaryTotal = styled.div`
   margin-bottom: 1rem;
+
+  & p {
+    display: flex;
+    justify-content: space-between;
+  }
 `;
 
 export const CheckoutSidebarButton = styled.div`
