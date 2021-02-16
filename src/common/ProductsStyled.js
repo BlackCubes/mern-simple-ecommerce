@@ -4,6 +4,10 @@ export const Products = styled.div`
   width: 75%;
 `;
 
+export const ProductsContainer = styled.div`
+  float: left;
+`;
+
 export const ProductsCard = styled.div`
   min-height: 23.5rem;
   padding-top: 3rem;
