@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const ProductDetailsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
   padding-left: 3rem;
   padding-right: 3rem;
 `;

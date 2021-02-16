@@ -6,6 +6,7 @@ export const CategorySidebar = styled.div`
 `;
 
 export const CategorySidebarHeader = styled.div`
+  margin-bottom: 2rem;
   padding: 1.5rem 0;
 `;
 
@@ -14,6 +15,7 @@ export const CategorySidebarCard = styled.div`
   grid-gap: 1.5rem;
   grid-template-columns: minmax(1px, 40%) minmax(1px, 1fr);
   grid-template-areas: 'image info';
+  margin-bottom: 6rem;
 `;
 
 export const CategorySidebarCardImage = styled.div`
@@ -31,9 +33,9 @@ export const CategorySidebarCardInfo = styled.div`
 `;
 
 export const CategorySidebarCardInfoTitle = styled.div`
-  margin-bottom: 1rem;
+  margin-bottom: 0.2rem;
 `;
 
 export const CategorySidebarCardInfoPrice = styled.div`
-  margin-top: 1rem;
+  margin-top: 0.2rem;
 `;
