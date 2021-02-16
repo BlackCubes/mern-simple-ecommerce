@@ -116,20 +116,6 @@ const CartPage = () => {
               <CartStyled.CartCardPrice>
                 <Paragraph tagtype="strong">{`$${prop.price}`}</Paragraph>
               </CartStyled.CartCardPrice>
-              {/* <div className="cart__product-quantity">
-                Quantity:&nbsp;
-                {prop.quantity}
-              </div> */}
-
-              {/* <div className="cart__product-remove">
-                <button
-                  type="button"
-                  className="btn"
-                  onClick={() => removeProduct(prop.id)}
-                >
-                  Remove
-                </button>
-              </div> */}
             </CartStyled.CartCard>
           ))
         )}
