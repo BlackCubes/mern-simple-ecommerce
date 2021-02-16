@@ -10,6 +10,7 @@ import HeadingSecondary from './HeadingSecondary';
 import HeadingTertiary from './HeadingTertiary';
 import Image from './Image';
 import Link from './Link';
+import * as NavbarStyled from './NavbarStyled';
 import Paragraph from './Paragraph';
 import * as ProductDetailsStyled from './ProductDetailsStyled';
 import * as ProductsStyled from './ProductsStyled';
@@ -30,6 +31,7 @@ export {
   HeadingTertiary,
   Image,
   Link,
+  NavbarStyled,
   Paragraph,
   ProductDetailsStyled,
   ProductsStyled,
