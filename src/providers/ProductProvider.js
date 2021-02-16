@@ -35,7 +35,6 @@ const ProductProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    getProducts();
     getCategories();
   }, []);
 
@@ -64,6 +63,7 @@ const ProductProvider = ({ children }) => {
         product,
         categories,
         getProduct,
+        getProducts,
         getCategory,
         getCategories,
       }}

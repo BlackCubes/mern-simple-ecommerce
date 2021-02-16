@@ -21,12 +21,13 @@ import { daysFromNow, dateTimeFormat } from '../utils';
 
 const ProductsPage = () => {
   const { addProduct } = useCartContext();
-  const { products, getCategory } = useProductContext();
+  const { products, getProducts, getCategory } = useProductContext();
 
   const { category } = useParams();
 
   useEffect(() => {
     if (category) getCategory(category);
+    else if (!category) getProducts();
   }, [category]);
 
   return (
