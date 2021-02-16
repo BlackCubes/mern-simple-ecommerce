@@ -29,9 +29,8 @@ const Link = ({ children, href, rest }) => (
 
 Link.propTypes = {
   children: PropTypes.node.isRequired,
-  href: PropTypes.string.isRequired,
+  href: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).isRequired,
   rest: PropTypes.shape({
-    onClick: PropTypes.func,
     colortype: PropTypes.string,
     hovercolortype: PropTypes.string,
   }),
