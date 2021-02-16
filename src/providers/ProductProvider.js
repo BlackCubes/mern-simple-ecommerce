@@ -14,6 +14,7 @@ const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState(null);
   const [product, setProduct] = useState(null);
   const [categories, setCategories] = useState(null);
+  const [category, setCategory] = useState(null);
 
   const getProducts = async () => {
     try {
@@ -41,6 +42,7 @@ const ProductProvider = ({ children }) => {
     try {
       const data = await getProductAPI(id);
       setProduct(data);
+      setCategory(data.category);
     } catch (err) {
       console.log(err);
     }
@@ -61,6 +63,7 @@ const ProductProvider = ({ children }) => {
         products,
         product,
         categories,
+        category,
         getProduct,
         getProducts,
         getCategory,
