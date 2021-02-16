@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-export const MainSideNav = styled.div`
+export const Sidebar = styled.div`
   width: 25%;
   padding-left: 4rem;
 `;
 
-export const MainSideNavContent = styled.div`
+export const SidebarContent = styled.div`
   height: 100%;
 `;
