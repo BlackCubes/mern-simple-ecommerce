@@ -1,5 +1,6 @@
 import Button from './Button';
 import * as CartStyled from './CartStyled';
+import * as CheckoutSidebar from './CheckoutSidebar';
 import GlobalStyles from './GlobalStyles';
 import HeadingPrimary from './HeadingPrimary';
 import HeadingQuaternary from './HeadingQuaternary';
@@ -17,6 +18,7 @@ import Theme from './theme';
 export {
   Button,
   CartStyled,
+  CheckoutSidebar,
   GlobalStyles,
   HeadingPrimary,
   HeadingQuaternary,
