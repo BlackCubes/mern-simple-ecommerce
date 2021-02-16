@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link as RouterLink, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import CategorySidebar from './CategorySidebar';
 
@@ -29,8 +29,6 @@ const ProductDetailsPage = () => {
 
   return (
     <ProductDetailsStyled.ProductDetailsContainer>
-      <RouterLink to="/products">Back</RouterLink>
-
       <ProductDetailsStyled.ProductDetails>
         {!product ? (
           <HeadingQuaternary>Loading...</HeadingQuaternary>
