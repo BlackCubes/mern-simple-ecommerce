@@ -27,10 +27,6 @@ const CheckoutProvider = ({ children }) => {
     setFinalTotal(subTotalAmount * 1.0725);
   };
 
-  console.log(
-    `subTotal: ${subTotal}. salesTax: ${salesTax}. finalTotal: ${finalTotal}`
-  );
-
   return (
     <CheckoutContext.Provider
       value={{ subTotal, salesTax, finalTotal, calcOrder }}
