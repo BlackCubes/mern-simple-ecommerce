@@ -37,7 +37,7 @@ const CategorySidebar = () => {
           </CategorySidebarStyled.CategorySidebarHeader>
 
           {similarProducts &&
-            similarProducts.map((prop) => (
+            similarProducts.slice(0, 4).map((prop) => (
               <CategorySidebarStyled.CategorySidebarCard key={prop.id}>
                 <CategorySidebarStyled.CategorySidebarCardImage>
                   <RouterLink to={`/products/${prop.id}`}>
