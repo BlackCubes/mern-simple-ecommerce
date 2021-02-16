@@ -36,7 +36,7 @@ const ProductProvider = ({ children }) => {
 
   useEffect(() => {
     getProducts();
-    // getCategories();
+    getCategories();
   }, []);
 
   const getProduct = async (id) => {
