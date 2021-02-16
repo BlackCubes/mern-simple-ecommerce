@@ -32,4 +32,5 @@ export const CheckoutSidebarSummaryTotal = styled.div`
 
 export const CheckoutSidebarButton = styled.div`
   margin-bottom: 2rem;
+  text-align: center;
 `;
