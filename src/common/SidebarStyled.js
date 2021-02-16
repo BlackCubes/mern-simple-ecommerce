@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 export const Sidebar = styled.div`
-  width: 25%;
+  width: 15%;
   padding-left: 4rem;
+  padding-right: 2rem;
 `;
 
 export const SidebarContainer = styled.div`
@@ -32,4 +33,5 @@ export const SidebarFacetList = styled.ul`
 
 export const SidebarFacetListItem = styled.li`
   margin-bottom: 1rem;
+  text-transform: capitalize;
 `;

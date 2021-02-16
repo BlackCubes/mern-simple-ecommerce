@@ -2,10 +2,13 @@ import styled from 'styled-components';
 
 export const Products = styled.div`
   width: 75%;
+  padding-left: 2rem;
+  padding-right: 2rem;
 `;
 
 export const ProductsContainer = styled.div`
-  float: left;
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const ProductsCard = styled.div`
