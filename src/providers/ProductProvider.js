@@ -51,7 +51,7 @@ const ProductProvider = ({ children }) => {
   const getCategory = async (category) => {
     try {
       const data = await getCategoryAPI(category);
-      setProduct(data);
+      setProducts(data);
     } catch (err) {
       console.log(err);
     }
