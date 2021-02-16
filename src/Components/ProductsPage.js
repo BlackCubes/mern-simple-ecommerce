@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link as RouterLink } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link as RouterLink, useParams } from 'react-router-dom';
 
 import Sidebar from './Sidebar';
 
@@ -21,7 +21,13 @@ import { daysFromNow, dateTimeFormat } from '../utils';
 
 const ProductsPage = () => {
   const { addProduct } = useCartContext();
-  const { products } = useProductContext();
+  const { products, getCategory } = useProductContext();
+
+  const { category } = useParams();
+
+  useEffect(() => {
+    if (category) getCategory(category);
+  }, [category]);
 
   return (
     <ProductsStyled.ProductsContainer>
