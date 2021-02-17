@@ -30,6 +30,7 @@ export const ProductDetailsHeaderData = styled.div`
 
 export const ProductDetailsBottomContainer = styled.div`
   display: flex;
+  margin-bottom: 6.5rem;
 `;
 
 export const ProductDetailsInfo = styled.div`
