@@ -29,20 +29,32 @@ export const NavbarLogo = styled.div`
 
 export const NavbarMenuHolder = styled.div`
   float: right;
+  height: 11rem;
   max-width: 80%;
 `;
 
 export const NavbarMenu = styled.nav`
   display: inline-block;
+  height: inherit;
 `;
 
 export const NavbarMenuList = styled.ul`
   display: block;
-  padding: 1.5rem 0;
+  height: inherit;
+  padding: 2rem 0;
   list-style: none;
 `;
 
 export const NavbarMenuListItem = styled.li`
+  display: flex;
   float: left;
+  height: 100%;
   margin-right: 1rem;
+
+  & a {
+    display: inline-flex;
+    font-size: 1.6rem;
+    padding: 1.5rem;
+    align-items: center;
+  }
 `;
