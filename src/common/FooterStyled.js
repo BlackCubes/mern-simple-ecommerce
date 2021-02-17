@@ -38,6 +38,11 @@ export const FooterFollowItem = styled.li`
     color: ${(props) => props.theme.colors.white};
     background-color: ${(props) => props.theme.colors.black_gray};
     border-radius: 50%;
+
+    &:hover {
+      color: inherit;
+      text-decoration: none;
+    }
   }
 
   & svg {
