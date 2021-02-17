@@ -13,7 +13,7 @@ const InputStyled = styled.inputprop.attrs((props) => ({
   id: props.inputprop.id,
   value: props.values[props.inputprop.name] || '',
   placeholder: props.inputprop.placeholder,
-  onChange: props.inputprop.onChange,
+  onChange: props.onChange,
   noValidate: props.inputprop.noValidate || true,
 }))`
   display: block;
@@ -67,10 +67,15 @@ const InputMessageStyled = styled.span`
   transition: all 0.3s;
 `;
 
-const Input = ({ inputprop, values, errors }) => (
+const Input = ({ inputprop, values, errors, onChange }) => (
   <>
     <LabelStyled inputprop={inputprop}>
-      <InputStyled inputprop={inputprop} values={values} errors={errors} />
+      <InputStyled
+        inputprop={inputprop}
+        values={values}
+        errors={errors}
+        onChange={onChange}
+      />
 
       <InputMessageStyled>
         {errors[inputprop.name] ? errors[inputprop.name] : inputprop.message}
@@ -85,12 +90,12 @@ Input.propTypes = {
     name: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
     placeholder: PropTypes.string.isRequired,
-    onChange: PropTypes.func.isRequired,
     noValidate: PropTypes.bool,
     message: PropTypes.string.isRequired,
   }).isRequired,
   values: PropTypes.objectOf(PropTypes.object).isRequired,
   errors: PropTypes.objectOf(PropTypes.object).isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default Input;
