@@ -16,11 +16,27 @@ const Navbar = () => (
         <NavbarStyled.NavbarMenu>
           <NavbarStyled.NavbarMenuList>
             <NavbarStyled.NavbarMenuListItem>
-              <Link href="/products">Products</Link>
+              <Link
+                href="/products"
+                rest={{
+                  colortype: 'white',
+                  hovercolortype: 'vivid_pink',
+                }}
+              >
+                Products
+              </Link>
             </NavbarStyled.NavbarMenuListItem>
 
             <NavbarStyled.NavbarMenuListItem>
-              <Link href="/cart">Cart</Link>
+              <Link
+                href="/cart"
+                rest={{
+                  colortype: 'white',
+                  hovercolortype: 'vivid_pink',
+                }}
+              >
+                Cart
+              </Link>
             </NavbarStyled.NavbarMenuListItem>
           </NavbarStyled.NavbarMenuList>
         </NavbarStyled.NavbarMenu>
