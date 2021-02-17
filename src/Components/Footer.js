@@ -42,7 +42,7 @@ const Footer = () => (
             &nbsp;&nbsp; | &nbsp; Phone:&nbsp;
             <Link href="tel:5595953839">559-595-3839</Link>
             <br />
-            3pm - 8pm PST Mon-Fri &nbsp; 10am - 4pm Sat&Sun
+            3pm - 8pm PST Mon-Fri &nbsp; | &nbsp; 10am - 4pm Sat&Sun
           </Small>
         </FooterStyled.FooterCopyrightContent>
       </FooterStyled.FooterCopyright>
