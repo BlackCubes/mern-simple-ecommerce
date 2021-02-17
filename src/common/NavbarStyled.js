@@ -83,6 +83,7 @@ export const NavbarMenuListItem = styled.li`
 `;
 
 export const NavbarCart = styled.div`
+  display: inline-flex;
   position: relative;
 `;
 
