@@ -35,7 +35,24 @@ const Navbar = () => (
                   hovercolortype: 'vivid_pink',
                 }}
               >
-                Cart
+                <NavbarStyled.NavbarCart>
+                  <NavbarStyled.NavbarCartImage>
+                    <Image
+                      rest={{
+                        src: '/img/shopping-cart.svg',
+                        alt: 'Shopping Cart',
+                      }}
+                    />
+                  </NavbarStyled.NavbarCartImage>
+
+                  <NavbarStyled.NavbarCartLabel>
+                    Cart
+                  </NavbarStyled.NavbarCartLabel>
+
+                  <NavbarStyled.NavbarCartQuantity>
+                    2
+                  </NavbarStyled.NavbarCartQuantity>
+                </NavbarStyled.NavbarCart>
               </Link>
             </NavbarStyled.NavbarMenuListItem>
           </NavbarStyled.NavbarMenuList>
