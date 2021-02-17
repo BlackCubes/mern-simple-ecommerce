@@ -3,6 +3,7 @@ import * as CartStyled from './CartStyled';
 import * as CategorySidebarStyled from './CategorySidebarStyled';
 import * as CheckoutSidebarStyled from './CheckoutSidebarStyled';
 import * as CheckoutStyled from './CheckoutStyled';
+import * as FooterStyled from './FooterStyled';
 import GlobalStyles from './GlobalStyles';
 import HeadingPrimary from './HeadingPrimary';
 import HeadingQuaternary from './HeadingQuaternary';
@@ -24,6 +25,7 @@ export {
   CategorySidebarStyled,
   CheckoutSidebarStyled,
   CheckoutStyled,
+  FooterStyled,
   GlobalStyles,
   HeadingPrimary,
   HeadingQuaternary,
