@@ -10,7 +10,7 @@ export const Navbar = styled.header`
     content: '';
     position: absolute;
     width: 100%;
-    height: 4rem;
+    height: 1rem;
     bottom: 0;
     left: 0;
     background-image: linear-gradient(
