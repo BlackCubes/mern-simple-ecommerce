@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Navbar = styled.header`
-  background-color: #111111;
+  background-color: ${(props) => props.theme.colors.black_gray};
   width: 100%;
   height: 11rem;
 `;
