@@ -22,6 +22,7 @@ export const NavbarLogo = styled.div`
   line-height: 0;
   transform: translateY(-50%);
   top: 50%;
+  transition: color 0.3s ease, background-color 0.3s ease;
 
   & a {
     display: block;
