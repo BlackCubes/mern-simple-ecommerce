@@ -52,3 +52,31 @@ export const FooterFollowItem = styled.li`
     height: 3.1rem;
   }
 `;
+
+export const FooterLower = styled.div`
+  width: 100%;
+  margin-bottom: 2rem;
+  background-color: ${(props) => props.theme.colors.black_gray};
+`;
+
+export const FooterCopyright = styled.div`
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.5rem 0 3.5rem;
+`;
+
+export const FooterCopyrightContent = styled.div`
+  display: block;
+  padding: 1.5rem 0;
+  line-height: 2;
+
+  & a {
+    color: ${(props) => props.theme.colors.white};
+
+    &:hover {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+`;
