@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const LabelStyled = styled.label.attrs((props) => ({
-  for: props.inputprop.id,
+  for: props.htmlFor,
 }));
 
 const InputStyled = styled.inputprop.attrs((props) => ({
@@ -69,7 +69,7 @@ const InputMessageStyled = styled.span`
 
 const Input = ({ inputprop, values, errors, onChange }) => (
   <>
-    <LabelStyled inputprop={inputprop}>
+    <LabelStyled htmlFor={inputprop.id}>
       <InputStyled
         inputprop={inputprop}
         values={values}
