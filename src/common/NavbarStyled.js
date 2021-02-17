@@ -81,3 +81,31 @@ export const NavbarMenuListItem = styled.li`
     }
   }
 `;
+
+export const NavbarCart = styled.div`
+  position: relative;
+`;
+
+export const NavbarCartImage = styled.div`
+  width: 3rem;
+  height: 3rem;
+`;
+
+export const NavbarCartLabel = styled.span`
+  margin-left: 0.5rem;
+`;
+
+export const NavbarCartQuantity = styled.div`
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  font-size: 1.1rem;
+  color: ${(props) => props.theme.colors.black_gray};
+  background-color: ${(props) => props.theme.colors.lime_green};
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  align-items: center;
+  top: -0.5rem;
+  left: 1.9rem;
+`;
