@@ -68,3 +68,24 @@ export const ProductDetailsShippingBuy = styled.div`
 export const ProductDetailsShippingOption = styled.div`
   margin-top: 1rem;
 `;
+
+export const ProductDetailsDescription = styled.div`
+  padding-left: 2rem;
+  padding-right: 2rem;
+`;
+
+export const ProductDetailsDescriptionHeader = styled.div`
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  text-align: left;
+
+  & h4 {
+    font-weight: 400;
+  }
+`;
+
+export const ProductDetailsDescriptionBody = styled.div`
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+`;
