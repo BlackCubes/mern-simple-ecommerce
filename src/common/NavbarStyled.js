@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Navbar = styled.header`
+  background-color: #111111;
   width: 100%;
   height: 11rem;
 `;
@@ -53,7 +54,7 @@ export const NavbarMenuListItem = styled.li`
 
   & a {
     display: inline-flex;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     padding: 1.5rem;
     align-items: center;
 
