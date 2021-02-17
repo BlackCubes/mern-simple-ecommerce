@@ -58,6 +58,7 @@ export const NavbarMenuListItem = styled.li`
     font-size: 1.8rem;
     padding: 1.5rem;
     align-items: center;
+    transition: color 0.3s ease, background-color 0.3s ease;
 
     &:hover {
       text-decoration: none;
