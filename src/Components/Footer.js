@@ -45,6 +45,19 @@ const Footer = () => (
             3pm - 8pm PST Mon-Fri &nbsp; | &nbsp; 10am - 4pm Sat&Sun
           </Small>
         </FooterStyled.FooterCopyrightContent>
+
+        <FooterStyled.FooterCopyrightContent>
+          <Small sizetype="xxsmall" colorType="white">
+            Icons made by&nbsp;
+            <Link href="https://www.freepik.com" rest={{ title: 'Freepik' }}>
+              Freepik
+            </Link>
+            &nbsp;from&nbsp;
+            <Link href="https://www.flaticon.com/" rest={{ title: 'Flaticon' }}>
+              www.flaticon.com
+            </Link>
+          </Small>
+        </FooterStyled.FooterCopyrightContent>
       </FooterStyled.FooterCopyright>
     </FooterStyled.FooterLower>
   </FooterStyled.Footer>
