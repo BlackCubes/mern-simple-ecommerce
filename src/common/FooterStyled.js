@@ -70,6 +70,7 @@ export const FooterCopyrightContent = styled.div`
   display: block;
   padding: 1.5rem 0;
   line-height: 2;
+  text-align: center;
 
   & a {
     color: ${(props) => props.theme.colors.white};

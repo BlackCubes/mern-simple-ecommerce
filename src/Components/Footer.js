@@ -34,7 +34,7 @@ const Footer = () => (
     <FooterStyled.FooterLower>
       <FooterStyled.FooterCopyright>
         <FooterStyled.FooterCopyrightContent>
-          <Small sizetype="xxsmall">
+          <Small sizetype="xxsmall" colorType="white">
             Email:&nbsp;
             <Link href="mailto:gutierrezelias1991@gmail.com">
               gutierrezelias1991@gmail.com
