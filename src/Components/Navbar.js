@@ -43,10 +43,6 @@ const Navbar = () => (
       </NavbarStyled.NavbarMenuHolder>
     </NavbarStyled.NavbarContainer>
   </NavbarStyled.Navbar>
-  // <nav>
-  //   <Link to="/products">Products</Link>
-  //   <Link to="/cart">Cart</Link>
-  // </nav>
 );
 
 export default Navbar;
