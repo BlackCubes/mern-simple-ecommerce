@@ -1,13 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+import { Input, Form } from '../common';
 
 import { useCheckoutContext } from '../context/CheckoutContext';
 
-const CheckoutPage = () => {
-  const { subTotal, salesTax, finalTotal } = useCheckoutContext();
+const formFields = [
+  {
+    type: 'text',
+    name: 'name',
+    id: 'nameInput',
+    placeholder: 'Name',
+    message: 'Add in a name',
+  },
+];
 
+const CheckoutPage = () => {
+  const [values, setValues] = useState();
+  const { subTotal, salesTax, finalTotal } = useCheckoutContext();
   console.log(subTotal, salesTax, finalTotal);
 
-  return <div>Hello!</div>;
+  const onSubmit = (newValues) => {
+    setValues(newValues);
+  };
+
+  console.log(values);
+
+  return (
+    <>
+      <div>Hello!</div>
+
+      <Form
+        onSubmit={onSubmit}
+        formFields={formFields}
+        InputComponent={Input}
+      />
+    </>
+  );
 };
 
 export default CheckoutPage;
