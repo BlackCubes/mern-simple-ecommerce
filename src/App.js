@@ -16,10 +16,10 @@ import ProductProvider from './providers/ProductProvider';
 function App() {
   return (
     <Router>
-      <Navbar />
       <ProductProvider>
         <CartProvider>
           <CheckoutProvider>
+            <Navbar />
             <Switch>
               <Route exact path="/" render={() => <div>Homepage</div>} />
               <Route exact path="/products" component={ProductsPage} />
