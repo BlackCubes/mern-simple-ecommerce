@@ -98,9 +98,15 @@ const ProductDetailsPage = () => {
               </ProductDetailsStyled.ProductDetailsPriceShippingCart>
             </ProductDetailsStyled.ProductDetailsBottomContainer>
 
-            <div className="product-details__description">
-              {product.description}
-            </div>
+            <ProductDetailsStyled.ProductDetailsDescription>
+              <ProductDetailsStyled.ProductDetailsDescriptionHeader>
+                <HeadingQuaternary>Overview</HeadingQuaternary>
+              </ProductDetailsStyled.ProductDetailsDescriptionHeader>
+
+              <ProductDetailsStyled.ProductDetailsDescriptionBody>
+                {product.description}
+              </ProductDetailsStyled.ProductDetailsDescriptionBody>
+            </ProductDetailsStyled.ProductDetailsDescription>
           </>
         )}
       </ProductDetailsStyled.ProductDetails>
