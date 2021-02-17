@@ -1,7 +1,7 @@
 export default {
   colors: {
     black: '#000',
-    black-gray: '#111111',
+    black_gray: '#111111',
     white: '#fff',
     vivid_pink: '#ff1e5e',
     vivid_pink_tone: '#f62762',
