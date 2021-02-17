@@ -26,6 +26,11 @@ const GlobalStyles = createGlobalStyle`
     min-height: 100vh;
     box-sizing: border-box;
   }
+
+  ::selection {
+    color: ${(props) => props.theme.colors.white};
+    background-color: ${(props) => props.theme.colors.vivid_pink};
+  }
 `;
 
 export default GlobalStyles;
