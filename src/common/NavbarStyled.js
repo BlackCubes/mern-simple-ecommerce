@@ -37,9 +37,12 @@ export const NavbarMenu = styled.nav`
 `;
 
 export const NavbarMenuList = styled.ul`
+  display: block;
   padding: 1.5rem 0;
+  list-style: none;
 `;
 
 export const NavbarMenuListItem = styled.li`
+  float: left;
   margin-right: 1rem;
 `;
