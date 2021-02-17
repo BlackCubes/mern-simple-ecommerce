@@ -9,6 +9,7 @@ import {
   HeadingSecondary,
   // HeadingTertiary,
   Image,
+  Paragraph,
   ProductDetailsStyled,
   Small,
 } from '../common';
@@ -104,7 +105,7 @@ const ProductDetailsPage = () => {
               </ProductDetailsStyled.ProductDetailsDescriptionHeader>
 
               <ProductDetailsStyled.ProductDetailsDescriptionBody>
-                {product.description}
+                <Paragraph>{product.description}</Paragraph>
               </ProductDetailsStyled.ProductDetailsDescriptionBody>
             </ProductDetailsStyled.ProductDetailsDescription>
           </>
