@@ -40,7 +40,7 @@ export const FooterFollowItem = styled.li`
     border-radius: 50%;
   }
 
-  & i {
+  & svg {
     font-size: 3.2rem;
     width: 3.1rem;
     height: 3.1rem;
