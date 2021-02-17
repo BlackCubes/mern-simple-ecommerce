@@ -10,4 +10,9 @@ export default {
     moderate_blue_dark: '#334690',
     lime_green: '#37bd6c',
   },
+  fontsizes: {
+    xxsmall: '0.8rem',
+    xsmall: '1.1rem',
+    small: '1.3rem',
+  },
 };
