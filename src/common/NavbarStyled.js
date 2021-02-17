@@ -56,5 +56,9 @@ export const NavbarMenuListItem = styled.li`
     font-size: 1.6rem;
     padding: 1.5rem;
     align-items: center;
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 `;
