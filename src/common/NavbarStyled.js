@@ -1,9 +1,25 @@
 import styled from 'styled-components';
 
 export const Navbar = styled.header`
+  position: relative;
   background-color: ${(props) => props.theme.colors.black_gray};
   width: 100%;
   height: 11rem;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4rem;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 1) 90%
+    );
+    z-index: 1;
+  }
 `;
 
 export const NavbarContainer = styled.div`
