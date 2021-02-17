@@ -8,7 +8,8 @@ export const Footer = styled.div`
 
 export const FooterFollow = styled.div`
   padding: 2rem;
-  background-color: ${(props) => props.theme.colors.lime_green};
+  background-color: ${(props) => props.theme.colors.moderate_blue};
+  background-image: linear-gradient(7deg, #505cc1, #ff1e5e);
   list-style: none;
   text-align: center;
 `;
