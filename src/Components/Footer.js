@@ -63,7 +63,7 @@ const Footer = () => (
           <Small sizetype="xxsmall" colorType="white">
             © 2021 UNTITLED_WEBSITE is owned and operated by Elias Gutierrez
             under a license from MIT License. The owner is responsible for the
-            site's content, but is not responsible on all aspects of your
+            site&apos;s content, but is not responsible on all aspects of your
             purchases since you cannot actually purchase anything on this
             website.
           </Small>
