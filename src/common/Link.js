@@ -31,6 +31,7 @@ Link.propTypes = {
   children: PropTypes.node.isRequired,
   href: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).isRequired,
   rest: PropTypes.shape({
+    title: PropTypes.string,
     onClick: PropTypes.func,
     colortype: PropTypes.string,
     hovercolortype: PropTypes.string,
@@ -38,7 +39,7 @@ Link.propTypes = {
 };
 
 Link.defaultProps = {
-  rest: { onClick: null, colortype: null, hovercolortype: null },
+  rest: { title: null, onClick: null, colortype: null, hovercolortype: null },
 };
 
 export default Link;
