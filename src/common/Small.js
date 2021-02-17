@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
 const SmallStyled = styled.small`
-  font-size: ${({ sizetype }) => (sizetype ? '1.1rem' : '1.3rem')};
+  font-size: ${(props) =>
+    props.sizetype
+      ? props.theme.fontsizes[props.sizetype]
+      : props.theme.fontsizes.small};
   color: ${(props) =>
     props.colorType
       ? props.theme.colors[props.colorType]
