@@ -15,6 +15,7 @@ export const FooterFollow = styled.div`
 
 export const FooterFollowHeader = styled.div`
   font-size: 1.6rem;
+  text-transform: uppercase;
   padding-bottom: 1rem;
 `;
 
