@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import {
   Button,
@@ -14,8 +14,9 @@ import { useCheckoutContext } from '../context/CheckoutContext';
 
 const CheckoutSidebar = () => {
   const { subTotal, salesTax, finalTotal } = useCheckoutContext();
+  const history = useHistory();
 
-  const handleClick = () => <Redirect to="/checkout" />;
+  const handleClick = () => history.push('/checkout');
 
   return (
     <SidebarStyled.Sidebar>
