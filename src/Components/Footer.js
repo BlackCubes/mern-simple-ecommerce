@@ -18,13 +18,13 @@ const Footer = () => (
         <FooterStyled.FooterFollowList>
           <FooterStyled.FooterFollowItem>
             <Link href="https://github.com/blackcubes">
-              <FontAwesomeIcon icon="github" />
+              <FontAwesomeIcon icon={['fab', 'github']} />
             </Link>
           </FooterStyled.FooterFollowItem>
 
           <FooterStyled.FooterFollowItem>
             <Link href="https://www.linkedin.com/in/eliasgutierrez1991/">
-              <FontAwesomeIcon icon="linkedin" />
+              <FontAwesomeIcon icon={['fab', 'linkedin']} />
             </Link>
           </FooterStyled.FooterFollowItem>
         </FooterStyled.FooterFollowList>
