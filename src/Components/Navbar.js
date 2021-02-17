@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
-import { Image, NavbarStyled } from '../common';
+import { Image, Link, NavbarStyled } from '../common';
 
 const Navbar = () => (
   <NavbarStyled.Navbar>
@@ -16,7 +16,11 @@ const Navbar = () => (
         <NavbarStyled.NavbarMenu>
           <NavbarStyled.NavbarMenuList>
             <NavbarStyled.NavbarMenuListItem>
-              Hello!
+              <Link href="/products">Products</Link>
+            </NavbarStyled.NavbarMenuListItem>
+
+            <NavbarStyled.NavbarMenuListItem>
+              <Link href="/cart">Cart</Link>
             </NavbarStyled.NavbarMenuListItem>
           </NavbarStyled.NavbarMenuList>
         </NavbarStyled.NavbarMenu>
