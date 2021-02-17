@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import CartPage from './Components/CartPage';
 import CheckoutPage from './Components/CheckoutPage';
+import Footer from './Components/Footer';
 import Navbar from './Components/Navbar';
 import ProductsPage from './Components/ProductsPage';
 import ProductDetailsPage from './Components/ProductDetailsPage';
@@ -35,6 +36,7 @@ function App() {
               <Route exact path="/cart" component={CartPage} />
               <Route exact path="/checkout" component={CheckoutPage} />
             </Switch>
+            <Footer />
           </CheckoutProvider>
         </CartProvider>
       </ProductProvider>
