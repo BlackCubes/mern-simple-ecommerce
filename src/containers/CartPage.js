@@ -1,18 +1,34 @@
 import React, { useEffect } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
-import CheckoutSidebar from './CheckoutSidebar';
+import { Button, Image, Link } from '../common';
 
 import {
-  Button,
   CartStyled,
+  CartLeftContainerStyled,
+  CartTitlePageStyled,
+  CartCardStyled,
+  CartCardDetailsStyled,
+  CartCardDetailsImageStyled,
+  CartCardDetailsTitleStyled,
+  CartCardShippingStyled,
+  CartCardShippingTypeStyled,
+  CartCardShippingInfoStyled,
+  CartCardActionStyled,
+  CartCardQuantityStyled,
+  CartCardRaiseLowerStyled,
+  CartCardRemoveStyled,
+  CartCardPriceStyled,
+} from '../common/Pages';
+
+import { CheckoutSidebar } from '../Components';
+
+import {
   HeadingPrimary,
   HeadingSecondary,
-  Image,
-  Link,
   Paragraph,
   Small,
-} from '../common';
+} from '../common/Typography';
 
 import { useCartContext } from '../context/CartContext';
 import { useCheckoutContext } from '../context/CheckoutContext';
@@ -28,38 +44,38 @@ const CartPage = () => {
   }, [cart]);
 
   return (
-    <CartStyled.Cart>
-      <CartStyled.CartLeftContainer>
-        <CartStyled.CartTitlePage>
+    <CartStyled>
+      <CartLeftContainerStyled>
+        <CartTitlePageStyled>
           <HeadingPrimary>Your Cart</HeadingPrimary>
-        </CartStyled.CartTitlePage>
+        </CartTitlePageStyled>
         {!cart.length ? (
           <HeadingSecondary>Empty</HeadingSecondary>
         ) : (
           cart.map((prop) => (
-            <CartStyled.CartCard key={prop.id}>
-              <CartStyled.CartCardDetails>
-                <CartStyled.CartCardDetailsImage>
+            <CartCardStyled key={prop.id}>
+              <CartCardDetailsStyled>
+                <CartCardDetailsImageStyled>
                   <RouterLink to={`/products/${prop.id}`}>
                     <Image rest={{ src: prop.image, alt: prop.title }} />
                   </RouterLink>
-                </CartStyled.CartCardDetailsImage>
+                </CartCardDetailsImageStyled>
 
-                <CartStyled.CartCardDetailsTitle>
+                <CartCardDetailsTitleStyled>
                   <Small>
                     <Link href={`/products/${prop.id}`}>{prop.title}</Link>
                   </Small>
-                </CartStyled.CartCardDetailsTitle>
-              </CartStyled.CartCardDetails>
+                </CartCardDetailsTitleStyled>
+              </CartCardDetailsStyled>
 
-              <CartStyled.CartCardShipping>
-                <CartStyled.CartCardShippingType>
+              <CartCardShippingStyled>
+                <CartCardShippingTypeStyled>
                   <Small tagType="strong">
                     {prop.price >= 50 ? 'FREE Shipping' : '3-DAY Shipping'}
                   </Small>
-                </CartStyled.CartCardShippingType>
+                </CartCardShippingTypeStyled>
 
-                <CartStyled.CartCardShippingInfo>
+                <CartCardShippingInfoStyled>
                   <Small sizetype="xsmall">Get it by</Small>
                   &nbsp;
                   <Small tagType="strong" sizetype="xsmall">
@@ -69,18 +85,18 @@ const CartPage = () => {
                       daysFromNow(3)
                     )}
                   </Small>
-                </CartStyled.CartCardShippingInfo>
-              </CartStyled.CartCardShipping>
+                </CartCardShippingInfoStyled>
+              </CartCardShippingStyled>
 
-              <CartStyled.CartCardAction>
-                <CartStyled.CartCardQuantity>
+              <CartCardActionStyled>
+                <CartCardQuantityStyled>
                   <Paragraph>
                     Quantity:&nbsp;
                     <span>{prop.quantity}</span>
                   </Paragraph>
-                </CartStyled.CartCardQuantity>
+                </CartCardQuantityStyled>
 
-                <CartStyled.CartCardRaiseLower>
+                <CartCardRaiseLowerStyled>
                   <Button
                     rest={{
                       type: 'button',
@@ -100,9 +116,9 @@ const CartPage = () => {
                   >
                     +
                   </Button>
-                </CartStyled.CartCardRaiseLower>
+                </CartCardRaiseLowerStyled>
 
-                <CartStyled.CartCardRemove>
+                <CartCardRemoveStyled>
                   <Button
                     rest={{
                       type: 'button',
@@ -112,19 +128,19 @@ const CartPage = () => {
                   >
                     Remove
                   </Button>
-                </CartStyled.CartCardRemove>
-              </CartStyled.CartCardAction>
+                </CartCardRemoveStyled>
+              </CartCardActionStyled>
 
-              <CartStyled.CartCardPrice>
+              <CartCardPriceStyled>
                 <Paragraph tagtype="strong">{`$${prop.price}`}</Paragraph>
-              </CartStyled.CartCardPrice>
-            </CartStyled.CartCard>
+              </CartCardPriceStyled>
+            </CartCardStyled>
           ))
         )}
-      </CartStyled.CartLeftContainer>
+      </CartLeftContainerStyled>
 
       <CheckoutSidebar />
-    </CartStyled.Cart>
+    </CartStyled>
   );
 };
 
