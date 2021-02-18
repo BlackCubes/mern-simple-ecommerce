@@ -1,14 +1,20 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
+import { Button } from '../common';
+
 import {
-  Button,
   CheckoutSidebarStyled,
-  HeadingSecondary,
-  Paragraph,
+  CheckoutSidebarHeaderStyled,
+  CheckoutSidebarSummaryStyled,
+  CheckoutSidebarSummaryLineStyled,
+  CheckoutSidebarSummaryTotalStyled,
+  CheckoutSidebarButtonStyled,
   SidebarStyled,
-  Small,
-} from '../common';
+  SidebarContainerStyled,
+} from '../common/Sidebar';
+
+import { HeadingSecondary, Paragraph, Small } from '../common/Typography';
 
 import { useCheckoutContext } from '../context/CheckoutContext';
 
@@ -19,35 +25,35 @@ const CheckoutSidebar = () => {
   const handleClick = () => history.push('/checkout');
 
   return (
-    <SidebarStyled.Sidebar>
-      <SidebarStyled.SidebarContainer>
-        <CheckoutSidebarStyled.CheckoutSidebar>
-          <CheckoutSidebarStyled.CheckoutSidebarHeader>
+    <SidebarStyled>
+      <SidebarContainerStyled>
+        <CheckoutSidebarStyled>
+          <CheckoutSidebarHeaderStyled>
             <HeadingSecondary>Checkout Summary</HeadingSecondary>
-          </CheckoutSidebarStyled.CheckoutSidebarHeader>
+          </CheckoutSidebarHeaderStyled>
 
-          <CheckoutSidebarStyled.CheckoutSidebarSummary>
-            <CheckoutSidebarStyled.CheckoutSidebarSummaryLine>
+          <CheckoutSidebarSummaryStyled>
+            <CheckoutSidebarSummaryLineStyled>
               <Small>Subtotal Price:</Small>
 
               <Small>{`$${subTotal}`}</Small>
-            </CheckoutSidebarStyled.CheckoutSidebarSummaryLine>
+            </CheckoutSidebarSummaryLineStyled>
 
-            <CheckoutSidebarStyled.CheckoutSidebarSummaryLine>
+            <CheckoutSidebarSummaryLineStyled>
               <Small>Sales Tax:</Small>
 
               <Small>{`${salesTax}%`}</Small>
-            </CheckoutSidebarStyled.CheckoutSidebarSummaryLine>
+            </CheckoutSidebarSummaryLineStyled>
 
-            <CheckoutSidebarStyled.CheckoutSidebarSummaryTotal>
+            <CheckoutSidebarSummaryTotalStyled>
               <Paragraph tagtype="strong">
                 Final:
                 <span>{`$${finalTotal}`}</span>
               </Paragraph>
-            </CheckoutSidebarStyled.CheckoutSidebarSummaryTotal>
-          </CheckoutSidebarStyled.CheckoutSidebarSummary>
+            </CheckoutSidebarSummaryTotalStyled>
+          </CheckoutSidebarSummaryStyled>
 
-          <CheckoutSidebarStyled.CheckoutSidebarButton>
+          <CheckoutSidebarButtonStyled>
             <Button
               rest={{
                 type: 'button',
@@ -57,10 +63,10 @@ const CheckoutSidebar = () => {
             >
               Checkout
             </Button>
-          </CheckoutSidebarStyled.CheckoutSidebarButton>
-        </CheckoutSidebarStyled.CheckoutSidebar>
-      </SidebarStyled.SidebarContainer>
-    </SidebarStyled.Sidebar>
+          </CheckoutSidebarButtonStyled>
+        </CheckoutSidebarStyled>
+      </SidebarContainerStyled>
+    </SidebarStyled>
   );
 };
 
