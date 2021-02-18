@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Input, Form } from '../common';
+import { Form } from '../common';
 
 import { useCheckoutContext } from '../context/CheckoutContext';
 
@@ -29,11 +29,7 @@ const CheckoutPage = () => {
     <>
       <div>Hello!</div>
 
-      <Form
-        onSubmit={onSubmit}
-        formFields={formFields}
-        InputComponent={Input}
-      />
+      <Form onSubmit={onSubmit} formFields={formFields} />
     </>
   );
 };
