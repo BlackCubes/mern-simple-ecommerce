@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 // import styled from 'styled-components';
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'uuid';
 
 import { InputMessageStyled, InputStyled, LabelStyled } from '../common';
 
@@ -63,25 +63,28 @@ const Form = ({ onSubmit, formFields }) => {
 
   return (
     <form onSubmit={handleSubmit} noValidate>
-      {inputProperties.map((prop, key) => (
+      {inputProperties.map((prop, key) => {
         // <Input key={uuidv4()} inputprop={prop} errors={inputErrors[key]} />
-        <LabelStyled key={uuidv4()} htmlFor={prop.id}>
-          <InputStyled
-            type={prop.type}
-            name={prop.name}
-            className={prop.className}
-            id={prop.id}
-            value={prop.value}
-            placeholder={prop.placeholder}
-            onChange={prop.onChange}
-            noValidate={prop.noValidate}
-          />
+        const ind = key;
+        return (
+          <LabelStyled key={ind} htmlFor={prop.id}>
+            <InputStyled
+              type={prop.type}
+              name={prop.name}
+              className={prop.className}
+              id={prop.id}
+              value={prop.value}
+              placeholder={prop.placeholder}
+              onChange={prop.onChange}
+              noValidate={prop.noValidate}
+            />
 
-          <InputMessageStyled>
-            {inputErrors[key] || prop.message}
-          </InputMessageStyled>
-        </LabelStyled>
-      ))}
+            <InputMessageStyled>
+              {inputErrors[key] || prop.message}
+            </InputMessageStyled>
+          </LabelStyled>
+        );
+      })}
     </form>
   );
 };
