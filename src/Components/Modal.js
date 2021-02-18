@@ -1,12 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Modal = ({ children, header }) => (
-  <div className="modal">
-    <div>{header}</div>
+import {
+  ModalStyled,
+  ModalHeaderStyled,
+  ModalBodyStyled,
+  ModalButtonStyled,
+} from '../common';
 
-    <div>{children}</div>
-  </div>
+import { HeadingQuaternary } from '../common/Typography';
+
+const Modal = ({ children, header }) => (
+  <ModalStyled>
+    <ModalHeaderStyled>
+      <HeadingQuaternary>{header}</HeadingQuaternary>
+    </ModalHeaderStyled>
+
+    <ModalBodyStyled>{children}</ModalBodyStyled>
+
+    <ModalButtonStyled>x</ModalButtonStyled>
+  </ModalStyled>
 );
 
 Modal.propTypes = {
