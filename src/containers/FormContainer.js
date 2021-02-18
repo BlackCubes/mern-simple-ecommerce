@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
+import { FormStyled, FormGroupStyled } from '../common';
+
 import { Input } from '../Components';
 
 import { fieldInputErrors, fieldInputProperties } from '../utils';
@@ -40,12 +42,16 @@ const FormContainer = ({ onSubmit, formFields }) => {
   );
 
   return (
-    <form onSubmit={handleSubmit} noValidate>
+    <FormStyled onSubmit={handleSubmit} noValidate>
       {inputProperties.map((prop, key) => {
         const ind = key;
-        return <Input key={ind} inputprop={prop} errors={inputErrors[key]} />;
+        return (
+          <FormGroupStyled key={ind}>
+            <Input inputprop={prop} errors={inputErrors[key]} />
+          </FormGroupStyled>
+        );
       })}
-    </form>
+    </FormStyled>
   );
 };
 
