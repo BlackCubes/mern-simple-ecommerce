@@ -3,37 +3,51 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { FooterStyled, Link, Small } from '../common';
+import { Link } from '../common';
+
+import {
+  FooterStyled,
+  FooterFollowStyled,
+  FooterFollowHeaderStyled,
+  FooterFollowNavigationStyled,
+  FooterFollowListStyled,
+  FooterFollowItemStyled,
+  FooterLowerStyled,
+  FooterCopyrightStyled,
+  FooterCopyrightContentStyled,
+} from '../common/Base';
+
+import { Small } from '../common/Typography';
 
 library.add(faGithub, faLinkedin);
 
 const Footer = () => (
-  <FooterStyled.Footer>
-    <FooterStyled.FooterFollow>
-      <FooterStyled.FooterFollowHeader>
+  <FooterStyled>
+    <FooterFollowStyled>
+      <FooterFollowHeaderStyled>
         Follow Elias Gutierrez
-      </FooterStyled.FooterFollowHeader>
+      </FooterFollowHeaderStyled>
 
-      <FooterStyled.FooterFollowNavigation>
-        <FooterStyled.FooterFollowList>
-          <FooterStyled.FooterFollowItem>
+      <FooterFollowNavigationStyled>
+        <FooterFollowListStyled>
+          <FooterFollowItemStyled>
             <Link href="https://github.com/blackcubes">
               <FontAwesomeIcon icon={['fab', 'github']} />
             </Link>
-          </FooterStyled.FooterFollowItem>
+          </FooterFollowItemStyled>
 
-          <FooterStyled.FooterFollowItem>
+          <FooterFollowItemStyled>
             <Link href="https://www.linkedin.com/in/eliasgutierrez1991/">
               <FontAwesomeIcon icon={['fab', 'linkedin']} />
             </Link>
-          </FooterStyled.FooterFollowItem>
-        </FooterStyled.FooterFollowList>
-      </FooterStyled.FooterFollowNavigation>
-    </FooterStyled.FooterFollow>
+          </FooterFollowItemStyled>
+        </FooterFollowListStyled>
+      </FooterFollowNavigationStyled>
+    </FooterFollowStyled>
 
-    <FooterStyled.FooterLower>
-      <FooterStyled.FooterCopyright>
-        <FooterStyled.FooterCopyrightContent>
+    <FooterLowerStyled>
+      <FooterCopyrightStyled>
+        <FooterCopyrightContentStyled>
           <Small sizetype="xxsmall" colorType="white">
             Email:&nbsp;
             <Link href="mailto:gutierrezelias1991@gmail.com">
@@ -44,9 +58,9 @@ const Footer = () => (
             <br />
             3pm - 8pm PST Mon-Fri &nbsp; | &nbsp; 10am - 4pm Sat&Sun
           </Small>
-        </FooterStyled.FooterCopyrightContent>
+        </FooterCopyrightContentStyled>
 
-        <FooterStyled.FooterCopyrightContent>
+        <FooterCopyrightContentStyled>
           <Small sizetype="xxsmall" colorType="white">
             Icons made by&nbsp;
             <Link href="https://www.freepik.com" rest={{ title: 'Freepik' }}>
@@ -57,9 +71,9 @@ const Footer = () => (
               www.flaticon.com
             </Link>
           </Small>
-        </FooterStyled.FooterCopyrightContent>
+        </FooterCopyrightContentStyled>
 
-        <FooterStyled.FooterCopyrightContent>
+        <FooterCopyrightContentStyled>
           <Small sizetype="xxsmall" colorType="white">
             © 2021 UNTITLED_WEBSITE is owned and operated by Elias Gutierrez
             under a license from MIT License. The owner is responsible for the
@@ -67,10 +81,10 @@ const Footer = () => (
             purchases since you cannot actually purchase anything on this
             website.
           </Small>
-        </FooterStyled.FooterCopyrightContent>
-      </FooterStyled.FooterCopyright>
-    </FooterStyled.FooterLower>
-  </FooterStyled.Footer>
+        </FooterCopyrightContentStyled>
+      </FooterCopyrightStyled>
+    </FooterLowerStyled>
+  </FooterStyled>
 );
 
 export default Footer;
