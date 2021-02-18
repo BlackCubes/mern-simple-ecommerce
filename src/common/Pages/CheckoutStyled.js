@@ -91,3 +91,60 @@ export const CheckoutSecondaryStyled = styled.div`
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 `;
+
+export const CheckoutOrderStyled = styled.div`
+  padding: 0.5rem 1.5rem 0;
+`;
+
+export const CheckoutOrderHeaderStyled = styled.div`
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+`;
+
+export const CheckoutOrderSummaryStyled = styled.div`
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+`;
+
+export const CheckoutOrderSummaryListStyled = styled.div`
+  padding: 0;
+`;
+
+export const CheckoutOrderSummaryShippingStyled = styled.div`
+  float: left;
+  margin: 1rem 0;
+`;
+
+export const CheckoutOrderSummaryItemListStyled = styled.div`
+  display: table;
+  width: 100%;
+`;
+
+export const CheckoutOrderSummaryItemListAvailableStyled = styled.div`
+  padding-bottom: 0.5rem;
+`;
+
+export const CheckoutOrderSummaryItemListCellStyled = styled.div`
+  display: table-cell;
+  vertical-align: top;
+
+  &:last-child {
+    text-align: right;
+  }
+`;
+
+export const CheckoutOrderSummaryItemListImgStyled = styled.div`
+  width: 5rem;
+  height: 5rem;
+  padding-right: 0.8rem;
+`;
+
+export const CheckoutOrderSummaryItemListCellBigStyled = styled(
+  CheckoutOrderSummaryItemListCellStyled
+)`
+  width: 100%;
+  max-width: 13.1rem;
+  max-height: 3.9rem;
+  padding-right: 0.8rem;
+  text-align: left;
+`;
