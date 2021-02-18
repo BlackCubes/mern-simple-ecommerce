@@ -19,6 +19,16 @@ import {
   CheckoutCardRowStyled,
   CheckoutCardColStyled,
   // CheckoutSecondaryStyled,
+  // CheckoutOrderStyled,
+  // CheckoutOrderHeaderStyled,
+  // CheckoutOrderSummaryStyled,
+  // CheckoutOrderSummaryListStyled,
+  // CheckoutOrderSummaryShippingStyled,
+  // CheckoutOrderSummaryItemListStyled,
+  // CheckoutOrderSummaryItemListAvailableStyled,
+  // CheckoutOrderSummaryItemListCellStyled,
+  // CheckoutOrderSummaryItemListImgStyled,
+  // CheckoutOrderSummaryItemListCellBigStyled,
 } from '../common/Pages/CheckoutStyled';
 
 import {
