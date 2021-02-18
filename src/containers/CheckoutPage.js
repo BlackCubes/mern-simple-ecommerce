@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
+import { Modal } from '../Components';
+
 import { useCheckoutContext } from '../context/CheckoutContext';
 
 const formFields = [
@@ -28,7 +30,9 @@ const CheckoutPage = ({ FormContainerComponent }) => {
     <>
       <div>Hello!</div>
 
-      <FormContainerComponent onSubmit={onSubmit} formFields={formFields} />
+      <Modal header="Enter Address">
+        <FormContainerComponent onSubmit={onSubmit} formFields={formFields} />
+      </Modal>
     </>
   );
 };
