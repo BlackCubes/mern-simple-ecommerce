@@ -22,7 +22,7 @@ import {
   SidebarFacetStyled,
   SidebarFacetLegendStyled,
   SidebarFacetListStyled,
-  SidebarFacetListItem,
+  SidebarFacetListItemStyled,
 } from './SidebarStyled';
 
 export {

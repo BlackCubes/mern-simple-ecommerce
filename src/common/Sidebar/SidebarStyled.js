@@ -31,7 +31,7 @@ export const SidebarFacetListStyled = styled.ul`
   list-style-type: none;
 `;
 
-export const SidebarFacetListItem = styled.li`
+export const SidebarFacetListItemStyled = styled.li`
   margin-bottom: 1rem;
   text-transform: capitalize;
 `;
