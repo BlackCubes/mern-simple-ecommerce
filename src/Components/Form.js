@@ -1,28 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-// import styled from 'styled-components';
-// import { v4 as uuidv4 } from 'uuid';
 
-import { InputMessageStyled, InputStyled, LabelStyled } from '../common';
+import Input from './Input';
 
 import { fieldInputErrors, fieldInputProperties } from '../utils';
-
-const Input = ({ inputprop, error }) => (
-  <LabelStyled htmlFor={inputprop.id}>
-    <InputStyled
-      type={inputprop.type}
-      name={inputprop.name}
-      className={inputprop.className}
-      id={inputprop.id}
-      value={inputprop.value}
-      placeholder={inputprop.placeholder}
-      onChange={inputprop.onChange}
-      noValidate={inputprop.noValidate}
-    />
-
-    <InputMessageStyled>{error || inputprop.message}</InputMessageStyled>
-  </LabelStyled>
-);
 
 const Form = ({ onSubmit, formFields }) => {
   const [values, setValues] = useState({});
@@ -58,53 +39,15 @@ const Form = ({ onSubmit, formFields }) => {
     fieldInputErrors(prop.name, errors)
   );
 
-  console.log('inputProperties: ', inputProperties);
-  console.log('inputErrors: ', inputErrors);
-
   return (
     <form onSubmit={handleSubmit} noValidate>
       {inputProperties.map((prop, key) => {
-        // <Input key={uuidv4()} inputprop={prop} errors={inputErrors[key]} />
         const ind = key;
-        return (
-          <LabelStyled key={ind} htmlFor={prop.id}>
-            <InputStyled
-              type={prop.type}
-              name={prop.name}
-              className={prop.className}
-              id={prop.id}
-              value={prop.value}
-              placeholder={prop.placeholder}
-              onChange={prop.onChange}
-              noValidate={prop.noValidate}
-            />
-
-            <InputMessageStyled>
-              {inputErrors[key] || prop.message}
-            </InputMessageStyled>
-          </LabelStyled>
-        );
+        return <Input key={ind} inputprop={prop} errors={inputErrors[key]} />;
       })}
     </form>
   );
 };
-
-Input.propTypes = {
-  inputprop: PropTypes.shape({
-    type: PropTypes.string,
-    name: PropTypes.string.isRequired,
-    className: PropTypes.string,
-    id: PropTypes.string.isRequired,
-    value: PropTypes.string,
-    placeholder: PropTypes.string.isRequired,
-    onChange: PropTypes.func.isRequired,
-    noValidate: PropTypes.bool,
-    message: PropTypes.string.isRequired,
-  }).isRequired,
-  error: PropTypes.string,
-};
-
-Input.defaultProps = { error: null };
 
 Form.propTypes = {
   onSubmit: PropTypes.func.isRequired,
