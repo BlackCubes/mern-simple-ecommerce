@@ -4,7 +4,7 @@ import * as CategorySidebarStyled from './CategorySidebarStyled';
 import * as CheckoutSidebarStyled from './CheckoutSidebarStyled';
 import * as CheckoutStyled from './CheckoutStyled';
 import * as FooterStyled from './FooterStyled';
-import Form from './Form';
+// import Form from './Form';
 import GlobalStyles from './GlobalStyles';
 import HeadingPrimary from './HeadingPrimary';
 import HeadingQuaternary from './HeadingQuaternary';
@@ -28,7 +28,7 @@ export {
   CheckoutSidebarStyled,
   CheckoutStyled,
   FooterStyled,
-  Form,
+  // Form,
   GlobalStyles,
   HeadingPrimary,
   HeadingQuaternary,
