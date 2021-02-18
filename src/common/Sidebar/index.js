@@ -38,7 +38,7 @@ export {
   CheckoutSidebarSummaryStyled,
   CheckoutSidebarSummaryLineStyled,
   CheckoutSidebarSummaryTotalStyled,
-  CheckoutSidebarButton,
+  CheckoutSidebarButtonStyled,
   SidebarStyled,
   SidebarContainerStyled,
   SidebarContentStyled,
