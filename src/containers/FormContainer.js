@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import Input from './Input';
+import Input from '../Components/Input';
 
 import { fieldInputErrors, fieldInputProperties } from '../utils';
 
-const Form = ({ onSubmit, formFields }) => {
+const FormContainer = ({ onSubmit, formFields }) => {
   const [values, setValues] = useState({});
   // const [errors, setErrors] = useState({});
   const errors = {};
@@ -49,9 +49,9 @@ const Form = ({ onSubmit, formFields }) => {
   );
 };
 
-Form.propTypes = {
+FormContainer.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   formFields: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
-export default Form;
+export default FormContainer;
