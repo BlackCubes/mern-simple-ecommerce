@@ -1,23 +1,23 @@
 import styled from 'styled-components';
 
-export const Products = styled.div`
+export const ProductsStyled = styled.div`
   width: 75%;
   padding-left: 2rem;
   padding-right: 2rem;
 `;
 
-export const ProductsContainer = styled.div`
+export const ProductsContainerStyled = styled.div`
   display: flex;
   justify-content: space-between;
 `;
 
-export const ProductsCard = styled.div`
+export const ProductsCardStyled = styled.div`
   min-height: 23.5rem;
   padding-top: 3rem;
   padding-bottom: 3rem;
 `;
 
-export const ProductsCardImage = styled.div`
+export const ProductsCardImageStyled = styled.div`
   display: inline-block;
   width: 16%;
   padding-right: 2rem;
@@ -28,13 +28,13 @@ export const ProductsCardImage = styled.div`
   }
 `;
 
-export const ProductsCardRightColumn = styled.div`
+export const ProductsCardRightColumnStyled = styled.div`
   display: inline-block;
   width: 84%;
   vertical-align: top;
 `;
 
-export const ProductsCardInfo = styled.div`
+export const ProductsCardInfoStyled = styled.div`
   display: inline-block;
   width: 60%;
   padding-left: 2rem;
@@ -42,35 +42,35 @@ export const ProductsCardInfo = styled.div`
   vertical-align: top;
 `;
 
-export const ProductsCardInfoTitle = styled.div`
+export const ProductsCardInfoTitleStyled = styled.div`
   margin-bottom: 1rem;
 `;
 
-export const ProductsCardInfoShipping = styled.div`
+export const ProductsCardInfoShippingStyled = styled.div`
   margin-top: 1rem;
 `;
 
-export const ProductsCardInfoShippingBuy = styled.div`
+export const ProductsCardInfoShippingBuyStyled = styled.div`
   margin-bottom: 1rem;
 `;
 
-export const ProductsCardInfoShippingOption = styled.div`
+export const ProductsCardInfoShippingOptionStyled = styled.div`
   margin-top: 1rem;
 `;
 
-export const ProductsCardPriceCart = styled.div`
+export const ProductsCardPriceCartStyled = styled.div`
   display: inline-block;
   width: 40%;
   padding-left: 2rem;
 `;
 
-export const ProductsCardPrice = styled.div`
+export const ProductsCardPriceStyled = styled.div`
   & h4 {
     font-weight: 600;
   }
 `;
 
-export const ProductsCardCartBtn = styled.div`
+export const ProductsCardCartBtnStyled = styled.div`
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 `;
