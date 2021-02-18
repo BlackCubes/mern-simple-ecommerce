@@ -1,18 +1,35 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import CategorySidebar from './CategorySidebar';
+import { Button, Image } from '../common';
 
 import {
-  Button,
+  ProductDetailsContainerStyled,
+  ProductDetailsStyled,
+  ProductDetailsHeaderStyled,
+  ProductDetailsHeaderTitleStyled,
+  ProductDetailsHeaderDataStyled,
+  ProductDetailsBottomContainerStyled,
+  ProductDetailsInfoStyled,
+  ProductDetailsInfoImageStyled,
+  ProductDetailsPriceShippingCartStyled,
+  ProductDetailsPriceShippingCartRowStyled,
+  ProductDetailsPriceStyled,
+  ProductDetailsShippingBuyStyled,
+  ProductDetailsShippingOptionStyled,
+  ProductDetailsDescriptionStyled,
+  ProductDetailsDescriptionHeaderStyled,
+  ProductDetailsDescriptionBodyStyled,
+} from '../common/Pages';
+
+import {
   HeadingQuaternary,
   HeadingSecondary,
-  // HeadingTertiary,
-  Image,
   Paragraph,
-  ProductDetailsStyled,
   Small,
-} from '../common';
+} from '../common/Typography';
+
+import { CategorySidebar } from '../Components';
 
 import { useCartContext } from '../context/CartContext';
 import { useProductContext } from '../context/ProductContext';
@@ -29,44 +46,44 @@ const ProductDetailsPage = () => {
   }, [id]);
 
   return (
-    <ProductDetailsStyled.ProductDetailsContainer>
-      <ProductDetailsStyled.ProductDetails>
+    <ProductDetailsContainerStyled>
+      <ProductDetailsStyled>
         {!product ? (
           <HeadingQuaternary>Loading...</HeadingQuaternary>
         ) : (
           <>
-            <ProductDetailsStyled.ProductDetailsHeader>
-              <ProductDetailsStyled.ProductDetailsHeaderTitle>
+            <ProductDetailsHeaderStyled>
+              <ProductDetailsHeaderTitleStyled>
                 <HeadingQuaternary>{product.title}</HeadingQuaternary>
-              </ProductDetailsStyled.ProductDetailsHeaderTitle>
+              </ProductDetailsHeaderTitleStyled>
 
-              <ProductDetailsStyled.ProductDetailsHeaderData>
+              <ProductDetailsHeaderDataStyled>
                 <Small tagType="strong">Type:</Small>
                 &nbsp;
                 <Small>{product.category}</Small>
-              </ProductDetailsStyled.ProductDetailsHeaderData>
-            </ProductDetailsStyled.ProductDetailsHeader>
+              </ProductDetailsHeaderDataStyled>
+            </ProductDetailsHeaderStyled>
 
-            <ProductDetailsStyled.ProductDetailsBottomContainer>
-              <ProductDetailsStyled.ProductDetailsInfo>
-                <ProductDetailsStyled.ProductDetailsInfoImage>
+            <ProductDetailsBottomContainerStyled>
+              <ProductDetailsInfoStyled>
+                <ProductDetailsInfoImageStyled>
                   <Image rest={{ src: product.image, alt: product.title }} />
-                </ProductDetailsStyled.ProductDetailsInfoImage>
-              </ProductDetailsStyled.ProductDetailsInfo>
+                </ProductDetailsInfoImageStyled>
+              </ProductDetailsInfoStyled>
 
-              <ProductDetailsStyled.ProductDetailsPriceShippingCart>
-                <ProductDetailsStyled.ProductDetailsPrice>
+              <ProductDetailsPriceShippingCartStyled>
+                <ProductDetailsPriceStyled>
                   <HeadingSecondary>{`$${product.price}`}</HeadingSecondary>
-                </ProductDetailsStyled.ProductDetailsPrice>
+                </ProductDetailsPriceStyled>
 
-                <ProductDetailsStyled.ProductDetailsPriceShippingCartRow>
-                  <ProductDetailsStyled.ProductDetailsShippingBuy>
+                <ProductDetailsPriceShippingCartRowStyled>
+                  <ProductDetailsShippingBuyStyled>
                     <Small tagType="strong" colorType="lime_green">
                       Get it in 3 days
                     </Small>
-                  </ProductDetailsStyled.ProductDetailsShippingBuy>
+                  </ProductDetailsShippingBuyStyled>
 
-                  <ProductDetailsStyled.ProductDetailsShippingOption>
+                  <ProductDetailsShippingOptionStyled>
                     <Small tagType="strong">
                       {product.price >= 50
                         ? 'FREE Shipping:'
@@ -81,10 +98,10 @@ const ProductDetailsPage = () => {
                         daysFromNow(3)
                       )}
                     </Small>
-                  </ProductDetailsStyled.ProductDetailsShippingOption>
-                </ProductDetailsStyled.ProductDetailsPriceShippingCartRow>
+                  </ProductDetailsShippingOptionStyled>
+                </ProductDetailsPriceShippingCartRowStyled>
 
-                <ProductDetailsStyled.ProductDetailsPriceShippingCartRow>
+                <ProductDetailsPriceShippingCartRowStyled>
                   <div className="product-details__cart-add">
                     <Button
                       rest={{
@@ -95,25 +112,25 @@ const ProductDetailsPage = () => {
                       Add to Cart
                     </Button>
                   </div>
-                </ProductDetailsStyled.ProductDetailsPriceShippingCartRow>
-              </ProductDetailsStyled.ProductDetailsPriceShippingCart>
-            </ProductDetailsStyled.ProductDetailsBottomContainer>
+                </ProductDetailsPriceShippingCartRowStyled>
+              </ProductDetailsPriceShippingCartStyled>
+            </ProductDetailsBottomContainerStyled>
 
-            <ProductDetailsStyled.ProductDetailsDescription>
-              <ProductDetailsStyled.ProductDetailsDescriptionHeader>
+            <ProductDetailsDescriptionStyled>
+              <ProductDetailsDescriptionHeaderStyled>
                 <HeadingQuaternary>Overview</HeadingQuaternary>
-              </ProductDetailsStyled.ProductDetailsDescriptionHeader>
+              </ProductDetailsDescriptionHeaderStyled>
 
-              <ProductDetailsStyled.ProductDetailsDescriptionBody>
+              <ProductDetailsDescriptionBodyStyled>
                 <Paragraph>{product.description}</Paragraph>
-              </ProductDetailsStyled.ProductDetailsDescriptionBody>
-            </ProductDetailsStyled.ProductDetailsDescription>
+              </ProductDetailsDescriptionBodyStyled>
+            </ProductDetailsDescriptionStyled>
           </>
         )}
-      </ProductDetailsStyled.ProductDetails>
+      </ProductDetailsStyled>
 
       <CategorySidebar />
-    </ProductDetailsStyled.ProductDetailsContainer>
+    </ProductDetailsContainerStyled>
   );
 };
 
