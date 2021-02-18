@@ -1,18 +1,31 @@
 import React, { useEffect } from 'react';
 import { Link as RouterLink, useParams } from 'react-router-dom';
 
-import Sidebar from './Sidebar';
+import { Button, Image, Link } from '../common';
 
 import {
-  Button,
+  ProductsStyled,
+  ProductsContainerStyled,
+  ProductsCardStyled,
+  ProductsCardImageStyled,
+  ProductsCardRightColumnStyled,
+  ProductsCardInfoStyled,
+  ProductsCardInfoTitleStyled,
+  ProductsCardInfoShippingStyled,
+  ProductsCardInfoShippingBuyStyled,
+  ProductsCardInfoShippingOptionStyled,
+  ProductsCardPriceCartStyled,
+  ProductsCardPriceStyled,
+  ProductsCardCartBtnStyled,
+} from '../common/Pages/ProductsStyled';
+
+import {
   HeadingQuaternary,
   HeadingSecondary,
-  Image,
-  Link,
-  // Paragraph,
-  ProductsStyled,
   Small,
-} from '../common';
+} from '../common/Typography';
+
+import { Sidebar } from '../Components';
 
 import { useCartContext } from '../context/CartContext';
 import { useProductContext } from '../context/ProductContext';
@@ -31,37 +44,37 @@ const ProductsPage = () => {
   }, [category]);
 
   return (
-    <ProductsStyled.ProductsContainer>
+    <ProductsContainerStyled>
       <Sidebar />
 
-      <ProductsStyled.Products>
+      <ProductsStyled>
         {!products ? (
           <HeadingSecondary>Hello!</HeadingSecondary>
         ) : (
           products.map((prop, key) => (
-            <ProductsStyled.ProductsCard key={prop.id}>
-              <ProductsStyled.ProductsCardImage>
+            <ProductsCardStyled key={prop.id}>
+              <ProductsCardImageStyled>
                 <RouterLink to={`/products/${prop.id}`}>
                   <Image rest={{ src: prop.image, alt: prop.title }} />
                 </RouterLink>
-              </ProductsStyled.ProductsCardImage>
+              </ProductsCardImageStyled>
 
-              <ProductsStyled.ProductsCardRightColumn>
-                <ProductsStyled.ProductsCardInfo>
-                  <ProductsStyled.ProductsCardInfoTitle>
+              <ProductsCardRightColumnStyled>
+                <ProductsCardInfoStyled>
+                  <ProductsCardInfoTitleStyled>
                     <HeadingQuaternary>
                       <Link href={`/products/${prop.id}`}>{prop.title}</Link>
                     </HeadingQuaternary>
-                  </ProductsStyled.ProductsCardInfoTitle>
+                  </ProductsCardInfoTitleStyled>
 
-                  <ProductsStyled.ProductsCardInfoShipping>
-                    <ProductsStyled.ProductsCardInfoShippingBuy>
+                  <ProductsCardInfoShippingStyled>
+                    <ProductsCardInfoShippingBuyStyled>
                       <Small tagType="strong" colorType="lime_green">
                         Buy it today
                       </Small>
-                    </ProductsStyled.ProductsCardInfoShippingBuy>
+                    </ProductsCardInfoShippingBuyStyled>
 
-                    <ProductsStyled.ProductsCardInfoShippingOption>
+                    <ProductsCardInfoShippingOptionStyled>
                       <Small tagType="strong">
                         {prop.price >= 50
                           ? 'FREE Shipping:'
@@ -76,16 +89,16 @@ const ProductsPage = () => {
                           daysFromNow(3)
                         )}
                       </Small>
-                    </ProductsStyled.ProductsCardInfoShippingOption>
-                  </ProductsStyled.ProductsCardInfoShipping>
-                </ProductsStyled.ProductsCardInfo>
+                    </ProductsCardInfoShippingOptionStyled>
+                  </ProductsCardInfoShippingStyled>
+                </ProductsCardInfoStyled>
 
-                <ProductsStyled.ProductsCardPriceCart>
-                  <ProductsStyled.ProductsCardPrice>
+                <ProductsCardPriceCartStyled>
+                  <ProductsCardPriceStyled>
                     <HeadingQuaternary>{`$${prop.price}`}</HeadingQuaternary>
-                  </ProductsStyled.ProductsCardPrice>
+                  </ProductsCardPriceStyled>
 
-                  <ProductsStyled.ProductsCardCartBtn>
+                  <ProductsCardCartBtnStyled>
                     <Button
                       rest={{
                         type: 'button',
@@ -94,14 +107,14 @@ const ProductsPage = () => {
                     >
                       Add to Cart
                     </Button>
-                  </ProductsStyled.ProductsCardCartBtn>
-                </ProductsStyled.ProductsCardPriceCart>
-              </ProductsStyled.ProductsCardRightColumn>
-            </ProductsStyled.ProductsCard>
+                  </ProductsCardCartBtnStyled>
+                </ProductsCardPriceCartStyled>
+              </ProductsCardRightColumnStyled>
+            </ProductsCardStyled>
           ))
         )}
-      </ProductsStyled.Products>
-    </ProductsStyled.ProductsContainer>
+      </ProductsStyled>
+    </ProductsContainerStyled>
   );
 };
 
