@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import {
   ModalStyled,
+  ModalContainerStyled,
   ModalHeaderStyled,
   ModalBodyStyled,
   ModalButtonStyled,
@@ -11,15 +12,17 @@ import {
 import { HeadingQuaternary } from '../common/Typography';
 
 const Modal = ({ children, header }) => (
-  <ModalStyled>
-    <ModalHeaderStyled>
-      <HeadingQuaternary>{header}</HeadingQuaternary>
-    </ModalHeaderStyled>
+  <ModalContainerStyled>
+    <ModalStyled>
+      <ModalHeaderStyled>
+        <HeadingQuaternary>{header}</HeadingQuaternary>
+      </ModalHeaderStyled>
 
-    <ModalBodyStyled>{children}</ModalBodyStyled>
+      <ModalBodyStyled>{children}</ModalBodyStyled>
 
-    <ModalButtonStyled>x</ModalButtonStyled>
-  </ModalStyled>
+      <ModalButtonStyled>x</ModalButtonStyled>
+    </ModalStyled>
+  </ModalContainerStyled>
 );
 
 Modal.propTypes = {
