@@ -1,36 +1,36 @@
 import styled from 'styled-components';
 
-export const Cart = styled.div`
+export const CartStyled = styled.div`
   display: flex;
   width: 100%;
   padding-left: 4rem;
 `;
 
-export const CartLeftContainer = styled.div`
+export const CartLeftContainerStyled = styled.div`
   width: 75%;
 `;
 
-export const CartRightContainer = styled.div`
+export const CartRightContainerStyled = styled.div`
   width: 25%;
 `;
 
-export const CartTitlePage = styled.div`
+export const CartTitlePageStyled = styled.div`
   margin-top: 2.5rem;
   margin-bottom: 1.6rem;
 `;
 
-export const CartCard = styled.div`
+export const CartCardStyled = styled.div`
   display: flex;
   margin-bottom: 2.4rem;
   padding: 2.4rem;
 `;
 
-export const CartCardDetails = styled.div`
+export const CartCardDetailsStyled = styled.div`
   display: flex;
   width: 42%;
 `;
 
-export const CartCardDetailsImage = styled.div`
+export const CartCardDetailsImageStyled = styled.div`
   width: 10rem;
 
   & > a {
@@ -38,29 +38,29 @@ export const CartCardDetailsImage = styled.div`
   }
 `;
 
-export const CartCardDetailsTitle = styled.div`
+export const CartCardDetailsTitleStyled = styled.div`
   width: calc(100% - 10rem);
   padding-left: 3rem;
   padding-right: 3rem;
 `;
 
-export const CartCardShipping = styled.div`
+export const CartCardShippingStyled = styled.div`
   width: 13%;
 `;
 
-export const CartCardShippingType = styled.div`
+export const CartCardShippingTypeStyled = styled.div`
   margin-bottom: 1rem;
 `;
 
-export const CartCardShippingInfo = styled.div`
+export const CartCardShippingInfoStyled = styled.div`
   margin-left: 0.5rem;
 `;
 
-export const CartCardAction = styled.div`
+export const CartCardActionStyled = styled.div`
   width: 20%;
 `;
 
-export const CartCardQuantity = styled.div`
+export const CartCardQuantityStyled = styled.div`
   margin-bottom: 1rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -75,17 +75,17 @@ export const CartCardQuantity = styled.div`
   }
 `;
 
-export const CartCardRaiseLower = styled.div`
+export const CartCardRaiseLowerStyled = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
 `;
 
-export const CartCardRemove = styled.div`
+export const CartCardRemoveStyled = styled.div`
   margin-top: 1rem;
 `;
 
-export const CartCardPrice = styled.div`
+export const CartCardPriceStyled = styled.div`
   width: 17%;
   text-align: right;
 `;
