@@ -5,6 +5,7 @@ import { LabelStyled, InputStyled, InputMessageStyled } from './InputStyled';
 import Link from './Link';
 import {
   ModalStyled,
+  ModalContainerStyled,
   ModalHeaderStyled,
   ModalBodyStyled,
   ModalButtonStyled,
@@ -20,6 +21,7 @@ export {
   LabelStyled,
   Link,
   ModalStyled,
+  ModalContainerStyled,
   ModalHeaderStyled,
   ModalBodyStyled,
   ModalButtonStyled,
