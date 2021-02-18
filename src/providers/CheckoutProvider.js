@@ -7,6 +7,8 @@ const CheckoutProvider = ({ children }) => {
   const [subTotal, setSubTotal] = useState(0);
   const [salesTax, setSalesTax] = useState(0);
   const [finalTotal, setFinalTotal] = useState(0);
+  const [shippingAddress, setShippingAddress] = useState(null);
+  const [billingAddress, setBillingAddress] = useState(null);
 
   const calcOrder = (items) => {
     if (!items.length) {
@@ -27,9 +29,22 @@ const CheckoutProvider = ({ children }) => {
     setFinalTotal(subTotalAmount * 1.0725);
   };
 
+  const getShippingAddress = (address) => setShippingAddress(address);
+  const getBillingAddress = (billingAddress) =>
+    setBillingAddress(billingAddress);
+
   return (
     <CheckoutContext.Provider
-      value={{ subTotal, salesTax, finalTotal, calcOrder }}
+      value={{
+        subTotal,
+        salesTax,
+        finalTotal,
+        shippingAddress,
+        billingAddress,
+        calcOrder,
+        getShippingAddress,
+        getBillingAddress,
+      }}
     >
       {children}
     </CheckoutContext.Provider>
