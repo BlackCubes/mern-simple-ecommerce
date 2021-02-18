@@ -88,8 +88,8 @@ Input.propTypes = {
     noValidate: PropTypes.bool,
     message: PropTypes.string.isRequired,
   }).isRequired,
-  values: PropTypes.objectOf(PropTypes.object).isRequired,
-  errors: PropTypes.objectOf(PropTypes.object).isRequired,
+  values: PropTypes.oneOfType([PropTypes.object]).isRequired,
+  errors: PropTypes.oneOfType([PropTypes.object]).isRequired,
   onChange: PropTypes.func.isRequired,
 };
 
