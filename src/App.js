@@ -8,6 +8,7 @@ import { Footer, Navbar } from './Components';
 import {
   CartPage,
   CheckoutPage,
+  FormContainer,
   ProductDetailsPage,
   ProductsPage,
 } from './containers';
@@ -34,7 +35,9 @@ function App() {
                 component={ProductDetailsPage}
               />
               <Route exact path="/cart" component={CartPage} />
-              <Route exact path="/checkout" component={CheckoutPage} />
+              <Route exact path="/checkout">
+                <CheckoutPage FormContainerComponent={FormContainer} />
+              </Route>
             </Switch>
             <Footer />
           </CheckoutProvider>
