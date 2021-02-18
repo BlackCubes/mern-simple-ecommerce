@@ -50,7 +50,7 @@ const CheckoutPage = ({ FormContainerComponent }) => {
 
   const handleModal = (e) => {
     e.preventDefault();
-    setModalToggle(true);
+    setModalToggle((bool) => !bool);
   };
 
   const onSubmit = (newValues) => {
