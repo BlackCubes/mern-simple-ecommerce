@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ModalStyled = styled.div`
   position: fixed;
-  width: 70%;
+  width: 50%;
   padding: 3.6rem;
   background-color: ${(props) => props.theme.colors.white};
   border: 0.1rem solid #ccc;
