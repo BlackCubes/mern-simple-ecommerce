@@ -30,8 +30,7 @@ const CheckoutProvider = ({ children }) => {
   };
 
   const getShippingAddress = (address) => setShippingAddress(address);
-  const getBillingAddress = (billingAddress) =>
-    setBillingAddress(billingAddress);
+  const getBillingAddress = (billAddress) => setBillingAddress(billAddress);
 
   return (
     <CheckoutContext.Provider
