@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import FormContainer from '.';
+import { FormContainer } from '.';
 
 import { useCheckoutContext } from '../context/CheckoutContext';
 
