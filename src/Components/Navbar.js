@@ -1,7 +1,21 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
-import { Image, Link, NavbarStyled } from '../common';
+import { Image, Link } from '../common';
+
+import {
+  NavbarStyled,
+  NavbarContainerStyled,
+  NavbarLogoStyled,
+  NavbarMenuHolderStyled,
+  NavbarMenuStyled,
+  NavbarMenuListStyled,
+  NavbarMenuListItemStyled,
+  NavbarCartStyled,
+  NavbarCartImageStyled,
+  NavbarCartLabelStyled,
+  NavbarCartQuantityStyled,
+} from '../common/Base';
 
 import { useCartContext } from '../context/CartContext';
 
@@ -9,18 +23,18 @@ const Navbar = () => {
   const { cart } = useCartContext();
 
   return (
-    <NavbarStyled.Navbar>
-      <NavbarStyled.NavbarContainer>
-        <NavbarStyled.NavbarLogo>
+    <NavbarStyled>
+      <NavbarContainerStyled>
+        <NavbarLogoStyled>
           <RouterLink to="/">
             <Image rest={{ src: '/img/icon.png', alt: 'Company Logo' }} />
           </RouterLink>
-        </NavbarStyled.NavbarLogo>
+        </NavbarLogoStyled>
 
-        <NavbarStyled.NavbarMenuHolder>
-          <NavbarStyled.NavbarMenu>
-            <NavbarStyled.NavbarMenuList>
-              <NavbarStyled.NavbarMenuListItem>
+        <NavbarMenuHolderStyled>
+          <NavbarMenuStyled>
+            <NavbarMenuListStyled>
+              <NavbarMenuListItemStyled>
                 <Link
                   href="/products"
                   rest={{
@@ -30,9 +44,9 @@ const Navbar = () => {
                 >
                   Products
                 </Link>
-              </NavbarStyled.NavbarMenuListItem>
+              </NavbarMenuListItemStyled>
 
-              <NavbarStyled.NavbarMenuListItem>
+              <NavbarMenuListItemStyled>
                 <Link
                   href="/cart"
                   rest={{
@@ -40,31 +54,29 @@ const Navbar = () => {
                     hovercolortype: 'vivid_pink',
                   }}
                 >
-                  <NavbarStyled.NavbarCart>
-                    <NavbarStyled.NavbarCartImage>
+                  <NavbarCartStyled>
+                    <NavbarCartImageStyled>
                       <Image
                         rest={{
                           src: '/img/shopping-cart.svg',
                           alt: 'Shopping Cart',
                         }}
                       />
-                    </NavbarStyled.NavbarCartImage>
+                    </NavbarCartImageStyled>
 
-                    <NavbarStyled.NavbarCartLabel>
-                      Cart
-                    </NavbarStyled.NavbarCartLabel>
+                    <NavbarCartLabelStyled>Cart</NavbarCartLabelStyled>
 
-                    <NavbarStyled.NavbarCartQuantity>
+                    <NavbarCartQuantityStyled>
                       {cart.length}
-                    </NavbarStyled.NavbarCartQuantity>
-                  </NavbarStyled.NavbarCart>
+                    </NavbarCartQuantityStyled>
+                  </NavbarCartStyled>
                 </Link>
-              </NavbarStyled.NavbarMenuListItem>
-            </NavbarStyled.NavbarMenuList>
-          </NavbarStyled.NavbarMenu>
-        </NavbarStyled.NavbarMenuHolder>
-      </NavbarStyled.NavbarContainer>
-    </NavbarStyled.Navbar>
+              </NavbarMenuListItemStyled>
+            </NavbarMenuListStyled>
+          </NavbarMenuStyled>
+        </NavbarMenuHolderStyled>
+      </NavbarContainerStyled>
+    </NavbarStyled>
   );
 };
 
