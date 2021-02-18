@@ -31,13 +31,16 @@ const CheckoutPage = ({ FormContainerComponent }) => {
   };
 
   console.log(values);
-  console.log(handleModal);
 
   return (
     <>
       <div>Hello!</div>
 
-      <Modal header="Enter Address" modalToggle={modalToggle}>
+      <Modal
+        header="Enter Address"
+        modalToggle={modalToggle}
+        handleModal={handleModal}
+      >
         <FormContainerComponent onSubmit={onSubmit} formFields={formFields} />
       </Modal>
     </>
