@@ -45,5 +45,5 @@ export {
   SidebarFacetStyled,
   SidebarFacetLegendStyled,
   SidebarFacetListStyled,
-  SidebarFacetListItem,
+  SidebarFacetListItemStyled,
 };
