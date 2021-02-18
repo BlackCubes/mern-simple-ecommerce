@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Form } from '../common';
+import Form from './Form';
 
 import { useCheckoutContext } from '../context/CheckoutContext';
 
