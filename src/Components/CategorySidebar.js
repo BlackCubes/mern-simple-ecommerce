@@ -3,8 +3,6 @@ import { Link as RouterLink } from 'react-router-dom';
 
 import { Image, Link } from '../common';
 
-import { Paragraph } from '../common/Typography';
-
 import {
   CategorySidebarStyled,
   CategorySidebarHeaderStyled,
@@ -16,6 +14,8 @@ import {
   SidebarStyled,
   SidebarContainerStyled,
 } from '../common/Sidebar';
+
+import { Paragraph } from '../common/Typography';
 
 import { useProductContext } from '../context/ProductContext';
 
