@@ -2,20 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const LabelStyled = styled.label.attrs((props) => ({
-  for: props.htmlFor,
-}));
+const LabelStyled = styled.label`
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+`;
 
-const InputStyled = styled.inputprop.attrs((props) => ({
-  type: props.inputprop.type || 'text',
-  name: props.inputprop.name,
-  class: props.errors[props.inputprop.name] && 'error',
-  id: props.inputprop.id,
-  value: props.values[props.inputprop.name] || '',
-  placeholder: props.inputprop.placeholder,
-  onChange: props.onChange,
-  noValidate: props.inputprop.noValidate || true,
-}))`
+const InputStyled = styled.input`
   display: block;
   width: 100%;
   margin-left: auto;
@@ -71,10 +63,13 @@ const Input = ({ inputprop, values, errors, onChange }) => (
   <>
     <LabelStyled htmlFor={inputprop.id}>
       <InputStyled
-        inputprop={inputprop}
-        values={values}
-        errors={errors}
+        type={inputprop.type || 'text'}
+        name={inputprop.name}
+        className={errors[inputprop.name] && 'error'}
+        value={values[inputprop.name] || ''}
+        placeholder={inputprop.placeholder}
         onChange={onChange}
+        noValidate={inputprop.noValidate || true}
       />
 
       <InputMessageStyled>
