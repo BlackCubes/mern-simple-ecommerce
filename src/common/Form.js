@@ -25,7 +25,7 @@ const Form = ({ onSubmit, formFields, InputComponent }) => {
     fieldInputProperties({
       type: prop.type,
       name: prop.name,
-      errors: prop.errors,
+      errors: errors,
       values: prop.values,
       placeholder: prop.placeholder,
       onChange: handleChange,
