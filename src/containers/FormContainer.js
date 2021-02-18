@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import Input from '../Components/Input';
+import { Input } from '../Components';
 
 import { fieldInputErrors, fieldInputProperties } from '../utils';
 
