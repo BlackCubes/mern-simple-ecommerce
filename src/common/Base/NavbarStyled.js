@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Navbar = styled.header`
+export const NavbarStyled = styled.header`
   position: relative;
   background-color: ${(props) => props.theme.colors.black_gray};
   width: 100%;
@@ -22,7 +22,7 @@ export const Navbar = styled.header`
   }
 `;
 
-export const NavbarContainer = styled.div`
+export const NavbarContainerStyled = styled.div`
   position: relative;
   width: 98%;
   max-width: 145rem;
@@ -31,7 +31,7 @@ export const NavbarContainer = styled.div`
   margin-right: auto;
 `;
 
-export const NavbarLogo = styled.div`
+export const NavbarLogoStyled = styled.div`
   float: left;
   width: 7rem;
   position: absolute;
@@ -45,25 +45,25 @@ export const NavbarLogo = styled.div`
   }
 `;
 
-export const NavbarMenuHolder = styled.div`
+export const NavbarMenuHolderStyled = styled.div`
   float: right;
   height: 11rem;
   max-width: 80%;
 `;
 
-export const NavbarMenu = styled.nav`
+export const NavbarMenuStyled = styled.nav`
   display: inline-block;
   height: inherit;
 `;
 
-export const NavbarMenuList = styled.ul`
+export const NavbarMenuListStyled = styled.ul`
   display: block;
   height: inherit;
   padding: 2rem 0;
   list-style: none;
 `;
 
-export const NavbarMenuListItem = styled.li`
+export const NavbarMenuListItemStyled = styled.li`
   display: flex;
   float: left;
   height: 100%;
@@ -82,21 +82,21 @@ export const NavbarMenuListItem = styled.li`
   }
 `;
 
-export const NavbarCart = styled.div`
+export const NavbarCartStyled = styled.div`
   display: inline-flex;
   position: relative;
 `;
 
-export const NavbarCartImage = styled.div`
+export const NavbarCartImageStyled = styled.div`
   width: 3rem;
   height: 3rem;
 `;
 
-export const NavbarCartLabel = styled.span`
+export const NavbarCartLabelStyled = styled.span`
   margin-left: 0.5rem;
 `;
 
-export const NavbarCartQuantity = styled.div`
+export const NavbarCartQuantityStyled = styled.div`
   display: flex;
   justify-content: center;
   position: absolute;
