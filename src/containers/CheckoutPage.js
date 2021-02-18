@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-
-import { FormContainer } from '.';
+import PropTypes from 'prop-types';
 
 import { useCheckoutContext } from '../context/CheckoutContext';
 
@@ -14,7 +13,7 @@ const formFields = [
   },
 ];
 
-const CheckoutPage = () => {
+const CheckoutPage = ({ FormContainerComponent }) => {
   const [values, setValues] = useState();
   const { subTotal, salesTax, finalTotal } = useCheckoutContext();
   console.log(subTotal, salesTax, finalTotal);
@@ -29,9 +28,13 @@ const CheckoutPage = () => {
     <>
       <div>Hello!</div>
 
-      <FormContainer onSubmit={onSubmit} formFields={formFields} />
+      <FormContainerComponent onSubmit={onSubmit} formFields={formFields} />
     </>
   );
+};
+
+CheckoutPage.propTypes = {
+  FormContainerComponent: PropTypes.elementType.isRequired,
 };
 
 export default CheckoutPage;
