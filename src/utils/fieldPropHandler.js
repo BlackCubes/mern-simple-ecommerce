@@ -1,7 +1,7 @@
 export const fieldInputProperties = (prop) => ({
   type: prop.type || 'text',
   name: prop.name,
-  className: prop.errors[prop.name] && 'error',
+  className: prop.errors[prop.name] ? 'error' : '',
   value: prop.values[prop.name] || '',
   placeholder: prop.placeholder,
   onChange: prop.onChange,
