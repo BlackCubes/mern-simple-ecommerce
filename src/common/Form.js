@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { fieldInputErrors, fieldInputProperties } from '../utils';
 
-const Form = ({ onSubmit, formFields, InputComponent }) => {
+const Form = ({ onSubmit, formFields }) => {
   const [values, setValues] = useState({});
   // const [errors, setErrors] = useState({});
   const errors = {};
@@ -44,13 +44,14 @@ const Form = ({ onSubmit, formFields, InputComponent }) => {
 
   return (
     <form onSubmit={handleSubmit} noValidate>
-      {inputProperties.map((prop, key) => (
+      {/* {inputProperties.map((prop, key) => (
         <InputComponent
           key={uuidv4()}
           inputprop={prop}
           errors={inputErrors[key]}
         />
-      ))}
+      ))} */}
+      Hello!
     </form>
   );
 };
@@ -58,7 +59,6 @@ const Form = ({ onSubmit, formFields, InputComponent }) => {
 Form.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   formFields: PropTypes.arrayOf(PropTypes.object).isRequired,
-  InputComponent: PropTypes.elementType.isRequired,
 };
 
 export default Form;
