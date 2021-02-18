@@ -30,7 +30,7 @@ export const CheckoutSidebarSummaryTotalStyled = styled.div`
   }
 `;
 
-export const CheckoutSidebarButton = styled.div`
+export const CheckoutSidebarButtonStyled = styled.div`
   margin-bottom: 2rem;
   text-align: center;
 `;

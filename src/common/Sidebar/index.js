@@ -13,7 +13,7 @@ import {
   CheckoutSidebarSummaryStyled,
   CheckoutSidebarSummaryLineStyled,
   CheckoutSidebarSummaryTotalStyled,
-  CheckoutSidebarButton,
+  CheckoutSidebarButtonStyled,
 } from './CheckoutSidebarStyled';
 import {
   SidebarStyled,
