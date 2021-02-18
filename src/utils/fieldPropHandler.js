@@ -7,6 +7,7 @@ export const fieldInputProperties = (prop) => ({
   placeholder: prop.placeholder,
   onChange: prop.onChange,
   noValidate: prop.noValidate || true,
+  message: prop.message,
 });
 
 export const fieldInputErrors = (name, errors) =>
