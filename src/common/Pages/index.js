@@ -33,7 +33,7 @@ import {
   ProductDetailsDescriptionStyled,
   ProductDetailsDescriptionHeaderStyled,
   ProductDetailsDescriptionBodyStyled,
-} from './CheckoutStyled';
+} from './ProductDetailsStyled';
 import {
   ProductsStyled,
   ProductsContainerStyled,
