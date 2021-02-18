@@ -14,4 +14,4 @@ Modal.propTypes = {
   header: PropTypes.string.isRequired,
 };
 
-export defailt Modal;
+export default Modal;
