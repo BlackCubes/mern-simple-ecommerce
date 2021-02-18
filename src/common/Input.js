@@ -59,38 +59,38 @@ const InputMessageStyled = styled.span`
   transition: all 0.3s;
 `;
 
-const Input = ({ inputprop, values, errors, onChange }) => (
-  <>
-    <LabelStyled htmlFor={inputprop.id}>
-      <InputStyled
-        type={inputprop.type || 'text'}
-        name={inputprop.name}
-        className={errors[inputprop.name] && 'error'}
-        value={values[inputprop.name] || ''}
-        placeholder={inputprop.placeholder}
-        onChange={onChange}
-        noValidate={inputprop.noValidate || true}
-      />
+const Input = ({ inputprop, error }) => (
+  <LabelStyled htmlFor={inputprop.id}>
+    <InputStyled
+      type={inputprop.type}
+      name={inputprop.name}
+      className={inputprop.className}
+      id={inputprop.id}
+      value={inputprop.value}
+      placeholder={inputprop.placeholder}
+      onChange={inputprop.onChange}
+      noValidate={inputprop.noValidate}
+    />
 
-      <InputMessageStyled>
-        {errors[inputprop.name] ? errors[inputprop.name] : inputprop.message}
-      </InputMessageStyled>
-    </LabelStyled>
-  </>
+    <InputMessageStyled>{error || inputprop.message}</InputMessageStyled>
+  </LabelStyled>
 );
 
 Input.propTypes = {
   inputprop: PropTypes.shape({
     type: PropTypes.string,
     name: PropTypes.string.isRequired,
+    className: PropTypes.string,
     id: PropTypes.string.isRequired,
+    value: PropTypes.string,
     placeholder: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
     noValidate: PropTypes.bool,
     message: PropTypes.string.isRequired,
   }).isRequired,
-  values: PropTypes.oneOfType([PropTypes.object]).isRequired,
-  errors: PropTypes.oneOfType([PropTypes.object]).isRequired,
-  onChange: PropTypes.func.isRequired,
+  error: PropTypes.string,
 };
+
+Input.defaultProps = { error: null };
 
 export default Input;
