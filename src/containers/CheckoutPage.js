@@ -45,7 +45,15 @@ const formFields = [
 const CheckoutPage = ({ FormContainerComponent }) => {
   const [values, setValues] = useState();
   const [modalToggle, setModalToggle] = useState(false);
-  const { subTotal, salesTax, finalTotal } = useCheckoutContext();
+  const {
+    subTotal,
+    salesTax,
+    finalTotal,
+    shippingAddress,
+    billingAddress,
+    getShippingAddress,
+    getBillingAddress,
+  } = useCheckoutContext();
   console.log(subTotal, salesTax, finalTotal);
 
   const handleModal = (e) => {
@@ -58,6 +66,8 @@ const CheckoutPage = ({ FormContainerComponent }) => {
   };
 
   console.log(values);
+  console.log(getBillingAddress, getShippingAddress);
+  console.log(billingAddress);
 
   return (
     <CheckoutStyled>
@@ -75,9 +85,21 @@ const CheckoutPage = ({ FormContainerComponent }) => {
 
               <CheckoutShippingInfoStyled>
                 <CheckoutShippingInfoSavedStyled>
-                  <Paragraph>No Name</Paragraph>
-                  <Paragraph>No Address</Paragraph>
-                  <Paragraph>No City</Paragraph>
+                  <Paragraph>
+                    {shippingAddress.userName
+                      ? shippingAddress.userName
+                      : 'No Name'}
+                  </Paragraph>
+                  <Paragraph>
+                    {shippingAddress.address
+                      ? shippingAddress.address
+                      : 'No Address'}
+                  </Paragraph>
+                  <Paragraph>
+                    {shippingAddress.cityZip
+                      ? shippingAddress.cityZip
+                      : 'No City'}
+                  </Paragraph>
                 </CheckoutShippingInfoSavedStyled>
 
                 <CheckoutShippingInfoAddStyled>
