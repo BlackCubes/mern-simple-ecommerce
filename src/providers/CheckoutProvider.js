@@ -7,8 +7,8 @@ const CheckoutProvider = ({ children }) => {
   const [subTotal, setSubTotal] = useState(0);
   const [salesTax, setSalesTax] = useState(0);
   const [finalTotal, setFinalTotal] = useState(0);
-  const [shippingAddress, setShippingAddress] = useState(null);
-  const [billingAddress, setBillingAddress] = useState(null);
+  const [shippingAddress, setShippingAddress] = useState({});
+  const [billingAddress, setBillingAddress] = useState({});
 
   const calcOrder = (items) => {
     if (!items.length) {
