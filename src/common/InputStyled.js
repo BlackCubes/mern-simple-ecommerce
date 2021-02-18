@@ -15,7 +15,7 @@ export const InputStyled = styled.input`
   padding: 1.5rem;
   border: none;
   border-bottom: 0.3rem solid transparent;
-  border-radius: 1rem;
+  border-radius: 0.2rem;
   transition: all 0.3s;
 
   &:focus {
