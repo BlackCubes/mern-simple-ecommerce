@@ -17,7 +17,7 @@ import {
   ProductsCardPriceCartStyled,
   ProductsCardPriceStyled,
   ProductsCardCartBtnStyled,
-} from '../common/Pages/ProductsStyled';
+} from '../common/Pages';
 
 import {
   HeadingQuaternary,
