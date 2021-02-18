@@ -17,20 +17,27 @@ const formFields = [
 
 const CheckoutPage = ({ FormContainerComponent }) => {
   const [values, setValues] = useState();
+  const [modalToggle, setModalToggle] = useState(false);
   const { subTotal, salesTax, finalTotal } = useCheckoutContext();
   console.log(subTotal, salesTax, finalTotal);
+
+  const handleModal = (e) => {
+    e.preventDefault();
+    setModalToggle(true);
+  };
 
   const onSubmit = (newValues) => {
     setValues(newValues);
   };
 
   console.log(values);
+  console.log(handleModal);
 
   return (
     <>
       <div>Hello!</div>
 
-      <Modal header="Enter Address">
+      <Modal header="Enter Address" modalToggle={modalToggle}>
         <FormContainerComponent onSubmit={onSubmit} formFields={formFields} />
       </Modal>
     </>
