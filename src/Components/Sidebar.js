@@ -1,7 +1,19 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-import { Link, Paragraph, SidebarStyled, Small } from '../common';
+import { Link } from '../common';
+
+import {
+  SidebarStyled,
+  SidebarContainerStyled,
+  SidebarContentStyled,
+  SidebarFacetStyled,
+  SidebarFacetLegendStyled,
+  SidebarFacetListStyled,
+  SidebarFacetListItemStyled,
+} from '../common/Sidebar';
+
+import { Paragraph, Small } from '../common/Typography';
 
 import { useProductContext } from '../context/ProductContext';
 
@@ -9,28 +21,28 @@ const Sidebar = () => {
   const { categories } = useProductContext();
 
   return (
-    <SidebarStyled.Sidebar>
-      <SidebarStyled.SidebarContainer>
-        <SidebarStyled.SidebarContent>
-          <SidebarStyled.SidebarFacet>
-            <SidebarStyled.SidebarFacetLegend>
+    <SidebarStyled>
+      <SidebarContainerStyled>
+        <SidebarContentStyled>
+          <SidebarFacetStyled>
+            <SidebarFacetLegendStyled>
               <Paragraph tagtype="strong">Category</Paragraph>
-            </SidebarStyled.SidebarFacetLegend>
+            </SidebarFacetLegendStyled>
 
-            <SidebarStyled.SidebarFacetList>
+            <SidebarFacetListStyled>
               {categories &&
                 categories.map((prop) => (
-                  <SidebarStyled.SidebarFacetListItem key={uuidv4()}>
+                  <SidebarFacetListItemStyled key={uuidv4()}>
                     <Small>
                       <Link href={`/products/category/${prop}`}>{prop}</Link>
                     </Small>
-                  </SidebarStyled.SidebarFacetListItem>
+                  </SidebarFacetListItemStyled>
                 ))}
-            </SidebarStyled.SidebarFacetList>
-          </SidebarStyled.SidebarFacet>
-        </SidebarStyled.SidebarContent>
-      </SidebarStyled.SidebarContainer>
-    </SidebarStyled.Sidebar>
+            </SidebarFacetListStyled>
+          </SidebarFacetStyled>
+        </SidebarContentStyled>
+      </SidebarContainerStyled>
+    </SidebarStyled>
   );
 };
 
