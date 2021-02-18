@@ -26,7 +26,7 @@ export const ModalBodyStyled = styled.div`
   margin: 1.4rem -7.5rem 0;
 `;
 
-export const ModalButton = styled.div`
+export const ModalButtonStyled = styled.div`
   button {
     position: absolute;
     padding: 1.2rem;
