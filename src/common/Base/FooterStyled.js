@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 
 export const FooterStyled = styled.div`
+  position: absolute;
   font-family: inherit;
   color: ${(props) => props.theme.colors.white};
+  width: 100%;
+  height: 2.5rem;
   background-color: ${(props) => props.theme.colors.black_gray};
+  bottom: 0;
 `;
 
 export const FooterFollowStyled = styled.div`

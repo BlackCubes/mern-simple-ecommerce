@@ -31,6 +31,11 @@ const GlobalStyles = createGlobalStyle`
     color: ${(props) => props.theme.colors.white};
     background-color: ${(props) => props.theme.colors.vivid_pink};
   }
+
+  #root {
+    position: relative;
+    min-height: 100vh;
+  }
 `;
 
 export default GlobalStyles;
