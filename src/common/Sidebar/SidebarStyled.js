@@ -1,32 +1,32 @@
 import styled from 'styled-components';
 
-export const Sidebar = styled.div`
+export const SidebarStyled = styled.div`
   width: 20%;
   padding-left: 4rem;
   padding-right: 2rem;
 `;
 
-export const SidebarContainer = styled.div`
+export const SidebarContainerStyled = styled.div`
   height: 100%;
 `;
 
-export const SidebarContent = styled.div`
+export const SidebarContentStyled = styled.div`
   position: sticky;
   top: 1.5rem;
   padding-left: 2rem;
   padding-right: 2rem;
 `;
 
-export const SidebarFacet = styled.div`
+export const SidebarFacetStyled = styled.div`
   padding: 2rem 0 2rem 2rem;
   border-bottom: 1px solid #000;
 `;
 
-export const SidebarFacetLegend = styled.div`
+export const SidebarFacetLegendStyled = styled.div`
   padding-bottom: 1rem;
 `;
 
-export const SidebarFacetList = styled.ul`
+export const SidebarFacetListStyled = styled.ul`
   margin-top: 1rem;
   list-style-type: none;
 `;

@@ -1,27 +1,27 @@
 import styled from 'styled-components';
 
-export const CheckoutSidebar = styled.div`
+export const CheckoutSidebarStyled = styled.div`
   position: sticky;
   top: 0;
   padding: 2.4rem 4rem;
 `;
 
-export const CheckoutSidebarHeader = styled.div`
+export const CheckoutSidebarHeaderStyled = styled.div`
   margin-bottom: 2rem;
   text-align: center;
 `;
 
-export const CheckoutSidebarSummary = styled.div`
+export const CheckoutSidebarSummaryStyled = styled.div`
   margin-bottom: 2rem;
 `;
 
-export const CheckoutSidebarSummaryLine = styled.div`
+export const CheckoutSidebarSummaryLineStyled = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.5rem;
 `;
 
-export const CheckoutSidebarSummaryTotal = styled.div`
+export const CheckoutSidebarSummaryTotalStyled = styled.div`
   margin-bottom: 1rem;
 
   & p {
