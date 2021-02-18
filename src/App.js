@@ -3,16 +3,16 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // import logo from './logo.svg';
 // import './App.css';
 
-import CartPage from './Components/CartPage';
-import CheckoutPage from './Components/CheckoutPage';
-import Footer from './Components/Footer';
-import Navbar from './Components/Navbar';
-import ProductsPage from './Components/ProductsPage';
-import ProductDetailsPage from './Components/ProductDetailsPage';
+import { Footer, Navbar } from './Components';
 
-import CartProvider from './providers/CartProvider';
-import CheckoutProvider from './providers/CheckoutProvider';
-import ProductProvider from './providers/ProductProvider';
+import {
+  CartPage,
+  CheckoutPage,
+  ProductDetailsPage,
+  ProductsPage,
+} from './containers';
+
+import { CartProvider, CheckoutProvider, ProductProvider } from './providers';
 
 function App() {
   return (
