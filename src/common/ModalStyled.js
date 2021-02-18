@@ -20,6 +20,9 @@ export const ModalContainerStyled = styled.div`
   margin-right: auto;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  transform: ${({ modaltoggle }) =>
+    modaltoggle ? 'translateY(0)' : 'translateY(-100vh)'};
+  opacity: ${({ modaltoggle }) => (modaltoggle ? 1 : 0)};
 `;
 
 export const ModalHeaderStyled = styled.div`
