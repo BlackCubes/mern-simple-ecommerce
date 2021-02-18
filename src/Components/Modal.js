@@ -27,7 +27,9 @@ const Modal = ({ children, header, modalToggle, handleModal }) => (
             type: 'button',
             onClick: (e) => handleModal(e),
           }}
-        ></Button>
+        >
+          x
+        </Button>
       </ModalButtonStyled>
     </ModalStyled>
   </ModalContainerStyled>
