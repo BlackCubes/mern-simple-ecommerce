@@ -11,7 +11,7 @@ import HeadingQuaternary from './HeadingQuaternary';
 import HeadingSecondary from './HeadingSecondary';
 import HeadingTertiary from './HeadingTertiary';
 import Image from './Image';
-import Input from './Input';
+import * as InputStyled from './Input';
 import Link from './Link';
 import * as NavbarStyled from './NavbarStyled';
 import Paragraph from './Paragraph';
@@ -35,7 +35,7 @@ export {
   HeadingSecondary,
   HeadingTertiary,
   Image,
-  Input,
+  InputStyled,
   Link,
   NavbarStyled,
   Paragraph,
