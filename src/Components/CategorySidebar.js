@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
+import { Image, Link } from '../common';
+
+import { Paragraph } from '../common/Typography';
+
 import {
   CategorySidebarStyled,
-  Image,
-  Link,
-  Paragraph,
+  CategorySidebarHeaderStyled,
+  CategorySidebarCardStyled,
+  CategorySidebarCardImageStyled,
+  CategorySidebarCardInfoStyled,
+  CategorySidebarCardInfoTitleStyled,
+  CategorySidebarCardInfoPriceStyled,
   SidebarStyled,
-} from '../common';
+  SidebarContainerStyled,
+} from '../common/Sidebar';
 
 import { useProductContext } from '../context/ProductContext';
 
@@ -29,38 +37,38 @@ const CategorySidebar = () => {
   }, [category]);
 
   return (
-    <SidebarStyled.Sidebar>
-      <SidebarStyled.SidebarContainer>
-        <CategorySidebarStyled.CategorySidebar>
-          <CategorySidebarStyled.CategorySidebarHeader>
+    <SidebarStyled>
+      <SidebarContainerStyled>
+        <CategorySidebarStyled>
+          <CategorySidebarHeaderStyled>
             <Paragraph tagtype="strong">Similar Category</Paragraph>
-          </CategorySidebarStyled.CategorySidebarHeader>
+          </CategorySidebarHeaderStyled>
 
           {similarProducts &&
             similarProducts.slice(0, 4).map((prop) => (
-              <CategorySidebarStyled.CategorySidebarCard key={prop.id}>
-                <CategorySidebarStyled.CategorySidebarCardImage>
+              <CategorySidebarCardStyled key={prop.id}>
+                <CategorySidebarCardImageStyled>
                   <RouterLink to={`/products/${prop.id}`}>
                     <Image rest={{ src: prop.image, alt: prop.title }} />
                   </RouterLink>
-                </CategorySidebarStyled.CategorySidebarCardImage>
+                </CategorySidebarCardImageStyled>
 
-                <CategorySidebarStyled.CategorySidebarCardInfo>
-                  <CategorySidebarStyled.CategorySidebarCardInfoTitle>
+                <CategorySidebarCardInfoStyled>
+                  <CategorySidebarCardInfoTitleStyled>
                     <Paragraph>
                       <Link href={`/products/${prop.id}`}>{prop.title}</Link>
                     </Paragraph>
-                  </CategorySidebarStyled.CategorySidebarCardInfoTitle>
+                  </CategorySidebarCardInfoTitleStyled>
 
-                  <CategorySidebarStyled.CategorySidebarCardInfoPrice>
+                  <CategorySidebarCardInfoPriceStyled>
                     <Paragraph tagtype="strong">{prop.price}</Paragraph>
-                  </CategorySidebarStyled.CategorySidebarCardInfoPrice>
-                </CategorySidebarStyled.CategorySidebarCardInfo>
-              </CategorySidebarStyled.CategorySidebarCard>
+                  </CategorySidebarCardInfoPriceStyled>
+                </CategorySidebarCardInfoStyled>
+              </CategorySidebarCardStyled>
             ))}
-        </CategorySidebarStyled.CategorySidebar>
-      </SidebarStyled.SidebarContainer>
-    </SidebarStyled.Sidebar>
+        </CategorySidebarStyled>
+      </SidebarContainerStyled>
+    </SidebarStyled>
   );
 };
 
