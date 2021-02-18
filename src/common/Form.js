@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 // import styled from 'styled-components';
-// import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 import { fieldInputErrors, fieldInputProperties } from '../utils';
 
@@ -25,11 +25,13 @@ const Form = ({ onSubmit, formFields, InputComponent }) => {
     fieldInputProperties({
       type: prop.type,
       name: prop.name,
+      id: prop.id,
       errors: errors,
       values: values,
       placeholder: prop.placeholder,
       onChange: handleChange,
       noValidate: prop.noValidate,
+      message: prop.message,
     })
   );
 
@@ -39,19 +41,16 @@ const Form = ({ onSubmit, formFields, InputComponent }) => {
 
   console.log('inputProperties: ', inputProperties);
   console.log('inputErrors: ', inputErrors);
-  console.log('InputComponent: ', InputComponent);
 
   return (
     <form onSubmit={handleSubmit} noValidate>
-      {/* {formFields.map((prop) => (
+      {inputProperties.map((prop, key) => (
         <InputComponent
           key={uuidv4()}
           inputprop={prop}
-          values={values}
-          errors={errors}
-          onChange={handleChange}
+          errors={inputErrors[key]}
         />
-      ))} */}
+      ))}
     </form>
   );
 };
