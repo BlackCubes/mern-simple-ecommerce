@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 
-export const CategorySidebar = styled.div`
+export const CategorySidebarStyled = styled.div`
   padding-left: 1rem;
   padding-right: 2rem;
 `;
 
-export const CategorySidebarHeader = styled.div`
+export const CategorySidebarHeaderStyled = styled.div`
   margin-bottom: 2rem;
   padding: 1.5rem 0;
 `;
 
-export const CategorySidebarCard = styled.div`
+export const CategorySidebarCardStyled = styled.div`
   display: grid;
   grid-gap: 1.5rem;
   grid-template-columns: minmax(1px, 40%) minmax(1px, 1fr);
@@ -18,7 +18,7 @@ export const CategorySidebarCard = styled.div`
   margin-bottom: 6rem;
 `;
 
-export const CategorySidebarCardImage = styled.div`
+export const CategorySidebarCardImageStyled = styled.div`
   & a {
     display: flex;
     justify-content: center;
@@ -26,16 +26,16 @@ export const CategorySidebarCardImage = styled.div`
   }
 `;
 
-export const CategorySidebarCardInfo = styled.div`
+export const CategorySidebarCardInfoStyled = styled.div`
   display: flex;
   flex-direction: column;
   grid-area: 'info';
 `;
 
-export const CategorySidebarCardInfoTitle = styled.div`
+export const CategorySidebarCardInfoTitleStyled = styled.div`
   margin-bottom: 0.2rem;
 `;
 
-export const CategorySidebarCardInfoPrice = styled.div`
+export const CategorySidebarCardInfoPriceStyled = styled.div`
   margin-top: 0.2rem;
 `;
