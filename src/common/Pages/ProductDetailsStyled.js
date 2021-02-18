@@ -1,26 +1,26 @@
 import styled from 'styled-components';
 
-export const ProductDetailsContainer = styled.div`
+export const ProductDetailsContainerStyled = styled.div`
   display: flex;
   justify-content: space-between;
   padding-left: 3rem;
   padding-right: 3rem;
 `;
 
-export const ProductDetails = styled.div`
+export const ProductDetailsStyled = styled.div`
   width: 75%;
 `;
 
-export const ProductDetailsHeader = styled.div`
+export const ProductDetailsHeaderStyled = styled.div`
   width: 100%;
   margin-bottom: 2rem;
 `;
 
-export const ProductDetailsHeaderTitle = styled.div`
+export const ProductDetailsHeaderTitleStyled = styled.div`
   margin-bottom: 1rem;
 `;
 
-export const ProductDetailsHeaderData = styled.div`
+export const ProductDetailsHeaderDataStyled = styled.div`
   padding-top: 1rem;
 
   & small:nth-child(2) {
@@ -28,54 +28,54 @@ export const ProductDetailsHeaderData = styled.div`
   }
 `;
 
-export const ProductDetailsBottomContainer = styled.div`
+export const ProductDetailsBottomContainerStyled = styled.div`
   display: flex;
   margin-bottom: 6.5rem;
 `;
 
-export const ProductDetailsInfo = styled.div`
+export const ProductDetailsInfoStyled = styled.div`
   width: 65%;
   padding-left: 2rem;
   padding-right: 2rem;
 `;
 
-export const ProductDetailsInfoImage = styled.div`
+export const ProductDetailsInfoImageStyled = styled.div`
   width: 40rem;
   margin-left: auto;
   margin-right: auto;
 `;
 
-export const ProductDetailsPriceShippingCart = styled.div`
+export const ProductDetailsPriceShippingCartStyled = styled.div`
   width: 35%;
   padding-left: 2rem;
   padding-right: 2rem;
 `;
 
-export const ProductDetailsPriceShippingCartRow = styled.div`
+export const ProductDetailsPriceShippingCartRowStyled = styled.div`
   margin-top: 2.4rem;
   padding-top: 2.4rem;
 `;
 
-export const ProductDetailsPrice = styled.div`
+export const ProductDetailsPriceStyled = styled.div`
   & h2 {
     font-weight: 600;
   }
 `;
 
-export const ProductDetailsShippingBuy = styled.div`
+export const ProductDetailsShippingBuyStyled = styled.div`
   margin-bottom: 1rem;
 `;
 
-export const ProductDetailsShippingOption = styled.div`
+export const ProductDetailsShippingOptionStyled = styled.div`
   margin-top: 1rem;
 `;
 
-export const ProductDetailsDescription = styled.div`
+export const ProductDetailsDescriptionStyled = styled.div`
   padding-left: 2rem;
   padding-right: 2rem;
 `;
 
-export const ProductDetailsDescriptionHeader = styled.div`
+export const ProductDetailsDescriptionHeaderStyled = styled.div`
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
   text-align: left;
@@ -85,7 +85,7 @@ export const ProductDetailsDescriptionHeader = styled.div`
   }
 `;
 
-export const ProductDetailsDescriptionBody = styled.div`
+export const ProductDetailsDescriptionBodyStyled = styled.div`
   width: 75%;
   margin-left: auto;
   margin-right: auto;
