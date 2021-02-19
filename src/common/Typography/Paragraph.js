@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
 const ParagraphStyled = styled.p`
-  font-size: 1.6rem;
+  font-size: ${(props) =>
+    props.tagtype ? props.theme.fontsizes[props.tagtype] : '1.6rem'};
 
   ${({ tagtype }) =>
     tagtype &&
@@ -12,15 +13,18 @@ const ParagraphStyled = styled.p`
     `}
 `;
 
-const Paragraph = ({ children, tagtype }) => (
-  <ParagraphStyled tagtype={tagtype}>{children}</ParagraphStyled>
+const Paragraph = ({ children, tagtype, sizetype }) => (
+  <ParagraphStyled tagtype={tagtype} sizetype={sizetype}>
+    {children}
+  </ParagraphStyled>
 );
 
 Paragraph.propTypes = {
   children: PropTypes.node.isRequired,
   tagtype: PropTypes.string,
+  sizetype: PropTypes.string,
 };
 
-Paragraph.defaultProps = { tagtype: null };
+Paragraph.defaultProps = { tagtype: null, sizetype: null };
 
 export default Paragraph;
