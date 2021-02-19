@@ -149,13 +149,13 @@ export const CheckoutOrderSummaryItemListCellBigStyled = styled(
   text-align: left;
 
   & small {
-    max-width: 131px;
+    max-width: 13.1rem;
     display: block;
     text-overflow: ellipsis;
     word-wrap: break-word;
     overflow: hidden;
-    max-height: 3.9em;
-    line-height: 1.3em;
+    max-height: 3.9rem;
+    line-height: 1.3rem;
     font-size: inherit;
     font-weight: 400;
   }
