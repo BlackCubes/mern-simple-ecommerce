@@ -206,16 +206,14 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                           {prop.quantity}
                         </Paragraph>
 
-                        {/* <span>
-                      <Button
-                        rest={{
-                          type: 'button',
-                          onClick={() => removeProduct(prop.id)}
-                        }}
-                      >
-                        Remove
-                      </Button>
-                    </span> */}
+                        <Button
+                          rest={{
+                            type: 'button',
+                            onClick: () => removeProduct(prop.id),
+                          }}
+                        >
+                          Remove
+                        </Button>
                       </CheckoutOrderSummaryItemListCellStyled>
                     </CheckoutOrderSummaryItemListStyled>
                   ))}
