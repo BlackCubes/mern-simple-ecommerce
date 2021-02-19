@@ -159,47 +159,54 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                 </Paragraph>
 
                 <Paragraph sizetype="small">
-                  {shippingAddress.address && shippingAddress.city && shippingAddress.state && shippingAddress.zipcode ? ('Shipping') : 'No Shipping Address'}
+                  {shippingAddress.address &&
+                  shippingAddress.city &&
+                  shippingAddress.state &&
+                  shippingAddress.zipcode
+                    ? 'Shipping'
+                    : 'No Shipping Address'}
                 </Paragraph>
               </CheckoutOrderSummaryShippingStyled>
 
-              {!cart.length ? null : cart.map((prop) => (
-                <CheckoutOrderSummaryItemListStyled key={prop.id}>
-                  <CheckoutOrderSummaryItemListAvailableStyled>
-                    <Small sizetype="xsmall">
-                      Get it by&nbsp;
-                      {dateTimeFormat(
-                        'en-US',
-                        { weekday: 'short' },
-                        daysFromNow(3)
-                      )}
-                    </Small>
-                  </CheckoutOrderSummaryItemListAvailableStyled>
+              {!cart.length
+                ? null
+                : cart.map((prop) => (
+                    <CheckoutOrderSummaryItemListStyled key={prop.id}>
+                      <CheckoutOrderSummaryItemListAvailableStyled>
+                        <Small sizetype="xsmall">
+                          Get it by&nbsp;
+                          {dateTimeFormat(
+                            'en-US',
+                            { weekday: 'short' },
+                            daysFromNow(3)
+                          )}
+                        </Small>
+                      </CheckoutOrderSummaryItemListAvailableStyled>
 
-                  <CheckoutOrderSummaryItemListCellStyled>
-                    <CheckoutOrderSummaryItemListImgStyled>
-                      <Image
-                        rest={{
-                          src: prop.image,
-                          alt: prop.title,
-                        }}
-                      />
-                    </CheckoutOrderSummaryItemListImgStyled>
-                  </CheckoutOrderSummaryItemListCellStyled>
+                      <CheckoutOrderSummaryItemListCellStyled>
+                        <CheckoutOrderSummaryItemListImgStyled>
+                          <Image
+                            rest={{
+                              src: prop.image,
+                              alt: prop.title,
+                            }}
+                          />
+                        </CheckoutOrderSummaryItemListImgStyled>
+                      </CheckoutOrderSummaryItemListCellStyled>
 
-                  <CheckoutOrderSummaryItemListCellBigStyled>
-                    <Small>{prop.title}</Small>
-                  </CheckoutOrderSummaryItemListCellBigStyled>
+                      <CheckoutOrderSummaryItemListCellBigStyled>
+                        <Small>{prop.title}</Small>
+                      </CheckoutOrderSummaryItemListCellBigStyled>
 
-                  <CheckoutOrderSummaryItemListCellStyled>
-                    <Paragraph sizetype="small">{`$${prop.price}`}</Paragraph>
+                      <CheckoutOrderSummaryItemListCellStyled>
+                        <Paragraph sizetype="small">{`$${prop.price}`}</Paragraph>
 
-                    <Paragraph sizetype="small">
-                      Qty&nbsp;
-                      {prop.quantity}
-                    </Paragraph>
+                        <Paragraph sizetype="small">
+                          Qty&nbsp;
+                          {prop.quantity}
+                        </Paragraph>
 
-                    <span>
+                        {/* <span>
                       <Button
                         rest={{
                           type: 'button',
@@ -208,10 +215,10 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                       >
                         Remove
                       </Button>
-                    </span>
-                  </CheckoutOrderSummaryItemListCellStyled>
-                </CheckoutOrderSummaryItemListStyled>
-              ))}
+                    </span> */}
+                      </CheckoutOrderSummaryItemListCellStyled>
+                    </CheckoutOrderSummaryItemListStyled>
+                  ))}
             </CheckoutOrderSummaryListStyled>
           </CheckoutOrderSummaryStyled>
         </CheckoutOrderStyled>
