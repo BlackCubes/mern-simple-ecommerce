@@ -79,6 +79,8 @@ const CheckoutPage = ({ FormContainerComponent }) => {
     setValues(newValues);
   };
 
+  const addressFormModal = handleModal;
+
   console.log(cart);
 
   console.log(values);
@@ -122,7 +124,8 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                   <Button
                     rest={{
                       type: 'button',
-                      onClick: (e) => handleModal(e),
+                      // onClick: (e) => handleModal(e),
+                      onClick: (e) => addressFormModal(e),
                       colortype: 'transparent',
                       hovercolortype: 'moderate_blue_dark',
                       sizetype: 'small',
@@ -237,7 +240,7 @@ const CheckoutPage = ({ FormContainerComponent }) => {
       <Modal
         header="Enter Address"
         modalToggle={modalToggle}
-        handleModal={handleModal}
+        handleModal={addressFormModal}
       >
         <FormContainerComponent onSubmit={onSubmit} formFields={formFields} />
       </Modal>
