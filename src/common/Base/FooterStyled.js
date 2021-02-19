@@ -41,7 +41,7 @@ export const FooterFollowItemStyled = styled.li`
     margin: 0 1rem;
     padding: 0.6rem;
     color: ${(props) => props.theme.colors.white};
-    background-color: ${(props) => props.theme.colors.black_gray};
+    background-color: ${(props) => props.theme.colors.moderate_blue_dark};
     border-radius: 50%;
 
     &:hover {
