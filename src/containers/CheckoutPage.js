@@ -170,7 +170,7 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                 </Paragraph>
               </CheckoutOrderSummaryShippingStyled>
 
-              {!cart.length &&
+              {cart.length &&
                 cart.map((prop) => (
                   <CheckoutOrderSummaryItemListStyled key={prop.id}>
                     <CheckoutOrderSummaryItemListAvailableStyled>
