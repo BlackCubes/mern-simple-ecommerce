@@ -121,6 +121,7 @@ export const CheckoutOrderSummaryItemListStyled = styled.div`
 `;
 
 export const CheckoutOrderSummaryItemListAvailableStyled = styled.div`
+  display: table-caption;
   padding-bottom: 0.5rem;
 `;
 
