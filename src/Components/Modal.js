@@ -26,6 +26,9 @@ const Modal = ({ children, header, modalToggle, handleModal }) => (
           rest={{
             type: 'button',
             onClick: (e) => handleModal(e),
+            colortype: 'transparent',
+            hovercolortype: 'moderate_blue_dark',
+            nonbtn: true,
           }}
         >
           x
