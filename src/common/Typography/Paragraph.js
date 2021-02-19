@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 
 const ParagraphStyled = styled.p`
   font-size: ${(props) =>
-    props.tagtype ? props.theme.fontsizes[props.tagtype] : '1.6rem'};
+    props.sizetype ? props.theme.fontsizes[props.sizetype] : '1.6rem'};
 
   ${({ tagtype }) =>
     tagtype &&
