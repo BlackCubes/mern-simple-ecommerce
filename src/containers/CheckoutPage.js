@@ -48,10 +48,45 @@ import { daysFromNow, dateTimeFormat } from '../utils';
 const formFields = [
   {
     type: 'text',
-    name: 'name',
-    id: 'nameInput',
-    placeholder: 'Name',
-    message: 'Add in a name',
+    name: 'firstname',
+    id: 'firstname',
+    placeholder: 'First Name',
+    message: 'Please enter a first name.',
+  },
+  {
+    type: 'text',
+    name: 'lastname',
+    id: 'lastname',
+    placeholder: 'Last Name',
+    message: 'Please enter a last name.',
+  },
+  {
+    type: 'text',
+    name: 'address',
+    id: 'address',
+    placeholder: 'Address',
+    message: 'Please enter a address',
+  },
+  {
+    type: 'text',
+    name: 'city',
+    id: 'city',
+    placeholder: 'City',
+    message: 'Please enter a city.',
+  },
+  {
+    type: 'text',
+    name: 'state',
+    id: 'state',
+    placeholder: 'Address',
+    message: 'Please select a state.',
+  },
+  {
+    type: 'tel',
+    name: 'zipcode',
+    id: 'zipcode',
+    placeholder: 'ZIP Code',
+    message: 'Please enter a ZIP code',
   },
 ];
 
