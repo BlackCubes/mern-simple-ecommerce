@@ -120,7 +120,14 @@ const CheckoutPage = ({ FormContainerComponent }) => {
 
                 <CheckoutShippingInfoAddStyled>
                   <Button
-                    rest={{ type: 'button', onClick: (e) => handleModal(e) }}
+                    rest={{
+                      type: 'button',
+                      onClick: (e) => handleModal(e),
+                      colortype: 'transparent',
+                      hovercolortype: 'moderate_blue_dark',
+                      sizetype: 'small',
+                      nonbtn: true,
+                    }}
                   >
                     <span>Add a new address</span>
                   </Button>
@@ -211,6 +218,10 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                         rest={{
                           type: 'button',
                           onClick: () => removeProduct(prop.id),
+                          colortype: 'transparent',
+                          hovercolortype: 'moderate_blue_dark',
+                          sizetype: 'small',
+                          nonbtn: true,
                         }}
                       >
                         Remove
