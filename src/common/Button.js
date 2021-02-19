@@ -4,16 +4,18 @@ import styled, { css } from 'styled-components';
 
 const ButtonStyled = styled.button`
   display: inline-block;
-  width: ${({ duobtn, fullbtn }) =>
-    duobtn ? '40%' : fullbtn ? '100%' : '90%'};
-  font-size: 1.6rem;
+  width: ${({ duobtn, fullbtn, nonbtn }) =>
+    duobtn ? '40%' : fullbtn ? '100%' : nonbtn ? 'auto' : '90%'};
+  font-size: ${(props) =>
+    props.sizetype ? props.theme.fontsizes[props.sizetype] : '1.6rem'};
   background-color: ${(props) =>
     props.colortype
       ? props.theme.colors[props.colortype]
       : props.theme.colors.vivid_pink};
-  padding: ${({ duobtn, fullbtn }) => (duobtn || fullbtn ? '1rem' : '1.5rem')};
+  padding: ${({ duobtn, fullbtn, nonbtn }) =>
+    duobtn || fullbtn ? '1rem' : nonbtn ? '0' : '1.5rem'};
   border: none;
-  border-radius: 1rem;
+  border-radius: ${({ nonbtn }) => (nonbtn ? '0' : '1rem')};
   -webkit-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
   cursor: pointer;
@@ -25,8 +27,27 @@ const ButtonStyled = styled.button`
       cursor: not-allowed;
     `}
 
+  ${(props) =>
+    props.nonbtn &&
+    css`
+      color: ${props.theme.colors.moderate_blue_2};
+    `};
+
   &:hover {
-    background-color: ${(props) => props.theme.colors.vivid_pink_tone};
+    background-color: ${(props) =>
+      props.nonbtn ? 'transparent' : props.theme.colors.vivid_pink_tone};
+
+    ${(props) =>
+      props.hovercolortype &&
+      css`
+        color: ${props.theme.colors[props.hovercolortype]};
+      `};
+
+    ${({ nonbtn }) =>
+      nonbtn &&
+      css`
+        text-decoration: underline;
+      `};
   }
 `;
 
@@ -44,6 +65,9 @@ Button.propTypes = {
     duobtn: PropTypes.bool,
     fullbtn: PropTypes.bool,
     colortype: PropTypes.string,
+    hovercolortype: PropTypes.string,
+    nonbtn: PropTypes.bool,
+    sizetype: PropTypes.string,
   }),
 };
 
@@ -56,6 +80,9 @@ Button.defaultProps = {
     duobtn: false,
     fullbtn: false,
     colortype: null,
+    hovercolortype: null,
+    nonbtn: false,
+    sizetype: null,
   },
 };
 
