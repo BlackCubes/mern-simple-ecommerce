@@ -147,4 +147,16 @@ export const CheckoutOrderSummaryItemListCellBigStyled = styled(
   max-height: 3.9rem;
   padding-right: 0.8rem;
   text-align: left;
+
+  & small {
+    max-width: 131px;
+    display: block;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 3.9em;
+    line-height: 1.3em;
+    font-size: inherit;
+    font-weight: 400;
+  }
 `;
