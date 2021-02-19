@@ -79,6 +79,8 @@ const CheckoutPage = ({ FormContainerComponent }) => {
     setValues(newValues);
   };
 
+  console.log(cart);
+
   console.log(values);
   console.log(getBillingAddress, getShippingAddress);
   console.log(billingAddress);
