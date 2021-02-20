@@ -4,8 +4,10 @@ import Image from './Image';
 import { LabelStyled, InputStyled, InputMessageStyled } from './InputStyled';
 import Link from './Link';
 import {
-  ModalStyled,
+  ModalOverlayStyled,
+  ModalWindowStyled,
   ModalContainerStyled,
+  ModalStyled,
   ModalHeaderStyled,
   ModalBodyStyled,
   ModalButtonStyled,
@@ -20,8 +22,10 @@ export {
   InputStyled,
   LabelStyled,
   Link,
-  ModalStyled,
+  ModalOverlayStyled,
+  ModalWindowStyled,
   ModalContainerStyled,
+  ModalStyled,
   ModalHeaderStyled,
   ModalBodyStyled,
   ModalButtonStyled,
