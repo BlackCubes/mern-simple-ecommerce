@@ -25,6 +25,10 @@ const GlobalStyles = createGlobalStyle`
     position: relative;
     min-height: 100vh;
     box-sizing: border-box;
+
+    &.modal-open {
+      overflow: hidden;
+    }
   }
 
   ::selection {
