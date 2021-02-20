@@ -6,6 +6,8 @@ export const ModalOverlayStyled = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
+  transform: ${({ modaltoggle }) =>
+    modaltoggle ? 'translateY(0)' : 'translateY(-100vh)'};
   z-index: 2000;
 `;
 

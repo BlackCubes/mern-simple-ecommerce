@@ -22,7 +22,7 @@ const Modal = ({ children, header, modalToggle, handleModal }) => {
   }
 
   return (
-    <ModalOverlayStyled>
+    <ModalOverlayStyled modaltoggle={modalToggle}>
       <ModalWindowStyled modaltoggle={modalToggle}>
         <ModalContainerStyled>
           <ModalStyled>
