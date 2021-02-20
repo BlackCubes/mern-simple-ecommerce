@@ -15,11 +15,8 @@ import {
 import { HeadingQuaternary } from '../common/Typography';
 
 const Modal = ({ children, header, modalToggle, handleModal }) => {
-  if (modalToggle) {
-    document.body.classList.add('modal-open');
-  } else {
-    document.body.classList.remove('modal-open');
-  }
+  if (modalToggle) document.body.classList.add('modal-open');
+  else document.body.classList.remove('modal-open');
 
   return (
     <ModalOverlayStyled modaltoggle={modalToggle}>
