@@ -16,8 +16,8 @@ import { HeadingQuaternary } from '../common/Typography';
 
 const Modal = ({ children, header, modalToggle, handleModal }) => (
   <ModalOverlayStyled>
-    <ModalWindowStyled>
-      <ModalContainerStyled modaltoggle={modalToggle}>
+    <ModalWindowStyled modaltoggle={modalToggle}>
+      <ModalContainerStyled>
         <ModalStyled>
           <ModalHeaderStyled>
             <HeadingQuaternary>{header}</HeadingQuaternary>
