@@ -14,35 +14,43 @@ import {
 
 import { HeadingQuaternary } from '../common/Typography';
 
-const Modal = ({ children, header, modalToggle, handleModal }) => (
-  <ModalOverlayStyled>
-    <ModalWindowStyled modaltoggle={modalToggle}>
-      <ModalContainerStyled>
-        <ModalStyled>
-          <ModalHeaderStyled>
-            <HeadingQuaternary>{header}</HeadingQuaternary>
-          </ModalHeaderStyled>
+const Modal = ({ children, header, modalToggle, handleModal }) => {
+  if (modalToggle) {
+    document.body.classList.add('modal-open');
+  } else {
+    document.body.classList.remove('modal-open');
+  }
 
-          <ModalBodyStyled>{children}</ModalBodyStyled>
+  return (
+    <ModalOverlayStyled>
+      <ModalWindowStyled modaltoggle={modalToggle}>
+        <ModalContainerStyled>
+          <ModalStyled>
+            <ModalHeaderStyled>
+              <HeadingQuaternary>{header}</HeadingQuaternary>
+            </ModalHeaderStyled>
 
-          <ModalButtonStyled>
-            <Button
-              rest={{
-                type: 'button',
-                onClick: (e) => handleModal(e),
-                colortype: 'transparent',
-                hovercolortype: 'moderate_blue_dark',
-                nonbtn: true,
-              }}
-            >
-              x
-            </Button>
-          </ModalButtonStyled>
-        </ModalStyled>
-      </ModalContainerStyled>
-    </ModalWindowStyled>
-  </ModalOverlayStyled>
-);
+            <ModalBodyStyled>{children}</ModalBodyStyled>
+
+            <ModalButtonStyled>
+              <Button
+                rest={{
+                  type: 'button',
+                  onClick: (e) => handleModal(e),
+                  colortype: 'transparent',
+                  hovercolortype: 'moderate_blue_dark',
+                  nonbtn: true,
+                }}
+              >
+                x
+              </Button>
+            </ModalButtonStyled>
+          </ModalStyled>
+        </ModalContainerStyled>
+      </ModalWindowStyled>
+    </ModalOverlayStyled>
+  );
+};
 
 Modal.propTypes = {
   children: PropTypes.node.isRequired,
