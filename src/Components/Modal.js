@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 
 import {
   Button,
-  ModalStyled,
+  ModalOverlayStyled,
+  ModalWindowStyled,
   ModalContainerStyled,
+  ModalStyled,
   ModalHeaderStyled,
   ModalBodyStyled,
   ModalButtonStyled,
@@ -13,29 +15,33 @@ import {
 import { HeadingQuaternary } from '../common/Typography';
 
 const Modal = ({ children, header, modalToggle, handleModal }) => (
-  <ModalContainerStyled modaltoggle={modalToggle}>
-    <ModalStyled>
-      <ModalHeaderStyled>
-        <HeadingQuaternary>{header}</HeadingQuaternary>
-      </ModalHeaderStyled>
+  <ModalOverlayStyled>
+    <ModalWindowStyled>
+      <ModalContainerStyled modaltoggle={modalToggle}>
+        <ModalStyled>
+          <ModalHeaderStyled>
+            <HeadingQuaternary>{header}</HeadingQuaternary>
+          </ModalHeaderStyled>
 
-      <ModalBodyStyled>{children}</ModalBodyStyled>
+          <ModalBodyStyled>{children}</ModalBodyStyled>
 
-      <ModalButtonStyled>
-        <Button
-          rest={{
-            type: 'button',
-            onClick: (e) => handleModal(e),
-            colortype: 'transparent',
-            hovercolortype: 'moderate_blue_dark',
-            nonbtn: true,
-          }}
-        >
-          x
-        </Button>
-      </ModalButtonStyled>
-    </ModalStyled>
-  </ModalContainerStyled>
+          <ModalButtonStyled>
+            <Button
+              rest={{
+                type: 'button',
+                onClick: (e) => handleModal(e),
+                colortype: 'transparent',
+                hovercolortype: 'moderate_blue_dark',
+                nonbtn: true,
+              }}
+            >
+              x
+            </Button>
+          </ModalButtonStyled>
+        </ModalStyled>
+      </ModalContainerStyled>
+    </ModalWindowStyled>
+  </ModalOverlayStyled>
 );
 
 Modal.propTypes = {
