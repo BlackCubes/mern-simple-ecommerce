@@ -157,9 +157,20 @@ const FormContainer = ({ onSubmit, formFields }) => {
     setValues((val) => ({ ...val, [name]: value }));
   };
 
+  const validateForm = (errorList) => {
+    let valid = true;
+    Object.values(errorList).forEach((err) => {
+      if (err.length) valid = false;
+    });
+    return valid;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(values);
+    if (validateForm(errors)) {
+      onSubmit(values);
+      setValues({});
+    }
   };
 
   const inputProperties = formFields.map((prop) =>
