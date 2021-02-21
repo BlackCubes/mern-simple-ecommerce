@@ -1,5 +1,3 @@
-// import React from 'react';
-// import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 export const LabelStyled = styled.label`
@@ -55,44 +53,6 @@ export const InputMessageStyled = styled.span`
   display: block;
   color: ${(props) => props.theme.colors.moderate_blue_2};
   margin-top: 0.5rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
   text-align: left;
   transition: all 0.3s;
 `;
-
-// const Input = ({ inputprop, error }) => (
-//   <LabelStyled htmlFor={inputprop.id}>
-//     <InputStyled
-//       type={inputprop.type}
-//       name={inputprop.name}
-//       className={inputprop.className}
-//       id={inputprop.id}
-//       value={inputprop.value}
-//       placeholder={inputprop.placeholder}
-//       onChange={inputprop.onChange}
-//       noValidate={inputprop.noValidate}
-//     />
-
-//     <InputMessageStyled>{error || inputprop.message}</InputMessageStyled>
-//   </LabelStyled>
-// );
-
-// Input.propTypes = {
-//   inputprop: PropTypes.shape({
-//     type: PropTypes.string,
-//     name: PropTypes.string.isRequired,
-//     className: PropTypes.string,
-//     id: PropTypes.string.isRequired,
-//     value: PropTypes.string,
-//     placeholder: PropTypes.string.isRequired,
-//     onChange: PropTypes.func.isRequired,
-//     noValidate: PropTypes.bool,
-//     message: PropTypes.string.isRequired,
-//   }).isRequired,
-//   error: PropTypes.string,
-// };
-
-// Input.defaultProps = { error: null };
-
-// export default Input;
