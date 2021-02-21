@@ -12,7 +12,7 @@ import {
   ModalButtonStyled,
 } from '../common';
 
-import { HeadingQuaternary } from '../common/Typography';
+import { HeadingTertiary } from '../common/Typography';
 
 const Modal = ({ children, header, modalToggle, handleModal }) => {
   if (modalToggle) document.body.classList.add('modal-open');
@@ -24,7 +24,7 @@ const Modal = ({ children, header, modalToggle, handleModal }) => {
         <ModalContainerStyled>
           <ModalStyled>
             <ModalHeaderStyled>
-              <HeadingQuaternary>{header}</HeadingQuaternary>
+              <HeadingTertiary fontweighttype={600}>{header}</HeadingTertiary>
             </ModalHeaderStyled>
 
             <ModalBodyStyled>{children}</ModalBodyStyled>
