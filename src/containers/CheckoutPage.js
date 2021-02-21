@@ -126,7 +126,6 @@ const formFields = [
 ];
 
 const CheckoutPage = ({ FormContainerComponent }) => {
-  const [values, setValues] = useState({});
   const [modalToggle, setModalToggle] = useState(false);
   const { cart, removeProduct } = useCartContext();
   const {
@@ -145,8 +144,8 @@ const CheckoutPage = ({ FormContainerComponent }) => {
     setModalToggle((bool) => !bool);
   };
 
-  const onSubmit = (newValues) => {
-    setValues(newValues);
+  const onAddressSubmit = (newValues) => {
+    getShippingAddress(newValues);
     setModalToggle(false);
   };
 
@@ -154,7 +153,6 @@ const CheckoutPage = ({ FormContainerComponent }) => {
 
   console.log(cart);
 
-  console.log(values);
   console.log(getBillingAddress, getShippingAddress);
   console.log(billingAddress);
 
@@ -175,19 +173,19 @@ const CheckoutPage = ({ FormContainerComponent }) => {
               <CheckoutShippingInfoStyled>
                 <CheckoutShippingInfoSavedStyled>
                   <Paragraph>
-                    {shippingAddress.userName
-                      ? shippingAddress.userName
+                    {shippingAddress.firstname && shippingAddress.lastname
+                      ? `${shippingAddress.name} ${shippingAddress.lastname}`
                       : 'No Name'}
                   </Paragraph>
                   <Paragraph>
-                    {shippingAddress.address
-                      ? shippingAddress.address
-                      : 'No Address'}
+                    {shippingAddress.address || 'No Address'}
                   </Paragraph>
                   <Paragraph>
-                    {shippingAddress.cityZip
-                      ? shippingAddress.cityZip
-                      : 'No City'}
+                    {shippingAddress.city &&
+                    shippingAddress.state &&
+                    shippingAddress.zipcode
+                      ? `${shippingAddress.city}, ${shippingAddress.state} ${shippingAddress.zipcode}`
+                      : 'No City, State, or ZIP Code'}
                   </Paragraph>
                 </CheckoutShippingInfoSavedStyled>
 
@@ -313,7 +311,10 @@ const CheckoutPage = ({ FormContainerComponent }) => {
         modalToggle={modalToggle}
         handleModal={addressFormModal}
       >
-        <FormContainerComponent onSubmit={onSubmit} formFields={formFields} />
+        <FormContainerComponent
+          onSubmit={onAddressSubmit}
+          formFields={formFields}
+        />
       </Modal>
     </CheckoutStyled>
   );
