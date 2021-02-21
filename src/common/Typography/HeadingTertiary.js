@@ -15,7 +15,7 @@ const HeadingTertiary = ({ children, fontweighttype }) => (
 
 HeadingTertiary.propTypes = {
   children: PropTypes.node.isRequired,
-  fontweighttype: PropTypes.string,
+  fontweighttype: PropTypes.number,
 };
 
 HeadingTertiary.defaultProps = { fontweighttype: 400 };
