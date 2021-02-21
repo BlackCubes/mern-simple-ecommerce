@@ -52,6 +52,11 @@ const formFields = [
     id: 'firstname',
     placeholder: 'First Name',
     message: 'Please enter a first name.',
+    addlstyle: {
+      flex: '1 22rem',
+      float: 'left',
+      padding: '0 0.75rem',
+    },
   },
   {
     type: 'text',
@@ -59,6 +64,11 @@ const formFields = [
     id: 'lastname',
     placeholder: 'Last Name',
     message: 'Please enter a last name.',
+    addlstyle: {
+      flex: '1 22rem',
+      float: 'left',
+      padding: '0 0.75rem',
+    },
   },
   {
     type: 'text',
@@ -66,6 +76,10 @@ const formFields = [
     id: 'address',
     placeholder: 'Address',
     message: 'Please enter a address',
+    addlstyle: {
+      float: 'left',
+      padding: '0 0.75rem',
+    },
   },
   {
     type: 'text',
@@ -73,6 +87,10 @@ const formFields = [
     id: 'city',
     placeholder: 'City',
     message: 'Please enter a city.',
+    addlstyle: {
+      float: 'left',
+      padding: '0 0.75rem',
+    },
   },
   {
     type: 'text',
@@ -80,6 +98,10 @@ const formFields = [
     id: 'state',
     placeholder: 'State',
     message: 'Please select a state.',
+    addlstyle: {
+      float: 'left',
+      padding: '0 0.75rem',
+    },
   },
   {
     type: 'tel',
@@ -87,6 +109,10 @@ const formFields = [
     id: 'zipcode',
     placeholder: 'ZIP Code',
     message: 'Please enter a ZIP code',
+    addlstyle: {
+      float: 'left',
+      padding: '0 0.75rem',
+    },
   },
 ];
 
