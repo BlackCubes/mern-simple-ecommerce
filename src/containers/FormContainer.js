@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { FormStyled, FormGroupStyled } from '../common';
+import { Button, FormStyled, FormGroupStyled } from '../common';
 
-import { Button, Input } from '../Components';
+import { Input } from '../Components';
 
 import { fieldInputErrors, fieldInputProperties } from '../utils';
 
