@@ -8,6 +8,7 @@ export const fieldInputProperties = (prop) => ({
   onChange: prop.onChange,
   noValidate: prop.noValidate || true,
   message: prop.message,
+  addlstyle: prop.addlstyle,
 });
 
 export const fieldInputErrors = (name, errors) =>
