@@ -127,6 +127,7 @@ const addressFormFields = [
 
 const CheckoutPage = ({ FormContainerComponent }) => {
   const [addressModalToggle, setAddressModalToggle] = useState(false);
+  // const [billingAddressModalToggle, setBillingAddressModalToggle] = useState(false);
   const { cart, removeProduct } = useCartContext();
   const {
     subTotal,
@@ -139,7 +140,7 @@ const CheckoutPage = ({ FormContainerComponent }) => {
   } = useCheckoutContext();
   console.log(subTotal, salesTax, finalTotal);
 
-  const handleModal = (e) => {
+  const addressFormModal = (e) => {
     e.preventDefault();
     setAddressModalToggle((bool) => !bool);
   };
@@ -149,7 +150,7 @@ const CheckoutPage = ({ FormContainerComponent }) => {
     setAddressModalToggle(false);
   };
 
-  const addressFormModal = handleModal;
+  // const addressFormModal = handleModal;
 
   console.log(cart);
 
