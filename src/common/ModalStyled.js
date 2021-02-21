@@ -33,7 +33,7 @@ export const ModalStyled = styled.div`
   width: 50%;
   position: relative;
   margin: 6rem auto;
-  padding: 3.6rem;
+  padding: 4rem;
   background-color: ${(props) => props.theme.colors.white};
 `;
 
