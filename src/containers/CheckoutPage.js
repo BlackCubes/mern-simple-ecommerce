@@ -177,10 +177,10 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                       ? `${shippingAddress.firstname} ${shippingAddress.lastname}`
                       : 'No Name'}
                   </Paragraph>
-                  <Paragraph>
+                  <Paragraph texttransformtype="uppercase">
                     {shippingAddress.address || 'No Address'}
                   </Paragraph>
-                  <Paragraph>
+                  <Paragraph texttransformtype="uppercase">
                     {shippingAddress.city &&
                     shippingAddress.state &&
                     shippingAddress.zipcode
