@@ -13,6 +13,7 @@ export const InputStyled = styled.input`
   margin-left: auto;
   margin-right: auto;
   padding: 1.5rem;
+  background-color: rgba(51, 70, 144, 0.1);
   border: none;
   border-bottom: 0.3rem solid transparent;
   border-radius: 0.2rem;
@@ -20,7 +21,7 @@ export const InputStyled = styled.input`
 
   &:focus {
     outline: none;
-    border-bottom: 0.3rem solid ${(props) => props.theme.colors.lime_green};
+    border-bottom: 0.3rem solid ${(props) => props.theme.colors.moderate_blue_2};
   }
 
   &:focus:invalid {
@@ -52,6 +53,7 @@ export const InputStyled = styled.input`
 
 export const InputMessageStyled = styled.span`
   display: block;
+  color: ${(props) => props.theme.colors.moderate_blue_2};
   margin-top: 0.5rem;
   margin-left: 1rem;
   margin-right: 1rem;
