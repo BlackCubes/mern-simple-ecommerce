@@ -53,7 +53,7 @@ const FormContainer = ({ onSubmit, formFields }) => {
         );
       })}
 
-      <FormGroupStyled>
+      <FormGroupStyled addlstyle={{ '> button': { width: '100%' } }}>
         <Button
           rest={{
             type: 'button',
