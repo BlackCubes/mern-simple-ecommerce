@@ -147,6 +147,7 @@ const CheckoutPage = ({ FormContainerComponent }) => {
 
   const onSubmit = (newValues) => {
     setValues(newValues);
+    setModalToggle(false);
   };
 
   const addressFormModal = handleModal;
