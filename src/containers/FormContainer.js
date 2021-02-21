@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { FormStyled, FormGroupStyled } from '../common';
 
-import { Input } from '../Components';
+import { Button, Input } from '../Components';
 
 import { fieldInputErrors, fieldInputProperties } from '../utils';
 
@@ -52,6 +52,16 @@ const FormContainer = ({ onSubmit, formFields }) => {
           </FormGroupStyled>
         );
       })}
+
+      <FormGroupStyled>
+        <Button
+          rest={{
+            type: 'button',
+          }}
+        >
+          Save
+        </Button>
+      </FormGroupStyled>
     </FormStyled>
   );
 };
