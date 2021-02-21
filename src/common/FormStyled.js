@@ -6,9 +6,7 @@ export const FormStyled = styled.form`
   margin-right: auto;
 `;
 
-export const FormGroupStyled = styled.div(
-  ({ addlstyle }) => addlstyle && { ...addlstyle }
-)`
+export const FormGroupStyled = styled.div(({ addlstyle }) => addlstyle || null)`
   margin: 1.5rem 0;
 `;
 
