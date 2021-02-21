@@ -127,7 +127,9 @@ const addressFormFields = [
 
 const CheckoutPage = ({ FormContainerComponent }) => {
   const [addressModalToggle, setAddressModalToggle] = useState(false);
-  // const [billingAddressModalToggle, setBillingAddressModalToggle] = useState(false);
+  const [billingAddressModalToggle, setBillingAddressModalToggle] = useState(
+    false
+  );
   const { cart, removeProduct } = useCartContext();
   const {
     subTotal,
@@ -150,7 +152,15 @@ const CheckoutPage = ({ FormContainerComponent }) => {
     setAddressModalToggle(false);
   };
 
-  // const addressFormModal = handleModal;
+  const billingAddressFormModal = (e) => {
+    e.preventDefault();
+    setBillingAddressModalToggle((bool) => !bool);
+  };
+
+  const onBillingAddressSubmit = (newValues) => {
+    getBillingAddress(newValues);
+    setBillingAddressModalToggle(false);
+  };
 
   console.log(cart);
 
@@ -308,12 +318,23 @@ const CheckoutPage = ({ FormContainerComponent }) => {
       </CheckoutSecondaryStyled>
 
       <Modal
-        header="Enter Address"
+        header="Enter Address Details"
         modalToggle={addressModalToggle}
         handleModal={addressFormModal}
       >
         <FormContainerComponent
           onSubmit={onAddressSubmit}
+          formFields={addressFormFields}
+        />
+      </Modal>
+
+      <Modal
+        header="Enter Card and Address Details"
+        modalToggle={billingAddressModalToggle}
+        handleModal={billingAddressFormModal}
+      >
+        <FormContainerComponent
+          onSubmit={onBillingAddressSubmit}
           formFields={addressFormFields}
         />
       </Modal>
