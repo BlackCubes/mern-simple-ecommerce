@@ -104,7 +104,7 @@ const formFields = [
     placeholder: 'State',
     message: 'Please select a state.',
     addlstyle: {
-      width: 'calc(100% / 3)',
+      width: 'calc(100% / 4)',
       flex: '1 22rem',
       float: 'left',
       padding: '0 0.75rem',
