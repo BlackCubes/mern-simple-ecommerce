@@ -34,6 +34,7 @@ const FormContainer = ({ onSubmit, formFields }) => {
       onChange: handleChange,
       noValidate: prop.noValidate,
       message: prop.message,
+      addlstyle: prop.addlstyle,
     })
   );
 
@@ -46,7 +47,7 @@ const FormContainer = ({ onSubmit, formFields }) => {
       {inputProperties.map((prop, key) => {
         const ind = key;
         return (
-          <FormGroupStyled key={ind}>
+          <FormGroupStyled key={ind} addlstyle={prop.addlstyle}>
             <Input inputprop={prop} errors={inputErrors[key]} />
           </FormGroupStyled>
         );
