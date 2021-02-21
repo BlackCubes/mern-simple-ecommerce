@@ -51,7 +51,7 @@ const formFields = [
     name: 'firstname',
     id: 'firstname',
     placeholder: 'First Name',
-    message: 'Please enter a first name.',
+    message: "Let's go!",
     addlstyle: {
       width: '50%',
       flex: '1 22rem',
@@ -64,7 +64,7 @@ const formFields = [
     name: 'lastname',
     id: 'lastname',
     placeholder: 'Last Name',
-    message: 'Please enter a last name.',
+    message: "Let's go!",
     addlstyle: {
       width: '50%',
       flex: '1 22rem',
@@ -77,7 +77,7 @@ const formFields = [
     name: 'address',
     id: 'address',
     placeholder: 'Address',
-    message: 'Please enter a address',
+    message: "Let's go!",
     addlstyle: {
       width: '100%',
       float: 'left',
@@ -89,7 +89,7 @@ const formFields = [
     name: 'city',
     id: 'city',
     placeholder: 'City',
-    message: 'Please enter a city.',
+    message: "Let's go!",
     addlstyle: {
       width: 'calc(100% / 1.85)',
       flex: '1 22rem',
@@ -102,7 +102,7 @@ const formFields = [
     name: 'state',
     id: 'state',
     placeholder: 'State',
-    message: 'Please select a state.',
+    message: "Let's go!",
     addlstyle: {
       width: 'calc(100% / 5)',
       flex: '1 22rem',
@@ -115,7 +115,7 @@ const formFields = [
     name: 'zipcode',
     id: 'zipcode',
     placeholder: 'ZIP Code',
-    message: 'Please enter a ZIP code',
+    message: "Let's go!",
     addlstyle: {
       width: 'calc(100% / 4)',
       flex: '1 22rem',
