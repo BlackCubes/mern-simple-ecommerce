@@ -2,6 +2,8 @@ import axios from 'axios';
 
 import { fieldInputErrors, fieldInputProperties } from './fieldPropHandler';
 
+import regex from './regex';
+
 // API
 const getProductsAPI = async () => {
   try {
@@ -61,4 +63,5 @@ export {
   getCategoriesAPI,
   getProductAPI,
   getProductsAPI,
+  regex,
 };
