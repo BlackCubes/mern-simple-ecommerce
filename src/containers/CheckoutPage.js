@@ -78,7 +78,7 @@ const formFields = [
     type: 'text',
     name: 'state',
     id: 'state',
-    placeholder: 'Address',
+    placeholder: 'State',
     message: 'Please select a state.',
   },
   {
