@@ -45,7 +45,7 @@ import { useCheckoutContext } from '../context/CheckoutContext';
 
 import { daysFromNow, dateTimeFormat } from '../utils';
 
-const formFields = [
+const addressFormFields = [
   {
     type: 'text',
     name: 'firstname',
@@ -313,7 +313,7 @@ const CheckoutPage = ({ FormContainerComponent }) => {
       >
         <FormContainerComponent
           onSubmit={onAddressSubmit}
-          formFields={formFields}
+          formFields={addressFormFields}
         />
       </Modal>
     </CheckoutStyled>
