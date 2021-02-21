@@ -208,7 +208,7 @@ const FormContainer = ({ onSubmit, formFields }) => {
       >
         <Button
           rest={{
-            type: 'button',
+            type: 'submit',
           }}
         >
           Save
