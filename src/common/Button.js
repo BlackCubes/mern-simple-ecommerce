@@ -15,7 +15,7 @@ const ButtonStyled = styled.button`
   padding: ${({ duobtn, fullbtn, nonbtn }) =>
     duobtn || fullbtn ? '1rem' : nonbtn ? '0' : '1.5rem'};
   border: none;
-  border-radius: ${({ nonbtn }) => (nonbtn ? '0' : '1rem')};
+  border-radius: ${({ nonbtn }) => (nonbtn ? '0' : '0.2rem')};
   -webkit-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
   cursor: pointer;
