@@ -187,7 +187,7 @@ const FormContainer = ({ onSubmit, formFields }) => {
         const ind = key;
         return (
           <FormGroupStyled key={ind} addlstyle={prop.addlstyle}>
-            <Input inputprop={prop} errors={inputErrors[key]} />
+            <Input inputprop={prop} error={inputErrors[key]} />
           </FormGroupStyled>
         );
       })}
