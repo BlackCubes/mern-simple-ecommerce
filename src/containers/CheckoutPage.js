@@ -91,7 +91,8 @@ const formFields = [
     placeholder: 'City',
     message: 'Please enter a city.',
     addlstyle: {
-      width: '100%',
+      width: 'calc(100% / 3)',
+      flex: '1 22rem',
       float: 'left',
       padding: '0 0.75rem',
     },
@@ -103,7 +104,8 @@ const formFields = [
     placeholder: 'State',
     message: 'Please select a state.',
     addlstyle: {
-      width: '100%',
+      width: 'calc(100% / 3)',
+      flex: '1 22rem',
       float: 'left',
       padding: '0 0.75rem',
     },
@@ -115,7 +117,8 @@ const formFields = [
     placeholder: 'ZIP Code',
     message: 'Please enter a ZIP code',
     addlstyle: {
-      width: '100%',
+      width: 'calc(100% / 3)',
+      flex: '1 22rem',
       float: 'left',
       padding: '0 0.75rem',
     },
