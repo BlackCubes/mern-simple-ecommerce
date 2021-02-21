@@ -126,7 +126,7 @@ const formFields = [
 ];
 
 const CheckoutPage = ({ FormContainerComponent }) => {
-  const [values, setValues] = useState();
+  const [values, setValues] = useState({});
   const [modalToggle, setModalToggle] = useState(false);
   const { cart, removeProduct } = useCartContext();
   const {
