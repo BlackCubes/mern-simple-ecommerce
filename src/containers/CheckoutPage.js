@@ -153,7 +153,7 @@ const CheckoutPage = ({ FormContainerComponent }) => {
 
   console.log(cart);
 
-  console.log(getBillingAddress, getShippingAddress);
+  console.log(getBillingAddress);
   console.log(billingAddress);
 
   return (
@@ -174,7 +174,7 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                 <CheckoutShippingInfoSavedStyled>
                   <Paragraph>
                     {shippingAddress.firstname && shippingAddress.lastname
-                      ? `${shippingAddress.name} ${shippingAddress.lastname}`
+                      ? `${shippingAddress.firstname} ${shippingAddress.lastname}`
                       : 'No Name'}
                   </Paragraph>
                   <Paragraph>
