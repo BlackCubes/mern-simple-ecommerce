@@ -12,12 +12,3 @@ export const FormGroupStyled = styled.div(
   },
   ({ addlstyle }) => addlstyle
 );
-
-export const FormTwoInputsStyled = styled.div`
-  flex: 1 22rem;
-`;
-
-export const FormAddressStyled = styled.div`
-  float: left;
-  padding: 0 0.75rem;
-`;

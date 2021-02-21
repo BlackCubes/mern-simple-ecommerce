@@ -1,10 +1,5 @@
 import Button from './Button';
-import {
-  FormStyled,
-  FormGroupStyled,
-  FormTwoInputsStyled,
-  FormAddressStyled,
-} from './FormStyled';
+import { FormStyled, FormGroupStyled } from './FormStyled';
 import Image from './Image';
 import { LabelStyled, InputStyled, InputMessageStyled } from './InputStyled';
 import Link from './Link';
@@ -22,8 +17,6 @@ export {
   Button,
   FormStyled,
   FormGroupStyled,
-  FormTwoInputsStyled,
-  FormAddressStyled,
   Image,
   InputMessageStyled,
   InputStyled,
