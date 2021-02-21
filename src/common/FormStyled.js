@@ -6,9 +6,12 @@ export const FormStyled = styled.form`
   margin-right: auto;
 `;
 
-export const FormGroupStyled = styled.div(({ addlstyle }) => addlstyle || null)`
-  margin: 1.5rem 0;
-`;
+export const FormGroupStyled = styled.div(
+  {
+    margin: '1.5rem 0',
+  },
+  ({ addlstyle }) => addlstyle
+);
 
 export const FormTwoInputsStyled = styled.div`
   flex: 1 22rem;
