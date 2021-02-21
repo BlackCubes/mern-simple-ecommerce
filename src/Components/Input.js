@@ -14,6 +14,7 @@ const Input = ({ inputprop, error }) => (
       placeholder={inputprop.placeholder}
       onChange={inputprop.onChange}
       noValidate={inputprop.noValidate}
+      addlstyle={inputprop.addlstyle}
     />
 
     <InputMessageStyled>{error || inputprop.message}</InputMessageStyled>
@@ -30,6 +31,7 @@ Input.propTypes = {
     placeholder: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
     noValidate: PropTypes.bool,
+    addlstyle: PropTypes.oneOfType([PropTypes.object]),
     message: PropTypes.string.isRequired,
   }).isRequired,
   error: PropTypes.string,
