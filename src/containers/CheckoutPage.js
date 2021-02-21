@@ -126,7 +126,7 @@ const addressFormFields = [
 ];
 
 const CheckoutPage = ({ FormContainerComponent }) => {
-  const [modalToggle, setModalToggle] = useState(false);
+  const [addressModalToggle, setAddressModalToggle] = useState(false);
   const { cart, removeProduct } = useCartContext();
   const {
     subTotal,
@@ -141,12 +141,12 @@ const CheckoutPage = ({ FormContainerComponent }) => {
 
   const handleModal = (e) => {
     e.preventDefault();
-    setModalToggle((bool) => !bool);
+    setAddressModalToggle((bool) => !bool);
   };
 
   const onAddressSubmit = (newValues) => {
     getShippingAddress(newValues);
-    setModalToggle(false);
+    setAddressModalToggle(false);
   };
 
   const addressFormModal = handleModal;
@@ -308,7 +308,7 @@ const CheckoutPage = ({ FormContainerComponent }) => {
 
       <Modal
         header="Enter Address"
-        modalToggle={modalToggle}
+        modalToggle={addressModalToggle}
         handleModal={addressFormModal}
       >
         <FormContainerComponent
