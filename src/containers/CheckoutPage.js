@@ -53,6 +53,7 @@ const formFields = [
     placeholder: 'First Name',
     message: 'Please enter a first name.',
     addlstyle: {
+      width: '50%',
       flex: '1 22rem',
       float: 'left',
       padding: '0 0.75rem',
@@ -65,6 +66,7 @@ const formFields = [
     placeholder: 'Last Name',
     message: 'Please enter a last name.',
     addlstyle: {
+      width: '50%',
       flex: '1 22rem',
       float: 'left',
       padding: '0 0.75rem',
