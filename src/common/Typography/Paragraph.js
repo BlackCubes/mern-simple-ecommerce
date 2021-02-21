@@ -11,10 +11,20 @@ const ParagraphStyled = styled.p`
     css`
       font-weight: 600;
     `}
+
+  ${({ texttransformtype }) =>
+    texttransformtype &&
+    css`
+      text-transform: ${texttransformtype};
+    `}
 `;
 
-const Paragraph = ({ children, tagtype, sizetype }) => (
-  <ParagraphStyled tagtype={tagtype} sizetype={sizetype}>
+const Paragraph = ({ children, tagtype, sizetype, texttransformtype }) => (
+  <ParagraphStyled
+    tagtype={tagtype}
+    sizetype={sizetype}
+    texttransformtype={texttransformtype}
+  >
     {children}
   </ParagraphStyled>
 );
@@ -23,8 +33,13 @@ Paragraph.propTypes = {
   children: PropTypes.node.isRequired,
   tagtype: PropTypes.string,
   sizetype: PropTypes.string,
+  texttransformtype: PropTypes.string,
 };
 
-Paragraph.defaultProps = { tagtype: null, sizetype: null };
+Paragraph.defaultProps = {
+  tagtype: null,
+  sizetype: null,
+  texttransformtype: null,
+};
 
 export default Paragraph;
