@@ -71,7 +71,6 @@ export const ModalBodyStyled = styled.div`
   flex-wrap: wrap;
   flex-direction: row;
   width: 100%;
-  margin: 1.4rem -7.5rem 0;
 `;
 
 export const ModalButtonStyled = styled.div`
