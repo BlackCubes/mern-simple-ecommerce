@@ -260,21 +260,6 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                       <Paragraph texttransformtype="uppercase">{`${shippingAddress.city}, ${shippingAddress.state} ${shippingAddress.zipcode}`}</Paragraph>
                     </>
                   )}
-                  {/* <Paragraph>
-                    {shippingAddress.firstname && shippingAddress.lastname
-                      ? `${shippingAddress.firstname} ${shippingAddress.lastname}`
-                      : 'No Name'}
-                  </Paragraph>
-                  <Paragraph texttransformtype="uppercase">
-                    {shippingAddress.address || 'No Address'}
-                  </Paragraph>
-                  <Paragraph texttransformtype="uppercase">
-                    {shippingAddress.city &&
-                    shippingAddress.state &&
-                    shippingAddress.zipcode
-                      ? `${shippingAddress.city}, ${shippingAddress.state} ${shippingAddress.zipcode}`
-                      : 'No City, State, or ZIP Code'}
-                  </Paragraph> */}
                 </CheckoutShippingInfoSavedStyled>
 
                 <CheckoutShippingInfoAddStyled>
@@ -334,21 +319,6 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                       <Paragraph texttransformtype="uppercase">{`${billingAddress.city}, ${billingAddress.state} ${billingAddress.zipcode}`}</Paragraph>
                     </>
                   )}
-                  {/* <Paragraph>
-                    {billingAddress.firstname && billingAddress.lastname
-                      ? `${billingAddress.firstname} ${billingAddress.lastname}`
-                      : 'No Name'}
-                  </Paragraph>
-                  <Paragraph texttransformtype="uppercase">
-                    {billingAddress.address || 'No Address'}
-                  </Paragraph>
-                  <Paragraph texttransformtype="uppercase">
-                    {billingAddress.city &&
-                    billingAddress.state &&
-                    billingAddress.zipcode
-                      ? `${billingAddress.city}, ${billingAddress.state} ${billingAddress.zipcode}`
-                      : 'No City, State, or ZIP Code'}
-                  </Paragraph> */}
                 </CheckoutShippingInfoSavedStyled>
 
                 <CheckoutShippingInfoAddStyled>
