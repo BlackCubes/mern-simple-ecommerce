@@ -20,6 +20,7 @@ export const CheckoutPageHeaderStyled = styled.div`
 `;
 
 export const CheckoutShippingCardStyled = styled.div`
+  height: 30rem;
   margin: 3rem 1.5rem;
   padding: 3.2rem 2.4rem;
 `;
