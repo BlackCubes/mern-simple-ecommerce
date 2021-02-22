@@ -204,7 +204,6 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                   <Button
                     rest={{
                       type: 'button',
-                      // onClick: (e) => handleModal(e),
                       onClick: (e) => addressFormModal(e),
                       colortype: 'transparent',
                       hovercolortype: 'moderate_blue_dark',
@@ -212,7 +211,7 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                       nonbtn: true,
                     }}
                   >
-                    <span>Add a new address</span>
+                    <span>Add a new shipping address</span>
                   </Button>
                 </CheckoutShippingInfoAddStyled>
               </CheckoutShippingInfoStyled>
@@ -266,7 +265,6 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                   <Button
                     rest={{
                       type: 'button',
-                      // onClick: (e) => handleModal(e),
                       onClick: (e) => addressFormModal(e),
                       colortype: 'transparent',
                       hovercolortype: 'moderate_blue_dark',
@@ -274,7 +272,7 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                       nonbtn: true,
                     }}
                   >
-                    <span>Add a new address</span>
+                    <span>Add a new billing address</span>
                   </Button>
                 </CheckoutShippingInfoAddStyled>
               </CheckoutShippingInfoStyled>
