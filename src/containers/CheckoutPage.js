@@ -175,12 +175,12 @@ const CheckoutPage = ({ FormContainerComponent }) => {
         </CheckoutPageHeaderStyled>
 
         <CheckoutShippingCardStyled className="clearfix">
+          <CheckoutShippingCardHeaderStyled>
+            <HeadingQuaternary>Shipping Information</HeadingQuaternary>
+          </CheckoutShippingCardHeaderStyled>
+
           <CheckoutCardRowStyled>
             <CheckoutCardColStyled>
-              <CheckoutShippingCardHeaderStyled>
-                <HeadingQuaternary>Shipping Information</HeadingQuaternary>
-              </CheckoutShippingCardHeaderStyled>
-
               <CheckoutShippingInfoStyled>
                 <CheckoutShippingInfoSavedStyled>
                   <Paragraph>
@@ -237,27 +237,27 @@ const CheckoutPage = ({ FormContainerComponent }) => {
         </CheckoutShippingCardStyled>
 
         <CheckoutShippingCardStyled className="clearfix">
+          <CheckoutShippingCardHeaderStyled>
+            <HeadingQuaternary>Billing Information</HeadingQuaternary>
+          </CheckoutShippingCardHeaderStyled>
+
           <CheckoutCardRowStyled>
             <CheckoutCardColStyled>
-              <CheckoutShippingCardHeaderStyled>
-                <HeadingQuaternary>Shipping Information</HeadingQuaternary>
-              </CheckoutShippingCardHeaderStyled>
-
               <CheckoutShippingInfoStyled>
                 <CheckoutShippingInfoSavedStyled>
                   <Paragraph>
-                    {shippingAddress.firstname && shippingAddress.lastname
-                      ? `${shippingAddress.firstname} ${shippingAddress.lastname}`
+                    {billingAddress.firstname && billingAddress.lastname
+                      ? `${billingAddress.firstname} ${billingAddress.lastname}`
                       : 'No Name'}
                   </Paragraph>
                   <Paragraph texttransformtype="uppercase">
-                    {shippingAddress.address || 'No Address'}
+                    {billingAddress.address || 'No Address'}
                   </Paragraph>
                   <Paragraph texttransformtype="uppercase">
-                    {shippingAddress.city &&
-                    shippingAddress.state &&
-                    shippingAddress.zipcode
-                      ? `${shippingAddress.city}, ${shippingAddress.state} ${shippingAddress.zipcode}`
+                    {billingAddress.city &&
+                    billingAddress.state &&
+                    billingAddress.zipcode
+                      ? `${billingAddress.city}, ${billingAddress.state} ${billingAddress.zipcode}`
                       : 'No City, State, or ZIP Code'}
                   </Paragraph>
                 </CheckoutShippingInfoSavedStyled>
