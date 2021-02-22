@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import Card from 'react-credit-cards';
 
 import { Button, Image } from '../common';
 
@@ -125,11 +126,67 @@ const addressFormFields = [
   },
 ];
 
+const creditCardFormFields = [
+  {
+    type: 'tel',
+    name: 'number',
+    id: 'number',
+    placeholder: 'Card Number',
+    message: "Let's go!",
+    addlstyle: {
+      width: '100%',
+      float: 'left',
+      padding: '0 0.75rem',
+    },
+  },
+  {
+    type: 'text',
+    name: 'fullname',
+    id: 'fullname',
+    placeholder: 'Name',
+    message: "Let's go!",
+    addlstyle: {
+      width: '100%',
+      float: 'left',
+      padding: '0 0.75rem',
+    },
+  },
+  {
+    type: 'tel',
+    name: 'expiry',
+    id: 'expiry',
+    placeholder: 'Valid Thru',
+    message: "Let's go!",
+    addlstyle: {
+      width: '50%',
+      flex: '1 22rem',
+      float: 'left',
+      padding: '0 0.75rem',
+    },
+  },
+  {
+    type: 'tel',
+    name: 'cvc',
+    id: 'cvc',
+    placeholder: 'Security Code',
+    message: "Let's go!",
+    addlstyle: {
+      width: '50%',
+      flex: '1 22rem',
+      float: 'left',
+      padding: '0 0.75rem',
+    },
+  },
+];
+
 const CheckoutPage = ({ FormContainerComponent }) => {
   const [addressModalToggle, setAddressModalToggle] = useState(false);
   const [billingAddressModalToggle, setBillingAddressModalToggle] = useState(
     false
   );
+  const [creditCardModalToggle, setCreditCardModalToggle] = useState(false);
+  const [creditCard, setCreditCard] = useState({});
+
   const { cart, removeProduct } = useCartContext();
   const {
     subTotal,
@@ -160,6 +217,16 @@ const CheckoutPage = ({ FormContainerComponent }) => {
   const onBillingAddressSubmit = (newValues) => {
     getBillingAddress(newValues);
     setBillingAddressModalToggle(false);
+  };
+
+  const creditCardFormModal = (e) => {
+    e.preventDefault();
+    setCreditCardModalToggle((bool) => !bool);
+  };
+
+  const onCreditCardSubmit = (newValues) => {
+    setCreditCard(newValues);
+    setCreditCardModalToggle(false);
   };
 
   console.log(cart);
@@ -276,19 +343,35 @@ const CheckoutPage = ({ FormContainerComponent }) => {
             </CheckoutCardColStyled>
 
             <CheckoutCardColStyled>
-              <CheckoutShippingOptionsStyled>
-                <CheckoutShippingOptionsHeaderStyled>
-                  <Paragraph tagtype="strong">Get your order by:</Paragraph>
-                </CheckoutShippingOptionsHeaderStyled>
+              <CheckoutShippingInfoStyled>
+                <CheckoutShippingInfoSavedStyled>
+                  {Object.keys(creditCard).length !== 4 ? (
+                    <Paragraph>No Credit Card</Paragraph>
+                  ) : (
+                    <Card
+                      number={creditCard.number}
+                      name={creditCard.fullname}
+                      expiry={creditCard.expiry}
+                      cvc={creditCard.cvc}
+                    />
+                  )}
+                </CheckoutShippingInfoSavedStyled>
 
-                <CheckoutShippingOptionsListItemStyled>
-                  <span>Shipping Options</span>
-
-                  <CheckoutShippingOptionsListPriceStyled>
-                    <Small>$20.00</Small>
-                  </CheckoutShippingOptionsListPriceStyled>
-                </CheckoutShippingOptionsListItemStyled>
-              </CheckoutShippingOptionsStyled>
+                <CheckoutShippingInfoAddStyled>
+                  <Button
+                    rest={{
+                      type: 'button',
+                      onClick: (e) => billingAddressFormModal(e),
+                      colortype: 'transparent',
+                      hovercolortype: 'moderate_blue_dark',
+                      sizetype: 'small',
+                      nonbtn: true,
+                    }}
+                  >
+                    <span>Add a new billing address</span>
+                  </Button>
+                </CheckoutShippingInfoAddStyled>
+              </CheckoutShippingInfoStyled>
             </CheckoutCardColStyled>
           </CheckoutCardRowStyled>
         </CheckoutShippingCardStyled>
@@ -393,6 +476,18 @@ const CheckoutPage = ({ FormContainerComponent }) => {
         <FormContainerComponent
           onSubmit={onBillingAddressSubmit}
           formFields={addressFormFields}
+        />
+      </Modal>
+
+      <Modal
+        header="Enter Credit Card"
+        modalToggle={creditCardModalToggle}
+        handleModal={creditCardFormModal}
+      >
+        <FormContainerComponent
+          onSubmit={onCreditCardSubmit}
+          formFields={creditCardFormFields}
+          hasCreditCard
         />
       </Modal>
     </CheckoutStyled>
