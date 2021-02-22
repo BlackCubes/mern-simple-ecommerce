@@ -247,7 +247,20 @@ const CheckoutPage = ({ FormContainerComponent }) => {
             <CheckoutCardColStyled>
               <CheckoutShippingInfoStyled>
                 <CheckoutShippingInfoSavedStyled>
-                  <Paragraph>
+                  {Object.keys(shippingAddress).length !== 6 ? (
+                    <Paragraph>No Shipping Address</Paragraph>
+                  ) : (
+                    <>
+                      <Paragraph>{`${shippingAddress.firstname} ${shippingAddress.lastname}`}</Paragraph>
+
+                      <Paragraph texttransformtype="uppercase">
+                        {shippingAddress.address}
+                      </Paragraph>
+
+                      <Paragraph texttransformtype="uppercase">{`${shippingAddress.city}, ${shippingAddress.state} ${shippingAddress.zipcode}`}</Paragraph>
+                    </>
+                  )}
+                  {/* <Paragraph>
                     {shippingAddress.firstname && shippingAddress.lastname
                       ? `${shippingAddress.firstname} ${shippingAddress.lastname}`
                       : 'No Name'}
@@ -261,7 +274,7 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                     shippingAddress.zipcode
                       ? `${shippingAddress.city}, ${shippingAddress.state} ${shippingAddress.zipcode}`
                       : 'No City, State, or ZIP Code'}
-                  </Paragraph>
+                  </Paragraph> */}
                 </CheckoutShippingInfoSavedStyled>
 
                 <CheckoutShippingInfoAddStyled>
