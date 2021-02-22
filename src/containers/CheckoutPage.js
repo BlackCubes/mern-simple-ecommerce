@@ -308,7 +308,20 @@ const CheckoutPage = ({ FormContainerComponent }) => {
             <CheckoutCardColStyled>
               <CheckoutShippingInfoStyled>
                 <CheckoutShippingInfoSavedStyled>
-                  <Paragraph>
+                  {Object.keys(billingAddress).length !== 6 ? (
+                    <Paragraph>No Billing Address</Paragraph>
+                  ) : (
+                    <>
+                      <Paragraph>{`${billingAddress.firstname} ${billingAddress.lastname}`}</Paragraph>
+
+                      <Paragraph texttransformtype="uppercase">
+                        {billingAddress.address}
+                      </Paragraph>
+
+                      <Paragraph texttransformtype="uppercase">{`${billingAddress.city}, ${billingAddress.state} ${billingAddress.zipcode}`}</Paragraph>
+                    </>
+                  )}
+                  {/* <Paragraph>
                     {billingAddress.firstname && billingAddress.lastname
                       ? `${billingAddress.firstname} ${billingAddress.lastname}`
                       : 'No Name'}
@@ -322,7 +335,7 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                     billingAddress.zipcode
                       ? `${billingAddress.city}, ${billingAddress.state} ${billingAddress.zipcode}`
                       : 'No City, State, or ZIP Code'}
-                  </Paragraph>
+                  </Paragraph> */}
                 </CheckoutShippingInfoSavedStyled>
 
                 <CheckoutShippingInfoAddStyled>
