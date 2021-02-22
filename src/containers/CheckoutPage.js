@@ -361,14 +361,14 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                   <Button
                     rest={{
                       type: 'button',
-                      onClick: (e) => billingAddressFormModal(e),
+                      onClick: (e) => creditCardFormModal(e),
                       colortype: 'transparent',
                       hovercolortype: 'moderate_blue_dark',
                       sizetype: 'small',
                       nonbtn: true,
                     }}
                   >
-                    <span>Add a new billing address</span>
+                    <span>Add a new credit card</span>
                   </Button>
                 </CheckoutShippingInfoAddStyled>
               </CheckoutShippingInfoStyled>
