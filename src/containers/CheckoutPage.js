@@ -265,7 +265,7 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                   <Button
                     rest={{
                       type: 'button',
-                      onClick: (e) => addressFormModal(e),
+                      onClick: (e) => billingAddressFormModal(e),
                       colortype: 'transparent',
                       hovercolortype: 'moderate_blue_dark',
                       sizetype: 'small',
@@ -378,7 +378,7 @@ const CheckoutPage = ({ FormContainerComponent }) => {
       </CheckoutSecondaryStyled>
 
       <Modal
-        header="Enter Address Details"
+        header="Enter Address"
         modalToggle={addressModalToggle}
         handleModal={addressFormModal}
       >
@@ -389,7 +389,7 @@ const CheckoutPage = ({ FormContainerComponent }) => {
       </Modal>
 
       <Modal
-        header="Enter Card and Address Details"
+        header="Enter Billing Address"
         modalToggle={billingAddressModalToggle}
         handleModal={billingAddressFormModal}
       >
