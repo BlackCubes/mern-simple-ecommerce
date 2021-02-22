@@ -40,6 +40,14 @@ const GlobalStyles = createGlobalStyle`
     position: relative;
     min-height: 100vh;
   }
+
+  .clearfix {
+    &::after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+  }
 `;
 
 export default GlobalStyles;
