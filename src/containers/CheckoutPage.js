@@ -168,13 +168,13 @@ const CheckoutPage = ({ FormContainerComponent }) => {
   console.log(billingAddress);
 
   return (
-    <CheckoutStyled>
+    <CheckoutStyled className="clearfix">
       <CheckoutPrimaryStyled>
         <CheckoutPageHeaderStyled>
           <HeadingSecondary>Review & Place Your Order</HeadingSecondary>
         </CheckoutPageHeaderStyled>
 
-        <CheckoutShippingCardStyled>
+        <CheckoutShippingCardStyled className="clearfix">
           <CheckoutCardRowStyled>
             <CheckoutCardColStyled>
               <CheckoutShippingCardHeaderStyled>
