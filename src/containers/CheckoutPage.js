@@ -199,35 +199,45 @@ const CheckoutPage = ({ FormContainerComponent }) => {
   } = useCheckoutContext();
   console.log(subTotal, salesTax, finalTotal);
 
-  const addressFormModal = (e) => {
+  const onFormModal = (setToggle) => (e) => {
     e.preventDefault();
-    setAddressModalToggle((bool) => !bool);
+    setToggle((bool) => !bool);
   };
 
-  const onAddressSubmit = (newValues) => {
-    getShippingAddress(newValues);
-    setAddressModalToggle(false);
+  const onSubmission = (getFunction, setToggle) => (newValues) => {
+    getFunction(newValues);
+    setToggle(false);
   };
 
-  const billingAddressFormModal = (e) => {
-    e.preventDefault();
-    setBillingAddressModalToggle((bool) => !bool);
-  };
+  // const addressFormModal = (e) => {
+  //   e.preventDefault();
+  //   setAddressModalToggle((bool) => !bool);
+  // };
 
-  const onBillingAddressSubmit = (newValues) => {
-    getBillingAddress(newValues);
-    setBillingAddressModalToggle(false);
-  };
+  // const onAddressSubmit = (newValues) => {
+  //   getShippingAddress(newValues);
+  //   setAddressModalToggle(false);
+  // };
 
-  const creditCardFormModal = (e) => {
-    e.preventDefault();
-    setCreditCardModalToggle((bool) => !bool);
-  };
+  // const billingAddressFormModal = (e) => {
+  //   e.preventDefault();
+  //   setBillingAddressModalToggle((bool) => !bool);
+  // };
 
-  const onCreditCardSubmit = (newValues) => {
-    setCreditCard(newValues);
-    setCreditCardModalToggle(false);
-  };
+  // const onBillingAddressSubmit = (newValues) => {
+  //   getBillingAddress(newValues);
+  //   setBillingAddressModalToggle(false);
+  // };
+
+  // const creditCardFormModal = (e) => {
+  //   e.preventDefault();
+  //   setCreditCardModalToggle((bool) => !bool);
+  // };
+
+  // const onCreditCardSubmit = (newValues) => {
+  //   setCreditCard(newValues);
+  //   setCreditCardModalToggle(false);
+  // };
 
   console.log(cart);
 
@@ -266,7 +276,7 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                   <Button
                     rest={{
                       type: 'button',
-                      onClick: (e) => addressFormModal(e),
+                      onClick: (e) => onFormModal(setAddressModalToggle)(e),
                       colortype: 'transparent',
                       hovercolortype: 'moderate_blue_dark',
                       sizetype: 'small',
@@ -325,7 +335,8 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                   <Button
                     rest={{
                       type: 'button',
-                      onClick: (e) => billingAddressFormModal(e),
+                      onClick: (e) =>
+                        onFormModal(setBillingAddressModalToggle)(e),
                       colortype: 'transparent',
                       hovercolortype: 'moderate_blue_dark',
                       sizetype: 'small',
@@ -357,7 +368,7 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                   <Button
                     rest={{
                       type: 'button',
-                      onClick: (e) => creditCardFormModal(e),
+                      onClick: (e) => onFormModal(setCreditCardModalToggle)(e),
                       colortype: 'transparent',
                       hovercolortype: 'moderate_blue_dark',
                       sizetype: 'small',
@@ -456,10 +467,10 @@ const CheckoutPage = ({ FormContainerComponent }) => {
       <Modal
         header="Enter Address"
         modalToggle={addressModalToggle}
-        handleModal={addressFormModal}
+        handleModal={onFormModal(setAddressModalToggle)}
       >
         <FormContainerComponent
-          onSubmit={onAddressSubmit}
+          onSubmit={onSubmission(getShippingAddress, setAddressModalToggle)}
           formFields={addressFormFields}
         />
       </Modal>
@@ -467,10 +478,13 @@ const CheckoutPage = ({ FormContainerComponent }) => {
       <Modal
         header="Enter Billing Address"
         modalToggle={billingAddressModalToggle}
-        handleModal={billingAddressFormModal}
+        handleModal={onFormModal(setBillingAddressModalToggle)}
       >
         <FormContainerComponent
-          onSubmit={onBillingAddressSubmit}
+          onSubmit={onSubmission(
+            getBillingAddress,
+            setBillingAddressModalToggle
+          )}
           formFields={addressFormFields}
         />
       </Modal>
@@ -478,10 +492,10 @@ const CheckoutPage = ({ FormContainerComponent }) => {
       <Modal
         header="Enter Credit Card"
         modalToggle={creditCardModalToggle}
-        handleModal={creditCardFormModal}
+        handleModal={onFormModal(setCreditCardModalToggle)}
       >
         <FormContainerComponent
-          onSubmit={onCreditCardSubmit}
+          onSubmit={onSubmission(setCreditCard, setCreditCardModalToggle)}
           formFields={creditCardFormFields}
           hasCreditCard
         />
