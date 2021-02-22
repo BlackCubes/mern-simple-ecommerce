@@ -209,36 +209,6 @@ const CheckoutPage = ({ FormContainerComponent }) => {
     setToggle(false);
   };
 
-  // const addressFormModal = (e) => {
-  //   e.preventDefault();
-  //   setAddressModalToggle((bool) => !bool);
-  // };
-
-  // const onAddressSubmit = (newValues) => {
-  //   getShippingAddress(newValues);
-  //   setAddressModalToggle(false);
-  // };
-
-  // const billingAddressFormModal = (e) => {
-  //   e.preventDefault();
-  //   setBillingAddressModalToggle((bool) => !bool);
-  // };
-
-  // const onBillingAddressSubmit = (newValues) => {
-  //   getBillingAddress(newValues);
-  //   setBillingAddressModalToggle(false);
-  // };
-
-  // const creditCardFormModal = (e) => {
-  //   e.preventDefault();
-  //   setCreditCardModalToggle((bool) => !bool);
-  // };
-
-  // const onCreditCardSubmit = (newValues) => {
-  //   setCreditCard(newValues);
-  //   setCreditCardModalToggle(false);
-  // };
-
   console.log(cart);
 
   return (
