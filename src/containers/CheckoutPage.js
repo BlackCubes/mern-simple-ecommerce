@@ -235,6 +235,68 @@ const CheckoutPage = ({ FormContainerComponent }) => {
             </CheckoutCardColStyled>
           </CheckoutCardRowStyled>
         </CheckoutShippingCardStyled>
+
+        <CheckoutShippingCardStyled className="clearfix">
+          <CheckoutCardRowStyled>
+            <CheckoutCardColStyled>
+              <CheckoutShippingCardHeaderStyled>
+                <HeadingQuaternary>Shipping Information</HeadingQuaternary>
+              </CheckoutShippingCardHeaderStyled>
+
+              <CheckoutShippingInfoStyled>
+                <CheckoutShippingInfoSavedStyled>
+                  <Paragraph>
+                    {shippingAddress.firstname && shippingAddress.lastname
+                      ? `${shippingAddress.firstname} ${shippingAddress.lastname}`
+                      : 'No Name'}
+                  </Paragraph>
+                  <Paragraph texttransformtype="uppercase">
+                    {shippingAddress.address || 'No Address'}
+                  </Paragraph>
+                  <Paragraph texttransformtype="uppercase">
+                    {shippingAddress.city &&
+                    shippingAddress.state &&
+                    shippingAddress.zipcode
+                      ? `${shippingAddress.city}, ${shippingAddress.state} ${shippingAddress.zipcode}`
+                      : 'No City, State, or ZIP Code'}
+                  </Paragraph>
+                </CheckoutShippingInfoSavedStyled>
+
+                <CheckoutShippingInfoAddStyled>
+                  <Button
+                    rest={{
+                      type: 'button',
+                      // onClick: (e) => handleModal(e),
+                      onClick: (e) => addressFormModal(e),
+                      colortype: 'transparent',
+                      hovercolortype: 'moderate_blue_dark',
+                      sizetype: 'small',
+                      nonbtn: true,
+                    }}
+                  >
+                    <span>Add a new address</span>
+                  </Button>
+                </CheckoutShippingInfoAddStyled>
+              </CheckoutShippingInfoStyled>
+            </CheckoutCardColStyled>
+
+            <CheckoutCardColStyled>
+              <CheckoutShippingOptionsStyled>
+                <CheckoutShippingOptionsHeaderStyled>
+                  <Paragraph tagtype="strong">Get your order by:</Paragraph>
+                </CheckoutShippingOptionsHeaderStyled>
+
+                <CheckoutShippingOptionsListItemStyled>
+                  <span>Shipping Options</span>
+
+                  <CheckoutShippingOptionsListPriceStyled>
+                    <Small>$20.00</Small>
+                  </CheckoutShippingOptionsListPriceStyled>
+                </CheckoutShippingOptionsListItemStyled>
+              </CheckoutShippingOptionsStyled>
+            </CheckoutCardColStyled>
+          </CheckoutCardRowStyled>
+        </CheckoutShippingCardStyled>
       </CheckoutPrimaryStyled>
 
       <CheckoutSecondaryStyled>
