@@ -164,9 +164,6 @@ const CheckoutPage = ({ FormContainerComponent }) => {
 
   console.log(cart);
 
-  console.log(getBillingAddress);
-  console.log(billingAddress);
-
   return (
     <CheckoutStyled className="clearfix">
       <CheckoutPrimaryStyled>
