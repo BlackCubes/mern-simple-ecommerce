@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
 export default styled.div`
-  transform: ${({ transformscale }) =>
-    `scale(${transformscale})` || 'scale(1)'};
+  transform: ${({ transformscaletype }) =>
+    `scale(${transformscaletype})` || 'scale(1)'};
 `;
