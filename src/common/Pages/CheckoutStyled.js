@@ -45,6 +45,10 @@ export const CheckoutShippingInfoSavedStyled = styled.div`
   }
 `;
 
+export const CheckoutCreditCardStyled = styled.div`
+  position: relative;
+`;
+
 export const CheckoutShippingInfoAddStyled = styled.div`
   margin-top: 0.5rem;
 
