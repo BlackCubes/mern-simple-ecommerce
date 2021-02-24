@@ -39,7 +39,7 @@ import {
   Small,
 } from '../common/Typography';
 
-import { Modal } from '../Components';
+import { CreditCard, Modal } from '../Components';
 
 import { useCartContext } from '../context/CartContext';
 import { useCheckoutContext } from '../context/CheckoutContext';
@@ -325,12 +325,14 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                   {Object.keys(creditCard).length !== 4 ? (
                     <Paragraph>No Credit Card</Paragraph>
                   ) : (
-                    <Card
-                      number={creditCard.number}
-                      name={creditCard.fullname}
-                      expiry={creditCard.expiry}
-                      cvc={creditCard.cvc}
-                    />
+                    <CreditCard transformscaletype="0.6">
+                      <Card
+                        number={creditCard.number}
+                        name={creditCard.fullname}
+                        expiry={creditCard.expiry}
+                        cvc={creditCard.cvc}
+                      />
+                    </CreditCard>
                   )}
                 </CheckoutShippingInfoSavedStyled>
 

@@ -4,7 +4,7 @@ import Card from 'react-credit-cards';
 
 import { Button, FormStyled, FormGroupStyled } from '../common';
 
-import { Input } from '../Components';
+import { CreditCard, Input } from '../Components';
 
 import { fieldInputErrors, fieldInputProperties, regex } from '../utils';
 
@@ -203,13 +203,15 @@ const FormContainer = ({ onSubmit, formFields, hasCreditCard }) => {
   return (
     <FormStyled onSubmit={handleSubmit} noValidate>
       {!hasCreditCard ? null : (
-        <Card
-          number={values.number || ''}
-          name={values.fullname || ''}
-          expiry={values.expiry || ''}
-          cvc={values.cvc || ''}
-          focused={focus}
-        />
+        <CreditCard transformscaletype="0.7">
+          <Card
+            number={values.number || ''}
+            name={values.fullname || ''}
+            expiry={values.expiry || ''}
+            cvc={values.cvc || ''}
+            focused={focus}
+          />
+        </CreditCard>
       )}
 
       {inputProperties.map((prop, key) => {
