@@ -1,0 +1,14 @@
+# CONFIG #
+#########
+
+# dependencies
+/node_modules
+
+# misc
+.DS_Store
+*.env
+.cache/
+
+debug.log
+
+npm-debug.log*
