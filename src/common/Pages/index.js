@@ -42,6 +42,7 @@ import {
   CheckoutOrderSummaryItemListCellStyled,
   CheckoutOrderSummaryItemListImgStyled,
   CheckoutOrderSummaryItemListCellBigStyled,
+  CheckoutCreditCardStyled,
 } from './CheckoutStyled';
 import {
   ProductDetailsContainerStyled,
@@ -119,6 +120,7 @@ export {
   CheckoutOrderSummaryItemListCellStyled,
   CheckoutOrderSummaryItemListImgStyled,
   CheckoutOrderSummaryItemListCellBigStyled,
+  CheckoutCreditCardStyled,
   ProductDetailsContainerStyled,
   ProductDetailsStyled,
   ProductDetailsHeaderStyled,
