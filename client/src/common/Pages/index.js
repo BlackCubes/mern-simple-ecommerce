@@ -61,6 +61,9 @@ import {
   ProductDetailsDescriptionStyled,
   ProductDetailsDescriptionHeaderStyled,
   ProductDetailsDescriptionBodyStyled,
+  ProductDetailsReviewsStyled,
+  ProductDetailsReviewsHeaderStyled,
+  ProductDetailsReviewsBodyStyled,
 } from './ProductDetailsStyled';
 import {
   ProductsStyled,
@@ -137,6 +140,9 @@ export {
   ProductDetailsDescriptionStyled,
   ProductDetailsDescriptionHeaderStyled,
   ProductDetailsDescriptionBodyStyled,
+  ProductDetailsReviewsStyled,
+  ProductDetailsReviewsHeaderStyled,
+  ProductDetailsReviewsBodyStyled,
   ProductsStyled,
   ProductsContainerStyled,
   ProductsCardStyled,
