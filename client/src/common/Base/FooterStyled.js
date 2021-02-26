@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const FooterStyled = styled.div`
+export const FooterStyled = styled.footer`
   position: absolute;
   font-family: inherit;
   color: ${(props) => props.theme.colors.white};
