@@ -10,7 +10,7 @@ import {
   FooterCopyrightContentStyled,
 } from './FooterStyled';
 import GlobalStyles from './GlobalStyles';
-import Main from './MainStyled';
+import Main from './Main';
 import {
   NavbarStyled,
   NavbarContainerStyled,
