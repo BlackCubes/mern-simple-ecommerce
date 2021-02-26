@@ -20,6 +20,9 @@ import {
   ProductDetailsDescriptionStyled,
   ProductDetailsDescriptionHeaderStyled,
   ProductDetailsDescriptionBodyStyled,
+  ProductDetailsReviewsStyled,
+  ProductDetailsReviewsHeaderStyled,
+  ProductDetailsReviewsBodyStyled,
 } from '../common/Pages';
 
 import {
@@ -125,6 +128,16 @@ const ProductDetailsPage = () => {
                 <Paragraph>{product.description}</Paragraph>
               </ProductDetailsDescriptionBodyStyled>
             </ProductDetailsDescriptionStyled>
+
+            <ProductDetailsReviewsStyled>
+              <ProductDetailsReviewsHeaderStyled>
+                <HeadingQuaternary>Reviews</HeadingQuaternary>
+              </ProductDetailsReviewsHeaderStyled>
+
+              <ProductDetailsReviewsBodyStyled>
+                <Paragraph>Nothing yet!</Paragraph>
+              </ProductDetailsReviewsBodyStyled>
+            </ProductDetailsReviewsStyled>
           </>
         )}
       </ProductDetailsStyled>
