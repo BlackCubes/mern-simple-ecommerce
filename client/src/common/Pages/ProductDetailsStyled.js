@@ -90,3 +90,17 @@ export const ProductDetailsDescriptionBodyStyled = styled.div`
   margin-left: auto;
   margin-right: auto;
 `;
+
+export const ProductDetailsReviewsStyled = styled(
+  ProductDetailsDescriptionStyled
+)`
+  margin-top: 2rem;
+`;
+
+export const ProductDetailsReviewsHeaderStyled = styled(
+  ProductDetailsDescriptionHeaderStyled
+);
+
+export const ProductDetailsReviewsBodyStyled = styled(
+  ProductDetailsDescriptionBodyStyled
+);
