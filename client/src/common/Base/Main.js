@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const MainStyled = styled.main`
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 6rem;
+  padding-bottom: 6rem;
 `;
 
 const Main = ({ children }) => <MainStyled>{children}</MainStyled>;
