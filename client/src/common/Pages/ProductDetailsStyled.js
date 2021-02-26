@@ -91,16 +91,24 @@ export const ProductDetailsDescriptionBodyStyled = styled.div`
   margin-right: auto;
 `;
 
-export const ProductDetailsReviewsStyled = styled(
-  ProductDetailsDescriptionStyled
-)`
+export const ProductDetailsReviewsStyled = styled.div`
   margin-top: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 `;
 
-export const ProductDetailsReviewsHeaderStyled = styled(
-  ProductDetailsDescriptionHeaderStyled
-);
+export const ProductDetailsReviewsHeaderStyled = styled.div`
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  text-align: left;
 
-export const ProductDetailsReviewsBodyStyled = styled(
-  ProductDetailsDescriptionBodyStyled
-);
+  & h4 {
+    font-weight: 400;
+  }
+`;
+
+export const ProductDetailsReviewsBodyStyled = styled.div`
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+`;
