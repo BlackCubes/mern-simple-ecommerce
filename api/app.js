@@ -7,6 +7,8 @@ const cookieParser = require('cookie-parser');
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 
+const { AppError } = require('./utils');
+
 const app = express();
 
 // Implement CORS
@@ -42,5 +44,10 @@ app.use(xss());
 
 // HPP -- prevent parameter pollution
 // nothing yet
+
+// -- unknown routes
+app.all('*', (req, res, next) => {
+  next(new AppError(`Could not find ${req.originalUrl} on this server!`, 404));
+});
 
 module.exports = app;
