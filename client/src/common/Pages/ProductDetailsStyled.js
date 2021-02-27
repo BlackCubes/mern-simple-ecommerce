@@ -112,3 +112,12 @@ export const ProductDetailsReviewsBodyStyled = styled.div`
   margin-left: auto;
   margin-right: auto;
 `;
+
+export const ProductDetailsReviewsAddStyled = styled.div`
+  margin-bottom: 2rem;
+`;
+
+export const ProductDetailsReviewContentStyled = styled.div`
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+`;
