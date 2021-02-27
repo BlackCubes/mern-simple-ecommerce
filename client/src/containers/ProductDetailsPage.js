@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import { Button, Image } from '../common';
 
@@ -32,21 +33,47 @@ import {
   Small,
 } from '../common/Typography';
 
-import { CategorySidebar } from '../Components';
+import { CategorySidebar, Modal } from '../Components';
 
 import { useCartContext } from '../context/CartContext';
 import { useProductContext } from '../context/ProductContext';
 
 import { daysFromNow, dateTimeFormat } from '../utils';
 
-const ProductDetailsPage = () => {
+const reviewFormFields = [
+  {
+    type: 'text',
+    name: 'fullname',
+    id: 'fullname',
+    placeholder: 'Name',
+    message: "Let's go!",
+    addlstyle: {
+      width: '100%',
+      float: 'left',
+      padding: '0 0.75rem',
+    },
+  },
+];
+
+const ProductDetailsPage = ({ FormContainerComponent }) => {
+  const [reviewModalToggle, setReviewModalToggle] = useState(false);
   const { id } = useParams();
   const { addProduct } = useCartContext();
-  const { getProduct, product } = useProductContext();
+  const { getProduct, product, postReview } = useProductContext();
 
   useEffect(() => {
     if (id) getProduct(id);
   }, [id]);
+
+  const onFormModal = (setToggle) => (e) => {
+    e.preventDefault();
+    setToggle((bool) => !bool);
+  };
+
+  const onSubmissionModal = (getFunction, setToggle) => (newValues) => {
+    getFunction(newValues);
+    setToggle(false);
+  };
 
   return (
     <ProductDetailsContainerStyled>
@@ -137,7 +164,27 @@ const ProductDetailsPage = () => {
               <ProductDetailsReviewsBodyStyled>
                 <Paragraph>Nothing yet!</Paragraph>
               </ProductDetailsReviewsBodyStyled>
+
+              <Button
+                rest={{
+                  type: 'button',
+                  onClick: (e) => onFormModal(setReviewModalToggle)(e),
+                }}
+              >
+                Add a review
+              </Button>
             </ProductDetailsReviewsStyled>
+
+            <Modal
+              header="Enter Review"
+              modalToggle={reviewModalToggle}
+              handleModal={onFormModal(setReviewModalToggle)}
+            >
+              <FormContainerComponent
+                onSubmit={onSubmissionModal(postReview, setReviewModalToggle)}
+                formFields={reviewFormFields}
+              />
+            </Modal>
           </>
         )}
       </ProductDetailsStyled>
@@ -145,6 +192,10 @@ const ProductDetailsPage = () => {
       <CategorySidebar />
     </ProductDetailsContainerStyled>
   );
+};
+
+ProductDetailsPage.propTypes = {
+  FormContainerComponent: PropTypes.elementType.isRequired,
 };
 
 export default ProductDetailsPage;
