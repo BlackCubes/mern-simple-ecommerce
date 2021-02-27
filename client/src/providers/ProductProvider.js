@@ -57,6 +57,8 @@ const ProductProvider = ({ children }) => {
     }
   };
 
+  const postReview = (review) => console.log(review);
+
   return (
     <ProductContext.Provider
       value={{
@@ -68,6 +70,7 @@ const ProductProvider = ({ children }) => {
         getProducts,
         getCategory,
         getCategories,
+        postReview,
       }}
     >
       {children}
