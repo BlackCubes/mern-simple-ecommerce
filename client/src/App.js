@@ -30,11 +30,9 @@ function App() {
                 path="/products/category/:category"
                 component={ProductsPage}
               />
-              <Route
-                exact
-                path="/products/:id"
-                component={ProductDetailsPage}
-              />
+              <Route exact path="/products/:id">
+                <ProductDetailsPage FormContainerComponent={FormContainer} />
+              </Route>
               <Route exact path="/cart" component={CartPage} />
               <Route exact path="/checkout">
                 <CheckoutPage FormContainerComponent={FormContainer} />
