@@ -115,6 +115,7 @@ export const ProductDetailsReviewsBodyStyled = styled.div`
 
 export const ProductDetailsReviewsAddStyled = styled.div`
   margin-bottom: 2rem;
+  text-align: right;
 `;
 
 export const ProductDetailsReviewContentStyled = styled.div`
