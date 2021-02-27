@@ -162,17 +162,20 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
               </ProductDetailsReviewsHeaderStyled>
 
               <ProductDetailsReviewsBodyStyled>
+                <Button
+                  rest={{
+                    type: 'button',
+                    onClick: (e) => onFormModal(setReviewModalToggle)(e),
+                    colortype: 'transparent',
+                    hovercolortype: 'moderate_blue_dark',
+                    nonbtn: true,
+                  }}
+                >
+                  Add a review
+                </Button>
+
                 <Paragraph>Nothing yet!</Paragraph>
               </ProductDetailsReviewsBodyStyled>
-
-              <Button
-                rest={{
-                  type: 'button',
-                  onClick: (e) => onFormModal(setReviewModalToggle)(e),
-                }}
-              >
-                Add a review
-              </Button>
             </ProductDetailsReviewsStyled>
 
             <Modal
