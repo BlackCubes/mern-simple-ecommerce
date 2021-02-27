@@ -24,6 +24,8 @@ import {
   ProductDetailsReviewsStyled,
   ProductDetailsReviewsHeaderStyled,
   ProductDetailsReviewsBodyStyled,
+  ProductDetailsReviewsAddStyled,
+  ProductDetailsReviewContentStyled,
 } from '../common/Pages';
 
 import {
@@ -162,19 +164,23 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
               </ProductDetailsReviewsHeaderStyled>
 
               <ProductDetailsReviewsBodyStyled>
-                <Button
-                  rest={{
-                    type: 'button',
-                    onClick: (e) => onFormModal(setReviewModalToggle)(e),
-                    colortype: 'transparent',
-                    hovercolortype: 'moderate_blue_dark',
-                    nonbtn: true,
-                  }}
-                >
-                  Add a review
-                </Button>
+                <ProductDetailsReviewsAddStyled>
+                  <Button
+                    rest={{
+                      type: 'button',
+                      onClick: (e) => onFormModal(setReviewModalToggle)(e),
+                      colortype: 'transparent',
+                      hovercolortype: 'moderate_blue_dark',
+                      nonbtn: true,
+                    }}
+                  >
+                    Add a review
+                  </Button>
+                </ProductDetailsReviewsAddStyled>
 
-                <Paragraph>Nothing yet!</Paragraph>
+                <ProductDetailsReviewContentStyled>
+                  <Paragraph>Nothing yet!</Paragraph>
+                </ProductDetailsReviewContentStyled>
               </ProductDetailsReviewsBodyStyled>
             </ProductDetailsReviewsStyled>
 
