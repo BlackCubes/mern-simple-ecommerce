@@ -9,6 +9,7 @@ const xss = require('xss-clean');
 
 const { AppError } = require('./utils');
 const { globalErrorHandler } = require('./controllers');
+const { reviewRouter } = require('./routes');
 
 const app = express();
 
@@ -45,6 +46,9 @@ app.use(xss());
 
 // HPP -- prevent parameter pollution
 // nothing yet
+
+// Routes
+app.use('/api/v1/reviews', reviewRouter);
 
 // Errors
 // -- unknown routes
