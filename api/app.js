@@ -9,7 +9,7 @@ const xss = require('xss-clean');
 
 const { AppError } = require('./utils');
 const { globalErrorHandler } = require('./controllers');
-const { reviewRouter } = require('./routes');
+const { productRouter, reviewRouter } = require('./routes');
 
 const app = express();
 
@@ -48,6 +48,7 @@ app.use(xss());
 // nothing yet
 
 // Routes
+app.use('/api/v1/products', productRouter);
 app.use('/api/v1/reviews', reviewRouter);
 
 // Errors
