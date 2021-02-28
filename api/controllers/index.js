@@ -1,3 +1,4 @@
 const globalErrorHandler = require('./errorController');
+const reviewController = require('./reviewController');
 
-module.exports = { globalErrorHandler };
+module.exports = { globalErrorHandler, reviewController };
