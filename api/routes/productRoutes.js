@@ -1,5 +1,9 @@
 const express = require('express');
 
-const router = express.Router();
+const reviewRouter = require('./reviewRoutes');
+
+const router = express.Router({ mergeParams: true });
+
+router.use('/:productId/reviews', reviewRouter);
 
 module.exports = router;
