@@ -15,7 +15,11 @@ exports.createOne = (Model) =>
 
 exports.getAll = (Model) =>
   catchAsync(async (req, res, next) => {
-    const doc = await Models[Model].find();
+    // For Nested Routes
+    const filter = {};
+    if (req.params.productId) filter.productId = req.params.productId;
+
+    const doc = await Models[Model].find(filter);
 
     res.status(200).json({
       status: 'success',
