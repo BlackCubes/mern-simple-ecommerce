@@ -2,7 +2,13 @@ const crypto = require('crypto');
 const jwt = require('jsonwebtoken');
 
 const { User } = require('../models');
-const { AppError, catchAsync, filterObj, sanitize } = require('../utils');
+const {
+  AppError,
+  catchAsync,
+  Email,
+  filterObj,
+  sanitize,
+} = require('../utils');
 
 const signToken = (id) =>
   jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -33,6 +39,19 @@ const createSendToken = (user, statusCode, req, res) => {
   });
 };
 
+exports.signup = catchAsync(async (req, res, next) => {
+  const filteredBody = sanitize(
+    filterObj(req.body, 'name', 'email', 'password', 'password_confirmation')
+  );
+
+  const newUser = await User.create(filteredBody);
+
+  const url = `${req.protocol}://${req.get('host')}/`;
+  await new Email(newUser, url).sendWelcome();
+
+  createSendToken(newUser, 201, req, res);
+});
+
 exports.login = catchAsync(async (req, res, next) => {
   const { email, password } = sanitize(
     filterObj(req.body, 'email', 'password')
@@ -57,6 +76,75 @@ exports.logout = (req, res) => {
   });
   res.status(200).json({ status: 'success' });
 };
+
+exports.forgotPassword = catchAsync(async (req, res, next) => {
+  const { email } = sanitize(filterObj(req.body, 'email'));
+  const user = await User.findOne({ email });
+
+  const ip =
+    (req.headers['x-forwarded-for'] || '').split(',')[0].trim() ||
+    req.connection.remoteAddress ||
+    req.socket.remoteAddress ||
+    req.connection.socket.remoteAddress;
+
+  const userAgent = `${req.useragent.browser} browser, ${req.useragent.os} operating system`;
+
+  if (!user)
+    try {
+      const forgotURL =
+        req.user && req.user.role === 'admin'
+          ? `${req.protocol}://${req.get('host')}/api/v1/users/forgot-password`
+          : `${req.protocol}://${req.get('host')}/forgot-password`;
+
+      await new Email(email, forgotURL).sendPasswordResetHelp(
+        ip,
+        userAgent,
+        email
+      );
+
+      res.status(202).json({
+        status: 'success',
+        message: 'An email has been sent to the provided address!',
+      });
+    } catch (err) {
+      return next(
+        new AppError(
+          'There was an error sending the provided email! Please try again later.',
+          500
+        )
+      );
+    }
+
+  const resetToken = user.createPasswordResetToken();
+  await user.save({ validateBeforeSave: false });
+
+  try {
+    const resetURL =
+      req.user && req.user.role === 'admin'
+        ? `${req.protocol}://${req.get(
+            'host'
+          )}/api/v1/users/reset-password/${resetToken}`
+        : `${req.protocol}://${req.get('host')}/reset-password/${resetToken}`;
+
+    await new Email(user, resetURL).sendPasswordReset(ip, userAgent);
+
+    res.status(200).json({
+      status: 'success',
+      message: 'Token sent to the provided email.',
+    });
+  } catch (err) {
+    user.passwordResetToken = undefined;
+    user.passwordResetExpires = undefined;
+    await user.save({ validateBeforeSave: false });
+
+    return next(
+      new AppError(
+        'There was an error sending the provided email! Please try again later.',
+        500
+      )
+    );
+  }
+});
 
 exports.resetPassword = catchAsync(async (req, res, next) => {
   const hashedToken = crypto
