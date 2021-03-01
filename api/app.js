@@ -4,6 +4,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
 const rateLimit = require('express-rate-limit');
+const useragent = require('express-useragent');
 const cookieParser = require('cookie-parser');
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
@@ -39,6 +40,9 @@ const limiter = rateLimit({
   message: 'Too many requests from this IP 😮. Please try again in an hour.',
 });
 app.use('/api', limiter);
+
+// Expose User-Agent
+app.use(useragent.express());
 
 // Body Parser -- reading data from the body into req.body
 app.use(express.json({ limit: '10kb' }));
