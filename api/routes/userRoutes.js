@@ -5,7 +5,7 @@ const { authController, userController } = require('../controllers');
 const router = express.Router();
 
 // ROUTES W/PURE AUTH
-router.post('/signup');
+router.post('/signup', authController.checkLogin, authController.signup);
 router.post('/login', authController.checkLogin, authController.login);
 router.get(
   '/logout',
@@ -13,7 +13,11 @@ router.get(
   authController.restrictTo('user', 'admin'),
   authController.logout
 );
-router.post('/forgot-password');
+router.post(
+  '/forgot-password',
+  authController.checkLogin,
+  authController.forgotPassword
+);
 router.patch(
   '/reset-password/:token',
   authController.checkLogin,
