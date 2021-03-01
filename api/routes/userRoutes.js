@@ -4,6 +4,15 @@ const { userController } = require('../controllers');
 
 const router = express.Router();
 
+// ROUTES W/PURE AUTH
+router.post('/signup');
+router.post('/login');
+router.get('/logout');
+router.post('/forgot-password');
+router.patch('/reset-password/:token');
+router.patch('/updateMyPassword');
+
+// ROUTES W/LESS AUTH
 router.get('/me', userController.getMe, userController.getUser);
 router.patch('/updateMe', userController.updateMe);
 router.delete('/deleteMe', userController.deactivateMe);
