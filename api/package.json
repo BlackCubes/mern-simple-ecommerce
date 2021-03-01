@@ -13,6 +13,7 @@
     "express": "^4.17.1",
     "express-mongo-sanitize": "^2.0.2",
     "express-rate-limit": "^5.2.6",
+    "express-useragent": "^1.0.15",
     "helmet": "^4.4.1",
     "hpp": "^0.2.3",
     "html-to-text": "^7.0.0",
