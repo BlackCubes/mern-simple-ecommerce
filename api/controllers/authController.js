@@ -157,6 +157,13 @@ exports.protect = catchAsync(async (req, res, next) => {
   next();
 });
 
+exports.checkLogin = (req, res, next) => {
+  if (req.cookies.jwt)
+    return next(new AppError('You are still logged in!', 403));
+
+  next();
+};
+
 exports.restrictTo = (...roles) => (req, res, next) => {
   if (!roles.includes(req.user.role))
     return next(
