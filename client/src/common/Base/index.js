@@ -11,19 +11,6 @@ import {
 } from './FooterStyled';
 import GlobalStyles from './GlobalStyles';
 import Main from './Main';
-import {
-  NavbarStyled,
-  NavbarContainerStyled,
-  NavbarLogoStyled,
-  NavbarMenuHolderStyled,
-  NavbarMenuStyled,
-  NavbarMenuListStyled,
-  NavbarMenuListItemStyled,
-  NavbarCartStyled,
-  NavbarCartImageStyled,
-  NavbarCartLabelStyled,
-  NavbarCartQuantityStyled,
-} from './NavbarStyled';
 import Theme from './Theme';
 
 export {
@@ -38,16 +25,5 @@ export {
   FooterCopyrightContentStyled,
   GlobalStyles,
   Main,
-  NavbarStyled,
-  NavbarContainerStyled,
-  NavbarLogoStyled,
-  NavbarMenuHolderStyled,
-  NavbarMenuStyled,
-  NavbarMenuListStyled,
-  NavbarMenuListItemStyled,
-  NavbarCartStyled,
-  NavbarCartImageStyled,
-  NavbarCartLabelStyled,
-  NavbarCartQuantityStyled,
   Theme,
 };
