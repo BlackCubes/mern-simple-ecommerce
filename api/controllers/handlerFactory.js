@@ -3,7 +3,10 @@ const { AppError, catchAsync } = require('./../utils');
 
 exports.createOne = (Model) =>
   catchAsync(async (req, res, next) => {
-    const doc = await Models[Model].create(req.body);
+    const query = req.body;
+    if (req.params.productId) query.productId = req.params.productId;
+
+    const doc = await Models[Model].create(query);
 
     res.status(201).json({
       status: 'success',
