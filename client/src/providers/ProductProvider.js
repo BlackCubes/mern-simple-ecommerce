@@ -8,6 +8,7 @@ import {
   getCategoryAPI,
   getProductsAPI,
   getProductAPI,
+  getReviewsAPI,
 } from '../utils';
 
 const ProductProvider = ({ children }) => {
@@ -15,6 +16,7 @@ const ProductProvider = ({ children }) => {
   const [product, setProduct] = useState(null);
   const [categories, setCategories] = useState(null);
   const [category, setCategory] = useState(null);
+  const [reviews, setReviews] = useState(null);
 
   const getProducts = async () => {
     try {
@@ -57,6 +59,15 @@ const ProductProvider = ({ children }) => {
     }
   };
 
+  const getReviews = async (productId) => {
+    try {
+      const data = await getReviewsAPI(productId);
+      setReviews(data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   const postReview = (review) => console.log(review);
 
   return (
@@ -70,6 +81,8 @@ const ProductProvider = ({ children }) => {
         getProducts,
         getCategory,
         getCategories,
+        reviews,
+        getReviews,
         postReview,
       }}
     >
