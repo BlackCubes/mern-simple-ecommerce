@@ -40,3 +40,14 @@ export const getCategoryAPI = async (category) => {
     console.log(err);
   }
 };
+
+// This Current Website's API (Errez Shop)
+export const getReviewsAPI = async (productId) => {
+  try {
+    const apiUrl = `${process.env.REACT_APP_ERREZ_SERVER_URL}/products/${productId}/reviews`;
+    const res = await axios.get(apiUrl);
+    if (res.status === 200) return res.data.data;
+  } catch (err) {
+    console.log(err);
+  }
+};
