@@ -56,7 +56,7 @@ router.delete(
   authController.protect,
   authController.restrictTo('admin'),
   authController.verifyPassword,
-  userController.deleteMe
+  userController.deactivateMe
 );
 
 // ROUTES ONLY FOR ADMIN
