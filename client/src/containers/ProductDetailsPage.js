@@ -202,7 +202,9 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
                 </ProductDetailsReviewsAddStyled>
 
                 <ProductDetailsReviewContentStyled>
-                  {!reviews.length ? (
+                  {!reviews ? (
+                    <Paragraph>No reviews</Paragraph>
+                  ) : !reviews.length ? (
                     <Paragraph>No reviews</Paragraph>
                   ) : (
                     reviews.map((review) => (
