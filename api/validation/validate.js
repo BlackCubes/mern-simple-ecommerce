@@ -49,8 +49,8 @@ Validator.registerAsync('exist', (val, attribute, req, passes) => {
   });
 });
 
-module.exports = (body, rules, customeMessages, cb) => {
-  const validation = new Validator(body, rules, customeMessages);
+module.exports = (body, rules, customMessages, cb) => {
+  const validation = new Validator(body, rules, customMessages);
 
   validation.passes(() => cb(null, true));
   validation.fails(() => cb(validation.errors, false));
