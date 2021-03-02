@@ -15,7 +15,7 @@ import {
   NavbarCartImageStyled,
   NavbarCartLabelStyled,
   NavbarCartQuantityStyled,
-} from '../common/Base';
+} from '../common/Navbar';
 
 import { useCartContext } from '../context/CartContext';
 
