@@ -1,12 +1,19 @@
 const express = require('express');
+
 const { authController, reviewController } = require('../controllers');
+
+const { validationController } = require('../validation');
 
 const router = express.Router({ mergeParams: true });
 
 router
   .route('/')
   .get(reviewController.getAllReviews)
-  .post(authController.checkLogin, reviewController.createReview);
+  .post(
+    authController.checkLogin,
+    validationController.createReview,
+    reviewController.createReview
+  );
 
 router
   .route('/:id')
@@ -18,6 +25,7 @@ router
   .patch(
     authController.protect,
     authController.restrictTo('admin'),
+    validationController.updateReview,
     reviewController.updateReview
   )
   .delete(
