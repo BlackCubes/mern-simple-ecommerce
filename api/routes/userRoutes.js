@@ -2,11 +2,23 @@ const express = require('express');
 
 const { authController, userController } = require('../controllers');
 
+const { validationController } = require('../validation');
+
 const router = express.Router();
 
 // ROUTES W/PURE AUTH
-router.post('/signup', authController.checkLogin, authController.signup);
-router.post('/login', authController.checkLogin, authController.login);
+router.post(
+  '/signup',
+  authController.checkLogin,
+  validationController.signup,
+  authController.signup
+);
+router.post(
+  '/login',
+  authController.checkLogin,
+  validationController.login,
+  authController.login
+);
 router.get(
   '/logout',
   authController.protect,
@@ -16,17 +28,20 @@ router.get(
 router.post(
   '/forgot-password',
   authController.checkLogin,
+  validationController.forgotPassword,
   authController.forgotPassword
 );
 router.patch(
   '/reset-password/:token',
   authController.checkLogin,
+  validationController.resetPassword,
   authController.resetPassword
 );
 router.patch(
   '/updateMyPassword',
   authController.protect,
   authController.restrictTo('admin'),
+  validationController.updatePassword,
   authController.updateMyPassword
 );
 
@@ -42,6 +57,7 @@ router.patch(
   '/updateMe',
   authController.protect,
   authController.restrictTo('admin'),
+  validationController.updateUser,
   userController.updateMe
 );
 router.delete(
@@ -83,6 +99,7 @@ router
   .patch(
     authController.protect,
     authController.restrictTo('admin'),
+    validationController.updateUser,
     userController.updateUser
   )
   .delete(
