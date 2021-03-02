@@ -3,6 +3,7 @@ import {
   getProductAPI,
   getCategoriesAPI,
   getCategoryAPI,
+  getReviewsAPI,
 } from './api';
 
 import { fieldInputErrors, fieldInputProperties } from './fieldPropHandler';
@@ -27,5 +28,6 @@ export {
   getCategoriesAPI,
   getProductAPI,
   getProductsAPI,
+  getReviewsAPI,
   regex,
 };
