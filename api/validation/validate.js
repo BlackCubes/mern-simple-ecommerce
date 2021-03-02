@@ -40,7 +40,7 @@ Validator.registerAsync('exist', (val, attribute, req, passes) => {
 
   const msg = `${capitalize(column)} already in use.`;
 
-  Models[table].valueExist({ [column]: val }).then((res) => {
+  Models[table].valueExists({ [column]: val }).then((res) => {
     if (res) {
       passes(false, msg);
       return;
