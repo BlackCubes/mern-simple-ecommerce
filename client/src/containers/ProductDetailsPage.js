@@ -45,12 +45,26 @@ import { daysFromNow, dateTimeFormat } from '../utils';
 const reviewFormFields = [
   {
     type: 'text',
-    name: 'fullname',
-    id: 'fullname',
-    placeholder: 'Name',
+    name: 'firstname',
+    id: 'firstname',
+    placeholder: 'First Name',
     message: "Let's go!",
     addlstyle: {
-      width: '100%',
+      width: '50%',
+      flex: '1 22rem',
+      float: 'left',
+      padding: '0 0.75rem',
+    },
+  },
+  {
+    type: 'text',
+    name: 'lastname',
+    id: 'lastname',
+    placeholder: 'Last Name',
+    message: "Let's go!",
+    addlstyle: {
+      width: '50%',
+      flex: '1 22rem',
       float: 'left',
       padding: '0 0.75rem',
     },
