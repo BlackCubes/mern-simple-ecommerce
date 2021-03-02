@@ -16,7 +16,7 @@ const ProductProvider = ({ children }) => {
   const [product, setProduct] = useState(null);
   const [categories, setCategories] = useState(null);
   const [category, setCategory] = useState(null);
-  const [reviews, setReviews] = useState(null);
+  const [reviews, setReviews] = useState([]);
 
   const getProducts = async () => {
     try {
