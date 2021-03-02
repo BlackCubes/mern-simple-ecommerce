@@ -18,7 +18,7 @@ exports.signup = catchAsync(async (req, res, next) => {
   const validationRule = {
     name: 'required|string|min:2|max:70|regexName',
     email: 'required|email|exist:User,email',
-    password: 'required|string|min:8|max:60|confirmed|regexPass',
+    password: 'required|string|min:8|max:60|confirmed|regexPassword',
     password_confirmation: 'required|string',
   };
 
@@ -28,7 +28,7 @@ exports.signup = catchAsync(async (req, res, next) => {
 exports.login = catchAsync(async (req, res, next) => {
   const validationRule = {
     email: 'required|email',
-    password: 'required|string|min:8|max:60|regexPass',
+    password: 'required|string|min:8|max:60|regexPassword',
   };
 
   givenValidation(req, next, validationRule);
@@ -44,7 +44,7 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
 
 exports.resetPassword = catchAsync(async (req, res, next) => {
   const validationRule = {
-    password: 'required|string|min:8|max:60|confirmed|regexPass',
+    password: 'required|string|min:8|max:60|confirmed|regexPassword',
     password_confirmation: 'required|string',
   };
 
@@ -53,8 +53,8 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
 
 exports.updatePassword = catchAsync(async (req, res, next) => {
   const validationRule = {
-    password_current: 'required|string|min:8|max:60|regexPass',
-    password: 'required|string|min:8|max:60|confirmed|regexPass',
+    password_current: 'required|string|min:8|max:60|regexPassword',
+    password: 'required|string|min:8|max:60|confirmed|regexPassword',
     password_confirmation: 'required|string',
   };
 
