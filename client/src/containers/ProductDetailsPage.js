@@ -61,10 +61,19 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
   const [reviewModalToggle, setReviewModalToggle] = useState(false);
   const { id } = useParams();
   const { addProduct } = useCartContext();
-  const { getProduct, product, postReview } = useProductContext();
+  const {
+    getProduct,
+    product,
+    reviews,
+    getReviews,
+    postReview,
+  } = useProductContext();
 
   useEffect(() => {
-    if (id) getProduct(id);
+    if (id) {
+      getProduct(id);
+      getReviews(id);
+    }
   }, [id]);
 
   const onFormModal = (setToggle) => (e) => {
@@ -179,7 +188,17 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
                 </ProductDetailsReviewsAddStyled>
 
                 <ProductDetailsReviewContentStyled>
-                  <Paragraph>Nothing yet!</Paragraph>
+                  {!reviews.length ? (
+                    <Paragraph>No reviews</Paragraph>
+                  ) : (
+                    reviews.map((review) => (
+                      <div key={review._id}>
+                        <Paragraph>{review.userfullname}</Paragraph>
+                        <Paragraph>{review.review}</Paragraph>
+                        <Paragraph>{review.rating}</Paragraph>
+                      </div>
+                    ))
+                  )}
                 </ProductDetailsReviewContentStyled>
               </ProductDetailsReviewsBodyStyled>
             </ProductDetailsReviewsStyled>
