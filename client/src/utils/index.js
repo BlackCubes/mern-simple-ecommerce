@@ -4,6 +4,7 @@ import {
   getCategoriesAPI,
   getCategoryAPI,
   getReviewsAPI,
+  postReviewAPI,
 } from './api';
 
 import { daysFromNow, dateTimeFormat } from './dates';
@@ -22,5 +23,6 @@ export {
   getProductAPI,
   getProductsAPI,
   getReviewsAPI,
+  postReviewAPI,
   regex,
 };
