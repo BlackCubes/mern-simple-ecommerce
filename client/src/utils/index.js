@@ -1,49 +1,13 @@
-import axios from 'axios';
+import {
+  getProductsAPI,
+  getProductAPI,
+  getCategoriesAPI,
+  getCategoryAPI,
+} from './api';
 
 import { fieldInputErrors, fieldInputProperties } from './fieldPropHandler';
 
 import regex from './regex';
-
-// API
-const getProductsAPI = async () => {
-  try {
-    const apiUrl = 'https://fakestoreapi.com/products';
-    const res = await axios.get(apiUrl);
-    if (res.status === 200) return res.data;
-  } catch (err) {
-    console.log(err);
-  }
-};
-
-const getProductAPI = async (id) => {
-  try {
-    const apiUrl = `https://fakestoreapi.com/products/${id}`;
-    const res = await axios.get(apiUrl);
-    if (res.status === 200) return res.data;
-  } catch (err) {
-    console.log(err);
-  }
-};
-
-const getCategoriesAPI = async () => {
-  try {
-    const apiUrl = 'https://fakestoreapi.com/products/categories';
-    const res = await axios.get(apiUrl);
-    if (res.status === 200) return res.data;
-  } catch (err) {
-    console.log(err);
-  }
-};
-
-const getCategoryAPI = async (category) => {
-  try {
-    const apiUrl = `https://fakestoreapi.com/products/category/${category}`;
-    const res = await axios.get(apiUrl);
-    if (res.status === 200) return res.data;
-  } catch (err) {
-    console.log(err);
-  }
-};
 
 // DATETIME
 const daysFromNow = (days) => {
