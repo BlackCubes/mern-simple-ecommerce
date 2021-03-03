@@ -15,7 +15,7 @@ import {
   FooterLowerStyled,
   FooterCopyrightStyled,
   FooterCopyrightContentStyled,
-} from '../common/Base';
+} from '../common/Footer';
 
 import { Small } from '../common/Typography';
 
