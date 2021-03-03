@@ -1,4 +1,9 @@
 import {
+  AccountNavbarStyled,
+  AccountNavbarLogoStyled,
+  AccountNavbarLogoImgStyled,
+} from './AccountNavbarStyled';
+import {
   NavbarStyled,
   NavbarContainerStyled,
   NavbarLogoStyled,
@@ -13,6 +18,9 @@ import {
 } from './NavbarStyled';
 
 export {
+  AccountNavbarStyled,
+  AccountNavbarLogoStyled,
+  AccountNavbarLogoImgStyled,
   NavbarStyled,
   NavbarContainerStyled,
   NavbarLogoStyled,
