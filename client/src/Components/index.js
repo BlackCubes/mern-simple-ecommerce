@@ -1,3 +1,4 @@
+import AccountNavbar from './AccountNavbar';
 import CategorySidebar from './CategorySidebar';
 import CheckoutSidebar from './CheckoutSidebar';
 import CreditCard from './CreditCard';
@@ -8,6 +9,7 @@ import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 
 export {
+  AccountNavbar,
   CategorySidebar,
   CheckoutSidebar,
   CreditCard,
