@@ -69,6 +69,15 @@ const reviewFormFields = [
       padding: '0 0.75rem',
     },
   },
+  {
+    type: 'textarea',
+    name: 'review',
+    id: 'review',
+    placeholder: 'Make A Review',
+    minlength: '20',
+    maxlength: '280',
+    message: "Let's go!",
+  },
 ];
 
 const ProductDetailsPage = ({ FormContainerComponent }) => {
