@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
-import { Image } from '../common';
+import { Image } from '../../common';
 
 import {
   AccountNavbarStyled,
   AccountNavbarLogoStyled,
   AccountNavbarLogoImgStyled,
-} from '../common/Navbar';
+} from '../../common/Navbar';
 
 const AccountNavbar = () => (
   <AccountNavbarStyled>
