@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
-import { Image, Link } from '../common';
+import { Image, Link } from '../../common';
 
 import {
   NavbarStyled,
@@ -15,9 +15,9 @@ import {
   NavbarCartImageStyled,
   NavbarCartLabelStyled,
   NavbarCartQuantityStyled,
-} from '../common/Navbar';
+} from '../../common/Navbar';
 
-import { useCartContext } from '../context/CartContext';
+import { useCartContext } from '../../context/CartContext';
 
 const Navbar = () => {
   const { cart } = useCartContext();
