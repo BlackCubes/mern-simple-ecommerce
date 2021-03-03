@@ -23,6 +23,8 @@ const Input = ({ inputprop, error }) => (
         id={inputprop.id}
         value={inputprop.value}
         placeholder={inputprop.placeholder}
+        minLength={inputprop.minlength}
+        maxLength={inputprop.maxlength}
         onChange={inputprop.onChange}
         noValidate={inputprop.noValidate}
       />
@@ -40,6 +42,8 @@ Input.propTypes = {
     id: PropTypes.string.isRequired,
     value: PropTypes.string,
     placeholder: PropTypes.string.isRequired,
+    minlength: PropTypes.string,
+    maxlength: PropTypes.string,
     onChange: PropTypes.func.isRequired,
     noValidate: PropTypes.bool,
     message: PropTypes.string.isRequired,
