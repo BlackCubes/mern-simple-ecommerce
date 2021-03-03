@@ -1,7 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { InputMessageStyled, InputStyled, LabelStyled } from '../common/Inputs';
+import {
+  InputMessageStyled,
+  InputStyled,
+  LabelStyled,
+  TextAreaStyled,
+} from '../common/Inputs';
 
 const Inputs = ({ inputprop, error }) => (
   <LabelStyled htmlFor={inputprop.id}>
@@ -17,7 +22,7 @@ const Inputs = ({ inputprop, error }) => (
         noValidate={inputprop.noValidate}
       />
     ) : (
-      <textarea
+      <TextAreaStyled
         name={inputprop.name}
         className={inputprop.className}
         id={inputprop.id}
