@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link } from '../common';
+import { Link } from '../../common';
 import {
   AccountFooterStyled,
   AccountFooterCreatedStyled,
@@ -9,8 +9,8 @@ import {
   AccountFooterCreatedNavigationStyled,
   AccountFooterCreatedListStyled,
   AccountFooterCreatedItemStyled,
-} from '../common/Footer';
-import { Paragraph } from '../common/Typography';
+} from '../../common/Footer';
+import { Paragraph } from '../../common/Typography';
 
 const AccountFooter = () => (
   <AccountFooterStyled>
