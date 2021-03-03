@@ -4,7 +4,7 @@ import Card from 'react-credit-cards';
 
 import { Button, FormStyled, FormGroupStyled } from '../common';
 
-import { CreditCard, Input } from '../Components';
+import { CreditCard, Inputs } from '../Components';
 
 import { fieldInputErrors, fieldInputProperties, regex } from '../utils';
 
@@ -218,7 +218,7 @@ const FormContainer = ({ onSubmit, formFields, hasCreditCard }) => {
         const ind = key;
         return (
           <FormGroupStyled key={ind} addlstyle={prop.addlstyle}>
-            <Input inputprop={prop} error={inputErrors[key]} />
+            <Inputs inputprop={prop} error={inputErrors[key]} />
           </FormGroupStyled>
         );
       })}
