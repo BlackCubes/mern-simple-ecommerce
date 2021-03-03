@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { InputMessageStyled, InputStyled, LabelStyled } from '../common';
+import { InputMessageStyled, InputStyled, LabelStyled } from '../common/Inputs';
 
 const Inputs = ({ inputprop, error }) => (
   <LabelStyled htmlFor={inputprop.id}>
