@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { InputMessageStyled, InputStyled, LabelStyled } from '../common';
 
-const Input = ({ inputprop, error }) => (
+const Inputs = ({ inputprop, error }) => (
   <LabelStyled htmlFor={inputprop.id}>
     {inputprop.type !== 'textarea' ? (
       <InputStyled
@@ -34,7 +34,7 @@ const Input = ({ inputprop, error }) => (
   </LabelStyled>
 );
 
-Input.propTypes = {
+Inputs.propTypes = {
   inputprop: PropTypes.shape({
     type: PropTypes.string,
     name: PropTypes.string.isRequired,
@@ -51,6 +51,6 @@ Input.propTypes = {
   error: PropTypes.string,
 };
 
-Input.defaultProps = { error: null };
+Inputs.defaultProps = { error: null };
 
-export default Input;
+export default Inputs;
