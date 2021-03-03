@@ -25,6 +25,8 @@ export const AccountFooterCreatedTitleStyled = styled.div`
 
   & span {
     font-size: 1.5rem;
+    color: #0067aa;
+    text-transform: uppercase;
   }
 `;
 
