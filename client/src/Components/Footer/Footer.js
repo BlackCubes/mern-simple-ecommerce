@@ -3,7 +3,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { Link } from '../common';
+import { Link } from '../../common';
 
 import {
   FooterStyled,
@@ -15,9 +15,9 @@ import {
   FooterLowerStyled,
   FooterCopyrightStyled,
   FooterCopyrightContentStyled,
-} from '../common/Footer';
+} from '../../common/Footer';
 
-import { Small } from '../common/Typography';
+import { Small } from '../../common/Typography';
 
 library.add(faGithub, faLinkedin);
 
