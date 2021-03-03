@@ -5,16 +5,28 @@ import { InputMessageStyled, InputStyled, LabelStyled } from '../common';
 
 const Input = ({ inputprop, error }) => (
   <LabelStyled htmlFor={inputprop.id}>
-    <InputStyled
-      type={inputprop.type}
-      name={inputprop.name}
-      className={inputprop.className}
-      id={inputprop.id}
-      value={inputprop.value}
-      placeholder={inputprop.placeholder}
-      onChange={inputprop.onChange}
-      noValidate={inputprop.noValidate}
-    />
+    {inputprop.type !== 'textarea' ? (
+      <InputStyled
+        type={inputprop.type}
+        name={inputprop.name}
+        className={inputprop.className}
+        id={inputprop.id}
+        value={inputprop.value}
+        placeholder={inputprop.placeholder}
+        onChange={inputprop.onChange}
+        noValidate={inputprop.noValidate}
+      />
+    ) : (
+      <textarea
+        name={inputprop.name}
+        className={inputprop.className}
+        id={inputprop.id}
+        value={inputprop.value}
+        placeholder={inputprop.placeholder}
+        onChange={inputprop.onChange}
+        noValidate={inputprop.noValidate}
+      />
+    )}
 
     <InputMessageStyled>{error || inputprop.message}</InputMessageStyled>
   </LabelStyled>
