@@ -1,3 +1,4 @@
+import AccountFooter from './AccountFooter';
 import Footer from './Footer';
 
-export { Footer };
+export { AccountFooter, Footer };
