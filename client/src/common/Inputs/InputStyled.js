@@ -1,11 +1,6 @@
 import styled from 'styled-components';
 
-export const LabelStyled = styled.label`
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-`;
-
-export const InputStyled = styled.input`
+export default styled.input`
   display: block;
   width: 100%;
   margin-left: auto;
@@ -47,12 +42,4 @@ export const InputStyled = styled.input`
   &.error + span {
     color: ${(props) => props.theme.colors.red};
   }
-`;
-
-export const InputMessageStyled = styled.span`
-  display: block;
-  color: ${(props) => props.theme.colors.moderate_blue_2};
-  margin-top: 0.5rem;
-  text-align: left;
-  transition: all 0.3s;
 `;
