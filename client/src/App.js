@@ -6,7 +6,7 @@ import 'react-credit-cards/es/styles-compiled.css';
 
 import { Main } from './common/Base';
 
-import { Navbar } from './Components';
+import { Navbar } from './Components/Navbar';
 import { Footer } from './Components/Footer';
 
 import {
