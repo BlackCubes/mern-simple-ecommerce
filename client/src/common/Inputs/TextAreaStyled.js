@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export default styled.textarea`
   display: block;
+  font-family: inherit;
   width: 100%;
   height: 20rem;
   margin-left: auto;
