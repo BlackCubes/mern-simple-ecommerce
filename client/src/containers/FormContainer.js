@@ -142,17 +142,36 @@ const FormContainer = ({ onSubmit, formFields, hasCreditCard }) => {
         if (!value.length)
           setErrors((err) => ({
             ...err,
-            [name]: 'Required',
+            [name]: 'Required.',
           }));
         else if (value.length !== 5)
           setErrors((err) => ({
             ...err,
-            [name]: 'Must be 5 characters long',
+            [name]: 'Must be 5 characters long.',
           }));
         else if (!regex.zipcode.test(value))
           setErrors((err) => ({
             ...err,
             [name]: 'Please provide a valid US ZIP code.',
+          }));
+        else setErrors((err) => ({ ...err, [name]: '' }));
+        break;
+
+      case 'review':
+        if (!value.length)
+          setErrors((err) => ({
+            ...err,
+            [name]: 'Required.',
+          }));
+        else if (value.length < 20)
+          setErrors((err) => ({
+            ...err,
+            [name]: 'Must be a minimum of 20 characters.',
+          }));
+        else if (value.length > 280)
+          setErrors((err) => ({
+            ...err,
+            [name]: 'Must be less than or equal to 280 characters.',
           }));
         else setErrors((err) => ({ ...err, [name]: '' }));
         break;
