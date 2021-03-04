@@ -33,7 +33,7 @@ const RatingIcons = ({
     <RatingIconStyled
       onMouseEnter={() => onMouseEnter(index)}
       onMouseLeave={() => onMouseLeave()}
-      onCLick={() => onSaveRating(index)}
+      onClick={() => onSaveRating(index)}
       cursortype={cursortype}
     >
       <StarIcon fill={fill} />
