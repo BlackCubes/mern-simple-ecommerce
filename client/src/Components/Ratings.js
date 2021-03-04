@@ -41,13 +41,22 @@ const RatingIcons = ({
   );
 };
 
-const Ratings = ({ cursortype }) => {
+const Ratings = ({ cursortype, onRatingsChange }) => {
   const [rating, setRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
 
-  const onMouseEnter = (index) => setHoverRating(index);
-  const onMouseLeave = () => setHoverRating(0);
-  const onSaveRating = (index) => setRating(index);
+  const onMouseEnter = (index) => {
+    setHoverRating(index);
+    onRatingsChange(index);
+  };
+  const onMouseLeave = () => {
+    setHoverRating(0);
+    onRatingsChange(0);
+  };
+  const onSaveRating = (index) => {
+    setRating(index);
+    onRatingsChange(index);
+  };
 
   return (
     <RatingsStyled>
@@ -91,6 +100,7 @@ RatingIcons.defaultProps = {
 
 Ratings.propTypes = {
   cursortype: PropTypes.string,
+  onRatingsChange: PropTypes.func.isRequired,
 };
 
 Ratings.defaultProps = {
