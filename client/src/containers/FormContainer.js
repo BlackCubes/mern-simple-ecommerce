@@ -3,12 +3,18 @@ import PropTypes from 'prop-types';
 import Card from 'react-credit-cards';
 
 import { Button, FormStyled, FormGroupStyled } from '../common';
+import { LabelStyled, InputMessageStyled } from '../common/Inputs';
 
-import { CreditCard, Inputs } from '../Components';
+import { CreditCard, Inputs, Ratings } from '../Components';
 
 import { fieldInputErrors, fieldInputProperties, regex } from '../utils';
 
-const FormContainer = ({ onSubmit, formFields, hasCreditCard }) => {
+const FormContainer = ({
+  onSubmit,
+  formFields,
+  hasCreditCard,
+  hasReviewRating,
+}) => {
   const [values, setValues] = useState({});
   const [errors, setErrors] = useState({});
   const [focus, setFocus] = useState('');
@@ -207,6 +213,32 @@ const FormContainer = ({ onSubmit, formFields, hasCreditCard }) => {
     setValues((val) => ({ ...val, [name]: value }));
   };
 
+  const handleRatingsChange = (rating) => {
+    if (!rating)
+      setErrors((err) => ({
+        ...err,
+        rating: 'Required',
+      }));
+    else if (rating < 1)
+      setErrors((err) => ({
+        ...err,
+        rating: 'Must be a minimum rating of 1.',
+      }));
+    else if (rating > 5)
+      setErrors((err) => ({
+        ...err,
+        rating: 'Must be a maximum rating of 5.',
+      }));
+    else if (!regex.rating.test(rating))
+      setErrors((err) => ({
+        ...err,
+        rating: 'Please provide a valid rating between 1 and 5',
+      }));
+    else setErrors((err) => ({ ...err, rating: 'none' }));
+
+    setValues((val) => ({ ...val, rating }));
+  };
+
   const validateForm = (errorList) => {
     let valid = true;
     Object.values(errorList).forEach((err) => {
@@ -257,6 +289,14 @@ const FormContainer = ({ onSubmit, formFields, hasCreditCard }) => {
         </CreditCard>
       )}
 
+      {!hasReviewRating ? null : (
+        <LabelStyled htmlFor="rating">
+          <Ratings id="rating" onRatingsChange={handleRatingsChange} />
+
+          <InputMessageStyled>{errors.rating || 'Noice!'}</InputMessageStyled>
+        </LabelStyled>
+      )}
+
       {inputProperties.map((prop, key) => {
         const ind = key;
         return (
@@ -285,8 +325,12 @@ FormContainer.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   formFields: PropTypes.arrayOf(PropTypes.object).isRequired,
   hasCreditCard: PropTypes.bool,
+  hasReviewRating: PropTypes.bool,
 };
 
-FormContainer.defaultProps = { hasCreditCard: false };
+FormContainer.defaultProps = {
+  hasCreditCard: false,
+  hasReviewRating: false,
+};
 
 export default FormContainer;
