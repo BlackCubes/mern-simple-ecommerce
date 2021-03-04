@@ -176,6 +176,30 @@ const FormContainer = ({ onSubmit, formFields, hasCreditCard }) => {
         else setErrors((err) => ({ ...err, [name]: '' }));
         break;
 
+      case 'rating':
+        if (!value.length)
+          setErrors((err) => ({
+            ...err,
+            [name]: 'Required.',
+          }));
+        else if (parseInt(value, 10) < 1)
+          setErrors((err) => ({
+            ...err,
+            [name]: 'Must be a minimum rating of 1.',
+          }));
+        else if (parseInt(value, 10) > 5)
+          setErrors((err) => ({
+            ...err,
+            [name]: 'Must be a maximum rating of 5.',
+          }));
+        else if (!regex.rating.test(value))
+          setErrors((err) => ({
+            ...err,
+            [name]: 'Please provide a valid rating between 1 and 5',
+          }));
+        else setErrors((err) => ({ ...err, [name]: '' }));
+        break;
+
       default:
         break;
     }
