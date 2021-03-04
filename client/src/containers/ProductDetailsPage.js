@@ -80,6 +80,7 @@ const reviewFormFields = [
     addlstyle: {
       width: '100%',
       float: 'left',
+      margin: '0 0 1rem',
       padding: '0 0.75rem',
     },
   },
