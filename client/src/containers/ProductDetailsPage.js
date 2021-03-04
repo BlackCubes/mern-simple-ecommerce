@@ -77,6 +77,11 @@ const reviewFormFields = [
     minlength: '20',
     maxlength: '280',
     message: "Let's go!",
+    addlstyle: {
+      width: '100%',
+      float: 'left',
+      padding: '0 0.75rem',
+    },
   },
 ];
 
