@@ -12,6 +12,7 @@ import {
   ModalBodyStyled,
   ModalButtonStyled,
 } from './ModalStyled';
+import SvgStyled from './SvgStyled';
 
 export {
   Button,
@@ -27,4 +28,5 @@ export {
   ModalHeaderStyled,
   ModalBodyStyled,
   ModalButtonStyled,
+  SvgStyled,
 };
