@@ -12,7 +12,7 @@ import {
   ModalBodyStyled,
   ModalButtonStyled,
 } from './ModalStyled';
-import RatingsStyled from './RatingsStyled';
+import { RatingsStyled, RatingIconStyled } from './RatingsStyled';
 import SvgStyled from './SvgStyled';
 
 export {
@@ -30,5 +30,6 @@ export {
   ModalBodyStyled,
   ModalButtonStyled,
   RatingsStyled,
+  RatingIconStyled,
   SvgStyled,
 };
