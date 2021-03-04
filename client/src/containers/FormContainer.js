@@ -291,7 +291,11 @@ const FormContainer = ({
 
       {!hasReviewRating ? null : (
         <LabelStyled htmlFor="rating">
-          <Ratings id="rating" onRatingsChange={handleRatingsChange} />
+          <Ratings
+            id="rating"
+            onRatingsChange={handleRatingsChange}
+            cursortype="pointer"
+          />
 
           <InputMessageStyled>{errors.rating || 'Noice!'}</InputMessageStyled>
         </LabelStyled>
