@@ -13,6 +13,7 @@ export default styled.textarea`
   border-bottom: 0.3rem solid transparent;
   border-radius: 0.2rem;
   transition: all 0.3s;
+  resize: none;
 
   &:focus {
     outline: none;
