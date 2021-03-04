@@ -242,6 +242,7 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
               <FormContainerComponent
                 onSubmit={onSubmissionModal(postReview, setReviewModalToggle)}
                 formFields={reviewFormFields}
+                hasReviewRating
               />
             </Modal>
           </>
