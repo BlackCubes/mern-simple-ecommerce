@@ -45,18 +45,11 @@ const Ratings = ({ cursortype, onRatingsChange }) => {
   const [rating, setRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
 
-  const onMouseEnter = (index) => {
-    setHoverRating(index);
-    onRatingsChange(index);
-  };
-  const onMouseLeave = () => {
-    setHoverRating(0);
-    onRatingsChange(0);
-  };
-  const onSaveRating = (index) => {
-    setRating(index);
-    onRatingsChange(index);
-  };
+  const onMouseEnter = (index) => setHoverRating(index);
+  const onMouseLeave = () => setHoverRating(0);
+  const onSaveRating = (index) => setRating(index);
+
+  onRatingsChange(rating);
 
   return (
     <RatingsStyled>
