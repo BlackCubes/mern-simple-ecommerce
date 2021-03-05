@@ -13,6 +13,7 @@ import {
   CartPage,
   CheckoutPage,
   FormContainer,
+  LoginPage,
   ProductDetailsPage,
   ProductsPage,
 } from './containers';
@@ -40,6 +41,9 @@ function App() {
                 <Route exact path="/cart" component={CartPage} />
                 <Route exact path="/checkout">
                   <CheckoutPage FormContainerComponent={FormContainer} />
+                </Route>
+                <Route exact path="/login">
+                  <LoginPage FormContainerComponent={FormContainer} />
                 </Route>
               </Switch>
             </Main>
