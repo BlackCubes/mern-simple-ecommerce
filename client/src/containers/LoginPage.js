@@ -18,6 +18,7 @@ const loginFormFields = [
     type: 'password',
     name: 'password',
     id: 'password',
+    placeholder: 'Password',
     message: "Let's go!",
     addlstyle: {
       width: '100%',
