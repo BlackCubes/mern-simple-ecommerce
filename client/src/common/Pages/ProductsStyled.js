@@ -74,3 +74,12 @@ export const ProductsCardCartBtnStyled = styled.div`
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 `;
+
+export const ProductsCardRatingStyled = styled.div`
+  margin-bottom: 1rem;
+
+  & svg {
+    width: 2rem;
+    height: 2rem;
+  }
+`;
