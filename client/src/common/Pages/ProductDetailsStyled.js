@@ -132,6 +132,14 @@ export const ProductDetailsReviewRatingStyled = styled.div`
   margin-bottom: 1.5rem;
 `;
 
+export const ProductDetailsReviewUserStyled = styled.div`
+  & span {
+    font-size: 1.5rem;
+    color: ${(props) => props.theme.colors.lime_green};
+    opacity: 0.8;
+  }
+`;
+
 export const ProductDetailsReviewDescriptionStyled = styled.div`
   margin-top: 2rem;
 `;
