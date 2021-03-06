@@ -25,7 +25,7 @@ import {
   Small,
 } from '../common/Typography';
 
-import { Sidebar } from '../Components';
+import { RatingsStatic, Sidebar } from '../Components';
 
 import { useCartContext } from '../context/CartContext';
 import { useProductContext } from '../context/ProductContext';
@@ -68,6 +68,8 @@ const ProductsPage = () => {
                   </ProductsCardInfoTitleStyled>
 
                   <ProductsCardInfoShippingStyled>
+                    <RatingsStatic rating={1} />
+
                     <ProductsCardInfoShippingBuyStyled>
                       <Small tagType="strong" colorType="lime_green">
                         Buy it today
