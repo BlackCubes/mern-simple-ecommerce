@@ -234,7 +234,7 @@ const FormContainer = ({
         ...err,
         rating: 'Please provide a valid rating between 1 and 5',
       }));
-    else setErrors((err) => ({ ...err, rating: 'none' }));
+    else setErrors((err) => ({ ...err, rating: '' }));
 
     setValues((val) => ({ ...val, rating }));
   };
@@ -297,7 +297,7 @@ const FormContainer = ({
             cursortype="pointer"
           />
 
-          <InputMessageStyled>{errors.rating || 'Noice!'}</InputMessageStyled>
+          <InputMessageStyled>{errors.rating || ''}</InputMessageStyled>
         </LabelStyled>
       )}
 
