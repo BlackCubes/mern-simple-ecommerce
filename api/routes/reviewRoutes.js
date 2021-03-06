@@ -11,6 +11,7 @@ router
   .get(reviewController.getAllReviews)
   .post(
     authController.checkLogin,
+    reviewController.setProductId,
     validationController.createReview,
     reviewController.createReview
   );
