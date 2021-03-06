@@ -3,8 +3,19 @@ import PropTypes from 'prop-types';
 
 import { RatingIconStyled, RatingsStyled, SvgStyled } from '../common';
 
-const StarIcon = ({ fill = 'none' }) => (
-  <SvgStyled fill={fill} stroke="currentColor" viewBox="0 0 24 24">
+const StarIcon = ({ fill = 'none', offset }) => (
+  <SvgStyled
+    fill={offset ? 'url(#starPercent)' : fill}
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <defs>
+      <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id="starPercent">
+        <stop stopColor="#ffe23e" offset={offset || '0%'} id="starFill1" />
+        <stop stopColor="transparent" offset="0%" id="starFill2" />
+      </linearGradient>
+    </defs>
+
     <path
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -77,10 +88,16 @@ const RatingsStatic = ({ rating = 0 }) => {
       return 'none';
     }, [rating, index]);
 
+  const offset = (index) => {
+    if (rating >= index) return '100%';
+    if (rating < index) return `${(rating / index) * 100}%`;
+    return '0%';
+  };
+
   return (
     <RatingsStyled className="ratings-static">
       {[1, 2, 3, 4, 5].map((index) => (
-        <StarIcon key={index} fill={fill(index)} />
+        <StarIcon key={index} fill={fill(index)} offset={offset(index)} />
       ))}
     </RatingsStyled>
   );
@@ -88,10 +105,12 @@ const RatingsStatic = ({ rating = 0 }) => {
 
 StarIcon.propTypes = {
   fill: PropTypes.string,
+  offset: PropTypes.string,
 };
 
 StarIcon.defaultProps = {
   fill: 'none',
+  offset: null,
 };
 
 RatingIcons.propTypes = {
