@@ -26,6 +26,8 @@ import {
   ProductDetailsReviewsBodyStyled,
   ProductDetailsReviewsAddStyled,
   ProductDetailsReviewContentStyled,
+  ProductDetailsReviewRatingStyled,
+  ProductDetailsReviewDescriptionStyled,
 } from '../common/Pages';
 
 import {
@@ -226,9 +228,15 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
                   ) : (
                     reviews.map((review) => (
                       <div key={review._id}>
+                        <ProductDetailsReviewRatingStyled>
+                          <Paragraph>{review.rating}</Paragraph>
+                        </ProductDetailsReviewRatingStyled>
+
                         <Paragraph>{review.userfullname}</Paragraph>
-                        <Paragraph>{review.review}</Paragraph>
-                        <Paragraph>{review.rating}</Paragraph>
+
+                        <ProductDetailsReviewDescriptionStyled>
+                          <Paragraph>{review.review}</Paragraph>
+                        </ProductDetailsReviewDescriptionStyled>
                       </div>
                     ))
                   )}
