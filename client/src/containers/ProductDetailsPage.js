@@ -236,7 +236,16 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
 
                         <ProductDetailsReviewUserStyled>
                           <Paragraph sizetype="small">
-                            <span>{review.userfullname}</span>
+                            <span>
+                              by&nbsp;
+                              {review.userfullname}
+                              &nbsp;on&nbsp;
+                              {dateTimeFormat(
+                                'en-US',
+                                { dateStyle: 'medium' },
+                                new Date(review.createdAt)
+                              )}
+                            </span>
                           </Paragraph>
                         </ProductDetailsReviewUserStyled>
 
