@@ -77,7 +77,7 @@ const ProductProvider = ({ children }) => {
         userfullname: `${data.firstname} ${data.lastname}`,
       };
       const { newData } = await postReviewAPI(productId, reviewData);
-      if (newData) setReviews((review) => [...review, newData]);
+      if (newData) setReviews((oldReviews) => [...oldReviews, newData]);
     } catch (err) {
       console.log(err);
     }
