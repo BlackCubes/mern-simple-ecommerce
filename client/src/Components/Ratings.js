@@ -70,6 +70,22 @@ const RatingsInput = ({ cursortype, onRatingsChange }) => {
   );
 };
 
+const RatingsStatic = ({ rating = 0 }) => {
+  const fill = (index) =>
+    useMemo(() => {
+      if (rating >= index) return 'yellow';
+      return 'none';
+    }, [rating, index]);
+
+  return (
+    <RatingsStyled>
+      {[1, 2, 3, 4, 5].map((index) => (
+        <StarIcon key={index} fill={fill(index)} />
+      ))}
+    </RatingsStyled>
+  );
+};
+
 StarIcon.propTypes = {
   fill: PropTypes.string,
 };
@@ -101,4 +117,12 @@ RatingsInput.defaultProps = {
   cursortype: null,
 };
 
-export default RatingsInput;
+RatingsStatic.propTypes = {
+  rating: PropTypes.number,
+};
+
+RatingsStatic.defaultProps = {
+  rating: 0,
+};
+
+export { RatingsInput, RatingsStatic };
