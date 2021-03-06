@@ -17,6 +17,7 @@ import {
   ProductsCardPriceCartStyled,
   ProductsCardPriceStyled,
   ProductsCardCartBtnStyled,
+  ProductsCardRatingStyled,
 } from '../common/Pages';
 
 import {
@@ -68,7 +69,9 @@ const ProductsPage = () => {
                   </ProductsCardInfoTitleStyled>
 
                   <ProductsCardInfoShippingStyled>
-                    <RatingsStatic rating={1} />
+                    <ProductsCardRatingStyled>
+                      <RatingsStatic rating={1} />
+                    </ProductsCardRatingStyled>
 
                     <ProductsCardInfoShippingBuyStyled>
                       <Small tagType="strong" colorType="lime_green">
