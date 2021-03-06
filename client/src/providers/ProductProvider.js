@@ -62,7 +62,7 @@ const ProductProvider = ({ children }) => {
 
   const getReviews = async (productId) => {
     try {
-      const data = await getReviewsAPI(productId);
+      const { data } = await getReviewsAPI(productId);
       if (data) setReviews(data);
     } catch (err) {
       console.log(err);
@@ -76,7 +76,7 @@ const ProductProvider = ({ children }) => {
         rating: data.rating,
         userfullname: `${data.firstname} ${data.lastname}`,
       };
-      const newData = await postReviewAPI(productId, reviewData);
+      const { newData } = await postReviewAPI(productId, reviewData);
       if (newData) setReviews((review) => [...review, newData]);
     } catch (err) {
       console.log(err);
