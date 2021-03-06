@@ -66,6 +66,7 @@ import {
   ProductDetailsReviewsBodyStyled,
   ProductDetailsReviewsAddStyled,
   ProductDetailsReviewContentStyled,
+  ProductDetailsReviewListStyled,
   ProductDetailsReviewRatingStyled,
   ProductDetailsReviewDescriptionStyled,
 } from './ProductDetailsStyled';
@@ -149,6 +150,7 @@ export {
   ProductDetailsReviewsBodyStyled,
   ProductDetailsReviewsAddStyled,
   ProductDetailsReviewContentStyled,
+  ProductDetailsReviewListStyled,
   ProductDetailsReviewRatingStyled,
   ProductDetailsReviewDescriptionStyled,
   ProductsStyled,
