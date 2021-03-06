@@ -66,6 +66,8 @@ import {
   ProductDetailsReviewsBodyStyled,
   ProductDetailsReviewsAddStyled,
   ProductDetailsReviewContentStyled,
+  ProductDetailsReviewRatingStyled,
+  ProductDetailsReviewDescription,
 } from './ProductDetailsStyled';
 import {
   ProductsStyled,
@@ -147,6 +149,8 @@ export {
   ProductDetailsReviewsBodyStyled,
   ProductDetailsReviewsAddStyled,
   ProductDetailsReviewContentStyled,
+  ProductDetailsReviewRatingStyled,
+  ProductDetailsReviewDescription,
   ProductsStyled,
   ProductsContainerStyled,
   ProductsCardStyled,
