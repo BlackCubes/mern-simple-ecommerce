@@ -24,8 +24,8 @@ const RatingIcons = ({
   cursortype,
 }) => {
   const fill = useMemo(() => {
-    if (hoverRating >= index) return 'yellow';
-    if (!hoverRating && rating >= index) return 'yellow';
+    if (hoverRating >= index) return '#ffe23e';
+    if (!hoverRating && rating >= index) return '#ffe23e';
     return 'none';
   }, [rating, hoverRating, index]);
 
@@ -73,7 +73,7 @@ const RatingsInput = ({ cursortype, onRatingsChange }) => {
 const RatingsStatic = ({ rating = 0 }) => {
   const fill = (index) =>
     useMemo(() => {
-      if (rating >= index) return 'yellow';
+      if (rating >= index) return '#ffe23e';
       return 'none';
     }, [rating, index]);
 
