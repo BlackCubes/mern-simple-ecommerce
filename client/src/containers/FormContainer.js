@@ -5,7 +5,7 @@ import Card from 'react-credit-cards';
 import { Button, FormStyled, FormGroupStyled } from '../common';
 import { LabelStyled, InputMessageStyled } from '../common/Inputs';
 
-import { CreditCard, Inputs, Ratings } from '../Components';
+import { CreditCard, Inputs, RatingsInput } from '../Components';
 
 import { fieldInputErrors, fieldInputProperties, regex } from '../utils';
 
@@ -291,7 +291,7 @@ const FormContainer = ({
 
       {!hasReviewRating ? null : (
         <LabelStyled htmlFor="rating">
-          <Ratings
+          <RatingsInput
             id="rating"
             onRatingsChange={handleRatingsChange}
             cursortype="pointer"
