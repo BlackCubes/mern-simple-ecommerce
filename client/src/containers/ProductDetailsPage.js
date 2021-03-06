@@ -28,6 +28,7 @@ import {
   ProductDetailsReviewContentStyled,
   ProductDetailsReviewListStyled,
   ProductDetailsReviewRatingStyled,
+  ProductDetailsReviewUserStyled,
   ProductDetailsReviewDescriptionStyled,
 } from '../common/Pages';
 
@@ -233,9 +234,11 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
                           <Paragraph>{review.rating}</Paragraph>
                         </ProductDetailsReviewRatingStyled>
 
-                        <Paragraph sizetype="small">
-                          {review.userfullname}
-                        </Paragraph>
+                        <ProductDetailsReviewUserStyled>
+                          <Paragraph sizetype="small">
+                            <span>{review.userfullname}</span>
+                          </Paragraph>
+                        </ProductDetailsReviewUserStyled>
 
                         <ProductDetailsReviewDescriptionStyled>
                           <Paragraph>{review.review}</Paragraph>
