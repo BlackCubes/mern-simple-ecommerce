@@ -101,4 +101,4 @@ RatingsInput.defaultProps = {
   cursortype: null,
 };
 
-export default Ratings;
+export default RatingsInput;
