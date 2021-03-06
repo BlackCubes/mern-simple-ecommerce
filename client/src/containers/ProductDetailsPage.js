@@ -140,7 +140,7 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
               </ProductDetailsHeaderDataStyled>
 
               <ProductDetailsReviewRatingStyled>
-                <RatingsStatic rating={3.7} />
+                <RatingsStatic rating={3.7} hasOffset />
               </ProductDetailsReviewRatingStyled>
             </ProductDetailsHeaderStyled>
 

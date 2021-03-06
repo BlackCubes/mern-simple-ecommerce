@@ -70,7 +70,7 @@ const ProductsPage = () => {
 
                   <ProductsCardInfoShippingStyled>
                     <ProductsCardRatingStyled>
-                      <RatingsStatic rating={1} />
+                      <RatingsStatic rating={1} hasOffset />
                     </ProductsCardRatingStyled>
 
                     <ProductsCardInfoShippingBuyStyled>
