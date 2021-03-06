@@ -48,7 +48,7 @@ export const getReviewsAPI = async (productId) => {
     const res = await axios.get(apiUrl);
     if (res.status === 200) return res.data.data;
   } catch (err) {
-    console.log(err);
+    console.log(err.response.data);
   }
 };
 
@@ -58,6 +58,6 @@ export const postReviewAPI = async (productId, data) => {
     const res = await axios.post(apiUrl, data);
     if (res.status === 201) return res.data.data;
   } catch (err) {
-    console.log(err);
+    console.log(err.response.data);
   }
 };
