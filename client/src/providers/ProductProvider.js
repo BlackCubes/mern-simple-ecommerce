@@ -71,7 +71,12 @@ const ProductProvider = ({ children }) => {
 
   const postReview = async (productId, data) => {
     try {
-      const newData = await postReviewAPI(productId, data);
+      const reviewData = {
+        review: data.review,
+        rating: data.rating,
+        userfullname: `${data.firstname} ${data.lastname}`,
+      };
+      const newData = await postReviewAPI(productId, reviewData);
       if (newData) setReviews((review) => [...review, newData]);
     } catch (err) {
       console.log(err);
