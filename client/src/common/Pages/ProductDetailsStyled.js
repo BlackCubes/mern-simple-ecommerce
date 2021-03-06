@@ -123,6 +123,11 @@ export const ProductDetailsReviewContentStyled = styled.div`
   margin-bottom: 2rem;
 `;
 
+export const ProductDetailsReviewListStyled = styled.div`
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+`;
+
 export const ProductDetailsReviewRatingStyled = styled.div`
   margin-bottom: 1.5rem;
 `;
