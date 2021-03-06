@@ -78,7 +78,7 @@ const RatingsStatic = ({ rating = 0 }) => {
     }, [rating, index]);
 
   return (
-    <RatingsStyled>
+    <RatingsStyled className="ratings-static">
       {[1, 2, 3, 4, 5].map((index) => (
         <StarIcon key={index} fill={fill(index)} />
       ))}
