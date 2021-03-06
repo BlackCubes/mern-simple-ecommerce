@@ -3,7 +3,7 @@ import CheckoutSidebar from './CheckoutSidebar';
 import CreditCard from './CreditCard';
 import Inputs from './Inputs';
 import Modal from './Modal';
-import RatingsInput from './Ratings';
+import { RatingsInput, RatingsStatic } from './Ratings';
 import Sidebar from './Sidebar';
 
 export {
@@ -13,5 +13,6 @@ export {
   Inputs,
   Modal,
   RatingsInput,
+  RatingsStatic,
   Sidebar,
 };
