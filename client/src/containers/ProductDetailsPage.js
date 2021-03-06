@@ -39,7 +39,7 @@ import {
   Small,
 } from '../common/Typography';
 
-import { CategorySidebar, Modal } from '../Components';
+import { CategorySidebar, Modal, RatingsStatic } from '../Components';
 
 import { useCartContext } from '../context/CartContext';
 import { useProductContext } from '../context/ProductContext';
@@ -231,7 +231,8 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
                     reviews.map((review) => (
                       <ProductDetailsReviewListStyled key={review._id}>
                         <ProductDetailsReviewRatingStyled>
-                          <Paragraph>{review.rating}</Paragraph>
+                          <RatingsStatic rating={review.rating} />
+                          {/* <Paragraph>{review.rating}</Paragraph> */}
                         </ProductDetailsReviewRatingStyled>
 
                         <ProductDetailsReviewUserStyled>
