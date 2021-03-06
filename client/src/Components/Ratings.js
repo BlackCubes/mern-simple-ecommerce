@@ -87,7 +87,7 @@ const RatingsInput = ({ cursortype, onRatingsChange }) => {
   );
 };
 
-const RatingsStatic = ({ rating = 0 }) => {
+const RatingsStatic = ({ rating = 0, hasOffset = false }) => {
   const fill = (index) =>
     useMemo(() => {
       if (rating >= index) return '#ffe23e';
@@ -108,7 +108,7 @@ const RatingsStatic = ({ rating = 0 }) => {
         <StarIcon
           key={index}
           fill={fill(index)}
-          offset={offset(index)}
+          offset={hasOffset ? offset(index) : null}
           index={index}
         />
       ))}
@@ -153,10 +153,12 @@ RatingsInput.defaultProps = {
 
 RatingsStatic.propTypes = {
   rating: PropTypes.number,
+  hasOffset: PropTypes.bool,
 };
 
 RatingsStatic.defaultProps = {
   rating: 0,
+  hasOffset: false,
 };
 
 export { RatingsInput, RatingsStatic };
