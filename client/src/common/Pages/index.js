@@ -85,6 +85,7 @@ import {
   ProductsCardPriceCartStyled,
   ProductsCardPriceStyled,
   ProductsCardCartBtnStyled,
+  ProductsCardRatingStyled,
 } from './ProductsStyled';
 
 export {
@@ -168,4 +169,5 @@ export {
   ProductsCardPriceCartStyled,
   ProductsCardPriceStyled,
   ProductsCardCartBtnStyled,
+  ProductsCardRatingStyled,
 };
