@@ -9,6 +9,7 @@ import {
   getProductsAPI,
   getProductAPI,
   getReviewsAPI,
+  postReviewAPI,
 } from '../utils';
 
 const ProductProvider = ({ children }) => {
@@ -68,7 +69,14 @@ const ProductProvider = ({ children }) => {
     }
   };
 
-  const postReview = (review) => console.log(review);
+  const postReview = async (productId, data) => {
+    try {
+      const newData = await postReviewAPI(productId, data);
+      setReviews((review) => [...review, newData]);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <ProductContext.Provider
