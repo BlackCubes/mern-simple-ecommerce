@@ -4,7 +4,7 @@ const { AppError, catchAsync } = require('./../utils');
 exports.createOne = (Model) =>
   catchAsync(async (req, res, next) => {
     const query = req.body;
-    if (req.params.productId) query.productId = req.params.productId;
+    // if (req.params.productId) query.productId = req.params.productId;
 
     const doc = await Models[Model].create(query);
 
