@@ -127,6 +127,6 @@ export const ProductDetailsReviewRatingStyled = styled.div`
   margin-bottom: 1.5rem;
 `;
 
-export const ProductDetailsReviewDescription = styled.div`
+export const ProductDetailsReviewDescriptionStyled = styled.div`
   margin-top: 2rem;
 `;

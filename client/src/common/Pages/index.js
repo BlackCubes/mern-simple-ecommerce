@@ -67,7 +67,7 @@ import {
   ProductDetailsReviewsAddStyled,
   ProductDetailsReviewContentStyled,
   ProductDetailsReviewRatingStyled,
-  ProductDetailsReviewDescription,
+  ProductDetailsReviewDescriptionStyled,
 } from './ProductDetailsStyled';
 import {
   ProductsStyled,
@@ -150,7 +150,7 @@ export {
   ProductDetailsReviewsAddStyled,
   ProductDetailsReviewContentStyled,
   ProductDetailsReviewRatingStyled,
-  ProductDetailsReviewDescription,
+  ProductDetailsReviewDescriptionStyled,
   ProductsStyled,
   ProductsContainerStyled,
   ProductsCardStyled,
