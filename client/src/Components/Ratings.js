@@ -95,8 +95,10 @@ const RatingsStatic = ({ rating = 0 }) => {
     }, [rating, index]);
 
   const offset = (index) => {
+    const indexLimit = Math.ceil(rating);
     if (rating >= index) return '100%';
-    if (rating < index) return `${(rating / index) * 100}%`;
+    if (rating < index && index <= indexLimit)
+      return `${(rating / index) * 100}%`;
     return '0%';
   };
 
