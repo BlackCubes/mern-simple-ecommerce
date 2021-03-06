@@ -110,8 +110,10 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
     setToggle((bool) => !bool);
   };
 
-  const onSubmissionModal = (getFunction, setToggle) => (newValues) => {
-    getFunction(newValues);
+  const onSubmissionModal = (getFunction, setToggle) => (productId) => (
+    newValues
+  ) => {
+    getFunction(productId, newValues);
     setToggle(false);
   };
 
@@ -240,7 +242,10 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
               handleModal={onFormModal(setReviewModalToggle)}
             >
               <FormContainerComponent
-                onSubmit={onSubmissionModal(postReview, setReviewModalToggle)}
+                onSubmit={onSubmissionModal(
+                  postReview,
+                  setReviewModalToggle
+                )(id)}
                 formFields={reviewFormFields}
                 hasReviewRating
               />
