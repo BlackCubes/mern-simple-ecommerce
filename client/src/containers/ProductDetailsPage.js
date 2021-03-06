@@ -138,6 +138,10 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
                 &nbsp;
                 <Small>{product.category}</Small>
               </ProductDetailsHeaderDataStyled>
+
+              <ProductDetailsReviewRatingStyled>
+                <RatingsStatic rating={3.7} />
+              </ProductDetailsReviewRatingStyled>
             </ProductDetailsHeaderStyled>
 
             <ProductDetailsBottomContainerStyled>
