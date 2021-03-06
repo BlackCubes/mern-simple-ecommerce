@@ -41,7 +41,7 @@ const RatingIcons = ({
   );
 };
 
-const Ratings = ({ cursortype, onRatingsChange }) => {
+const RatingsInput = ({ cursortype, onRatingsChange }) => {
   const [rating, setRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
 
@@ -92,12 +92,12 @@ RatingIcons.defaultProps = {
   cursortype: null,
 };
 
-Ratings.propTypes = {
+RatingsInput.propTypes = {
   cursortype: PropTypes.string,
   onRatingsChange: PropTypes.func.isRequired,
 };
 
-Ratings.defaultProps = {
+RatingsInput.defaultProps = {
   cursortype: null,
 };
 
