@@ -10,7 +10,6 @@ import { Navbar } from './Components/Navbar';
 import { Footer } from './Components/Footer';
 
 import {
-  BreadcrumbsContainer,
   CartPage,
   CheckoutPage,
   FormContainer,
@@ -28,7 +27,6 @@ function App() {
         <CartProvider>
           <CheckoutProvider>
             <Navbar />
-            <BreadcrumbsContainer />
             <Main>
               <Switch>
                 <Route exact path="/" render={() => <div>Homepage</div>} />
