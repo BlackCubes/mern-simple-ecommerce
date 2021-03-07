@@ -153,7 +153,7 @@ RatingsInput.defaultProps = {
 
 RatingsStatic.propTypes = {
   rating: PropTypes.number,
-  uniqueOffset: PropTypes.number,
+  uniqueOffset: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 RatingsStatic.defaultProps = {
