@@ -87,7 +87,7 @@ const RatingsInput = ({ cursortype, onRatingsChange }) => {
   );
 };
 
-const RatingsStatic = ({ rating = 0, uniqueOffset = null }) => {
+const RatingsStatic = ({ rating = 0, uniqueOffset = 0 }) => {
   const fill = (index) =>
     useMemo(() => {
       if (rating >= index) return '#ffe23e';
@@ -158,7 +158,7 @@ RatingsStatic.propTypes = {
 
 RatingsStatic.defaultProps = {
   rating: 0,
-  uniqueOffset: null,
+  uniqueOffset: 0,
 };
 
 export { RatingsInput, RatingsStatic };
