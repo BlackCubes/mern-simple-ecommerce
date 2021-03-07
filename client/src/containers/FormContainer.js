@@ -290,15 +290,23 @@ const FormContainer = ({
       )}
 
       {!hasReviewRating ? null : (
-        <LabelStyled htmlFor="rating">
-          <RatingsInput
-            id="rating"
-            onRatingsChange={handleRatingsChange}
-            cursortype="pointer"
-          />
+        <FormGroupStyled
+          addlstyle={{
+            width: '100%',
+            float: 'left',
+            padding: '0 0.75rem',
+          }}
+        >
+          <LabelStyled htmlFor="rating">
+            <RatingsInput
+              id="rating"
+              onRatingsChange={handleRatingsChange}
+              cursortype="pointer"
+            />
 
-          <InputMessageStyled>{errors.rating || ''}</InputMessageStyled>
-        </LabelStyled>
+            <InputMessageStyled>{errors.rating || ''}</InputMessageStyled>
+          </LabelStyled>
+        </FormGroupStyled>
       )}
 
       {inputProperties.map((prop, key) => {
