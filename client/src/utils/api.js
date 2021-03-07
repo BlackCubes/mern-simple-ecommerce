@@ -61,3 +61,13 @@ export const postReviewAPI = async (productId, data) => {
     console.log(err.response.data);
   }
 };
+
+export const getEveryReviewsAPI = async () => {
+  try {
+    const apiUrl = `${process.env.REACT_APP_ERREZ_SERVER_URL}/reviews`;
+    const res = await axios.get(apiUrl);
+    if (res.status === 200) return res.data.data;
+  } catch (err) {
+    console.log(err.response.data);
+  }
+};
