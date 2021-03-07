@@ -51,8 +51,6 @@ const ProductsPage = () => {
     getEveryReviews();
   }, [category]);
 
-  console.log('everyReviews: ', everyReviews);
-
   return (
     <ProductsContainerStyled>
       <Sidebar />
