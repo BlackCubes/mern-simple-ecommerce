@@ -6,6 +6,7 @@ import { ProductContext } from '../context';
 import {
   getCategoriesAPI,
   getCategoryAPI,
+  getEveryReviewsAPI,
   getProductsAPI,
   getProductAPI,
   getReviewsAPI,
@@ -86,7 +87,7 @@ const ProductProvider = ({ children }) => {
 
   const getEveryReviews = async () => {
     try {
-      const { data } = await getEveryReviewsApi();
+      const { data } = await getEveryReviewsAPI();
       if (data) setEveryReviews(data);
     } catch (err) {
       console.log(err);
