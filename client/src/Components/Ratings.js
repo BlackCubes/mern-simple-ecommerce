@@ -109,7 +109,7 @@ const RatingsStatic = ({ rating = 0, uniqueOffset = null }) => {
           key={index}
           fill={fill(index)}
           offset={uniqueOffset ? offset(index) : null}
-          index={`${index}${uniqueOffset}`}
+          index={`${uniqueOffset}${index}`}
         />
       ))}
     </RatingsStyled>
