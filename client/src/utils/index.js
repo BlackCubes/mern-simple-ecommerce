@@ -8,6 +8,8 @@ import {
   postReviewAPI,
 } from './api';
 
+import breadcrumbsRoutes from './breadcrumbsRoutes';
+
 import { daysFromNow, dateTimeFormat } from './dates';
 
 import { fieldInputErrors, fieldInputProperties } from './fieldPropHandler';
@@ -15,6 +17,7 @@ import { fieldInputErrors, fieldInputProperties } from './fieldPropHandler';
 import regex from './regex';
 
 export {
+  breadcrumbsRoutes,
   dateTimeFormat,
   daysFromNow,
   fieldInputErrors,
