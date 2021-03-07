@@ -21,7 +21,12 @@ const Breadcrumbs = ({ crumbs, LinkComponent }) => {
 };
 
 Breadcrumbs.propTypes = {
-  crumbs: PropTypes.arrayOf(PropTypes.string).isRequired,
+  crumbs: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      path: PropTypes.string,
+    })
+  ).isRequired,
   LinkComponent: PropTypes.elementType.isRequired,
 };
 
