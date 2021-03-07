@@ -79,7 +79,17 @@ const ProductsPage = () => {
 
                   <ProductsCardInfoShippingStyled>
                     <ProductsCardRatingStyled>
-                      <RatingsStatic rating={1} uniqueOffset={prop.id} />
+                      <RatingsStatic
+                        rating={
+                          Object.prototype.hasOwnProperty.call(
+                            everyReviews,
+                            prop.id
+                          )
+                            ? everyReviews[prop.id]
+                            : 0
+                        }
+                        uniqueOffset={prop.id}
+                      />
                     </ProductsCardRatingStyled>
 
                     <ProductsCardInfoShippingBuyStyled>
