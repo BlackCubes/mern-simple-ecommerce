@@ -1,3 +1,4 @@
+import Breadcrumbs from './Breadcrumbs';
 import CategorySidebar from './CategorySidebar';
 import CheckoutSidebar from './CheckoutSidebar';
 import CreditCard from './CreditCard';
@@ -7,6 +8,7 @@ import { RatingsInput, RatingsStatic } from './Ratings';
 import Sidebar from './Sidebar';
 
 export {
+  Breadcrumbs,
   CategorySidebar,
   CheckoutSidebar,
   CreditCard,
