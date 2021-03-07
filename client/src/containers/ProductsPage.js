@@ -56,6 +56,7 @@ const ProductsPage = () => {
       });
     } else if (!category) {
       getProducts();
+      if (crumbs.length !== 1) crumbs.pop();
     }
     getEveryReviews();
   }, [category]);
