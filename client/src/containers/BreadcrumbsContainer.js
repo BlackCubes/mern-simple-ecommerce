@@ -22,6 +22,7 @@ const BreadcrumbsContainer = () => {
       ...rest,
     }));
 
+  console.log(breadcrumbsRoutes);
   console.log(crumbs);
 
   return null;
