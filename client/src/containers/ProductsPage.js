@@ -26,12 +26,14 @@ import {
   Small,
 } from '../common/Typography';
 
-import { RatingsStatic, Sidebar } from '../Components';
+import { Breadcrumbs, RatingsStatic, Sidebar } from '../Components';
 
 import { useCartContext } from '../context/CartContext';
 import { useProductContext } from '../context/ProductContext';
 
 import { daysFromNow, dateTimeFormat } from '../utils';
+
+const crumbs = [{ name: 'Products', path: '/products' }];
 
 const ProductsPage = () => {
   const { addProduct } = useCartContext();
@@ -53,6 +55,7 @@ const ProductsPage = () => {
 
   return (
     <ProductsContainerStyled>
+      <Breadcrumbs crumbs={crumbs} LinkComponent={Link} />
       <Sidebar />
 
       <ProductsStyled>
