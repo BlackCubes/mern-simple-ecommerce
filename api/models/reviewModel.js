@@ -80,7 +80,7 @@ reviewSchema.statics.calcAverageRatings = async function (productId) {
 
 // -- -- then, middleware for current review
 reviewSchema.post('save', function () {
-  this.contructor.calcAverageRatings(this.productId);
+  this.constructor.calcAverageRatings(this.productId);
 });
 
 reviewSchema.pre(/^findOneAnd/, async function (next) {
