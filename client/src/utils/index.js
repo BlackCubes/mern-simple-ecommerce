@@ -3,6 +3,7 @@ import {
   getProductAPI,
   getCategoriesAPI,
   getCategoryAPI,
+  getEveryReviewsAPI,
   getReviewsAPI,
   postReviewAPI,
 } from './api';
@@ -20,6 +21,7 @@ export {
   fieldInputProperties,
   getCategoryAPI,
   getCategoriesAPI,
+  getEveryReviewsAPI,
   getProductAPI,
   getProductsAPI,
   getReviewsAPI,
