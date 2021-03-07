@@ -19,7 +19,7 @@ const ProductProvider = ({ children }) => {
   const [categories, setCategories] = useState(null);
   const [category, setCategory] = useState(null);
   const [reviews, setReviews] = useState([]);
-  const [everyReviews, setEveryReviews] = useState([]);
+  const [everyReviews, setEveryReviews] = useState(null);
 
   const getProducts = async () => {
     try {
@@ -87,7 +87,7 @@ const ProductProvider = ({ children }) => {
 
   const getEveryReviews = async () => {
     try {
-      const { data } = await getEveryReviewsAPI();
+      const data = await getEveryReviewsAPI();
       if (data) setEveryReviews(data);
     } catch (err) {
       console.log(err);
