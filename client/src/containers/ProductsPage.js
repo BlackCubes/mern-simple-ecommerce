@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link as RouterLink, useParams } from 'react-router-dom';
 
 import { Button, Image, Link } from '../common';
@@ -33,7 +33,35 @@ import { useProductContext } from '../context/ProductContext';
 
 import { daysFromNow, dateTimeFormat } from '../utils';
 
+const nonDuplicateProductsReviews = (products, reviews, state) => {
+  const removedDuplicates = {};
+
+  if (products.length && reviews.length) {
+    products.forEach((product) => {
+      const hasAProperty = Object.prototype.hasOwnProperty.call(
+        removedDuplicates,
+        product.id
+      );
+
+      if (!hasAProperty) removedDuplicates[product.id] = 0;
+    });
+
+    reviews.forEach((review) => {
+      const hasAProperty = Object.prototype.hasOwnProperty.call(
+        removedDuplicates,
+        review.productId
+      );
+
+      if (hasAProperty && removedDuplicates[review.productId] === 0)
+        removedDuplicates[review.productId] = review.ratingsAverage;
+    });
+  }
+
+  state(removedDuplicates);
+};
+
 const ProductsPage = () => {
+  const [productsReviews, setProductsReviews] = useState([]);
   const { addProduct } = useCartContext();
   const {
     products,
@@ -51,7 +79,9 @@ const ProductsPage = () => {
     getEveryReviews();
   }, [category]);
 
-  console.log('everyReviews: ', everyReviews);
+  nonDuplicateProductsReviews(products, everyReviews, setProductsReviews);
+
+  console.log('productsReviews: ', productsReviews);
 
   return (
     <ProductsContainerStyled>
