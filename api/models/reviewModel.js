@@ -12,6 +12,17 @@ const reviewSchema = new mongoose.Schema({
     min: [1, 'A minimum rating of 1!'],
     max: [5, 'A maximum rating of 5!'],
   },
+  ratingsAverage: {
+    type: Number,
+    default: 3.5,
+    min: [1, 'A minimum average rating of 1.0!'],
+    max: [5, 'A maximum average rating of 5.0!'],
+    set: (val) => Math.round(val * 10) / 10,
+  },
+  ratingsQuantity: {
+    type: Number,
+    default: 0,
+  },
   userfullname: {
     type: String,
     required: [true, 'Please enter your name!'],
@@ -33,6 +44,54 @@ const reviewSchema = new mongoose.Schema({
 });
 
 // STATIC METHODS
+// -- calculate the average review rating
+reviewSchema.statics.calcAverageRatings = async function (productId) {
+  const stats = await this.aggregate([
+    {
+      $match: { productId },
+    },
+    {
+      $group: {
+        _productId: '$productId',
+        nRating: { $sum: 1 },
+        avgRating: { $avg: '$rating' },
+      },
+    },
+  ]);
+
+  if (stats.length > 0) {
+    await this.updateMany(
+      { productId },
+      {
+        ratingsQuantity: stats[0].nRating,
+        ratingsAverage: stats[0].avgRating,
+      }
+    );
+  } else {
+    await this.updateMany(
+      { productId },
+      {
+        ratingsQuantity: 0,
+        ratingsAverage: 3.5,
+      }
+    );
+  }
+};
+
+// -- -- then, middleware for current review
+reviewSchema.post('save', function () {
+  this.contructor.calcAverageRatings(this.productId);
+});
+
+reviewSchema.pre(/^findOneAnd/, async function (next) {
+  this.r = await this.findOne();
+  next();
+});
+
+reviewSchema.post(/^findOneAnd/, async function () {
+  await this.r.constructor.calcAverageRatings(this.r.productId);
+});
+
 // -- find query in DB
 reviewSchema.statics.valueExists = function (query) {
   return this.findOne(query).then((res) => res);
