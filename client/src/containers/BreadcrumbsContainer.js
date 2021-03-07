@@ -22,7 +22,9 @@ const BreadcrumbsContainer = () => {
       ...rest,
     }));
 
-  return console.log(crumbs);
+  console.log(crumbs);
+
+  return null;
 };
 
 export default BreadcrumbsContainer;
