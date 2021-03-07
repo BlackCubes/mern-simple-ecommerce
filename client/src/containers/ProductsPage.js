@@ -35,14 +35,23 @@ import { daysFromNow, dateTimeFormat } from '../utils';
 
 const ProductsPage = () => {
   const { addProduct } = useCartContext();
-  const { products, getProducts, getCategory } = useProductContext();
+  const {
+    products,
+    everyReviews,
+    getProducts,
+    getCategory,
+    getEveryReviews,
+  } = useProductContext();
 
   const { category } = useParams();
 
   useEffect(() => {
     if (category) getCategory(category);
     else if (!category) getProducts();
+    getEveryReviews();
   }, [category]);
+
+  console.log('everyReviews: ', everyReviews);
 
   return (
     <ProductsContainerStyled>
