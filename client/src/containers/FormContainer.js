@@ -294,6 +294,7 @@ const FormContainer = ({
           addlstyle={{
             width: '100%',
             float: 'left',
+            margin: 0,
             padding: '0 0.75rem',
           }}
         >
