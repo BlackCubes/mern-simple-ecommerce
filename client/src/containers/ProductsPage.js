@@ -48,8 +48,15 @@ const ProductsPage = () => {
   const { category } = useParams();
 
   useEffect(() => {
-    if (category) getCategory(category);
-    else if (!category) getProducts();
+    if (category) {
+      getCategory(category);
+      crumbs.push({
+        name: `Category: ${category}`,
+        path: `/products/category/${category}`,
+      });
+    } else if (!category) {
+      getProducts();
+    }
     getEveryReviews();
   }, [category]);
 
