@@ -66,7 +66,22 @@ export const getEveryReviewsAPI = async () => {
   try {
     const apiUrl = `${process.env.REACT_APP_ERREZ_SERVER_URL}/reviews`;
     const res = await axios.get(apiUrl);
-    if (res.status === 200) return res.data.data;
+    if (res.status === 200) {
+      const { data } = res.data.data;
+      const removeDuplicates = {};
+
+      data.forEach((reviewData) => {
+        const hasProperty = Object.prototype.hasOwnProperty.call(
+          removeDuplicates,
+          reviewData.productId
+        );
+
+        if (!hasProperty)
+          removeDuplicates[reviewData.productId] = reviewData.ratingsAverage;
+      });
+
+      return removeDuplicates;
+    }
   } catch (err) {
     console.log(err.response.data);
   }
