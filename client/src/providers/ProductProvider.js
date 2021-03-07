@@ -18,6 +18,7 @@ const ProductProvider = ({ children }) => {
   const [categories, setCategories] = useState(null);
   const [category, setCategory] = useState(null);
   const [reviews, setReviews] = useState([]);
+  const [everyReviews, setEveryReviews] = useState([]);
 
   const getProducts = async () => {
     try {
@@ -83,6 +84,15 @@ const ProductProvider = ({ children }) => {
     }
   };
 
+  const getEveryReviews = async () => {
+    try {
+      const { data } = await getEveryReviewsApi();
+      if (data) setEveryReviews(data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <ProductContext.Provider
       value={{
@@ -90,13 +100,15 @@ const ProductProvider = ({ children }) => {
         product,
         categories,
         category,
+        reviews,
+        everyReviews,
         getProduct,
         getProducts,
         getCategory,
         getCategories,
-        reviews,
         getReviews,
         postReview,
+        getEveryReviews,
       }}
     >
       {children}
