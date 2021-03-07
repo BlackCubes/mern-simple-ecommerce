@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { RatingIconStyled, RatingsStyled, SvgStyled } from '../common';
 
-const StarIcon = ({ fill = 'none', offset, index = 1 }) => (
+const StarIcon = ({ fill = 'none', offset, index = '1' }) => (
   <SvgStyled
     fill={offset ? `url(#starPercent${index})` : fill}
     stroke="currentColor"
@@ -87,7 +87,7 @@ const RatingsInput = ({ cursortype, onRatingsChange }) => {
   );
 };
 
-const RatingsStatic = ({ rating = 0, hasOffset = false }) => {
+const RatingsStatic = ({ rating = 0, uniqueOffset = null }) => {
   const fill = (index) =>
     useMemo(() => {
       if (rating >= index) return '#ffe23e';
@@ -108,8 +108,8 @@ const RatingsStatic = ({ rating = 0, hasOffset = false }) => {
         <StarIcon
           key={index}
           fill={fill(index)}
-          offset={hasOffset ? offset(index) : null}
-          index={index}
+          offset={uniqueOffset ? offset(index) : null}
+          index={`${index}${uniqueOffset}`}
         />
       ))}
     </RatingsStyled>
@@ -119,13 +119,13 @@ const RatingsStatic = ({ rating = 0, hasOffset = false }) => {
 StarIcon.propTypes = {
   fill: PropTypes.string,
   offset: PropTypes.string,
-  index: PropTypes.number,
+  index: PropTypes.string,
 };
 
 StarIcon.defaultProps = {
   fill: 'none',
   offset: null,
-  index: 1,
+  index: '1',
 };
 
 RatingIcons.propTypes = {
@@ -153,12 +153,12 @@ RatingsInput.defaultProps = {
 
 RatingsStatic.propTypes = {
   rating: PropTypes.number,
-  hasOffset: PropTypes.bool,
+  uniqueOffset: PropTypes.number,
 };
 
 RatingsStatic.defaultProps = {
   rating: 0,
-  hasOffset: false,
+  uniqueOffset: null,
 };
 
 export { RatingsInput, RatingsStatic };
