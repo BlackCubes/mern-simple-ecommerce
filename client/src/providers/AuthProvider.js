@@ -30,7 +30,10 @@ const AuthProvider = ({ children }) => {
       const currentToken = localStorage.getItem('jwt') || null;
       const data = await logoutAPI(headers(currentToken));
 
-      if (data.status === 'success') history.push('/');
+      if (data.status === 'success') {
+        localStorage.removeItem('jwt');
+        history.push('/');
+      }
     } catch (err) {
       console.log(err);
     }
