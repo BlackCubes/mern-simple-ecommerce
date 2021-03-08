@@ -18,6 +18,7 @@ const AuthProvider = ({ children }) => {
       if (token && userData) {
         setUser(userData);
         localStorage.setItem('jwt', token);
+        history.push('/products');
       }
     } catch (err) {
       console.log(err);
