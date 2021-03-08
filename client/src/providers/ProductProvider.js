@@ -10,6 +10,7 @@ import {
   getProductsAPI,
   getProductAPI,
   getReviewsAPI,
+  headers,
   postReviewAPI,
 } from '../utils';
 
@@ -73,12 +74,19 @@ const ProductProvider = ({ children }) => {
 
   const postReview = async (productId, data) => {
     try {
+      const currentToken = localStorage.getItem('jwt') || null;
       const reviewData = {
         review: data.review,
         rating: data.rating,
         userfullname: `${data.firstname} ${data.lastname}`,
       };
-      const { newData } = await postReviewAPI(productId, reviewData);
+
+      const { newData } = await postReviewAPI(
+        productId,
+        reviewData,
+        headers(currentToken)
+      );
+
       if (newData) setReviews((oldReviews) => [...oldReviews, newData]);
     } catch (err) {
       console.log(err);
