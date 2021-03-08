@@ -1,3 +1,9 @@
+import {
+  BreadcrumbsContainerStyled,
+  BreadcrumbsStyled,
+  BreadcrumbsListStyled,
+  BreadcrumbsListItemStyled,
+} from './BreadcrumbsStyled';
 import Button from './Button';
 import CreditCardStyled from './CreditCardStyled';
 import { FormStyled, FormGroupStyled } from './FormStyled';
@@ -16,6 +22,10 @@ import { RatingsStyled, RatingIconStyled } from './RatingsStyled';
 import SvgStyled from './SvgStyled';
 
 export {
+  BreadcrumbsContainerStyled,
+  BreadcrumbsStyled,
+  BreadcrumbsListStyled,
+  BreadcrumbsListItemStyled,
   Button,
   CreditCardStyled,
   FormStyled,
