@@ -1,5 +1,6 @@
+import AuthProvider from './AuthProvider';
 import CartProvider from './CartProvider';
 import CheckoutProvider from './CheckoutProvider';
 import ProductProvider from './ProductProvider';
 
-export { CartProvider, CheckoutProvider, ProductProvider };
+export { AuthProvider, CartProvider, CheckoutProvider, ProductProvider };
