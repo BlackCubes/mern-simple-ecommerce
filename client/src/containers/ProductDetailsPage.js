@@ -39,7 +39,12 @@ import {
   Small,
 } from '../common/Typography';
 
-import { CategorySidebar, Modal, RatingsStatic } from '../Components';
+import {
+  Breadcrumbs,
+  CategorySidebar,
+  Modal,
+  RatingsStatic,
+} from '../Components';
 
 import { useCartContext } from '../context/CartContext';
 import { useProductContext } from '../context/ProductContext';
@@ -90,6 +95,8 @@ const reviewFormFields = [
   },
 ];
 
+let newCrumbs = [];
+
 const ProductDetailsPage = ({ FormContainerComponent }) => {
   const [reviewModalToggle, setReviewModalToggle] = useState(false);
   const { id } = useParams();
@@ -109,6 +116,16 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
     }
   }, [id]);
 
+  useEffect(() => {
+    if (product)
+      newCrumbs = [
+        {
+          name: product.title,
+          path: `/products/${product.id}`,
+        },
+      ];
+  }, [product]);
+
   const onFormModal = (setToggle) => (e) => {
     e.preventDefault();
     setToggle((bool) => !bool);
@@ -122,177 +139,181 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
   };
 
   return (
-    <ProductDetailsContainerStyled>
-      <ProductDetailsStyled>
-        {!product ? (
-          <HeadingQuaternary>Loading...</HeadingQuaternary>
-        ) : (
-          <>
-            <ProductDetailsHeaderStyled>
-              <ProductDetailsHeaderTitleStyled>
-                <HeadingQuaternary>{product.title}</HeadingQuaternary>
-              </ProductDetailsHeaderTitleStyled>
+    <>
+      <Breadcrumbs newCrumbs={newCrumbs} />
 
-              <ProductDetailsHeaderDataStyled>
-                <Small tagType="strong">Type:</Small>
-                &nbsp;
-                <Small>{product.category}</Small>
-              </ProductDetailsHeaderDataStyled>
+      <ProductDetailsContainerStyled>
+        <ProductDetailsStyled>
+          {!product ? (
+            <HeadingQuaternary>Loading...</HeadingQuaternary>
+          ) : (
+            <>
+              <ProductDetailsHeaderStyled>
+                <ProductDetailsHeaderTitleStyled>
+                  <HeadingQuaternary>{product.title}</HeadingQuaternary>
+                </ProductDetailsHeaderTitleStyled>
 
-              <ProductDetailsReviewRatingStyled>
-                <RatingsStatic
-                  rating={
-                    !reviews
-                      ? 0
-                      : !reviews.length
-                      ? 0
-                      : reviews[0].ratingsAverage
-                  }
-                  uniqueOffset={id}
-                />
-              </ProductDetailsReviewRatingStyled>
-            </ProductDetailsHeaderStyled>
+                <ProductDetailsHeaderDataStyled>
+                  <Small tagType="strong">Type:</Small>
+                  &nbsp;
+                  <Small>{product.category}</Small>
+                </ProductDetailsHeaderDataStyled>
 
-            <ProductDetailsBottomContainerStyled>
-              <ProductDetailsInfoStyled>
-                <ProductDetailsInfoImageStyled>
-                  <Image rest={{ src: product.image, alt: product.title }} />
-                </ProductDetailsInfoImageStyled>
-              </ProductDetailsInfoStyled>
+                <ProductDetailsReviewRatingStyled>
+                  <RatingsStatic
+                    rating={
+                      !reviews
+                        ? 0
+                        : !reviews.length
+                        ? 0
+                        : reviews[0].ratingsAverage
+                    }
+                    uniqueOffset={id}
+                  />
+                </ProductDetailsReviewRatingStyled>
+              </ProductDetailsHeaderStyled>
 
-              <ProductDetailsPriceShippingCartStyled>
-                <ProductDetailsPriceStyled>
-                  <HeadingSecondary>{`$${product.price}`}</HeadingSecondary>
-                </ProductDetailsPriceStyled>
+              <ProductDetailsBottomContainerStyled>
+                <ProductDetailsInfoStyled>
+                  <ProductDetailsInfoImageStyled>
+                    <Image rest={{ src: product.image, alt: product.title }} />
+                  </ProductDetailsInfoImageStyled>
+                </ProductDetailsInfoStyled>
 
-                <ProductDetailsPriceShippingCartRowStyled>
-                  <ProductDetailsShippingBuyStyled>
-                    <Small tagType="strong" colorType="lime_green">
-                      Get it in 3 days
-                    </Small>
-                  </ProductDetailsShippingBuyStyled>
+                <ProductDetailsPriceShippingCartStyled>
+                  <ProductDetailsPriceStyled>
+                    <HeadingSecondary>{`$${product.price}`}</HeadingSecondary>
+                  </ProductDetailsPriceStyled>
 
-                  <ProductDetailsShippingOptionStyled>
-                    <Small tagType="strong">
-                      {product.price >= 50
-                        ? 'FREE Shipping:'
-                        : '3-DAY Shipping:'}
-                    </Small>
-                    &nbsp;
-                    <Small>
-                      Get it by&nbsp;
-                      {dateTimeFormat(
-                        'en-US',
-                        { weekday: 'short' },
-                        daysFromNow(3)
-                      )}
-                    </Small>
-                  </ProductDetailsShippingOptionStyled>
-                </ProductDetailsPriceShippingCartRowStyled>
+                  <ProductDetailsPriceShippingCartRowStyled>
+                    <ProductDetailsShippingBuyStyled>
+                      <Small tagType="strong" colorType="lime_green">
+                        Get it in 3 days
+                      </Small>
+                    </ProductDetailsShippingBuyStyled>
 
-                <ProductDetailsPriceShippingCartRowStyled>
-                  <div className="product-details__cart-add">
+                    <ProductDetailsShippingOptionStyled>
+                      <Small tagType="strong">
+                        {product.price >= 50
+                          ? 'FREE Shipping:'
+                          : '3-DAY Shipping:'}
+                      </Small>
+                      &nbsp;
+                      <Small>
+                        Get it by&nbsp;
+                        {dateTimeFormat(
+                          'en-US',
+                          { weekday: 'short' },
+                          daysFromNow(3)
+                        )}
+                      </Small>
+                    </ProductDetailsShippingOptionStyled>
+                  </ProductDetailsPriceShippingCartRowStyled>
+
+                  <ProductDetailsPriceShippingCartRowStyled>
+                    <div className="product-details__cart-add">
+                      <Button
+                        rest={{
+                          type: 'button',
+                          onClick: () => addProduct(product),
+                        }}
+                      >
+                        Add to Cart
+                      </Button>
+                    </div>
+                  </ProductDetailsPriceShippingCartRowStyled>
+                </ProductDetailsPriceShippingCartStyled>
+              </ProductDetailsBottomContainerStyled>
+
+              <ProductDetailsDescriptionStyled>
+                <ProductDetailsDescriptionHeaderStyled>
+                  <HeadingQuaternary>Overview</HeadingQuaternary>
+                </ProductDetailsDescriptionHeaderStyled>
+
+                <ProductDetailsDescriptionBodyStyled>
+                  <Paragraph>{product.description}</Paragraph>
+                </ProductDetailsDescriptionBodyStyled>
+              </ProductDetailsDescriptionStyled>
+
+              <ProductDetailsReviewsStyled>
+                <ProductDetailsReviewsHeaderStyled>
+                  <HeadingQuaternary>Reviews</HeadingQuaternary>
+                </ProductDetailsReviewsHeaderStyled>
+
+                <ProductDetailsReviewsBodyStyled>
+                  <ProductDetailsReviewsAddStyled>
                     <Button
                       rest={{
                         type: 'button',
-                        onClick: () => addProduct(product),
+                        onClick: (e) => onFormModal(setReviewModalToggle)(e),
+                        colortype: 'transparent',
+                        hovercolortype: 'moderate_blue_dark',
+                        nonbtn: true,
                       }}
                     >
-                      Add to Cart
+                      Add a review
                     </Button>
-                  </div>
-                </ProductDetailsPriceShippingCartRowStyled>
-              </ProductDetailsPriceShippingCartStyled>
-            </ProductDetailsBottomContainerStyled>
+                  </ProductDetailsReviewsAddStyled>
 
-            <ProductDetailsDescriptionStyled>
-              <ProductDetailsDescriptionHeaderStyled>
-                <HeadingQuaternary>Overview</HeadingQuaternary>
-              </ProductDetailsDescriptionHeaderStyled>
+                  <ProductDetailsReviewContentStyled>
+                    {!reviews ? (
+                      <Paragraph>No reviews</Paragraph>
+                    ) : !reviews.length ? (
+                      <Paragraph>No reviews</Paragraph>
+                    ) : (
+                      reviews.map((review) => (
+                        <ProductDetailsReviewListStyled key={review._id}>
+                          <ProductDetailsReviewRatingStyled>
+                            <RatingsStatic rating={review.rating} />
+                            {/* <Paragraph>{review.rating}</Paragraph> */}
+                          </ProductDetailsReviewRatingStyled>
 
-              <ProductDetailsDescriptionBodyStyled>
-                <Paragraph>{product.description}</Paragraph>
-              </ProductDetailsDescriptionBodyStyled>
-            </ProductDetailsDescriptionStyled>
+                          <ProductDetailsReviewUserStyled>
+                            <Paragraph sizetype="small">
+                              <span>
+                                by&nbsp;
+                                {review.userfullname}
+                                &nbsp;on&nbsp;
+                                {dateTimeFormat(
+                                  'en-US',
+                                  { dateStyle: 'medium' },
+                                  new Date(review.createdAt)
+                                )}
+                              </span>
+                            </Paragraph>
+                          </ProductDetailsReviewUserStyled>
 
-            <ProductDetailsReviewsStyled>
-              <ProductDetailsReviewsHeaderStyled>
-                <HeadingQuaternary>Reviews</HeadingQuaternary>
-              </ProductDetailsReviewsHeaderStyled>
+                          <ProductDetailsReviewDescriptionStyled>
+                            <Paragraph>{review.review}</Paragraph>
+                          </ProductDetailsReviewDescriptionStyled>
+                        </ProductDetailsReviewListStyled>
+                      ))
+                    )}
+                  </ProductDetailsReviewContentStyled>
+                </ProductDetailsReviewsBodyStyled>
+              </ProductDetailsReviewsStyled>
 
-              <ProductDetailsReviewsBodyStyled>
-                <ProductDetailsReviewsAddStyled>
-                  <Button
-                    rest={{
-                      type: 'button',
-                      onClick: (e) => onFormModal(setReviewModalToggle)(e),
-                      colortype: 'transparent',
-                      hovercolortype: 'moderate_blue_dark',
-                      nonbtn: true,
-                    }}
-                  >
-                    Add a review
-                  </Button>
-                </ProductDetailsReviewsAddStyled>
+              <Modal
+                header="Enter Review"
+                modalToggle={reviewModalToggle}
+                handleModal={onFormModal(setReviewModalToggle)}
+              >
+                <FormContainerComponent
+                  onSubmit={onSubmissionModal(
+                    postReview,
+                    setReviewModalToggle
+                  )(id)}
+                  formFields={reviewFormFields}
+                  hasReviewRating
+                />
+              </Modal>
+            </>
+          )}
+        </ProductDetailsStyled>
 
-                <ProductDetailsReviewContentStyled>
-                  {!reviews ? (
-                    <Paragraph>No reviews</Paragraph>
-                  ) : !reviews.length ? (
-                    <Paragraph>No reviews</Paragraph>
-                  ) : (
-                    reviews.map((review) => (
-                      <ProductDetailsReviewListStyled key={review._id}>
-                        <ProductDetailsReviewRatingStyled>
-                          <RatingsStatic rating={review.rating} />
-                          {/* <Paragraph>{review.rating}</Paragraph> */}
-                        </ProductDetailsReviewRatingStyled>
-
-                        <ProductDetailsReviewUserStyled>
-                          <Paragraph sizetype="small">
-                            <span>
-                              by&nbsp;
-                              {review.userfullname}
-                              &nbsp;on&nbsp;
-                              {dateTimeFormat(
-                                'en-US',
-                                { dateStyle: 'medium' },
-                                new Date(review.createdAt)
-                              )}
-                            </span>
-                          </Paragraph>
-                        </ProductDetailsReviewUserStyled>
-
-                        <ProductDetailsReviewDescriptionStyled>
-                          <Paragraph>{review.review}</Paragraph>
-                        </ProductDetailsReviewDescriptionStyled>
-                      </ProductDetailsReviewListStyled>
-                    ))
-                  )}
-                </ProductDetailsReviewContentStyled>
-              </ProductDetailsReviewsBodyStyled>
-            </ProductDetailsReviewsStyled>
-
-            <Modal
-              header="Enter Review"
-              modalToggle={reviewModalToggle}
-              handleModal={onFormModal(setReviewModalToggle)}
-            >
-              <FormContainerComponent
-                onSubmit={onSubmissionModal(
-                  postReview,
-                  setReviewModalToggle
-                )(id)}
-                formFields={reviewFormFields}
-                hasReviewRating
-              />
-            </Modal>
-          </>
-        )}
-      </ProductDetailsStyled>
-
-      <CategorySidebar />
-    </ProductDetailsContainerStyled>
+        <CategorySidebar />
+      </ProductDetailsContainerStyled>
+    </>
   );
 };
 
