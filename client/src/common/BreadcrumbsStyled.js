@@ -20,4 +20,15 @@ export const BreadcrumbsListStyled = styled.ol`
 
 export const BreadcrumbsListItemStyled = styled.li`
   display: inline;
+
+  &:nth-child(1n + 2) {
+    content: ' ';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin: 0 0.7rem;
+    border-top: 0.4rem solid transparent;
+    border-bottom: 0.4rem solid transparent;
+    border-left: 0.4rem solid #55555a;
+  }
 `;
