@@ -11,8 +11,11 @@ import {
 } from '../common';
 import { Small } from '../common/Typography';
 
-const Breadcrumbs = ({ crumbs }) => {
-  if (crumbs.length < 1) return null;
+import { breadcrumbsRoutes } from '../utils';
+
+const Breadcrumbs = ({ newCrumbs }) => {
+  // if (crumbs.length < 1) return null;
+  const crumbs = breadcrumbsRoutes.concat(newCrumbs);
 
   return (
     <BreadcrumbsContainerStyled>
@@ -38,7 +41,7 @@ const Breadcrumbs = ({ crumbs }) => {
 };
 
 Breadcrumbs.propTypes = {
-  crumbs: PropTypes.arrayOf(
+  newCrumbs: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,
       path: PropTypes.string,
