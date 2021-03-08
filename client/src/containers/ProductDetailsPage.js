@@ -120,6 +120,10 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
     if (product)
       newCrumbs = [
         {
+          name: `Category: ${product.category}`,
+          path: `/products/category/${product.category}`,
+        },
+        {
           name: product.title,
           path: `/products/${product.id}`,
         },
