@@ -21,7 +21,7 @@ export const BreadcrumbsListStyled = styled.ol`
 export const BreadcrumbsListItemStyled = styled.li`
   display: inline;
 
-  &:nth-child(1n + 2) {
+  &:nth-child(1n + 2)::before {
     content: ' ';
     display: inline-block;
     width: 0;
