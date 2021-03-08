@@ -62,92 +62,95 @@ const ProductsPage = () => {
   }, [category]);
 
   return (
-    <ProductsContainerStyled>
+    <>
       <Breadcrumbs crumbs={crumbs} />
-      <Sidebar />
 
-      <ProductsStyled>
-        {!products ? (
-          <HeadingSecondary>Hello!</HeadingSecondary>
-        ) : (
-          products.map((prop, key) => (
-            <ProductsCardStyled key={prop.id}>
-              <ProductsCardImageStyled>
-                <RouterLink to={`/products/${prop.id}`}>
-                  <Image rest={{ src: prop.image, alt: prop.title }} />
-                </RouterLink>
-              </ProductsCardImageStyled>
+      <ProductsContainerStyled>
+        <Sidebar />
 
-              <ProductsCardRightColumnStyled>
-                <ProductsCardInfoStyled>
-                  <ProductsCardInfoTitleStyled>
-                    <HeadingQuaternary>
-                      <Link href={`/products/${prop.id}`}>{prop.title}</Link>
-                    </HeadingQuaternary>
-                  </ProductsCardInfoTitleStyled>
+        <ProductsStyled>
+          {!products ? (
+            <HeadingSecondary>Hello!</HeadingSecondary>
+          ) : (
+            products.map((prop, key) => (
+              <ProductsCardStyled key={prop.id}>
+                <ProductsCardImageStyled>
+                  <RouterLink to={`/products/${prop.id}`}>
+                    <Image rest={{ src: prop.image, alt: prop.title }} />
+                  </RouterLink>
+                </ProductsCardImageStyled>
 
-                  <ProductsCardInfoShippingStyled>
-                    <ProductsCardRatingStyled>
-                      <RatingsStatic
-                        rating={
-                          Object.prototype.hasOwnProperty.call(
-                            everyReviews,
-                            prop.id
-                          )
-                            ? everyReviews[prop.id]
-                            : 0
-                        }
-                        uniqueOffset={prop.id}
-                      />
-                    </ProductsCardRatingStyled>
+                <ProductsCardRightColumnStyled>
+                  <ProductsCardInfoStyled>
+                    <ProductsCardInfoTitleStyled>
+                      <HeadingQuaternary>
+                        <Link href={`/products/${prop.id}`}>{prop.title}</Link>
+                      </HeadingQuaternary>
+                    </ProductsCardInfoTitleStyled>
 
-                    <ProductsCardInfoShippingBuyStyled>
-                      <Small tagType="strong" colorType="lime_green">
-                        Buy it today
-                      </Small>
-                    </ProductsCardInfoShippingBuyStyled>
+                    <ProductsCardInfoShippingStyled>
+                      <ProductsCardRatingStyled>
+                        <RatingsStatic
+                          rating={
+                            Object.prototype.hasOwnProperty.call(
+                              everyReviews,
+                              prop.id
+                            )
+                              ? everyReviews[prop.id]
+                              : 0
+                          }
+                          uniqueOffset={prop.id}
+                        />
+                      </ProductsCardRatingStyled>
 
-                    <ProductsCardInfoShippingOptionStyled>
-                      <Small tagType="strong">
-                        {prop.price >= 50
-                          ? 'FREE Shipping:'
-                          : '3-DAY Shipping:'}
-                      </Small>
-                      &nbsp;
-                      <Small>
-                        Get it by&nbsp;
-                        {dateTimeFormat(
-                          'en-US',
-                          { weekday: 'short' },
-                          daysFromNow(3)
-                        )}
-                      </Small>
-                    </ProductsCardInfoShippingOptionStyled>
-                  </ProductsCardInfoShippingStyled>
-                </ProductsCardInfoStyled>
+                      <ProductsCardInfoShippingBuyStyled>
+                        <Small tagType="strong" colorType="lime_green">
+                          Buy it today
+                        </Small>
+                      </ProductsCardInfoShippingBuyStyled>
 
-                <ProductsCardPriceCartStyled>
-                  <ProductsCardPriceStyled>
-                    <HeadingQuaternary>{`$${prop.price}`}</HeadingQuaternary>
-                  </ProductsCardPriceStyled>
+                      <ProductsCardInfoShippingOptionStyled>
+                        <Small tagType="strong">
+                          {prop.price >= 50
+                            ? 'FREE Shipping:'
+                            : '3-DAY Shipping:'}
+                        </Small>
+                        &nbsp;
+                        <Small>
+                          Get it by&nbsp;
+                          {dateTimeFormat(
+                            'en-US',
+                            { weekday: 'short' },
+                            daysFromNow(3)
+                          )}
+                        </Small>
+                      </ProductsCardInfoShippingOptionStyled>
+                    </ProductsCardInfoShippingStyled>
+                  </ProductsCardInfoStyled>
 
-                  <ProductsCardCartBtnStyled>
-                    <Button
-                      rest={{
-                        type: 'button',
-                        onClick: () => addProduct(products[key]),
-                      }}
-                    >
-                      Add to Cart
-                    </Button>
-                  </ProductsCardCartBtnStyled>
-                </ProductsCardPriceCartStyled>
-              </ProductsCardRightColumnStyled>
-            </ProductsCardStyled>
-          ))
-        )}
-      </ProductsStyled>
-    </ProductsContainerStyled>
+                  <ProductsCardPriceCartStyled>
+                    <ProductsCardPriceStyled>
+                      <HeadingQuaternary>{`$${prop.price}`}</HeadingQuaternary>
+                    </ProductsCardPriceStyled>
+
+                    <ProductsCardCartBtnStyled>
+                      <Button
+                        rest={{
+                          type: 'button',
+                          onClick: () => addProduct(products[key]),
+                        }}
+                      >
+                        Add to Cart
+                      </Button>
+                    </ProductsCardCartBtnStyled>
+                  </ProductsCardPriceCartStyled>
+                </ProductsCardRightColumnStyled>
+              </ProductsCardStyled>
+            ))
+          )}
+        </ProductsStyled>
+      </ProductsContainerStyled>
+    </>
   );
 };
 
