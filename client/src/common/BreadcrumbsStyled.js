@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const BreadcrumbsContainerStyled = styled.div`
-  width: 90%;
+  width: 96%;
   margin: 1rem auto;
   padding-left: 1rem;
   padding-right: 1rem;
