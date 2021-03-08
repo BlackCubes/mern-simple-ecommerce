@@ -81,10 +81,15 @@ export const getReviewsAPI = async (productId) => {
   }
 };
 
-export const postReviewAPI = async (productId, data) => {
+export const postReviewAPI = async (productId, data, headers) => {
   try {
-    const apiUrl = `${process.env.REACT_APP_ERREZ_SERVER_URL}/products/${productId}/reviews`;
-    const res = await axios.post(apiUrl, data);
+    const url = `${process.env.REACT_APP_ERREZ_SERVER_URL}/products/${productId}/reviews`;
+    const res = await axios({
+      method: 'POST',
+      url,
+      data,
+      headers,
+    });
     if (res.status === 201) return res.data.data;
   } catch (err) {
     console.log(err.response.data);
