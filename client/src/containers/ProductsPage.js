@@ -33,6 +33,8 @@ import { useProductContext } from '../context/ProductContext';
 
 import { daysFromNow, dateTimeFormat } from '../utils';
 
+let newCrumbs = [];
+
 const ProductsPage = () => {
   const { addProduct } = useCartContext();
   const {
@@ -44,8 +46,6 @@ const ProductsPage = () => {
   } = useProductContext();
 
   const { category } = useParams();
-
-  let newCrumbs = [];
 
   useEffect(() => {
     if (category) {
