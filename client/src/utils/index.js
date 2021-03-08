@@ -16,6 +16,8 @@ import { daysFromNow, dateTimeFormat } from './dates';
 
 import { fieldInputErrors, fieldInputProperties } from './fieldPropHandler';
 
+import headers from './headers';
+
 import regex from './regex';
 
 export {
@@ -30,6 +32,7 @@ export {
   getProductAPI,
   getProductsAPI,
   getReviewsAPI,
+  headers,
   loginAPI,
   logoutAPI,
   postReviewAPI,
