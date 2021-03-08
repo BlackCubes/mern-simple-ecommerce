@@ -65,7 +65,7 @@ const ProductsPage = () => {
 
   return (
     <>
-      <Breadcrumbs crumbs={newCrumbs} />
+      <Breadcrumbs newCrumbs={newCrumbs} />
 
       <ProductsContainerStyled>
         <Sidebar />
