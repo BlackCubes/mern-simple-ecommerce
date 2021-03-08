@@ -63,7 +63,7 @@ const ProductsPage = () => {
 
   return (
     <ProductsContainerStyled>
-      <Breadcrumbs crumbs={crumbs} LinkComponent={Link} />
+      <Breadcrumbs crumbs={crumbs} />
       <Sidebar />
 
       <ProductsStyled>
