@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -7,7 +7,6 @@ import { AuthContext } from '../context';
 import { headers, loginAPI, logoutAPI } from '../utils';
 
 const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
   const history = useHistory();
 
   const login = async (data) => {
@@ -16,7 +15,6 @@ const AuthProvider = ({ children }) => {
       const { token, userData } = await loginAPI(data, headers(currentToken));
 
       if (token && userData) {
-        setUser(userData);
         localStorage.setItem('jwt', token);
         history.push('/products');
       }
@@ -39,8 +37,10 @@ const AuthProvider = ({ children }) => {
     }
   };
 
+  const checkAuth = () => !!localStorage.getItem('jwt');
+
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ login, logout, checkAuth }}>
       {children}
     </AuthContext.Provider>
   );
