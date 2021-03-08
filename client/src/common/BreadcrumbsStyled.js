@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 
 export const BreadcrumbsContainerStyled = styled.div`
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  width: 90%;
+  margin: 1rem auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
 `;
 
 export const BreadcrumbsStyled = styled.nav`
