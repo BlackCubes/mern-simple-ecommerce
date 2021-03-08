@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
+
+import { useAuthContext } from '../context';
 
 const loginFormFields = [
   {
@@ -30,6 +33,10 @@ const loginFormFields = [
 
 const LoginPage = ({ FormContainerComponent }) => {
   const [loginData, setLoginData] = useState({});
+  const history = useHistory();
+  const { checkAuth } = useAuthContext();
+
+  if (checkAuth) history.push('/products');
 
   const onSubmission = (data) => setLoginData(data);
 
