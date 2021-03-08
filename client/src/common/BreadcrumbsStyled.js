@@ -20,6 +20,7 @@ export const BreadcrumbsListStyled = styled.ol`
 
 export const BreadcrumbsListItemStyled = styled.li`
   display: inline;
+  text-transform: capitalize;
 
   &:nth-child(1n + 2)::before {
     content: ' ';
