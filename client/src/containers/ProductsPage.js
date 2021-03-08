@@ -33,8 +33,6 @@ import { useProductContext } from '../context/ProductContext';
 
 import { daysFromNow, dateTimeFormat } from '../utils';
 
-const crumbs = [{ name: 'Products', path: '/products' }];
-
 const ProductsPage = () => {
   const { addProduct } = useCartContext();
   const {
@@ -47,23 +45,27 @@ const ProductsPage = () => {
 
   const { category } = useParams();
 
+  let newCrumbs = [];
+
   useEffect(() => {
     if (category) {
       getCategory(category);
-      crumbs.push({
-        name: `Category: ${category}`,
-        path: `/products/category/${category}`,
-      });
+      newCrumbs = [
+        {
+          name: `Category: ${category}`,
+          path: `/products/category/${category}`,
+        },
+      ];
     } else if (!category) {
       getProducts();
-      if (crumbs.length !== 1) crumbs.pop();
+      newCrumbs = [];
     }
     getEveryReviews();
   }, [category]);
 
   return (
     <>
-      <Breadcrumbs crumbs={crumbs} />
+      <Breadcrumbs crumbs={newCrumbs} />
 
       <ProductsContainerStyled>
         <Sidebar />
