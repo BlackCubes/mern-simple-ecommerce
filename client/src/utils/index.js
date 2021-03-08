@@ -5,6 +5,8 @@ import {
   getCategoryAPI,
   getEveryReviewsAPI,
   getReviewsAPI,
+  loginAPI,
+  logoutAPI,
   postReviewAPI,
 } from './api';
 
@@ -28,6 +30,8 @@ export {
   getProductAPI,
   getProductsAPI,
   getReviewsAPI,
+  loginAPI,
+  logoutAPI,
   postReviewAPI,
   regex,
 };
