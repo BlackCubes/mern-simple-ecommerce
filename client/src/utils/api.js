@@ -42,6 +42,35 @@ export const getCategoryAPI = async (category) => {
 };
 
 // This Current Website's API (Errez Shop)
+export const loginAPI = async (data, headers) => {
+  try {
+    const url = `${process.env.REACT_APP_ERREZ_SERVER_URL}/users/login`;
+    const res = await axios({
+      method: 'POST',
+      url,
+      data,
+      headers,
+    });
+    if (res.status === 200) return { token: res.token, user: res.data.user };
+  } catch (err) {
+    console.log(err.response.data);
+  }
+};
+
+export const logoutAPI = async (headers) => {
+  try {
+    const url = `${process.env.REACT_APP_ERREZ_SERVER_URL}/users/logout`;
+    const res = await axios({
+      method: 'GET',
+      url,
+      headers,
+    });
+    if (res.status === 200) return { status: 'success' };
+  } catch (err) {
+    console.log(err.response.data);
+  }
+};
+
 export const getReviewsAPI = async (productId) => {
   try {
     const apiUrl = `${process.env.REACT_APP_ERREZ_SERVER_URL}/products/${productId}/reviews`;
