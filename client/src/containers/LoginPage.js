@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -32,15 +32,12 @@ const loginFormFields = [
 ];
 
 const LoginPage = ({ FormContainerComponent }) => {
-  const [loginData, setLoginData] = useState({});
   const history = useHistory();
-  const { checkAuth } = useAuthContext();
+  const { checkAuth, login } = useAuthContext();
 
   if (checkAuth()) history.push('/products');
 
-  const onSubmission = (data) => setLoginData(data);
-
-  console.log(loginData);
+  const onSubmission = (data) => login(data);
 
   return (
     <FormContainerComponent
