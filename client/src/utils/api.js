@@ -51,7 +51,7 @@ export const loginAPI = async (data, headers) => {
       data,
       headers,
     });
-    if (res.status === 200) return res.data.data;
+    if (res.status === 200) return res.data;
   } catch (err) {
     console.log(err.response.data);
   }
