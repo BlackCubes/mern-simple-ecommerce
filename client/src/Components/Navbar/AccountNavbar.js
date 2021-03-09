@@ -13,7 +13,7 @@ const AccountNavbar = () => (
   <AccountNavbarStyled>
     <AccountNavbarLogoStyled>
       <AccountNavbarLogoImgStyled>
-        <RouterLink>
+        <RouterLink to="/">
           <Image
             rest={{ src: '/img/logo-large.png', alt: 'Company Big Logo' }}
           />
