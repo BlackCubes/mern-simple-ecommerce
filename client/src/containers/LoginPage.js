@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { useAuthContext } from '../context';
@@ -32,10 +32,9 @@ const loginFormFields = [
 ];
 
 const LoginPage = ({ FormContainerComponent }) => {
-  const history = useHistory();
   const { checkAuth, login } = useAuthContext();
 
-  if (checkAuth()) history.push('/products');
+  if (checkAuth()) return <Redirect to="/products" />;
 
   const onSubmission = (data) => login(data);
 
