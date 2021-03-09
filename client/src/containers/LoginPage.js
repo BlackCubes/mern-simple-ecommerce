@@ -36,7 +36,7 @@ const LoginPage = ({ FormContainerComponent }) => {
   const history = useHistory();
   const { checkAuth } = useAuthContext();
 
-  if (checkAuth) history.push('/products');
+  if (checkAuth()) history.push('/products');
 
   const onSubmission = (data) => setLoginData(data);
 
