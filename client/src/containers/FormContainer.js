@@ -29,11 +29,50 @@ const FormContainer = ({
     const { name, value } = e.target;
 
     switch (name) {
+      case 'email':
+        if (!value.length)
+          setErrors((err) => ({
+            ...err,
+            [name]: 'Required.',
+          }));
+        else if (!regex.email.test(value))
+          setErrors((err) => ({
+            ...err,
+            [name]: 'Please provide a valid email.',
+          }));
+        else setErrors((err) => ({ ...err, [name]: '' }));
+        break;
+
+      case 'password':
+        if (!value.length)
+          setErrors((err) => ({
+            ...err,
+            [name]: 'Required.',
+          }));
+        else if (value.length < 8)
+          setErrors((err) => ({
+            ...err,
+            [name]: 'Must be a minimum of 8 characters.',
+          }));
+        else if (value.length > 60)
+          setErrors((err) => ({
+            ...err,
+            [name]: 'Must be less than or equal to 60 characters.',
+          }));
+        else if (!regex.password.test(value))
+          setErrors((err) => ({
+            ...err,
+            [name]:
+              'Please use at least one number, one special character, and one capital letter between 8 to 60 characters.',
+          }));
+        else setErrors((err) => ({ ...err, [name]: '' }));
+        break;
+
       case 'firstname':
         if (!value.length)
           setErrors((err) => ({
             ...err,
-            [name]: 'Required',
+            [name]: 'Required.',
           }));
         else if (value.length < 2)
           setErrors((err) => ({
