@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
-import { Image, Link } from '../../common';
+import { Button, Image, Link } from '../../common';
 
 import {
   NavbarStyled,
@@ -17,10 +17,14 @@ import {
   NavbarCartQuantityStyled,
 } from '../../common/Navbar';
 
+import { useAuthContext } from '../../context';
 import { useCartContext } from '../../context/CartContext';
 
 const Navbar = () => {
+  const { logout } = useAuthContext();
   const { cart } = useCartContext();
+
+  const token = localStorage.getItem('jwt') || null;
 
   return (
     <NavbarStyled>
@@ -34,6 +38,20 @@ const Navbar = () => {
         <NavbarMenuHolderStyled>
           <NavbarMenuStyled>
             <NavbarMenuListStyled>
+              {!token ? null : (
+                <NavbarMenuListItemStyled>
+                  <Button
+                    rest={{
+                      type: 'button',
+                      onClick: () => logout(),
+                      nonbtn: true,
+                    }}
+                  >
+                    Logout
+                  </Button>
+                </NavbarMenuListItemStyled>
+              )}
+
               <NavbarMenuListItemStyled>
                 <Link
                   href="/products"
