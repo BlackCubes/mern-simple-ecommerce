@@ -6,7 +6,6 @@ import 'react-credit-cards/es/styles-compiled.css';
 
 import { Main } from './common/Base';
 
-import { Navbar } from './Components/Navbar';
 import { Footer } from './Components/Footer';
 
 import {
@@ -14,6 +13,7 @@ import {
   CheckoutPage,
   FormContainer,
   LoginPage,
+  NavbarContainer,
   ProductDetailsPage,
   ProductsPage,
 } from './containers';
@@ -32,24 +32,29 @@ function App() {
         <ProductProvider>
           <CartProvider>
             <CheckoutProvider>
-              <Navbar />
+              <NavbarContainer />
               <Main>
                 <Switch>
                   <Route exact path="/" render={() => <div>Homepage</div>} />
+
                   <Route exact path="/products" component={ProductsPage} />
                   <Route
                     path="/products/category/:category"
                     component={ProductsPage}
                   />
+
                   <Route exact path="/products/:id">
                     <ProductDetailsPage
                       FormContainerComponent={FormContainer}
                     />
                   </Route>
+
                   <Route exact path="/cart" component={CartPage} />
+
                   <Route exact path="/checkout">
                     <CheckoutPage FormContainerComponent={FormContainer} />
                   </Route>
+
                   <Route exact path="/login">
                     <LoginPage FormContainerComponent={FormContainer} />
                   </Route>
