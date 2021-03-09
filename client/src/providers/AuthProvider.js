@@ -12,9 +12,9 @@ const AuthProvider = ({ children }) => {
   const login = async (data) => {
     try {
       const currentToken = localStorage.getItem('jwt') || null;
-      const { token, userData } = await loginAPI(data, headers(currentToken));
+      const { token } = await loginAPI(data, headers(currentToken));
 
-      if (token && userData) {
+      if (token) {
         localStorage.setItem('jwt', token);
         history.push('/products');
       }
