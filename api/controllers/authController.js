@@ -246,7 +246,11 @@ exports.protect = catchAsync(async (req, res, next) => {
 });
 
 exports.checkLogin = (req, res, next) => {
-  if (req.cookies.jwt)
+  if (
+    req.cookies.jwt ||
+    (req.headers.authorization &&
+      req.headers.authorization.startsWith('Bearer'))
+  )
     return next(new AppError('You are still logged in!', 403));
 
   next();
