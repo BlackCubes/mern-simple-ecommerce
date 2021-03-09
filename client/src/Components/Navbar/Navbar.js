@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
-import { Button, Image, Link } from '../../common';
+import { Image, Link } from '../../common';
 
 import {
   NavbarStyled,
@@ -40,15 +40,16 @@ const Navbar = () => {
             <NavbarMenuListStyled>
               {!token ? null : (
                 <NavbarMenuListItemStyled>
-                  <Button
+                  <Link
+                    href="/#"
                     rest={{
-                      type: 'button',
+                      colortype: 'white',
+                      hovercolortype: 'vivid_pink',
                       onClick: () => logout(),
-                      nonbtn: true,
                     }}
                   >
                     Logout
-                  </Button>
+                  </Link>
                 </NavbarMenuListItemStyled>
               )}
 
