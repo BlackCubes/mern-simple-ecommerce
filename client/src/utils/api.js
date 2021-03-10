@@ -120,3 +120,19 @@ export const getEveryReviewsAPI = async () => {
     console.log(err.response.data);
   }
 };
+
+export const deleteReviewAPI = async (reviewId, verifyPassword, headers) => {
+  try {
+    const url = `${process.env.REACT_APP_ERREZ_SERVER_URL}/reviews/${reviewId}`;
+    const res = await axios({
+      method: 'DELETE',
+      url,
+      data: verifyPassword,
+      headers,
+    });
+
+    if (res.status === 204) return res.data;
+  } catch (err) {
+    console.log(err.response.data);
+  }
+};
