@@ -6,11 +6,10 @@ import 'react-credit-cards/es/styles-compiled.css';
 
 import { Main } from './common/Base';
 
-import { Footer } from './Components/Footer';
-
 import {
   CartPage,
   CheckoutPage,
+  FooterContainer,
   FormContainer,
   LoginPage,
   NavbarContainer,
@@ -60,7 +59,7 @@ function App() {
                   </Route>
                 </Switch>
               </Main>
-              <Footer />
+              <FooterContainer />
             </CheckoutProvider>
           </CartProvider>
         </ProductProvider>
