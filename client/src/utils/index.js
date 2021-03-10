@@ -1,4 +1,5 @@
 import {
+  deleteReviewAPI,
   getProductsAPI,
   getProductAPI,
   getCategoriesAPI,
@@ -24,6 +25,7 @@ export {
   breadcrumbsRoutes,
   dateTimeFormat,
   daysFromNow,
+  deleteReviewAPI,
   fieldInputErrors,
   fieldInputProperties,
   getCategoryAPI,
