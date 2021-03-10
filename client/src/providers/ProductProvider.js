@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { ProductContext } from '../context';
 
 import {
+  deleteReviewAPI,
   getCategoriesAPI,
   getCategoryAPI,
   getEveryReviewsAPI,
@@ -102,6 +103,21 @@ const ProductProvider = ({ children }) => {
     }
   };
 
+  const deleteReview = async (reviewId, verifyPassword) => {
+    try {
+      const currentToken = localStorage.getItem('jwt') || null;
+      const { status } = await deleteReviewAPI(
+        reviewId,
+        verifyPassword,
+        headers(currentToken)
+      );
+
+      if (status === 'success') console.log('Review deleted!');
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <ProductContext.Provider
       value={{
@@ -110,6 +126,7 @@ const ProductProvider = ({ children }) => {
         categories,
         category,
         reviews,
+        deleteReview,
         everyReviews,
         getProduct,
         getProducts,
