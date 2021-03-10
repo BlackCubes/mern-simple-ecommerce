@@ -128,6 +128,14 @@ export const ProductDetailsReviewListStyled = styled.div`
   padding-bottom: 2rem;
 `;
 
+export const ProductDetailsLeftColStyled = styled.div`
+  float: left;
+`;
+
+export const ProductDetailsRightColStyled = styled.div`
+  float: right;
+`;
+
 export const ProductDetailsReviewRatingStyled = styled.div`
   margin-bottom: 1.5rem;
 `;
