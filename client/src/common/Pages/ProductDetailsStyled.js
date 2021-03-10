@@ -128,11 +128,11 @@ export const ProductDetailsReviewListStyled = styled.div`
   padding-bottom: 2rem;
 `;
 
-export const ProductDetailsLeftColStyled = styled.div`
+export const ProductDetailsReviewLeftColStyled = styled.div`
   float: left;
 `;
 
-export const ProductDetailsRightColStyled = styled.div`
+export const ProductDetailsReviewRightColStyled = styled.div`
   float: right;
 `;
 
