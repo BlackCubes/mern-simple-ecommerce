@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { AuthContext } from '../context';
@@ -7,6 +7,8 @@ import { AuthContext } from '../context';
 import { headers, loginAPI, logoutAPI } from '../utils';
 
 const AuthProvider = ({ children }) => {
+  const history = useHistory();
+
   const login = async (data) => {
     try {
       const currentToken = localStorage.getItem('jwt') || null;
@@ -14,7 +16,7 @@ const AuthProvider = ({ children }) => {
 
       if (token) {
         localStorage.setItem('jwt', token);
-        return <Redirect to="/products" />;
+        history.push('/products');
       }
     } catch (err) {
       console.log(err);
@@ -28,7 +30,7 @@ const AuthProvider = ({ children }) => {
 
       if (data.status === 'success') {
         localStorage.removeItem('jwt');
-        return <Redirect to="/" />;
+        history.push('/');
       }
     } catch (err) {
       console.log(err);
