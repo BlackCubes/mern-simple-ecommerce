@@ -124,6 +124,8 @@ export const ProductDetailsReviewContentStyled = styled.div`
 `;
 
 export const ProductDetailsReviewListStyled = styled.div`
+  display: flex;
+  justify-content: space-between;
   padding-top: 2rem;
   padding-bottom: 2rem;
 `;
