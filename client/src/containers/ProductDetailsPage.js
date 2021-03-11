@@ -48,6 +48,7 @@ import {
   RatingsStatic,
 } from '../Components';
 
+import { useAuthContext } from '../context';
 import { useCartContext } from '../context/CartContext';
 import { useProductContext } from '../context/ProductContext';
 
@@ -128,6 +129,7 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
     postReview,
     deleteReview,
   } = useProductContext();
+  const { checkAuth } = useAuthContext();
 
   useEffect(() => {
     if (id) {
@@ -314,22 +316,24 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
                             </ProductDetailsReviewDescriptionStyled>
                           </ProductDetailsReviewLeftColStyled>
 
-                          <ProductDetailsReviewRightColStyled>
-                            <Button
-                              rest={{
-                                type: 'button',
-                                onClick: (e) =>
-                                  onFormModal(setVerifyModalToggle)(e)(
-                                    review._id
-                                  ),
-                                colortype: 'transparent',
-                                hovercolortype: 'moderate_blue_dark',
-                                nonbtn: true,
-                              }}
-                            >
-                              Delete Review
-                            </Button>
-                          </ProductDetailsReviewRightColStyled>
+                          {checkAuth() ? (
+                            <ProductDetailsReviewRightColStyled>
+                              <Button
+                                rest={{
+                                  type: 'button',
+                                  onClick: (e) =>
+                                    onFormModal(setVerifyModalToggle)(e)(
+                                      review._id
+                                    ),
+                                  colortype: 'transparent',
+                                  hovercolortype: 'moderate_blue_dark',
+                                  nonbtn: true,
+                                }}
+                              >
+                                Delete Review
+                              </Button>
+                            </ProductDetailsReviewRightColStyled>
+                          ) : null}
                         </ProductDetailsReviewListStyled>
                       ))
                     )}
