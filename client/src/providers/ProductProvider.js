@@ -112,7 +112,8 @@ const ProductProvider = ({ children }) => {
         headers(currentToken)
       );
 
-      if (status === 'success') console.log('Review deleted!');
+      if (status === 'success')
+        setReviews(reviews.filter((review) => review._id !== reviewId));
     } catch (err) {
       console.log(err);
     }
