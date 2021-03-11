@@ -73,22 +73,22 @@ const ProductProvider = ({ children }) => {
     }
   };
 
-  const postReview = async (productId, data) => {
+  const postReview = async (productId, newData) => {
     try {
       const currentToken = localStorage.getItem('jwt') || null;
       const reviewData = {
-        review: data.review,
-        rating: data.rating,
-        userfullname: `${data.firstname} ${data.lastname}`,
+        review: newData.review,
+        rating: newData.rating,
+        userfullname: `${newData.firstname} ${newData.lastname}`,
       };
 
-      const { newData } = await postReviewAPI(
+      const { data } = await postReviewAPI(
         productId,
         reviewData,
         headers(currentToken)
       );
 
-      if (newData) setReviews((oldReviews) => [...oldReviews, newData]);
+      if (data) setReviews(reviews.push(data));
     } catch (err) {
       console.log(err);
     }
