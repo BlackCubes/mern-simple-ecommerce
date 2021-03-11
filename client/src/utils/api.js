@@ -131,7 +131,7 @@ export const deleteReviewAPI = async (reviewId, verifyPassword, headers) => {
       headers,
     });
 
-    if (res.status === 204) return res.data;
+    if (res.status === 204) return { status: 'success' };
   } catch (err) {
     console.log(err.response.data);
   }
