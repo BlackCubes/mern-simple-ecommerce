@@ -27,6 +27,8 @@ import {
   ProductDetailsReviewsAddStyled,
   ProductDetailsReviewContentStyled,
   ProductDetailsReviewListStyled,
+  ProductDetailsReviewLeftColStyled,
+  ProductDetailsReviewRightColStyled,
   ProductDetailsReviewRatingStyled,
   ProductDetailsReviewUserStyled,
   ProductDetailsReviewDescriptionStyled,
@@ -95,10 +97,27 @@ const reviewFormFields = [
   },
 ];
 
+const adminVerifyFields = [
+  {
+    type: 'password',
+    name: 'password',
+    id: 'password',
+    placeholder: 'Password',
+    message: "Let's go!",
+    addlstyle: {
+      width: '100%',
+      float: 'left',
+      padding: '0 0.75rem',
+    },
+  },
+];
+
 let newCrumbs = [];
 
 const ProductDetailsPage = ({ FormContainerComponent }) => {
   const [reviewModalToggle, setReviewModalToggle] = useState(false);
+  const [verifyModalToggle, setVerifyModalToggle] = useState(false);
+  const [reviewId, setReviewId] = useState(0);
   const { id } = useParams();
   const { addProduct } = useCartContext();
   const {
@@ -107,6 +126,7 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
     reviews,
     getReviews,
     postReview,
+    deleteReview,
   } = useProductContext();
 
   useEffect(() => {
@@ -130,9 +150,10 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
       ];
   }, [product]);
 
-  const onFormModal = (setToggle) => (e) => {
+  const onFormModal = (setToggle) => (e) => (chosenReviewId) => {
     e.preventDefault();
     setToggle((bool) => !bool);
+    if (chosenReviewId) setReviewId(chosenReviewId);
   };
 
   const onSubmissionModal = (getFunction, setToggle) => (productId) => (
@@ -267,29 +288,48 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
                     ) : (
                       reviews.map((review) => (
                         <ProductDetailsReviewListStyled key={review._id}>
-                          <ProductDetailsReviewRatingStyled>
-                            <RatingsStatic rating={review.rating} />
-                            {/* <Paragraph>{review.rating}</Paragraph> */}
-                          </ProductDetailsReviewRatingStyled>
+                          <ProductDetailsReviewLeftColStyled>
+                            <ProductDetailsReviewRatingStyled>
+                              <RatingsStatic rating={review.rating} />
+                              {/* <Paragraph>{review.rating}</Paragraph> */}
+                            </ProductDetailsReviewRatingStyled>
 
-                          <ProductDetailsReviewUserStyled>
-                            <Paragraph sizetype="small">
-                              <span>
-                                by&nbsp;
-                                {review.userfullname}
-                                &nbsp;on&nbsp;
-                                {dateTimeFormat(
-                                  'en-US',
-                                  { dateStyle: 'medium' },
-                                  new Date(review.createdAt)
-                                )}
-                              </span>
-                            </Paragraph>
-                          </ProductDetailsReviewUserStyled>
+                            <ProductDetailsReviewUserStyled>
+                              <Paragraph sizetype="small">
+                                <span>
+                                  by&nbsp;
+                                  {review.userfullname}
+                                  &nbsp;on&nbsp;
+                                  {dateTimeFormat(
+                                    'en-US',
+                                    { dateStyle: 'medium' },
+                                    new Date(review.createdAt)
+                                  )}
+                                </span>
+                              </Paragraph>
+                            </ProductDetailsReviewUserStyled>
 
-                          <ProductDetailsReviewDescriptionStyled>
-                            <Paragraph>{review.review}</Paragraph>
-                          </ProductDetailsReviewDescriptionStyled>
+                            <ProductDetailsReviewDescriptionStyled>
+                              <Paragraph>{review.review}</Paragraph>
+                            </ProductDetailsReviewDescriptionStyled>
+                          </ProductDetailsReviewLeftColStyled>
+
+                          <ProductDetailsReviewRightColStyled>
+                            <Button
+                              rest={{
+                                type: 'button',
+                                onClick: (e) =>
+                                  onFormModal(setVerifyModalToggle)(e)(
+                                    product._id
+                                  ),
+                                colortype: 'transparent',
+                                hovercolortype: 'moderate_blue_dark',
+                                nonbtn: true,
+                              }}
+                            >
+                              Delete Review
+                            </Button>
+                          </ProductDetailsReviewRightColStyled>
                         </ProductDetailsReviewListStyled>
                       ))
                     )}
@@ -309,6 +349,20 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
                   )(id)}
                   formFields={reviewFormFields}
                   hasReviewRating
+                />
+              </Modal>
+
+              <Modal
+                header="Verify Password"
+                modalToggle={verifyModalToggle}
+                handleModal={onFormModal(setVerifyModalToggle)}
+              >
+                <FormContainerComponent
+                  onSubmit={onSubmissionModal(
+                    deleteReview,
+                    setVerifyModalToggle
+                  )(reviewId)}
+                  formFields={adminVerifyFields}
                 />
               </Modal>
             </>
