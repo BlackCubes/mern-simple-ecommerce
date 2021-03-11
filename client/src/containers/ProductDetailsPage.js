@@ -320,7 +320,7 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
                                 type: 'button',
                                 onClick: (e) =>
                                   onFormModal(setVerifyModalToggle)(e)(
-                                    product._id
+                                    review._id
                                   ),
                                 colortype: 'transparent',
                                 hovercolortype: 'moderate_blue_dark',
