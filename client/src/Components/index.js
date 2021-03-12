@@ -6,6 +6,7 @@ import Inputs from './Inputs';
 import Modal from './Modal';
 import { RatingsInput, RatingsStatic } from './Ratings';
 import Sidebar from './Sidebar';
+import Snackbar from './Snackbar';
 
 export {
   Breadcrumbs,
@@ -17,4 +18,5 @@ export {
   RatingsInput,
   RatingsStatic,
   Sidebar,
+  Snackbar,
 };
