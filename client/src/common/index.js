@@ -19,6 +19,7 @@ import {
   ModalButtonStyled,
 } from './ModalStyled';
 import { RatingsStyled, RatingIconStyled } from './RatingsStyled';
+import SnackbarStyled from './SnackbarStyled';
 import SvgStyled from './SvgStyled';
 
 export {
@@ -41,5 +42,6 @@ export {
   ModalButtonStyled,
   RatingsStyled,
   RatingIconStyled,
+  SnackbarStyled,
   SvgStyled,
 };
