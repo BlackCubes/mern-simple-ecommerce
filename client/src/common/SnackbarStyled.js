@@ -32,7 +32,7 @@ export default styled.div`
   transform: translateX(-50%);
   z-index: 9999;
   color: white;
-  background-color: ${(props) => props.theme.colors[props.colortype]};
+  background-color: ${(props) => props.theme.colors[props.bgcolortype]};
   font-size: 1.6rem;
   font-weight: 400;
   text-align: center;
