@@ -152,7 +152,7 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
       ];
   }, [product]);
 
-  const onFormModal = (setToggle) => (e) => (chosenReviewId) => {
+  const onFormModal = (setToggle) => (e, chosenReviewId) => {
     e.preventDefault();
     setToggle((bool) => !bool);
     if (chosenReviewId) setReviewId(chosenReviewId);
@@ -322,7 +322,8 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
                                 rest={{
                                   type: 'button',
                                   onClick: (e) =>
-                                    onFormModal(setVerifyModalToggle)(e)(
+                                    onFormModal(setVerifyModalToggle)(
+                                      e,
                                       review._id
                                     ),
                                   colortype: 'transparent',
