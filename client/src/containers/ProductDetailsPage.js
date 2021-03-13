@@ -46,6 +46,7 @@ import {
   CategorySidebar,
   Modal,
   RatingsStatic,
+  Snackbar,
 } from '../Components';
 
 import { useAuthContext } from '../context';
@@ -128,6 +129,7 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
     getReviews,
     postReview,
     deleteReview,
+    apiReviewErr,
   } = useProductContext();
   const { checkAuth } = useAuthContext();
 
@@ -370,6 +372,10 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
                   formFields={adminVerifyFields}
                 />
               </Modal>
+
+              {!apiReviewErr ? null : (
+                <Snackbar color="red">{apiReviewErr}</Snackbar>
+              )}
             </>
           )}
         </ProductDetailsStyled>
