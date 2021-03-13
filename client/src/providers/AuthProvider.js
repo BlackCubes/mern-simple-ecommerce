@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -46,9 +46,12 @@ const AuthProvider = ({ children }) => {
 
   const checkAuth = () => !!localStorage.getItem('jwt');
 
-  setTimeout(() => {
-    setApiAuthErr(null);
-  }, 10000);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setApiAuthErr(null);
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, [apiAuthErr]);
 
   return (
     <AuthContext.Provider value={{ login, logout, checkAuth, apiAuthErr }}>
