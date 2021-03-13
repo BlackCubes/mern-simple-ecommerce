@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 import { SnackbarStyled } from '../common';
 
-const Snackbar = ({ message, color }) => (
-  <SnackbarStyled bgcolortype={color}>{message}</SnackbarStyled>
+const Snackbar = ({ children, color }) => (
+  <SnackbarStyled bgcolortype={color}>{children}</SnackbarStyled>
 );
 
 Snackbar.propTypes = {
-  message: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
   color: PropTypes.string.isRequired,
 };
 
