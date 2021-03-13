@@ -41,6 +41,6 @@ export default styled.div`
 
   &.show {
     visibility: visible;
-    animation: ${fadeIn} 0.5s, ${fadeOut} 0.5s 2.5s;
+    animation: ${fadeIn} 0.5s, ${fadeOut} 0.5s 4.5s;
   }
 `;
