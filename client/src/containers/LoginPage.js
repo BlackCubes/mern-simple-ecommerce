@@ -2,6 +2,8 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import { Snackbar } from '../Components';
+
 import { useAuthContext } from '../context';
 
 const loginFormFields = [
@@ -32,7 +34,7 @@ const loginFormFields = [
 ];
 
 const LoginPage = ({ FormContainerComponent }) => {
-  const { checkAuth, login } = useAuthContext();
+  const { checkAuth, login, apiAuthErr } = useAuthContext();
   const history = useHistory();
 
   if (checkAuth()) history.push('/products');
@@ -40,10 +42,14 @@ const LoginPage = ({ FormContainerComponent }) => {
   const onSubmission = (data) => login(data);
 
   return (
-    <FormContainerComponent
-      onSubmit={onSubmission}
-      formFields={loginFormFields}
-    />
+    <>
+      <FormContainerComponent
+        onSubmit={onSubmission}
+        formFields={loginFormFields}
+      />
+
+      {!apiAuthErr ? null : <Snackbar color="red">{apiAuthErr}</Snackbar>}
+    </>
   );
 };
 
