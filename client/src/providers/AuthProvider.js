@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -7,40 +7,47 @@ import { AuthContext } from '../context';
 import { headers, loginAPI, logoutAPI } from '../utils';
 
 const AuthProvider = ({ children }) => {
+  const [apiAuthErr, setApiAuthErr] = useState(null);
   const history = useHistory();
 
   const login = async (data) => {
     try {
       const currentToken = localStorage.getItem('jwt') || null;
-      const { token } = await loginAPI(data, headers(currentToken));
+      const apiData = await loginAPI(data, headers(currentToken));
 
-      if (token) {
-        localStorage.setItem('jwt', token);
+      if (apiData.status === 'success') {
+        localStorage.setItem('jwt', apiData.token);
         history.push('/products');
       }
+
+      if (apiData.status === ('fail' || 'error'))
+        throw new Error(apiData.message);
     } catch (err) {
-      console.log(err);
+      setApiAuthErr(err.message);
     }
   };
 
   const logout = async () => {
     try {
       const currentToken = localStorage.getItem('jwt') || null;
-      const data = await logoutAPI(headers(currentToken));
+      const apiData = await logoutAPI(headers(currentToken));
 
-      if (data.status === 'success') {
+      if (apiData.status === 'success') {
         localStorage.removeItem('jwt');
         history.push('/');
       }
+
+      if (apiData.status === ('fail' || 'error'))
+        throw new Error(apiData.message);
     } catch (err) {
-      console.log(err);
+      setApiAuthErr(err.message);
     }
   };
 
   const checkAuth = () => !!localStorage.getItem('jwt');
 
   return (
-    <AuthContext.Provider value={{ login, logout, checkAuth }}>
+    <AuthContext.Provider value={{ login, logout, checkAuth, apiAuthErr }}>
       {children}
     </AuthContext.Provider>
   );
