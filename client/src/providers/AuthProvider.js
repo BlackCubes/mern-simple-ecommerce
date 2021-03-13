@@ -20,7 +20,7 @@ const AuthProvider = ({ children }) => {
         history.push('/products');
       }
 
-      if (apiData.status === ('fail' || 'error') || apiData.statusCode === 429)
+      if (apiData.status === ('fail' || 'error'))
         throw new Error(apiData.message);
     } catch (err) {
       setApiAuthErr(err.message);
@@ -37,7 +37,7 @@ const AuthProvider = ({ children }) => {
         history.push('/');
       }
 
-      if (apiData.status === ('fail' || 'error') || apiData.statusCode === 429)
+      if (apiData.status === ('fail' || 'error'))
         throw new Error(apiData.message);
     } catch (err) {
       setApiAuthErr(err.message);
