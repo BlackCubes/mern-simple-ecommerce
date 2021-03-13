@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import { SnackbarStyled } from '../common';
@@ -6,9 +6,12 @@ import { SnackbarStyled } from '../common';
 const Snackbar = ({ children, color }) => {
   const [isActive, setIsActive] = useState(true);
 
-  setTimeout(() => {
-    setIsActive(false);
-  }, 5000);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsActive(false);
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <SnackbarStyled className={isActive ? 'show' : ''} bgcolortype={color}>
