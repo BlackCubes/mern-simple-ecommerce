@@ -75,22 +75,28 @@ export const getReviewsAPI = async (productId) => {
   try {
     const apiUrl = `${process.env.REACT_APP_ERREZ_SERVER_URL}/products/${productId}/reviews`;
     const res = await axios.get(apiUrl);
-    if (res.status === 200) return res.data.data;
+    if (res.status === 200) {
+      const { status, data } = res.data;
+      return { status, data: data.data };
+    }
   } catch (err) {
     return err.response.data;
   }
 };
 
-export const postReviewAPI = async (productId, data, headers) => {
+export const postReviewAPI = async (productId, inputData, headers) => {
   try {
     const url = `${process.env.REACT_APP_ERREZ_SERVER_URL}/products/${productId}/reviews`;
     const res = await axios({
       method: 'POST',
       url,
-      data,
+      inputData,
       headers,
     });
-    if (res.status === 201) return res.data.data;
+    if (res.status === 201) {
+      const { status, data } = res.data;
+      return { status, data: data.data };
+    }
   } catch (err) {
     return err.response.data;
   }
@@ -101,6 +107,7 @@ export const getEveryReviewsAPI = async () => {
     const apiUrl = `${process.env.REACT_APP_ERREZ_SERVER_URL}/reviews`;
     const res = await axios.get(apiUrl);
     if (res.status === 200) {
+      const { status } = res.data;
       const { data } = res.data.data;
       const removeDuplicates = {};
 
@@ -114,7 +121,7 @@ export const getEveryReviewsAPI = async () => {
           removeDuplicates[reviewData.productId] = reviewData.ratingsAverage;
       });
 
-      return removeDuplicates;
+      return { status, data: removeDuplicates };
     }
   } catch (err) {
     return err.response.data;
