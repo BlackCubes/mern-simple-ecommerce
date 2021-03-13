@@ -46,6 +46,10 @@ const AuthProvider = ({ children }) => {
 
   const checkAuth = () => !!localStorage.getItem('jwt');
 
+  setTimeout(() => {
+    setApiAuthErr(null);
+  }, 10000);
+
   return (
     <AuthContext.Provider value={{ login, logout, checkAuth, apiAuthErr }}>
       {children}
