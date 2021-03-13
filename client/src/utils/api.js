@@ -90,7 +90,7 @@ export const postReviewAPI = async (productId, inputData, headers) => {
     const res = await axios({
       method: 'POST',
       url,
-      inputData,
+      data: inputData,
       headers,
     });
     if (res.status === 201) {
