@@ -53,7 +53,7 @@ export const loginAPI = async (data, headers) => {
     });
     if (res.status === 200) return res.data;
   } catch (err) {
-    console.log(err.response.data);
+    return err.response.data;
   }
 };
 
@@ -67,7 +67,7 @@ export const logoutAPI = async (headers) => {
     });
     if (res.status === 200) return { status: 'success' };
   } catch (err) {
-    console.log(err.response.data);
+    return err.response.data;
   }
 };
 
@@ -77,7 +77,7 @@ export const getReviewsAPI = async (productId) => {
     const res = await axios.get(apiUrl);
     if (res.status === 200) return res.data.data;
   } catch (err) {
-    console.log(err.response.data);
+    return err.response.data;
   }
 };
 
@@ -92,7 +92,7 @@ export const postReviewAPI = async (productId, data, headers) => {
     });
     if (res.status === 201) return res.data.data;
   } catch (err) {
-    console.log(err.response.data);
+    return err.response.data;
   }
 };
 
@@ -117,7 +117,7 @@ export const getEveryReviewsAPI = async () => {
       return removeDuplicates;
     }
   } catch (err) {
-    console.log(err.response.data);
+    return err.response.data;
   }
 };
 
@@ -133,6 +133,6 @@ export const deleteReviewAPI = async (reviewId, verifyPassword, headers) => {
 
     if (res.status === 204) return { status: 'success' };
   } catch (err) {
-    console.log(err.response.data);
+    return err.response.data;
   }
 };
