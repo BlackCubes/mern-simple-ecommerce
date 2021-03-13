@@ -8,7 +8,7 @@ const Snackbar = ({ message, color }) => (
 );
 
 Snackbar.propTypes = {
-  message: PropTypes.string.isRequired,
+  message: PropTypes.node.isRequired,
   color: PropTypes.string.isRequired,
 };
 
