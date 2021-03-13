@@ -69,7 +69,7 @@ const ProductProvider = ({ children }) => {
     try {
       const apiData = await getReviewsAPI(productId);
       if (apiData.status === 'success') setReviews(apiData.data);
-      if (apiData.status === ('fail' || 'error') || apiData.statusCode === 429)
+      if (apiData.status === ('fail' || 'error'))
         throw new Error(apiData.message);
     } catch (err) {
       setApiReviewErr(err.message);
@@ -92,7 +92,7 @@ const ProductProvider = ({ children }) => {
       );
 
       if (apiData.status === 'success') setReviews(reviews.push(apiData.data));
-      if (apiData.status === ('fail' || 'error') || apiData.statusCode === 429)
+      if (apiData.status === ('fail' || 'error'))
         throw new Error(apiData.message);
     } catch (err) {
       setApiReviewErr(err.message);
@@ -103,7 +103,7 @@ const ProductProvider = ({ children }) => {
     try {
       const apiData = await getEveryReviewsAPI();
       if (apiData.status === 'success') setEveryReviews(apiData.data);
-      if (apiData.status === ('fail' || 'error') || apiData.statusCode === 429)
+      if (apiData.status === ('fail' || 'error'))
         throw new Error(apiData.message);
     } catch (err) {
       setApiReviewErr(err.message);
@@ -121,7 +121,7 @@ const ProductProvider = ({ children }) => {
 
       if (apiData.status === 'success')
         setReviews(reviews.filter((review) => review._id !== reviewId));
-      if (apiData.status === ('fail' || 'error') || apiData.statusCode === 429)
+      if (apiData.status === ('fail' || 'error'))
         throw new Error(apiData.message);
     } catch (err) {
       setApiReviewErr(err.message);
