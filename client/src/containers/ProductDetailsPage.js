@@ -158,10 +158,10 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
     if (chosenReviewId) setReviewId(chosenReviewId);
   };
 
-  const onSubmissionModal = (getFunction, setToggle) => (productId) => (
+  const onSubmissionModal = (getFunction, setToggle) => (givenId) => (
     newValues
   ) => {
-    getFunction(productId, newValues);
+    getFunction(givenId, newValues);
     setToggle(false);
   };
 
