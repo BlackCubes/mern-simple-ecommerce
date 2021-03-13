@@ -22,6 +22,7 @@ const ProductProvider = ({ children }) => {
   const [category, setCategory] = useState(null);
   const [reviews, setReviews] = useState([]);
   const [everyReviews, setEveryReviews] = useState(null);
+  const [apiReviewErr, setApiReviewErr] = useState(null);
 
   const getProducts = async () => {
     try {
@@ -66,10 +67,12 @@ const ProductProvider = ({ children }) => {
 
   const getReviews = async (productId) => {
     try {
-      const { data } = await getReviewsAPI(productId);
-      if (data) setReviews(data);
+      const apiData = await getReviewsAPI(productId);
+      if (apiData.status === 'success') setReviews(apiData.data);
+      if (apiData.status === ('fail' || 'error') || apiData.statusCode === 429)
+        throw new Error(apiData.message);
     } catch (err) {
-      console.log(err);
+      setApiReviewErr(err.message);
     }
   };
 
@@ -82,42 +85,55 @@ const ProductProvider = ({ children }) => {
         userfullname: `${newData.firstname} ${newData.lastname}`,
       };
 
-      const { data } = await postReviewAPI(
+      const apiData = await postReviewAPI(
         productId,
         reviewData,
         headers(currentToken)
       );
 
-      if (data) setReviews(reviews.push(data));
+      if (apiData.status === 'success') setReviews(reviews.push(apiData.data));
+      if (apiData.status === ('fail' || 'error') || apiData.statusCode === 429)
+        throw new Error(apiData.message);
     } catch (err) {
-      console.log(err);
+      setApiReviewErr(err.message);
     }
   };
 
   const getEveryReviews = async () => {
     try {
-      const data = await getEveryReviewsAPI();
-      if (data) setEveryReviews(data);
+      const apiData = await getEveryReviewsAPI();
+      if (apiData.status === 'success') setEveryReviews(apiData.data);
+      if (apiData.status === ('fail' || 'error') || apiData.statusCode === 429)
+        throw new Error(apiData.message);
     } catch (err) {
-      console.log(err);
+      setApiReviewErr(err.message);
     }
   };
 
   const deleteReview = async (reviewId, verifyPassword) => {
     try {
       const currentToken = localStorage.getItem('jwt') || null;
-      const { status } = await deleteReviewAPI(
+      const apiData = await deleteReviewAPI(
         reviewId,
         verifyPassword,
         headers(currentToken)
       );
 
-      if (status === 'success')
+      if (apiData.status === 'success')
         setReviews(reviews.filter((review) => review._id !== reviewId));
+      if (apiData.status === ('fail' || 'error') || apiData.statusCode === 429)
+        throw new Error(apiData.message);
     } catch (err) {
-      console.log(err);
+      setApiReviewErr(err.message);
     }
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setApiReviewErr(null);
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, [apiReviewErr]);
 
   return (
     <ProductContext.Provider
@@ -136,6 +152,7 @@ const ProductProvider = ({ children }) => {
         getReviews,
         postReview,
         getEveryReviews,
+        apiReviewErr,
       }}
     >
       {children}
