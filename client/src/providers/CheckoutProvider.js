@@ -24,9 +24,9 @@ const CheckoutProvider = ({ children }) => {
       subTotalAmount += item.price * item.quantity;
     });
 
-    setSubTotal(subTotalAmount);
-    setSalesTax(subTotalAmount * 0.0725);
-    setFinalTotal(subTotalAmount * 1.0725);
+    setSubTotal(subTotalAmount.toFixed(2));
+    setSalesTax((subTotalAmount * 0.0725).toFixed(2));
+    setFinalTotal((subTotalAmount * 1.0725).toFixed(2));
   };
 
   const getShippingAddress = (address) => setShippingAddress(address);
