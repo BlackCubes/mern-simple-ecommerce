@@ -1,7 +1,7 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-import { Link } from '../common';
+import { Link } from '../../common';
 
 import {
   SidebarStyled,
@@ -11,11 +11,11 @@ import {
   SidebarFacetLegendStyled,
   SidebarFacetListStyled,
   SidebarFacetListItemStyled,
-} from '../common/Sidebar';
+} from '../../common/Sidebar';
 
-import { Paragraph, Small } from '../common/Typography';
+import { Paragraph, Small } from '../../common/Typography';
 
-import { useProductContext } from '../context/ProductContext';
+import { useProductContext } from '../../context/ProductContext';
 
 const Sidebar = () => {
   const { categories } = useProductContext();

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
-import { Image, Link } from '../common';
+import { Image, Link } from '../../common';
 
 import {
   CategorySidebarStyled,
@@ -13,11 +13,11 @@ import {
   CategorySidebarCardInfoPriceStyled,
   SidebarStyled,
   SidebarContainerStyled,
-} from '../common/Sidebar';
+} from '../../common/Sidebar';
 
-import { Paragraph } from '../common/Typography';
+import { Paragraph } from '../../common/Typography';
 
-import { useProductContext } from '../context/ProductContext';
+import { useProductContext } from '../../context/ProductContext';
 
 const CategorySidebar = () => {
   const [similarProducts, setSimilarProducts] = useState(null);

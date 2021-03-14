@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { Button } from '../common';
+import { Button } from '../../common';
 
 import {
   CheckoutSidebarStyled,
@@ -12,11 +12,11 @@ import {
   CheckoutSidebarButtonStyled,
   SidebarStyled,
   SidebarContainerStyled,
-} from '../common/Sidebar';
+} from '../../common/Sidebar';
 
-import { HeadingSecondary, Paragraph, Small } from '../common/Typography';
+import { HeadingSecondary, Paragraph, Small } from '../../common/Typography';
 
-import { useCheckoutContext } from '../context/CheckoutContext';
+import { useCheckoutContext } from '../../context/CheckoutContext';
 
 const CheckoutSidebar = () => {
   const { subTotal, salesTax, finalTotal } = useCheckoutContext();
