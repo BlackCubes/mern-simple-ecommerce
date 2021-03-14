@@ -437,37 +437,41 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                   </CheckoutOrderSummaryItemListStyled>
                 ))}
 
-              <CheckoutHRStyled />
+              {cart.length > 0 && (
+                <>
+                  <CheckoutHRStyled />
 
-              <CheckoutOrderSummarySubtotalStyled>
-                <Small>Item Subtotal</Small>
+                  <CheckoutOrderSummarySubtotalStyled>
+                    <Small>Item Subtotal</Small>
 
-                <Small>{`$${subTotal}`}</Small>
-              </CheckoutOrderSummarySubtotalStyled>
+                    <Small>{`$${subTotal}`}</Small>
+                  </CheckoutOrderSummarySubtotalStyled>
 
-              <CheckoutOrderSummarySubtotalStyled>
-                <Small>Shipping</Small>
+                  <CheckoutOrderSummarySubtotalStyled>
+                    <Small>Shipping</Small>
 
-                <Small colorType="lime_green">
-                  {subTotal >= 50 ? 'FREE Shipping' : '3-DAYS'}
-                </Small>
-              </CheckoutOrderSummarySubtotalStyled>
+                    <Small colorType="lime_green">
+                      {subTotal >= 50 ? 'FREE Shipping' : '3-DAYS'}
+                    </Small>
+                  </CheckoutOrderSummarySubtotalStyled>
 
-              <CheckoutOrderSummarySubtotalStyled>
-                <Small>Estimated Sales Tax</Small>
+                  <CheckoutOrderSummarySubtotalStyled>
+                    <Small>Estimated Sales Tax</Small>
 
-                <Small>{`${salesTax}%`}</Small>
-              </CheckoutOrderSummarySubtotalStyled>
+                    <Small>{`${salesTax}%`}</Small>
+                  </CheckoutOrderSummarySubtotalStyled>
 
-              <CheckoutHRStyled />
+                  <CheckoutHRStyled />
 
-              <CheckoutOrderSummaryTotalStyled>
-                <Paragraph tagtype="strong">
-                  <span>Total</span>
+                  <CheckoutOrderSummaryTotalStyled>
+                    <Paragraph tagtype="strong">
+                      <span>Total</span>
 
-                  <span>{`$${finalTotal}`}</span>
-                </Paragraph>
-              </CheckoutOrderSummaryTotalStyled>
+                      <span>{`$${finalTotal}`}</span>
+                    </Paragraph>
+                  </CheckoutOrderSummaryTotalStyled>
+                </>
+              )}
             </CheckoutOrderSummaryListStyled>
           </CheckoutOrderSummaryStyled>
         </CheckoutOrderStyled>
