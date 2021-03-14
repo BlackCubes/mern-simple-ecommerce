@@ -91,7 +91,7 @@ const ProductProvider = ({ children }) => {
         headers(currentToken)
       );
 
-      if (apiData.status === 'success') setReviews(reviews.push(apiData.data));
+      if (apiData.status === 'success') setReviews([...reviews, apiData.data]);
       if (apiData.status === ('fail' || 'error'))
         throw new Error(apiData.message);
     } catch (err) {
