@@ -33,6 +33,7 @@ import {
   CheckoutHRStyled,
   CheckoutOrderSummarySubtotalStyled,
   CheckoutOrderSummaryTotalStyled,
+  CheckoutCreditCardStyled,
 } from '../common/Pages/CheckoutStyled';
 
 import {
@@ -359,14 +360,16 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                   {Object.keys(creditCard).length !== 4 ? (
                     <Paragraph>No Credit Card</Paragraph>
                   ) : (
-                    <CreditCard transformscaletype="0.6">
-                      <Card
-                        number={creditCard.number}
-                        name={creditCard.fullname}
-                        expiry={creditCard.expiry}
-                        cvc={creditCard.cvc}
-                      />
-                    </CreditCard>
+                    <CheckoutCreditCardStyled>
+                      <CreditCard transformscaletype={0.6}>
+                        <Card
+                          number={creditCard.number}
+                          name={creditCard.fullname}
+                          expiry={creditCard.expiry}
+                          cvc={creditCard.cvc}
+                        />
+                      </CreditCard>
+                    </CheckoutCreditCardStyled>
                   )}
                 </CheckoutShippingInfoSavedStyled>
               </CheckoutShippingInfoStyled>
