@@ -50,7 +50,7 @@ export const CheckoutCreditCardStyled = styled.div`
 `;
 
 export const CheckoutShippingInfoAddStyled = styled.div`
-  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 
   & span {
     font-size: 1.3rem !important;
