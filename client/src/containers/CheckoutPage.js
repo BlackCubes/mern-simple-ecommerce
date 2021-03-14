@@ -278,7 +278,11 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                     </Small>
 
                     <Small colorType="lime_green">
-                      {subTotal >= 50 ? 'FREE Shipping' : '3-DAY Shipping'}
+                      {!cart.length
+                        ? '3-DAY Shipping'
+                        : subTotal >= 50
+                        ? 'FREE Shipping'
+                        : '3-DAY Shipping'}
                     </Small>
                   </CheckoutShippingOptionsListPriceStyled>
                 </CheckoutShippingOptionsListItemStyled>
