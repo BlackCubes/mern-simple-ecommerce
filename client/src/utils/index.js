@@ -13,6 +13,8 @@ import {
 
 import breadcrumbsRoutes from './breadcrumbsRoutes';
 
+import { formatCreditCardNumber, formatCvc, formatExpDate } from './cardUtils';
+
 import { daysFromNow, dateTimeFormat } from './dates';
 
 import { fieldInputErrors, fieldInputProperties } from './fieldPropHandler';
@@ -28,6 +30,9 @@ export {
   deleteReviewAPI,
   fieldInputErrors,
   fieldInputProperties,
+  formatCreditCardNumber,
+  formatCvc,
+  formatExpDate,
   getCategoryAPI,
   getCategoriesAPI,
   getEveryReviewsAPI,
