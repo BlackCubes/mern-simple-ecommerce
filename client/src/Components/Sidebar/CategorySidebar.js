@@ -61,7 +61,9 @@ const CategorySidebar = () => {
                   </CategorySidebarCardInfoTitleStyled>
 
                   <CategorySidebarCardInfoPriceStyled>
-                    <Paragraph tagtype="strong">{prop.price}</Paragraph>
+                    <Paragraph tagtype="strong">
+                      {prop.price.toFixed(2)}
+                    </Paragraph>
                   </CategorySidebarCardInfoPriceStyled>
                 </CategorySidebarCardInfoStyled>
               </CategorySidebarCardStyled>
