@@ -116,6 +116,35 @@ const FormContainer = ({
         else setErrors((err) => ({ ...err, [name]: '' }));
         break;
 
+      case 'fullname':
+        if (!value.split(' ')[0])
+          setErrors((err) => ({
+            ...err,
+            [name]: 'Required first name.',
+          }));
+        else if (!value.split(' ')[1])
+          setErrors((err) => ({
+            ...err,
+            [name]: 'Required last name.',
+          }));
+        else if (value.length < 2)
+          setErrors((err) => ({
+            ...err,
+            [name]: 'Must be a minimum of 2 characters',
+          }));
+        else if (value.length > 70)
+          setErrors((err) => ({
+            ...err,
+            [name]: 'Must be less than or equal to 70 characters.',
+          }));
+        else if (!regex.name.test(value))
+          setErrors((err) => ({
+            ...err,
+            [name]: 'Please use a valid fullname.',
+          }));
+        else setErrors((err) => ({ ...err, [name]: '' }));
+        break;
+
       case 'address':
         if (!value.length)
           setErrors((err) => ({
