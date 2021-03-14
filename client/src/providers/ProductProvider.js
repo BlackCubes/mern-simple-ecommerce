@@ -82,7 +82,7 @@ const ProductProvider = ({ children }) => {
       const reviewData = {
         review: newData.review,
         rating: newData.rating,
-        userfullname: `${newData.firstname} ${newData.lastname}`,
+        userfullname: newData.fullname,
       };
 
       const apiData = await postReviewAPI(
