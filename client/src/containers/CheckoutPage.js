@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Card from 'react-credit-cards';
+import Payment from 'payment';
 
 import { Button, Image } from '../common';
 
@@ -48,7 +49,11 @@ import { CreditCard, Modal } from '../Components';
 import { useCartContext } from '../context/CartContext';
 import { useCheckoutContext } from '../context/CheckoutContext';
 
-import { daysFromNow, dateTimeFormat } from '../utils';
+import {
+  daysFromNow,
+  dateTimeFormat,
+  formatCreditCardNumOutput,
+} from '../utils';
 
 const addressFormFields = [
   {
@@ -363,10 +368,11 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                     <CheckoutCreditCardStyled>
                       <CreditCard transformscaletype={0.6}>
                         <Card
-                          number={creditCard.number}
+                          number={formatCreditCardNumOutput(creditCard.number)}
                           name={creditCard.fullname}
                           expiry={creditCard.expiry}
                           cvc={creditCard.cvc}
+                          issuer={Payment.fns.cardType(creditCard.number)}
                         />
                       </CreditCard>
                     </CheckoutCreditCardStyled>
