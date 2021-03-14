@@ -198,7 +198,9 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
 
                 <ProductDetailsPriceShippingCartStyled>
                   <ProductDetailsPriceStyled>
-                    <HeadingSecondary>{`$${product.price}`}</HeadingSecondary>
+                    <HeadingSecondary>
+                      {`$${product.price.toFixed(2)}`}
+                    </HeadingSecondary>
                   </ProductDetailsPriceStyled>
 
                   <ProductDetailsPriceShippingCartRowStyled>
