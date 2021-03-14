@@ -384,58 +384,59 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                 )}
               </CheckoutOrderSummaryShippingStyled>
 
-              {cart.length &&
-                cart.map((prop) => (
-                  <CheckoutOrderSummaryItemListStyled key={prop.id}>
-                    <CheckoutOrderSummaryItemListAvailableStyled>
-                      <Small sizetype="xsmall">
-                        Get it by&nbsp;
-                        {dateTimeFormat(
-                          'en-US',
-                          { weekday: 'short' },
-                          daysFromNow(3)
-                        )}
-                      </Small>
-                    </CheckoutOrderSummaryItemListAvailableStyled>
+              {!cart.length
+                ? null
+                : cart.map((prop) => (
+                    <CheckoutOrderSummaryItemListStyled key={prop.id}>
+                      <CheckoutOrderSummaryItemListAvailableStyled>
+                        <Small sizetype="xsmall">
+                          Get it by&nbsp;
+                          {dateTimeFormat(
+                            'en-US',
+                            { weekday: 'short' },
+                            daysFromNow(3)
+                          )}
+                        </Small>
+                      </CheckoutOrderSummaryItemListAvailableStyled>
 
-                    <CheckoutOrderSummaryItemListCellStyled>
-                      <CheckoutOrderSummaryItemListImgStyled>
-                        <Image
+                      <CheckoutOrderSummaryItemListCellStyled>
+                        <CheckoutOrderSummaryItemListImgStyled>
+                          <Image
+                            rest={{
+                              src: prop.image,
+                              alt: prop.title,
+                            }}
+                          />
+                        </CheckoutOrderSummaryItemListImgStyled>
+                      </CheckoutOrderSummaryItemListCellStyled>
+
+                      <CheckoutOrderSummaryItemListCellBigStyled>
+                        <Small>{prop.title}</Small>
+                      </CheckoutOrderSummaryItemListCellBigStyled>
+
+                      <CheckoutOrderSummaryItemListCellStyled>
+                        <Paragraph sizetype="small">{`$${prop.price}`}</Paragraph>
+
+                        <Paragraph sizetype="small">
+                          Qty&nbsp;
+                          {prop.quantity}
+                        </Paragraph>
+
+                        <Button
                           rest={{
-                            src: prop.image,
-                            alt: prop.title,
+                            type: 'button',
+                            onClick: () => removeProduct(prop.id),
+                            colortype: 'transparent',
+                            hovercolortype: 'moderate_blue_dark',
+                            sizetype: 'small',
+                            nonbtn: true,
                           }}
-                        />
-                      </CheckoutOrderSummaryItemListImgStyled>
-                    </CheckoutOrderSummaryItemListCellStyled>
-
-                    <CheckoutOrderSummaryItemListCellBigStyled>
-                      <Small>{prop.title}</Small>
-                    </CheckoutOrderSummaryItemListCellBigStyled>
-
-                    <CheckoutOrderSummaryItemListCellStyled>
-                      <Paragraph sizetype="small">{`$${prop.price}`}</Paragraph>
-
-                      <Paragraph sizetype="small">
-                        Qty&nbsp;
-                        {prop.quantity}
-                      </Paragraph>
-
-                      <Button
-                        rest={{
-                          type: 'button',
-                          onClick: () => removeProduct(prop.id),
-                          colortype: 'transparent',
-                          hovercolortype: 'moderate_blue_dark',
-                          sizetype: 'small',
-                          nonbtn: true,
-                        }}
-                      >
-                        Remove
-                      </Button>
-                    </CheckoutOrderSummaryItemListCellStyled>
-                  </CheckoutOrderSummaryItemListStyled>
-                ))}
+                        >
+                          Remove
+                        </Button>
+                      </CheckoutOrderSummaryItemListCellStyled>
+                    </CheckoutOrderSummaryItemListStyled>
+                  ))}
             </CheckoutOrderSummaryListStyled>
           </CheckoutOrderSummaryStyled>
         </CheckoutOrderStyled>
