@@ -232,6 +232,21 @@ const CheckoutPage = ({ FormContainerComponent }) => {
           <CheckoutCardRowStyled>
             <CheckoutCardColStyled>
               <CheckoutShippingInfoStyled>
+                <CheckoutShippingInfoAddStyled>
+                  <Button
+                    rest={{
+                      type: 'button',
+                      onClick: (e) => onFormModal(setAddressModalToggle)(e),
+                      colortype: 'transparent',
+                      hovercolortype: 'moderate_blue_dark',
+                      sizetype: 'small',
+                      nonbtn: true,
+                    }}
+                  >
+                    <span>Add a new shipping address</span>
+                  </Button>
+                </CheckoutShippingInfoAddStyled>
+
                 <CheckoutShippingInfoSavedStyled>
                   {Object.keys(shippingAddress).length !== 6 ? (
                     <Paragraph>No Shipping Address</Paragraph>
@@ -247,21 +262,6 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                     </>
                   )}
                 </CheckoutShippingInfoSavedStyled>
-
-                <CheckoutShippingInfoAddStyled>
-                  <Button
-                    rest={{
-                      type: 'button',
-                      onClick: (e) => onFormModal(setAddressModalToggle)(e),
-                      colortype: 'transparent',
-                      hovercolortype: 'moderate_blue_dark',
-                      sizetype: 'small',
-                      nonbtn: true,
-                    }}
-                  >
-                    <span>Add a new shipping address</span>
-                  </Button>
-                </CheckoutShippingInfoAddStyled>
               </CheckoutShippingInfoStyled>
             </CheckoutCardColStyled>
 
