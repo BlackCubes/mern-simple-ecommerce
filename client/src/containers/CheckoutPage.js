@@ -373,6 +373,7 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                           expiry={creditCard.expiry}
                           cvc={creditCard.cvc}
                           issuer={Payment.fns.cardType(creditCard.number)}
+                          preview
                         />
                       </CreditCard>
                     </CheckoutCreditCardStyled>
