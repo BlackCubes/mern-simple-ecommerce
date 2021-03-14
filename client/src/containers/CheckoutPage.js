@@ -369,14 +369,15 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                   Shipping
                 </Paragraph>
 
-                <Paragraph sizetype="small">
-                  {shippingAddress.address &&
-                  shippingAddress.city &&
-                  shippingAddress.state &&
-                  shippingAddress.zipcode
-                    ? 'Shipping'
-                    : 'No Shipping Address'}
-                </Paragraph>
+                {Object.keys(shippingAddress).length !== 6 ? (
+                  <Paragraph>No Shipping Address</Paragraph>
+                ) : (
+                  <>
+                    <Paragraph>{shippingAddress.address}</Paragraph>
+
+                    <Paragraph>{`${shippingAddress.city}, ${shippingAddress.state} ${shippingAddress.zipcode}`}</Paragraph>
+                  </>
+                )}
               </CheckoutOrderSummaryShippingStyled>
 
               {cart.length &&
