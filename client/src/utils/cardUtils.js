@@ -49,8 +49,8 @@ export const formatCreditCardNumOutput = (value) => {
   const numArr = value.split(' ');
   const lastValue = numArr.pop();
 
-  numArr.forEach((val) => val.replaceAll(/\d/gi, '*'));
-  const paddedValues = numArr.join(' ');
+  const paddedArr = numArr.map((val) => val.replaceAll(/\d/gi, '*'));
+  const paddedValues = paddedArr.join(' ');
 
   return `${paddedValues} ${lastValue}`;
 };
