@@ -46,7 +46,7 @@ export const CheckoutShippingInfoSavedStyled = styled.div`
 `;
 
 export const CheckoutCreditCardStyled = styled.div`
-  position: relative;
+  transform: translateX(-8rem);
 `;
 
 export const CheckoutShippingInfoAddStyled = styled.div`
