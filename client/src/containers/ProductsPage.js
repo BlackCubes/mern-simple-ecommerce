@@ -133,7 +133,9 @@ const ProductsPage = () => {
 
                   <ProductsCardPriceCartStyled>
                     <ProductsCardPriceStyled>
-                      <HeadingQuaternary>{`$${prop.price}`}</HeadingQuaternary>
+                      <HeadingQuaternary>
+                        {`$${prop.price.toFixed(2)}`}
+                      </HeadingQuaternary>
                     </ProductsCardPriceStyled>
 
                     <ProductsCardCartBtnStyled>
