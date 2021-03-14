@@ -384,59 +384,58 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                 )}
               </CheckoutOrderSummaryShippingStyled>
 
-              {!cart.length
-                ? null
-                : cart.map((prop) => (
-                    <CheckoutOrderSummaryItemListStyled key={prop.id}>
-                      <CheckoutOrderSummaryItemListAvailableStyled>
-                        <Small sizetype="xsmall">
-                          Get it by&nbsp;
-                          {dateTimeFormat(
-                            'en-US',
-                            { weekday: 'short' },
-                            daysFromNow(3)
-                          )}
-                        </Small>
-                      </CheckoutOrderSummaryItemListAvailableStyled>
+              {cart.length > 0 &&
+                cart.map((prop) => (
+                  <CheckoutOrderSummaryItemListStyled key={prop.id}>
+                    <CheckoutOrderSummaryItemListAvailableStyled>
+                      <Small sizetype="xsmall">
+                        Get it by&nbsp;
+                        {dateTimeFormat(
+                          'en-US',
+                          { weekday: 'short' },
+                          daysFromNow(3)
+                        )}
+                      </Small>
+                    </CheckoutOrderSummaryItemListAvailableStyled>
 
-                      <CheckoutOrderSummaryItemListCellStyled>
-                        <CheckoutOrderSummaryItemListImgStyled>
-                          <Image
-                            rest={{
-                              src: prop.image,
-                              alt: prop.title,
-                            }}
-                          />
-                        </CheckoutOrderSummaryItemListImgStyled>
-                      </CheckoutOrderSummaryItemListCellStyled>
-
-                      <CheckoutOrderSummaryItemListCellBigStyled>
-                        <Small>{prop.title}</Small>
-                      </CheckoutOrderSummaryItemListCellBigStyled>
-
-                      <CheckoutOrderSummaryItemListCellStyled>
-                        <Paragraph sizetype="small">{`$${prop.price}`}</Paragraph>
-
-                        <Paragraph sizetype="small">
-                          Qty&nbsp;
-                          {prop.quantity}
-                        </Paragraph>
-
-                        <Button
+                    <CheckoutOrderSummaryItemListCellStyled>
+                      <CheckoutOrderSummaryItemListImgStyled>
+                        <Image
                           rest={{
-                            type: 'button',
-                            onClick: () => removeProduct(prop.id),
-                            colortype: 'transparent',
-                            hovercolortype: 'moderate_blue_dark',
-                            sizetype: 'small',
-                            nonbtn: true,
+                            src: prop.image,
+                            alt: prop.title,
                           }}
-                        >
-                          Remove
-                        </Button>
-                      </CheckoutOrderSummaryItemListCellStyled>
-                    </CheckoutOrderSummaryItemListStyled>
-                  ))}
+                        />
+                      </CheckoutOrderSummaryItemListImgStyled>
+                    </CheckoutOrderSummaryItemListCellStyled>
+
+                    <CheckoutOrderSummaryItemListCellBigStyled>
+                      <Small>{prop.title}</Small>
+                    </CheckoutOrderSummaryItemListCellBigStyled>
+
+                    <CheckoutOrderSummaryItemListCellStyled>
+                      <Paragraph sizetype="small">{`$${prop.price}`}</Paragraph>
+
+                      <Paragraph sizetype="small">
+                        Qty&nbsp;
+                        {prop.quantity}
+                      </Paragraph>
+
+                      <Button
+                        rest={{
+                          type: 'button',
+                          onClick: () => removeProduct(prop.id),
+                          colortype: 'transparent',
+                          hovercolortype: 'moderate_blue_dark',
+                          sizetype: 'small',
+                          nonbtn: true,
+                        }}
+                      >
+                        Remove
+                      </Button>
+                    </CheckoutOrderSummaryItemListCellStyled>
+                  </CheckoutOrderSummaryItemListStyled>
+                ))}
             </CheckoutOrderSummaryListStyled>
           </CheckoutOrderSummaryStyled>
         </CheckoutOrderStyled>
