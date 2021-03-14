@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { CheckoutContext } from '../context';
@@ -9,6 +10,7 @@ const CheckoutProvider = ({ children }) => {
   const [finalTotal, setFinalTotal] = useState(0);
   const [shippingAddress, setShippingAddress] = useState({});
   const [billingAddress, setBillingAddress] = useState({});
+  const history = useHistory();
 
   const calcOrder = (items) => {
     if (!items.length) {
@@ -32,6 +34,11 @@ const CheckoutProvider = ({ children }) => {
   const getShippingAddress = (address) => setShippingAddress(address);
   const getBillingAddress = (billAddress) => setBillingAddress(billAddress);
 
+  const checkoutSubmit = (e) => {
+    e.preventDefault();
+    history.push('/products');
+  };
+
   return (
     <CheckoutContext.Provider
       value={{
@@ -43,6 +50,7 @@ const CheckoutProvider = ({ children }) => {
         calcOrder,
         getShippingAddress,
         getBillingAddress,
+        checkoutSubmit,
       }}
     >
       {children}
