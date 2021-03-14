@@ -13,7 +13,12 @@ import {
 
 import breadcrumbsRoutes from './breadcrumbsRoutes';
 
-import { formatCreditCardNumber, formatCvc, formatExpDate } from './cardUtils';
+import {
+  formatCreditCardNumber,
+  formatCreditCardNumOutput,
+  formatCvc,
+  formatExpDate,
+} from './cardUtils';
 
 import { daysFromNow, dateTimeFormat } from './dates';
 
@@ -31,6 +36,7 @@ export {
   fieldInputErrors,
   fieldInputProperties,
   formatCreditCardNumber,
+  formatCreditCardNumOutput,
   formatCvc,
   formatExpDate,
   getCategoryAPI,
