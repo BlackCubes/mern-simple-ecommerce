@@ -340,21 +340,6 @@ const CheckoutPage = ({ FormContainerComponent }) => {
 
             <CheckoutCardColStyled>
               <CheckoutShippingInfoStyled>
-                <CheckoutShippingInfoSavedStyled>
-                  {Object.keys(creditCard).length !== 4 ? (
-                    <Paragraph>No Credit Card</Paragraph>
-                  ) : (
-                    <CreditCard transformscaletype="0.6">
-                      <Card
-                        number={creditCard.number}
-                        name={creditCard.fullname}
-                        expiry={creditCard.expiry}
-                        cvc={creditCard.cvc}
-                      />
-                    </CreditCard>
-                  )}
-                </CheckoutShippingInfoSavedStyled>
-
                 <CheckoutShippingInfoAddStyled>
                   <Button
                     rest={{
@@ -369,6 +354,21 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                     <span>Add a new credit card</span>
                   </Button>
                 </CheckoutShippingInfoAddStyled>
+
+                <CheckoutShippingInfoSavedStyled>
+                  {Object.keys(creditCard).length !== 4 ? (
+                    <Paragraph>No Credit Card</Paragraph>
+                  ) : (
+                    <CreditCard transformscaletype="0.6">
+                      <Card
+                        number={creditCard.number}
+                        name={creditCard.fullname}
+                        expiry={creditCard.expiry}
+                        cvc={creditCard.cvc}
+                      />
+                    </CreditCard>
+                  )}
+                </CheckoutShippingInfoSavedStyled>
               </CheckoutShippingInfoStyled>
             </CheckoutCardColStyled>
           </CheckoutCardRowStyled>
