@@ -30,6 +30,9 @@ import {
   CheckoutOrderSummaryItemListCellStyled,
   CheckoutOrderSummaryItemListImgStyled,
   CheckoutOrderSummaryItemListCellBigStyled,
+  CheckoutHRStyled,
+  CheckoutOrderSummarySubtotalStyled,
+  CheckoutOrderSummaryTotalStyled,
 } from '../common/Pages/CheckoutStyled';
 
 import {
@@ -197,7 +200,6 @@ const CheckoutPage = ({ FormContainerComponent }) => {
     getShippingAddress,
     getBillingAddress,
   } = useCheckoutContext();
-  console.log(subTotal, salesTax, finalTotal);
 
   const onFormModal = (setToggle) => (e) => {
     e.preventDefault();
@@ -434,6 +436,38 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                     </CheckoutOrderSummaryItemListCellStyled>
                   </CheckoutOrderSummaryItemListStyled>
                 ))}
+
+              <CheckoutHRStyled />
+
+              <CheckoutOrderSummarySubtotalStyled>
+                <Small>Item Subtotal</Small>
+
+                <Small>{`$${subTotal}`}</Small>
+              </CheckoutOrderSummarySubtotalStyled>
+
+              <CheckoutOrderSummarySubtotalStyled>
+                <Small>Shipping</Small>
+
+                <Small colorType="lime_green">
+                  {subTotal >= 50 ? 'FREE Shipping' : '3-DAYS'}
+                </Small>
+              </CheckoutOrderSummarySubtotalStyled>
+
+              <CheckoutOrderSummarySubtotalStyled>
+                <Small>Estimated Sales Tax</Small>
+
+                <Small>{`${salesTax}%`}</Small>
+              </CheckoutOrderSummarySubtotalStyled>
+
+              <CheckoutHRStyled />
+
+              <CheckoutOrderSummaryTotalStyled>
+                <Paragraph tagtype="strong">
+                  <span>Total</span>
+
+                  <span>{`$${finalTotal}`}</span>
+                </Paragraph>
+              </CheckoutOrderSummaryTotalStyled>
             </CheckoutOrderSummaryListStyled>
           </CheckoutOrderSummaryStyled>
         </CheckoutOrderStyled>
