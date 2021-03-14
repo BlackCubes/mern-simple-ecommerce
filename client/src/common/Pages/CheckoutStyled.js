@@ -46,7 +46,7 @@ export const CheckoutShippingInfoSavedStyled = styled.div`
 `;
 
 export const CheckoutCreditCardStyled = styled.div`
-  transform: translateX(-8rem);
+  transform: translateX(-4rem);
 `;
 
 export const CheckoutShippingInfoAddStyled = styled.div`
