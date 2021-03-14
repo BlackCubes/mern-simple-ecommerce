@@ -123,7 +123,7 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
   }, [id]);
 
   useEffect(() => {
-    if (product)
+    if (product || id)
       newCrumbs = [
         {
           name: `Category: ${product.category}`,
@@ -134,7 +134,7 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
           path: `/products/${product.id}`,
         },
       ];
-  }, [product]);
+  }, [product, id]);
 
   const onFormModal = (setToggle) => (e, chosenReviewId) => {
     e.preventDefault();
