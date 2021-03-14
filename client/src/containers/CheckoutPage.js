@@ -269,7 +269,17 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                   <span>Shipping Options</span>
 
                   <CheckoutShippingOptionsListPriceStyled>
-                    <Small>$20.00</Small>
+                    <Small>
+                      {dateTimeFormat(
+                        'en-US',
+                        { weekday: 'short' },
+                        daysFromNow(3)
+                      )}
+                    </Small>
+
+                    <Small colorType="lime_green">
+                      {subTotal >= 50 ? 'FREE Shipping' : '3-DAY Shipping'}
+                    </Small>
                   </CheckoutShippingOptionsListPriceStyled>
                 </CheckoutShippingOptionsListItemStyled>
               </CheckoutShippingOptionsStyled>
