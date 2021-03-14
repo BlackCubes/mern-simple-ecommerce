@@ -43,6 +43,9 @@ import {
   CheckoutOrderSummaryItemListImgStyled,
   CheckoutOrderSummaryItemListCellBigStyled,
   CheckoutCreditCardStyled,
+  CheckoutHRStyled,
+  CheckoutOrderSummarySubtotalStyled,
+  CheckoutOrderSummaryTotalStyled,
 } from './CheckoutStyled';
 import {
   ProductDetailsContainerStyled,
@@ -133,6 +136,9 @@ export {
   CheckoutOrderSummaryItemListImgStyled,
   CheckoutOrderSummaryItemListCellBigStyled,
   CheckoutCreditCardStyled,
+  CheckoutHRStyled,
+  CheckoutOrderSummarySubtotalStyled,
+  CheckoutOrderSummaryTotalStyled,
   ProductDetailsContainerStyled,
   ProductDetailsStyled,
   ProductDetailsHeaderStyled,
