@@ -166,3 +166,22 @@ export const CheckoutOrderSummaryItemListCellBigStyled = styled(
     font-weight: 400;
   }
 `;
+
+export const CheckoutHRStyled = styled.hr`
+  margin: 2rem 0;
+  border: 0;
+  border-top: 0.1rem solid #c5cbd5;
+`;
+
+export const CheckoutOrderSummarySubtotalStyled = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+`;
+
+export const CheckoutOrderSummaryTotalStyled = styled.div`
+  & p {
+    display: flex;
+    justify-content: space-between;
+  }
+`;
