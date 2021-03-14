@@ -305,22 +305,6 @@ const CheckoutPage = ({ FormContainerComponent }) => {
           <CheckoutCardRowStyled>
             <CheckoutCardColStyled>
               <CheckoutShippingInfoStyled>
-                <CheckoutShippingInfoSavedStyled>
-                  {Object.keys(billingAddress).length !== 6 ? (
-                    <Paragraph>No Billing Address</Paragraph>
-                  ) : (
-                    <>
-                      <Paragraph>{`${billingAddress.firstname} ${billingAddress.lastname}`}</Paragraph>
-
-                      <Paragraph texttransformtype="uppercase">
-                        {billingAddress.address}
-                      </Paragraph>
-
-                      <Paragraph texttransformtype="uppercase">{`${billingAddress.city}, ${billingAddress.state} ${billingAddress.zipcode}`}</Paragraph>
-                    </>
-                  )}
-                </CheckoutShippingInfoSavedStyled>
-
                 <CheckoutShippingInfoAddStyled>
                   <Button
                     rest={{
@@ -336,6 +320,22 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                     <span>Add a new billing address</span>
                   </Button>
                 </CheckoutShippingInfoAddStyled>
+
+                <CheckoutShippingInfoSavedStyled>
+                  {Object.keys(billingAddress).length !== 6 ? (
+                    <Paragraph>No Billing Address</Paragraph>
+                  ) : (
+                    <>
+                      <Paragraph>{`${billingAddress.firstname} ${billingAddress.lastname}`}</Paragraph>
+
+                      <Paragraph texttransformtype="uppercase">
+                        {billingAddress.address}
+                      </Paragraph>
+
+                      <Paragraph texttransformtype="uppercase">{`${billingAddress.city}, ${billingAddress.state} ${billingAddress.zipcode}`}</Paragraph>
+                    </>
+                  )}
+                </CheckoutShippingInfoSavedStyled>
               </CheckoutShippingInfoStyled>
             </CheckoutCardColStyled>
 
