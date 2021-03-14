@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Card from 'react-credit-cards';
 
@@ -199,6 +199,7 @@ const CheckoutPage = ({ FormContainerComponent }) => {
     billingAddress,
     getShippingAddress,
     getBillingAddress,
+    calcOrder,
   } = useCheckoutContext();
 
   const onFormModal = (setToggle) => (e) => {
@@ -210,6 +211,10 @@ const CheckoutPage = ({ FormContainerComponent }) => {
     getFunction(newValues);
     setToggle(false);
   };
+
+  useEffect(() => {
+    calcOrder(cart);
+  }, [cart]);
 
   return (
     <CheckoutStyled className="clearfix">
