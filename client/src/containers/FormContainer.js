@@ -290,11 +290,6 @@ const FormContainer = ({
             ...err,
             [name]: 'Required.',
           }));
-        else if (value.length !== 16)
-          setErrors((err) => ({
-            ...err,
-            [name]: 'Must be 16 characters.',
-          }));
         else if (!cardValidator.number(value).isValid)
           setErrors((err) => ({
             ...err,
