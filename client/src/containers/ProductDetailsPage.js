@@ -41,13 +41,8 @@ import {
   Small,
 } from '../common/Typography';
 
-import {
-  Breadcrumbs,
-  CategorySidebar,
-  Modal,
-  RatingsStatic,
-  Snackbar,
-} from '../Components';
+import { Breadcrumbs, Modal, RatingsStatic, Snackbar } from '../Components';
+import { CategorySidebar } from '../Components/Sidebar';
 
 import { useAuthContext } from '../context';
 import { useCartContext } from '../context/CartContext';
