@@ -21,7 +21,7 @@ import {
   CartCardPriceStyled,
 } from '../common/Pages';
 
-import { CheckoutSidebar } from '../Components';
+import { CheckoutSidebar } from '../Components/Sidebar';
 
 import {
   HeadingPrimary,
