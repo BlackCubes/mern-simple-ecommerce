@@ -8,7 +8,14 @@ import { LabelStyled, InputMessageStyled } from '../common/Inputs';
 
 import { CreditCard, Inputs, RatingsInput } from '../Components';
 
-import { fieldInputErrors, fieldInputProperties, regex } from '../utils';
+import {
+  formatCreditCardNumber,
+  formatCvc,
+  formatExpDate,
+  fieldInputErrors,
+  fieldInputProperties,
+  regex,
+} from '../utils';
 
 const FormContainer = ({
   onSubmit,
@@ -27,7 +34,8 @@ const FormContainer = ({
   };
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name } = e.target;
+    let { value } = e.target;
 
     switch (name) {
       case 'email':
@@ -276,6 +284,7 @@ const FormContainer = ({
         break;
 
       case 'number':
+        value = formatCreditCardNumber(value);
         if (!value.length)
           setErrors((err) => ({
             ...err,
@@ -295,6 +304,7 @@ const FormContainer = ({
         break;
 
       case 'expiry':
+        value = formatExpDate(value);
         if (!value.length)
           setErrors((err) => ({
             ...err,
@@ -309,6 +319,7 @@ const FormContainer = ({
         break;
 
       case 'cvc':
+        value = formatCvc(value);
         if (!value.length)
           setErrors((err) => ({
             ...err,
