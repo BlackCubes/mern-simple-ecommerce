@@ -206,6 +206,7 @@ const CheckoutPage = ({ FormContainerComponent }) => {
     getShippingAddress,
     getBillingAddress,
     calcOrder,
+    checkoutSubmit,
   } = useCheckoutContext();
 
   const onFormModal = (setToggle) => (e) => {
@@ -380,6 +381,21 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                   )}
                 </CheckoutShippingInfoSavedStyled>
               </CheckoutShippingInfoStyled>
+            </CheckoutCardColStyled>
+          </CheckoutCardRowStyled>
+        </CheckoutShippingCardStyled>
+
+        <CheckoutShippingCardStyled>
+          <CheckoutCardRowStyled>
+            <CheckoutCardColStyled>
+              <Button
+                rest={{
+                  type: 'button',
+                  onClick: checkoutSubmit,
+                }}
+              >
+                Place Your Order
+              </Button>
             </CheckoutCardColStyled>
           </CheckoutCardRowStyled>
         </CheckoutShippingCardStyled>
