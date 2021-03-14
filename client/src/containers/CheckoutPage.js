@@ -209,8 +209,6 @@ const CheckoutPage = ({ FormContainerComponent }) => {
     setToggle(false);
   };
 
-  console.log(cart);
-
   return (
     <CheckoutStyled className="clearfix">
       <CheckoutPrimaryStyled>
