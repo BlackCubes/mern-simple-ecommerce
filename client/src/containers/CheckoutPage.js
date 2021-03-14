@@ -461,7 +461,7 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                     <Small>Shipping</Small>
 
                     <Small colorType="lime_green">
-                      {subTotal >= 50 ? 'FREE Shipping' : '3-DAYS'}
+                      {subTotal >= 50 ? 'FREE' : '3-DAYS'}
                     </Small>
                   </CheckoutOrderSummarySubtotalStyled>
 
