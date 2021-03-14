@@ -44,3 +44,13 @@ export const formatCvc = (value) => {
   const clearValue = clearNonDigits(value);
   return clearValue.slice(0, 4);
 };
+
+export const formatCreditCardNumOutput = (value) => {
+  const numArr = value.split(' ');
+  const lastValue = numArr.pop();
+
+  numArr.forEach((val) => val.replaceAll(/\d/gi, '*'));
+  const paddedValues = numArr.join(' ');
+
+  return `${paddedValues} ${lastValue}`;
+};
