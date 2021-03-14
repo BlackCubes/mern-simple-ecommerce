@@ -26,7 +26,7 @@ import {
   Small,
 } from '../common/Typography';
 
-import { Breadcrumbs, RatingsStatic, Sidebar } from '../Components';
+import { Breadcrumbs, RatingsStatic, Sidebar, Snackbar } from '../Components';
 
 import { useCartContext } from '../context/CartContext';
 import { useProductContext } from '../context/ProductContext';
@@ -43,6 +43,7 @@ const ProductsPage = () => {
     getProducts,
     getCategory,
     getEveryReviews,
+    apiReviewErr,
   } = useProductContext();
 
   const { category } = useParams();
@@ -152,6 +153,8 @@ const ProductsPage = () => {
           )}
         </ProductsStyled>
       </ProductsContainerStyled>
+
+      {!apiReviewErr ? null : <Snackbar color="red">{apiReviewErr}</Snackbar>}
     </>
   );
 };
