@@ -72,9 +72,9 @@ export const CheckoutShippingOptionsListItemStyled = styled.div`
 `;
 
 export const CheckoutShippingOptionsListPriceStyled = styled.div`
-  position: absolute;
-  top: 1rem;
-  right: 0;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
 `;
 
 export const CheckoutCardRowStyled = styled.div`
