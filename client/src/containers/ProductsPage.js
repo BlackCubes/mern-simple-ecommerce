@@ -26,7 +26,8 @@ import {
   Small,
 } from '../common/Typography';
 
-import { Breadcrumbs, RatingsStatic, Sidebar, Snackbar } from '../Components';
+import { Breadcrumbs, RatingsStatic, Snackbar } from '../Components';
+import { Sidebar } from '../Components/Sidebar';
 
 import { useCartContext } from '../context/CartContext';
 import { useProductContext } from '../context/ProductContext';
