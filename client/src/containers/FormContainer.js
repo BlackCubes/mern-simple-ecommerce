@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Card from 'react-credit-cards';
+import cardValidator from 'card-validator';
 
 import { Button, FormStyled, FormGroupStyled } from '../common';
 import { LabelStyled, InputMessageStyled } from '../common/Inputs';
@@ -270,6 +271,53 @@ const FormContainer = ({
           setErrors((err) => ({
             ...err,
             [name]: 'Please provide a valid rating between 1 and 5',
+          }));
+        else setErrors((err) => ({ ...err, [name]: '' }));
+        break;
+
+      case 'number':
+        if (!value.length)
+          setErrors((err) => ({
+            ...err,
+            [name]: 'Required.',
+          }));
+        else if (value.length !== 16)
+          setErrors((err) => ({
+            ...err,
+            [name]: 'Must be 16 characters.',
+          }));
+        else if (!cardValidator.number(value).isValid)
+          setErrors((err) => ({
+            ...err,
+            [name]: 'Please provide a valid number.',
+          }));
+        else setErrors((err) => ({ ...err, [name]: '' }));
+        break;
+
+      case 'expiry':
+        if (!value.length)
+          setErrors((err) => ({
+            ...err,
+            [name]: 'Required.',
+          }));
+        else if (!cardValidator.expirationDate(value).isValid)
+          setErrors((err) => ({
+            ...err,
+            [name]: 'Please provide a valid exp. data.',
+          }));
+        else setErrors((err) => ({ ...err, [name]: '' }));
+        break;
+
+      case 'cvc':
+        if (!value.length)
+          setErrors((err) => ({
+            ...err,
+            [name]: 'Required.',
+          }));
+        else if (!cardValidator.cvv(value).isValid)
+          setErrors((err) => ({
+            ...err,
+            [name]: 'Please provide a valid cvv',
           }));
         else setErrors((err) => ({ ...err, [name]: '' }));
         break;
