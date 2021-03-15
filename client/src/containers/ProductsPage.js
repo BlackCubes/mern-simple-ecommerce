@@ -96,10 +96,12 @@ const ProductsPage = () => {
                       <ProductsCardRatingStyled>
                         <RatingsStatic
                           rating={
-                            Object.prototype.hasOwnProperty.call(
-                              everyReviews,
-                              prop.id
-                            )
+                            !everyReviews
+                              ? 0
+                              : Object.prototype.hasOwnProperty.call(
+                                  everyReviews,
+                                  prop.id
+                                )
                               ? everyReviews[prop.id]
                               : 0
                           }
