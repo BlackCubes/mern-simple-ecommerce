@@ -26,7 +26,6 @@ const FormContainer = ({
   const [values, setValues] = useState({});
   const [errors, setErrors] = useState({});
   const [focus, setFocus] = useState('');
-  // const errors = {};
 
   const handleFocus = (e) => {
     const { name } = e.target;
