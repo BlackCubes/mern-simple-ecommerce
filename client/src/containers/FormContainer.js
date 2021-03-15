@@ -26,6 +26,7 @@ const FormContainer = ({
   const [values, setValues] = useState({});
   const [errors, setErrors] = useState({});
   const [focus, setFocus] = useState('');
+  const [hasRatingsSubmit, setHasRatingsSubmit] = useState(false);
 
   const handleFocus = (e) => {
     const { name } = e.target;
@@ -71,6 +72,7 @@ const FormContainer = ({
   const handleSubmit = (e) => {
     e.preventDefault();
     if (checkErrors(errors)) {
+      if (values.ratings) setHasRatingsSubmit(true);
       onSubmit(values);
       setValues({});
     }
@@ -124,6 +126,7 @@ const FormContainer = ({
               id="rating"
               onRatingsChange={handleRatingsChange}
               cursortype="pointer"
+              hasSubmitted={hasRatingsSubmit}
             />
 
             <InputMessageStyled>{errors.rating || ''}</InputMessageStyled>
