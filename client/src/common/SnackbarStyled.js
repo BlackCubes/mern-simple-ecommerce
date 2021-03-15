@@ -26,7 +26,6 @@ export default styled.div`
   visibility: hidden;
   position: fixed;
   min-width: 25rem;
-  margin-left: -12.5rem;
   bottom: 3rem;
   left: 50%;
   transform: translateX(-50%);
