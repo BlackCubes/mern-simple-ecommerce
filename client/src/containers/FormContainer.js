@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Card from 'react-credit-cards';
 
@@ -72,11 +72,15 @@ const FormContainer = ({
   const handleSubmit = (e) => {
     e.preventDefault();
     if (checkErrors(errors)) {
-      if (values.ratings) setHasRatingsSubmit(true);
+      setHasRatingsSubmit(true);
       onSubmit(values);
       setValues({});
     }
   };
+
+  useEffect(() => {
+    if (!hasRatingsSubmit) setHasRatingsSubmit(false);
+  }, [hasRatingsSubmit]);
 
   const inputProperties = formFields.map((prop) =>
     fieldInputProperties({
