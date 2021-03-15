@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Card from 'react-credit-cards';
 import Payment from 'payment';
@@ -195,8 +196,9 @@ const CheckoutPage = ({ FormContainerComponent }) => {
   );
   const [creditCardModalToggle, setCreditCardModalToggle] = useState(false);
   const [creditCard, setCreditCard] = useState({});
+  const history = useHistory();
 
-  const { cart, removeProduct } = useCartContext();
+  const { cart, removeProduct, resetCart } = useCartContext();
   const {
     subTotal,
     salesTax,
@@ -206,7 +208,6 @@ const CheckoutPage = ({ FormContainerComponent }) => {
     getShippingAddress,
     getBillingAddress,
     calcOrder,
-    checkoutSubmit,
   } = useCheckoutContext();
 
   const onFormModal = (setToggle) => (e) => {
@@ -217,6 +218,16 @@ const CheckoutPage = ({ FormContainerComponent }) => {
   const onSubmission = (getFunction, setToggle) => (newValues) => {
     getFunction(newValues);
     setToggle(false);
+  };
+
+  const onFinalSubmission = (e) => {
+    e.preventDefault();
+    setCreditCard({});
+    getShippingAddress({});
+    getBillingAddress({});
+    resetCart();
+    calcOrder([]);
+    history.push('/products');
   };
 
   useEffect(() => {
@@ -391,7 +402,7 @@ const CheckoutPage = ({ FormContainerComponent }) => {
               <Button
                 rest={{
                   type: 'button',
-                  onClick: checkoutSubmit,
+                  onClick: onFinalSubmission,
                 }}
               >
                 Place Your Order
