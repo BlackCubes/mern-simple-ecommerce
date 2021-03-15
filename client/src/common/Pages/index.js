@@ -48,6 +48,16 @@ import {
   CheckoutOrderSummaryTotalStyled,
 } from './CheckoutStyled';
 import {
+  HomePageSectionsContainerStyled,
+  HomeSectionStyled,
+  HomeImageStyled,
+  FakeStoreSectionStyled,
+  FakeStoreSplitHolderStyled,
+  FakeStoreSplitColorStyled,
+  FakeStoreImageStyled,
+  FakeStoreContent,
+} from './HomeStyled';
+import {
   ProductDetailsContainerStyled,
   ProductDetailsStyled,
   ProductDetailsHeaderStyled,
@@ -139,6 +149,14 @@ export {
   CheckoutHRStyled,
   CheckoutOrderSummarySubtotalStyled,
   CheckoutOrderSummaryTotalStyled,
+  FakeStoreSectionStyled,
+  FakeStoreSplitHolderStyled,
+  FakeStoreSplitColorStyled,
+  FakeStoreImageStyled,
+  FakeStoreContent,
+  HomePageSectionsContainerStyled,
+  HomeSectionStyled,
+  HomeImageStyled,
   ProductDetailsContainerStyled,
   ProductDetailsStyled,
   ProductDetailsHeaderStyled,
