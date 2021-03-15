@@ -79,7 +79,7 @@ const FormContainer = ({
   };
 
   useEffect(() => {
-    if (!hasRatingsSubmit) setHasRatingsSubmit(false);
+    if (hasRatingsSubmit) setHasRatingsSubmit(false);
   }, [hasRatingsSubmit]);
 
   const inputProperties = formFields.map((prop) =>
