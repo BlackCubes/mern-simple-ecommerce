@@ -2,7 +2,31 @@ import cardValidator from 'card-validator';
 
 import regex from './regex';
 
-export default (inputName, inputValue, setErrors) => {
+export const validateStarRatings = (rating, setErrors) => {
+  if (!rating)
+    setErrors((err) => ({
+      ...err,
+      rating: 'Required',
+    }));
+  else if (rating < 1)
+    setErrors((err) => ({
+      ...err,
+      rating: 'Must be a minimum rating of 1.',
+    }));
+  else if (rating > 5)
+    setErrors((err) => ({
+      ...err,
+      rating: 'Must be a maximum rating of 5.',
+    }));
+  else if (!regex.rating.test(rating))
+    setErrors((err) => ({
+      ...err,
+      rating: 'Please provide a valid rating between 1 and 5',
+    }));
+  else setErrors((err) => ({ ...err, rating: '' }));
+};
+
+export const validateForm = (inputName, inputValue, setErrors) => {
   switch (inputName) {
     case 'email':
       if (!inputValue.length)
