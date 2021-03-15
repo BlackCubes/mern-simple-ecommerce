@@ -58,7 +58,7 @@ const RatingIcons = ({
   );
 };
 
-const RatingsInput = ({ cursortype, onRatingsChange }) => {
+const RatingsInput = ({ cursortype, onRatingsChange, hasSubmitted }) => {
   const [rating, setRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
 
@@ -68,6 +68,8 @@ const RatingsInput = ({ cursortype, onRatingsChange }) => {
     setRating(index);
     onRatingsChange(index);
   };
+
+  if (hasSubmitted) setRating(0);
 
   return (
     <RatingsStyled>
@@ -145,6 +147,7 @@ RatingIcons.defaultProps = {
 RatingsInput.propTypes = {
   cursortype: PropTypes.string,
   onRatingsChange: PropTypes.func.isRequired,
+  hasSubmitted: PropTypes.bool.isRequired,
 };
 
 RatingsInput.defaultProps = {
