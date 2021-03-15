@@ -26,7 +26,7 @@ import { fieldInputErrors, fieldInputProperties } from './fieldPropHandler';
 
 import headers from './headers';
 
-import regex from './regex';
+import { validateForm, validateStarRatings } from './validate';
 
 export {
   breadcrumbsRoutes,
@@ -49,5 +49,6 @@ export {
   loginAPI,
   logoutAPI,
   postReviewAPI,
-  regex,
+  validateForm,
+  validateStarRatings,
 };
