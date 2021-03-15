@@ -124,16 +124,18 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
 
   useEffect(() => {
     if (product || id)
-      newCrumbs = [
-        {
-          name: `Category: ${product.category}`,
-          path: `/products/category/${product.category}`,
-        },
-        {
-          name: product.title,
-          path: `/products/${product.id}`,
-        },
-      ];
+      newCrumbs = !product
+        ? []
+        : [
+            {
+              name: `Category: ${product.category}`,
+              path: `/products/category/${product.category}`,
+            },
+            {
+              name: product.title,
+              path: `/products/${product.id}`,
+            },
+          ];
   }, [product, id]);
 
   const onFormModal = (setToggle) => (e, chosenReviewId) => {
