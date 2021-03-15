@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import { RatingIconStyled, RatingsStyled, SvgStyled } from '../common';
@@ -69,7 +69,9 @@ const RatingsInput = ({ cursortype, onRatingsChange, hasSubmitted }) => {
     onRatingsChange(index);
   };
 
-  if (hasSubmitted) setRating(0);
+  useEffect(() => {
+    if (hasSubmitted) setRating(0);
+  }, [hasSubmitted]);
 
   return (
     <RatingsStyled>
