@@ -25,7 +25,11 @@ const HomePage = () => (
 
       <HomeContentStyled>
         <HeadingPrimary textcolor="white">
-          Giving Power To The Users. Be What You Want. Own That Power.
+          Giving Power To The Users.
+          <br />
+          Be What You Want.
+          <br />
+          Own That Power.
         </HeadingPrimary>
       </HomeContentStyled>
     </HomeSectionStyled>
