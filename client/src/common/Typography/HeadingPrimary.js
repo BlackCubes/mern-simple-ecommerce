@@ -5,6 +5,8 @@ import styled from 'styled-components';
 const HeadingPrimaryStyled = styled.h1`
   font-size: 4rem;
   font-weight: 400;
+  color: ${(props) =>
+    props.textcolor ? props.theme.colors[props.textcolor] : 'inherit'};
 `;
 
 const HeadingPrimary = ({ children }) => (
