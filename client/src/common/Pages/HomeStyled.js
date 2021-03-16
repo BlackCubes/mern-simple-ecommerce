@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
 export const HomePageSectionsContainerStyled = styled.div`
-  width: 95%;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+  margin-top: -6rem;
 `;
 
 export const HomeSectionStyled = styled.section`
@@ -14,7 +13,14 @@ export const HomeSectionStyled = styled.section`
 `;
 
 export const HomeImageStyled = styled.div`
-  width: 44rem;
+  width: 50rem;
+`;
+
+export const HomeContentStyled = styled.div`
+  width: 100rem;
+  margin-top: 20rem;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 export const FakeStoreSectionStyled = styled.div`
