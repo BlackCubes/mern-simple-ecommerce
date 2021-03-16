@@ -24,7 +24,7 @@ const HomePage = () => (
       </HomeImageStyled>
 
       <HomeContentStyled>
-        <HeadingPrimary textcolor="white">
+        <HeadingPrimary fontweight={600} textcolor="white">
           Giving Power To The Users.
           <br />
           Be What You Want.
