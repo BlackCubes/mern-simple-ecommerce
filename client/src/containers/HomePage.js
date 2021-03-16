@@ -5,6 +5,7 @@ import {
   HomePageSectionsContainerStyled,
   HomeSectionStyled,
   HomeImageStyled,
+  HomeContentStyled,
   FakeStoreSectionStyled,
   FakeStoreSplitHolderStyled,
   FakeStoreSplitColorStyled,
@@ -22,10 +23,12 @@ const HomePage = () => (
         />
       </HomeImageStyled>
 
-      <HeadingPrimary>
-        Giving Power To The Users. Become The Person You Were Meant To Be. Own
-        That Power.
-      </HeadingPrimary>
+      <HomeContentStyled>
+        <HeadingPrimary>
+          Giving Power To The Users. Become The Person You Were Meant To Be. Own
+          That Power.
+        </HeadingPrimary>
+      </HomeContentStyled>
     </HomeSectionStyled>
 
     <FakeStoreSectionStyled>
