@@ -24,7 +24,7 @@ const HomePage = () => (
       </HomeImageStyled>
 
       <HomeContentStyled>
-        <HeadingPrimary>
+        <HeadingPrimary textcolor="white">
           Giving Power To The Users. Become The Person You Were Meant To Be. Own
           That Power.
         </HeadingPrimary>
