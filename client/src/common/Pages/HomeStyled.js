@@ -3,6 +3,17 @@ import styled from 'styled-components';
 export const HomePageSectionsContainerStyled = styled.div`
   width: 100%;
   margin-top: -6rem;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1rem;
+    top: -1rem;
+    left: 0;
+    background-color: ${(props) => props.theme.colors.black_gray};
+    z-index: 1;
+  }
 `;
 
 export const HomeSectionStyled = styled.section`
