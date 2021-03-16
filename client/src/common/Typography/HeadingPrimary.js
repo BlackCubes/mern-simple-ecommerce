@@ -4,21 +4,25 @@ import styled from 'styled-components';
 
 const HeadingPrimaryStyled = styled.h1`
   font-size: 4rem;
-  font-weight: 400;
+  font-weight: ${(props) => props.fontweight || '400'};
   color: ${(props) =>
     props.textcolor ? props.theme.colors[props.textcolor] : 'inherit'};
 `;
 
-const HeadingPrimary = ({ children, textcolor }) => (
-  <HeadingPrimaryStyled textcolor={textcolor}>{children}</HeadingPrimaryStyled>
+const HeadingPrimary = ({ children, fontweight, textcolor }) => (
+  <HeadingPrimaryStyled fontweight={fontweight} textcolor={textcolor}>
+    {children}
+  </HeadingPrimaryStyled>
 );
 
 HeadingPrimary.propTypes = {
   children: PropTypes.node.isRequired,
+  fontweight: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   textcolor: PropTypes.string,
 };
 
 HeadingPrimary.defaultProps = {
+  fontweight: null,
   textcolor: null,
 };
 
