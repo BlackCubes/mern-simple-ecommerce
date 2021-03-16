@@ -11,6 +11,7 @@ import {
   CheckoutPage,
   FooterContainer,
   FormContainer,
+  HomePage,
   LoginPage,
   NavbarContainer,
   ProductDetailsPage,
@@ -34,7 +35,7 @@ function App() {
               <NavbarContainer />
               <Main>
                 <Switch>
-                  <Route exact path="/" render={() => <div>Homepage</div>} />
+                  <Route exact path="/" component={HomePage} />
 
                   <Route exact path="/products" component={ProductsPage} />
                   <Route
