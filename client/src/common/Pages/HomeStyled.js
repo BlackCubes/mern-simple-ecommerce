@@ -25,14 +25,15 @@ export const HomeSectionStyled = styled.section`
 `;
 
 export const HomeImageStyled = styled.div`
-  width: 50rem;
+  width: 60rem;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 3rem;
 `;
 
 export const HomeContentStyled = styled.div`
   width: 100rem;
-  margin-top: 20rem;
+  margin-top: 10rem;
   margin-left: auto;
   margin-right: auto;
 `;
