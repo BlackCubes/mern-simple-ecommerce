@@ -9,12 +9,17 @@ const HeadingPrimaryStyled = styled.h1`
     props.textcolor ? props.theme.colors[props.textcolor] : 'inherit'};
 `;
 
-const HeadingPrimary = ({ children }) => (
-  <HeadingPrimaryStyled>{children}</HeadingPrimaryStyled>
+const HeadingPrimary = ({ children, textcolor }) => (
+  <HeadingPrimaryStyled textcolor={textcolor}>{children}</HeadingPrimaryStyled>
 );
 
 HeadingPrimary.propTypes = {
   children: PropTypes.node.isRequired,
+  textcolor: PropTypes.string,
+};
+
+HeadingPrimary.defaultProps = {
+  textcolor: null,
 };
 
 export default HeadingPrimary;
