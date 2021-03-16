@@ -14,6 +14,8 @@ export const HomeSectionStyled = styled.section`
 
 export const HomeImageStyled = styled.div`
   width: 50rem;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 export const HomeContentStyled = styled.div`
