@@ -41,6 +41,7 @@ export const HomeContentStyled = styled.div`
 export const FakeStoreSectionStyled = styled.div`
   position: relative;
   width: 117rem;
+  margin-left: auto;
   background-color: ${(props) => props.theme.colors.vivid_pink};
 `;
 
