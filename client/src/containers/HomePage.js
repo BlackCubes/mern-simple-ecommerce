@@ -12,7 +12,7 @@ import {
   FakeStoreImageStyled,
   FakeStoreContent,
 } from '../common/Pages';
-import { HeadingPrimary, Paragraph } from '../common/Typography';
+import { HeadingPrimary, HeadingSecondary } from '../common/Typography';
 
 const HomePage = () => (
   <HomePageSectionsContainerStyled>
@@ -49,10 +49,10 @@ const HomePage = () => (
       </FakeStoreImageStyled>
 
       <FakeStoreContent>
-        <Paragraph>
+        <HeadingSecondary>
           With the power of the Fake Store API, you can own of of your favorite
           products: electronics, jewelery, clothing and more
-        </Paragraph>
+        </HeadingSecondary>
       </FakeStoreContent>
     </FakeStoreSectionStyled>
   </HomePageSectionsContainerStyled>
