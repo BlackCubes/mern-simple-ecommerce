@@ -7,6 +7,7 @@ import {
   HomeImageStyled,
   HomeContentStyled,
   FakeStoreSectionStyled,
+  FakeStoreContainerStyled,
   FakeStoreSplitHolderStyled,
   FakeStoreSplitColorStyled,
   FakeStoreImageStyled,
@@ -35,25 +36,27 @@ const HomePage = () => (
     </HomeSectionStyled>
 
     <FakeStoreSectionStyled className="clearfix">
-      <FakeStoreSplitHolderStyled>
-        <FakeStoreSplitColorStyled />
-      </FakeStoreSplitHolderStyled>
+      <FakeStoreContainerStyled>
+        <FakeStoreSplitHolderStyled>
+          <FakeStoreSplitColorStyled />
+        </FakeStoreSplitHolderStyled>
 
-      <FakeStoreImageStyled>
-        <Image
-          rest={{
-            src: 'https://fakestoreapi.com/icons/intro.svg',
-            alt: 'Fake Store API',
-          }}
-        />
-      </FakeStoreImageStyled>
+        <FakeStoreImageStyled>
+          <Image
+            rest={{
+              src: 'https://fakestoreapi.com/icons/intro.svg',
+              alt: 'Fake Store API',
+            }}
+          />
+        </FakeStoreImageStyled>
 
-      <FakeStoreContent>
-        <HeadingSecondary>
-          With the power of the Fake Store API, you can own of of your favorite
-          products: electronics, jewelery, clothing and more
-        </HeadingSecondary>
-      </FakeStoreContent>
+        <FakeStoreContent>
+          <HeadingSecondary>
+            With the power of the Fake Store API, you can own of of your
+            favorite products: electronics, jewelery, clothing and more
+          </HeadingSecondary>
+        </FakeStoreContent>
+      </FakeStoreContainerStyled>
     </FakeStoreSectionStyled>
   </HomePageSectionsContainerStyled>
 );
