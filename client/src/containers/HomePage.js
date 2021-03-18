@@ -25,7 +25,7 @@ const HomePage = () => (
 
       <HomeContentStyled>
         <HeadingPrimary fontweight={600} textcolor="white">
-          Giving Power To The Users.
+          Give Power To The Users.
           <br />
           Be What You Want.
           <br />
