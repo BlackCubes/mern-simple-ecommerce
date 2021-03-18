@@ -38,11 +38,16 @@ export const HomeContentStyled = styled.div`
   margin-right: auto;
 `;
 
-export const FakeStoreSectionStyled = styled.div`
+export const FakeStoreSectionStyled = styled.section`
   position: relative;
+  width: 100%;
+  background-color: ${(props) => props.theme.colors.vivid_pink};
+`;
+
+export const FakeStoreContainerStyled = styled.div`
   width: 117rem;
   margin-left: auto;
-  background-color: ${(props) => props.theme.colors.vivid_pink};
+  margin-right: auto;
 `;
 
 export const FakeStoreSplitHolderStyled = styled.div`
