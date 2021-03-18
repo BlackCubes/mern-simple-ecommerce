@@ -34,7 +34,7 @@ const HomePage = () => (
       </HomeContentStyled>
     </HomeSectionStyled>
 
-    <FakeStoreSectionStyled>
+    <FakeStoreSectionStyled className="clearfix">
       <FakeStoreSplitHolderStyled>
         <FakeStoreSplitColorStyled />
       </FakeStoreSplitHolderStyled>
