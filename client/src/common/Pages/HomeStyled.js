@@ -41,6 +41,7 @@ export const HomeContentStyled = styled.div`
 export const FakeStoreSectionStyled = styled.section`
   position: relative;
   width: 100%;
+  min-height: calc(100vh - 11rem);
   background-color: ${(props) => props.theme.colors.vivid_pink};
 `;
 
@@ -74,6 +75,9 @@ export const FakeStoreContent = styled.div`
   float: right;
   width: 60rem;
   margin-top: 5rem;
+  padding-left: 10rem;
+  padding-right: 10rem;
+  text-align: center;
 
   & h2 {
     font-weight: 300;
