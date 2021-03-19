@@ -66,6 +66,7 @@ export const FakeStoreSplitColorStyled = styled.div`
 
 export const FakeStoreImageStyled = styled.div`
   position: relative;
+  float: left;
   width: 20rem;
 `;
 
