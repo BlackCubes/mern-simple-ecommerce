@@ -2,6 +2,9 @@ import React from 'react';
 
 import { Image } from '../common';
 import {
+  CategorySectionStyled,
+  CategoryCardContainerStyled,
+  CategoryCardStyled,
   HomePageSectionsContainerStyled,
   HomeSectionStyled,
   HomeImageStyled,
@@ -58,6 +61,16 @@ const HomePage = () => (
         </FakeStoreContent>
       </FakeStoreContainerStyled>
     </FakeStoreSectionStyled>
+
+    <CategorySectionStyled>
+      <CategoryCardContainerStyled>
+        <CategoryCardStyled>This is a test</CategoryCardStyled>
+
+        <CategoryCardStyled>This is another test</CategoryCardStyled>
+
+        <CategoryCardStyled>This is a third test</CategoryCardStyled>
+      </CategoryCardContainerStyled>
+    </CategorySectionStyled>
   </HomePageSectionsContainerStyled>
 );
 
