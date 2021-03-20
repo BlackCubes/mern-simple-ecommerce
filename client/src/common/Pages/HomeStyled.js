@@ -90,3 +90,23 @@ export const FakeStoreContent = styled.div`
     line-height: 2;
   }
 `;
+
+export const CategorySectionStyled = styled.section`
+  width: 100%;
+  min-height: calc(100vh - 11rem);
+  background-color: ${(props) => props.theme.colors.white};
+`;
+
+export const CategoryCardContainerStyled = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 117rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10.5rem 0;
+`;
+
+export const CategoryCardStyled = styled.div`
+  width: 30rem;
+  text-align: center;
+`;
