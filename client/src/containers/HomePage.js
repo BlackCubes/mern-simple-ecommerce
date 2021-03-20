@@ -98,7 +98,7 @@ const HomePage = () => {
             </CategoryCardHeaderStyled>
 
             <CategoryCardBodyStyled>
-              {homeCategories.electronics &&
+              {homeCategories.electronics.length &&
                 homeCategories.electronics.map((electronic) => (
                   <Small key={electronic.id}>{electronic.title}</Small>
                 ))}
@@ -120,7 +120,7 @@ const HomePage = () => {
             </CategoryCardHeaderStyled>
 
             <CategoryCardBodyStyled>
-              {homeCategories.womenClothing > 0 &&
+              {homeCategories.womenClothing.length > 0 &&
                 homeCategories.womenClothing.map((clothing) => (
                   <Small key={clothing.id}>{clothing.title}</Small>
                 ))}
@@ -142,7 +142,7 @@ const HomePage = () => {
             </CategoryCardHeaderStyled>
 
             <CategoryCardBodyStyled>
-              {homeCategories.jeweleries > 0 &&
+              {homeCategories.jeweleries.length > 0 &&
                 homeCategories.jeweleries.map((jewelery) => (
                   <Small key={jewelery.id}>{jewelery.title}</Small>
                 ))}
