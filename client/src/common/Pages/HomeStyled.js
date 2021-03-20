@@ -97,6 +97,19 @@ export const CategorySectionStyled = styled.section`
   background-color: ${(props) => props.theme.colors.white};
 `;
 
+export const CategoryContentStyled = styled.div`
+  width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  & h2 {
+    font-weight: 300;
+    letter-spacing: 0.3rem;
+    line-height: 2;
+  }
+`;
+
 export const CategoryCardContainerStyled = styled.div`
   display: flex;
   justify-content: space-around;
