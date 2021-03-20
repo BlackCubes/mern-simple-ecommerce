@@ -122,12 +122,15 @@ export const CategoryCardContainerStyled = styled.div`
 
 export const CategoryCardStyled = styled.div`
   width: 30rem;
+  background-color: ${(props) => props.theme.colors.moderate_blue};
+  background-image: linear-gradient(7deg, #505cc1, #ff1e5e);
   text-align: center;
 `;
 
 export const CategoryCardHeaderStyled = styled.div`
   margin-bottom: 2.5rem;
   padding: 4rem 0;
+  background-color: ${(props) => props.theme.colors.black_gray};
 
   & h4 {
     text-transform: uppercase;
