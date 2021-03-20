@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { Button, Image } from '../common';
@@ -27,10 +27,27 @@ import {
   Small,
 } from '../common/Typography';
 
+import { useProductContext } from '../context';
+
 const HomePage = () => {
+  const { electronics, setElectronics } = useState([]);
+  const { womenClothing, setWomenClothing } = useState([]);
+  const { jeweleries, setJeweleries } = useState([]);
+  const { homeCategories, getHomeCategories } = useProductContext();
   const history = useHistory();
 
   const categoryPath = (path) => history.push(`/products/category/${path}`);
+
+  useEffect(() => {
+    getHomeCategories();
+  }, []);
+
+  useEffect(() => {
+    if (homeCategories.electronics) setElectronics(homeCategories.electronics);
+    if (homeCategories['women clothing'])
+      setWomenClothing(homeCategories['women clothing']);
+    if (homeCategories.jewelery) setJeweleries(homeCategories.jewelery);
+  }, [homeCategories]);
 
   return (
     <HomePageSectionsContainerStyled>
@@ -91,16 +108,19 @@ const HomePage = () => {
             </CategoryCardHeaderStyled>
 
             <CategoryCardBodyStyled>
-              <Small>
-                <Button
-                  rest={{
-                    type: 'button',
-                    onClick: () => categoryPath('electronics'),
-                  }}
-                >
-                  Choose
-                </Button>
-              </Small>
+              {!electronics.length > 0 &&
+                electronics.map((electronic) => (
+                  <Small key={electronic.id}>{electronic.title}</Small>
+                ))}
+
+              <Button
+                rest={{
+                  type: 'button',
+                  onClick: () => categoryPath('electronics'),
+                }}
+              >
+                Choose
+              </Button>
             </CategoryCardBodyStyled>
           </CategoryCardStyled>
 
@@ -110,16 +130,19 @@ const HomePage = () => {
             </CategoryCardHeaderStyled>
 
             <CategoryCardBodyStyled>
-              <Small>
-                <Button
-                  rest={{
-                    type: 'button',
-                    onClick: () => categoryPath('women clothing'),
-                  }}
-                >
-                  Choose
-                </Button>
-              </Small>
+              {!womenClothing.length > 0 &&
+                womenClothing.map((clothing) => (
+                  <Small key={clothing.id}>{clothing.title}</Small>
+                ))}
+
+              <Button
+                rest={{
+                  type: 'button',
+                  onClick: () => categoryPath('women clothing'),
+                }}
+              >
+                Choose
+              </Button>
             </CategoryCardBodyStyled>
           </CategoryCardStyled>
 
@@ -129,16 +152,19 @@ const HomePage = () => {
             </CategoryCardHeaderStyled>
 
             <CategoryCardBodyStyled>
-              <Small>
-                <Button
-                  rest={{
-                    type: 'button',
-                    onClick: () => categoryPath('jewelery'),
-                  }}
-                >
-                  Choose
-                </Button>
-              </Small>
+              {!jeweleries.length > 0 &&
+                jeweleries.map((jewelery) => (
+                  <Small key={jewelery.id}>{jewelery.title}</Small>
+                ))}
+
+              <Button
+                rest={{
+                  type: 'button',
+                  onClick: () => categoryPath('jewelery'),
+                }}
+              >
+                Choose
+              </Button>
             </CategoryCardBodyStyled>
           </CategoryCardStyled>
         </CategoryCardContainerStyled>
