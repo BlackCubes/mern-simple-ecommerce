@@ -99,6 +99,7 @@ export const CategorySectionStyled = styled.section`
 
 export const CategoryContentStyled = styled.div`
   width: 80rem;
+  margin-top: 10.5rem;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
