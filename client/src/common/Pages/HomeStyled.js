@@ -139,6 +139,7 @@ export const CategoryCardHeaderStyled = styled.div`
 `;
 
 export const CategoryCardBodyStyled = styled.div`
+  position: relative;
   height: 33rem;
   margin-bottom: 4rem;
   padding: 0 10%;
@@ -150,5 +151,8 @@ export const CategoryCardBodyContentStyled = styled.div`
 `;
 
 export const CategoryCardButtonStyled = styled.div`
-  margin-bottom: 0.1rem;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
 `;
