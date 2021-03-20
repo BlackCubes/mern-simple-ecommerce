@@ -3,6 +3,7 @@ import React from 'react';
 import { Image } from '../common';
 import {
   CategorySectionStyled,
+  CategoryContentStyled,
   CategoryCardContainerStyled,
   CategoryCardStyled,
   HomePageSectionsContainerStyled,
@@ -63,6 +64,13 @@ const HomePage = () => (
     </FakeStoreSectionStyled>
 
     <CategorySectionStyled>
+      <CategoryContentStyled>
+        <HeadingSecondary>
+          Explore different categories for your needs to be the best version for
+          today, tomorrow, and the next year
+        </HeadingSecondary>
+      </CategoryContentStyled>
+
       <CategoryCardContainerStyled>
         <CategoryCardStyled>This is a test</CategoryCardStyled>
 
