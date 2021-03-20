@@ -30,9 +30,9 @@ import {
 import { useProductContext } from '../context';
 
 const HomePage = () => {
-  const { electronics, setElectronics } = useState([]);
-  const { womenClothing, setWomenClothing } = useState([]);
-  const { jeweleries, setJeweleries } = useState([]);
+  const { electronics, setElectronics } = useState(null);
+  const { womenClothing, setWomenClothing } = useState(null);
+  const { jeweleries, setJeweleries } = useState(null);
   const { homeCategories, getHomeCategories } = useProductContext();
   const history = useHistory();
 
