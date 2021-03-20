@@ -31,14 +31,15 @@ const ProductProvider = ({ children }) => {
       const selectedHomeCategories = {};
 
       if (data) {
-        data.forEach((val) => {
-          if (val.category === 'electronics')
-            selectedHomeCategories[val.category] = [].push(val).slice(0, 4);
-          if (val.category === 'women clothing')
-            selectedHomeCategories[val.category] = [].push(val).slice(0, 4);
-          if (val.category === 'jewelery')
-            selectedHomeCategories[val.category] = [].push(val).slice(0, 4);
-        });
+        selectedHomeCategories.electronics = data.filter(
+          (val) => val.category === 'electronics'
+        );
+        selectedHomeCategories['women clothing'] = data.filter(
+          (val) => val.category === 'women clothing'
+        );
+        selectedHomeCategories.jewelery = data.filter(
+          (val) => val.category === 'jewelery'
+        );
 
         setHomeCategories(selectedHomeCategories);
       }
