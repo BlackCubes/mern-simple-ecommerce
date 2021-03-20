@@ -10,6 +10,7 @@ import {
   CategoryCardHeaderStyled,
   CategoryCardBodyStyled,
   CategoryCardBodyContentStyled,
+  CategoryCardButtonStyled,
   HomePageSectionsContainerStyled,
   HomeSectionStyled,
   HomeImageStyled,
@@ -107,14 +108,16 @@ const HomePage = () => {
                   </CategoryCardBodyContentStyled>
                 ))}
 
-              <Button
-                rest={{
-                  type: 'button',
-                  onClick: () => categoryPath('electronics'),
-                }}
-              >
-                Choose
-              </Button>
+              <CategoryCardButtonStyled>
+                <Button
+                  rest={{
+                    type: 'button',
+                    onClick: () => categoryPath('electronics'),
+                  }}
+                >
+                  Choose
+                </Button>
+              </CategoryCardButtonStyled>
             </CategoryCardBodyStyled>
           </CategoryCardStyled>
 
@@ -131,14 +134,16 @@ const HomePage = () => {
                   </CategoryCardBodyContentStyled>
                 ))}
 
-              <Button
-                rest={{
-                  type: 'button',
-                  onClick: () => categoryPath('women clothing'),
-                }}
-              >
-                Choose
-              </Button>
+              <CategoryCardButtonStyled>
+                <Button
+                  rest={{
+                    type: 'button',
+                    onClick: () => categoryPath('women clothing'),
+                  }}
+                >
+                  Choose
+                </Button>
+              </CategoryCardButtonStyled>
             </CategoryCardBodyStyled>
           </CategoryCardStyled>
 
@@ -156,14 +161,16 @@ const HomePage = () => {
                   </CategoryCardBodyContentStyled>
                 ))}
 
-              <Button
-                rest={{
-                  type: 'button',
-                  onClick: () => categoryPath('jewelery'),
-                }}
-              >
-                Choose
-              </Button>
+              <CategoryCardButtonStyled>
+                <Button
+                  rest={{
+                    type: 'button',
+                    onClick: () => categoryPath('jewelery'),
+                  }}
+                >
+                  Choose
+                </Button>
+              </CategoryCardButtonStyled>
             </CategoryCardBodyStyled>
           </CategoryCardStyled>
         </CategoryCardContainerStyled>
