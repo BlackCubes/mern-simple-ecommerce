@@ -98,7 +98,7 @@ export const CategorySectionStyled = styled.section`
 `;
 
 export const CategoryContentStyled = styled.div`
-  width: 60rem;
+  width: 80rem;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
