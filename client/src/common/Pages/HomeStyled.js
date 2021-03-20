@@ -36,6 +36,10 @@ export const HomeContentStyled = styled.div`
   margin-top: 10rem;
   margin-left: auto;
   margin-right: auto;
+
+  & h1 {
+    letter-spacing: 0.3rem;
+  }
 `;
 
 export const FakeStoreSectionStyled = styled.section`
@@ -49,6 +53,7 @@ export const FakeStoreContainerStyled = styled.div`
   width: 117rem;
   margin-left: auto;
   margin-right: auto;
+  padding: 10.5rem 0;
 `;
 
 export const FakeStoreSplitHolderStyled = styled.div`
@@ -68,18 +73,20 @@ export const FakeStoreSplitColorStyled = styled.div`
 export const FakeStoreImageStyled = styled.div`
   position: relative;
   float: left;
-  width: 50rem;
+  width: 55rem;
 `;
 
 export const FakeStoreContent = styled.div`
   float: right;
   width: 60rem;
-  margin-top: 5rem;
+  margin-top: 2rem;
   padding-left: 10rem;
   padding-right: 10rem;
   text-align: center;
 
   & h2 {
     font-weight: 300;
+    letter-spacing: 0.3rem;
+    line-height: 2;
   }
 `;
