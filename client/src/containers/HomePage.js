@@ -9,6 +9,7 @@ import {
   CategoryCardStyled,
   CategoryCardHeaderStyled,
   CategoryCardBodyStyled,
+  CategoryCardBodyContentStyled,
   HomePageSectionsContainerStyled,
   HomeSectionStyled,
   HomeImageStyled,
@@ -101,7 +102,9 @@ const HomePage = () => {
               {homeCategories &&
                 homeCategories.electronics.length &&
                 homeCategories.electronics.map((electronic) => (
-                  <Small key={electronic.id}>{electronic.title}</Small>
+                  <CategoryCardBodyContentStyled key={electronic.id}>
+                    <Small>{electronic.title}</Small>
+                  </CategoryCardBodyContentStyled>
                 ))}
 
               <Button
@@ -123,7 +126,9 @@ const HomePage = () => {
             <CategoryCardBodyStyled>
               {(homeCategories && homeCategories.womenClothing.length) > 0 &&
                 homeCategories.womenClothing.map((clothing) => (
-                  <Small key={clothing.id}>{clothing.title}</Small>
+                  <CategoryCardBodyContentStyled key={clothing.id}>
+                    <Small key={clothing.id}>{clothing.title}</Small>
+                  </CategoryCardBodyContentStyled>
                 ))}
 
               <Button
@@ -146,7 +151,9 @@ const HomePage = () => {
               {homeCategories &&
                 homeCategories.jeweleries.length > 0 &&
                 homeCategories.jeweleries.map((jewelery) => (
-                  <Small key={jewelery.id}>{jewelery.title}</Small>
+                  <CategoryCardBodyContentStyled key={jewelery.id}>
+                    <Small>{jewelery.title}</Small>
+                  </CategoryCardBodyContentStyled>
                 ))}
 
               <Button
