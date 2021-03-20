@@ -30,9 +30,6 @@ import {
 import { useProductContext } from '../context';
 
 const HomePage = () => {
-  const { electronics, setElectronics } = useState(null);
-  const { womenClothing, setWomenClothing } = useState(null);
-  const { jeweleries, setJeweleries } = useState(null);
   const { homeCategories, getHomeCategories } = useProductContext();
   const history = useHistory();
 
@@ -41,24 +38,6 @@ const HomePage = () => {
   useEffect(() => {
     getHomeCategories();
   }, []);
-
-  useEffect(() => {
-    if (
-      homeCategories &&
-      Object.prototype.hasOwnProperty.call(homeCategories, 'electronics')
-    )
-      setElectronics(homeCategories.electronics);
-    if (
-      homeCategories &&
-      Object.prototype.hasOwnProperty.call(homeCategories, 'women clothing')
-    )
-      setWomenClothing(homeCategories['women clothing']);
-    if (
-      homeCategories &&
-      Object.prototype.hasOwnProperty.call(homeCategories, 'jewelery')
-    )
-      setJeweleries(homeCategories.jewelery);
-  }, [homeCategories]);
 
   return (
     <HomePageSectionsContainerStyled>
@@ -119,8 +98,8 @@ const HomePage = () => {
             </CategoryCardHeaderStyled>
 
             <CategoryCardBodyStyled>
-              {electronics &&
-                electronics.map((electronic) => (
+              {homeCategories.electronics &&
+                homeCategories.electronics.map((electronic) => (
                   <Small key={electronic.id}>{electronic.title}</Small>
                 ))}
 
@@ -141,8 +120,8 @@ const HomePage = () => {
             </CategoryCardHeaderStyled>
 
             <CategoryCardBodyStyled>
-              {womenClothing > 0 &&
-                womenClothing.map((clothing) => (
+              {homeCategories.womenClothing > 0 &&
+                homeCategories.womenClothing.map((clothing) => (
                   <Small key={clothing.id}>{clothing.title}</Small>
                 ))}
 
@@ -163,8 +142,8 @@ const HomePage = () => {
             </CategoryCardHeaderStyled>
 
             <CategoryCardBodyStyled>
-              {jeweleries > 0 &&
-                jeweleries.map((jewelery) => (
+              {homeCategories.jeweleries > 0 &&
+                homeCategories.jeweleries.map((jewelery) => (
                   <Small key={jewelery.id}>{jewelery.title}</Small>
                 ))}
 
