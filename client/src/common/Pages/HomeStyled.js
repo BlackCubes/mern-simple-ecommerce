@@ -130,7 +130,7 @@ export const CategoryCardStyled = styled.div`
 export const CategoryCardHeaderStyled = styled.div`
   margin-bottom: 2.5rem;
   padding: 4rem 0;
-  background-color: ${(props) => props.theme.colors.black_gray};
+  background-color: rgba(17, 17, 17, 0.95);
 
   & h4 {
     color: ${(props) => props.theme.colors.white};
