@@ -127,6 +127,10 @@ export const CategoryCardStyled = styled.div`
 export const CategoryCardHeaderStyled = styled.div`
   margin-bottom: 2.5rem;
   padding: 4rem 0;
+
+  & h4 {
+    text-transform: uppercase;
+  }
 `;
 
 export const CategoryCardBodyStyled = styled.div`
