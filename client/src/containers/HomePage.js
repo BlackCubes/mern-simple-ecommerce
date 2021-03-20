@@ -1,6 +1,7 @@
 import React from 'react';
+import useHistory from 'react-router-dom';
 
-import { Image } from '../common';
+import { Button, Image } from '../common';
 import {
   CategorySectionStyled,
   CategoryContentStyled,
@@ -26,91 +27,124 @@ import {
   Small,
 } from '../common/Typography';
 
-const HomePage = () => (
-  <HomePageSectionsContainerStyled>
-    <HomeSectionStyled>
-      <HomeImageStyled>
-        <Image
-          rest={{ src: '/img/logo-large.png', alt: 'Large Company Logo' }}
-        />
-      </HomeImageStyled>
+const HomePage = () => {
+  const history = useHistory();
 
-      <HomeContentStyled>
-        <HeadingPrimary fontweight={600} textcolor="white">
-          Give Power To The Users.
-          <br />
-          Be What You Want.
-          <br />
-          Own That Power.
-        </HeadingPrimary>
-      </HomeContentStyled>
-    </HomeSectionStyled>
+  const categoryPath = (path) => history.push(`/products/category/${path}`);
 
-    <FakeStoreSectionStyled className="clearfix">
-      <FakeStoreContainerStyled>
-        <FakeStoreSplitHolderStyled>
-          <FakeStoreSplitColorStyled />
-        </FakeStoreSplitHolderStyled>
-
-        <FakeStoreImageStyled>
+  return (
+    <HomePageSectionsContainerStyled>
+      <HomeSectionStyled>
+        <HomeImageStyled>
           <Image
-            rest={{
-              src: 'https://fakestoreapi.herokuapp.com/icons/intro.svg',
-              alt: 'Fake Store API',
-            }}
+            rest={{ src: '/img/logo-large.png', alt: 'Large Company Logo' }}
           />
-        </FakeStoreImageStyled>
+        </HomeImageStyled>
 
-        <FakeStoreContent>
+        <HomeContentStyled>
+          <HeadingPrimary fontweight={600} textcolor="white">
+            Give Power To The Users.
+            <br />
+            Be What You Want.
+            <br />
+            Own That Power.
+          </HeadingPrimary>
+        </HomeContentStyled>
+      </HomeSectionStyled>
+
+      <FakeStoreSectionStyled className="clearfix">
+        <FakeStoreContainerStyled>
+          <FakeStoreSplitHolderStyled>
+            <FakeStoreSplitColorStyled />
+          </FakeStoreSplitHolderStyled>
+
+          <FakeStoreImageStyled>
+            <Image
+              rest={{
+                src: 'https://fakestoreapi.herokuapp.com/icons/intro.svg',
+                alt: 'Fake Store API',
+              }}
+            />
+          </FakeStoreImageStyled>
+
+          <FakeStoreContent>
+            <HeadingSecondary>
+              With the power of the Fake Store API, you can own one of your
+              favorite products: electronics, jewelery, clothing and more
+            </HeadingSecondary>
+          </FakeStoreContent>
+        </FakeStoreContainerStyled>
+      </FakeStoreSectionStyled>
+
+      <CategorySectionStyled>
+        <CategoryContentStyled>
           <HeadingSecondary>
-            With the power of the Fake Store API, you can own one of your
-            favorite products: electronics, jewelery, clothing and more
+            Explore different categories for your needs to be the best version
+            for today, tomorrow, and the next year
           </HeadingSecondary>
-        </FakeStoreContent>
-      </FakeStoreContainerStyled>
-    </FakeStoreSectionStyled>
+        </CategoryContentStyled>
 
-    <CategorySectionStyled>
-      <CategoryContentStyled>
-        <HeadingSecondary>
-          Explore different categories for your needs to be the best version for
-          today, tomorrow, and the next year
-        </HeadingSecondary>
-      </CategoryContentStyled>
+        <CategoryCardContainerStyled>
+          <CategoryCardStyled>
+            <CategoryCardHeaderStyled>
+              <HeadingQuaternary>Electronics</HeadingQuaternary>
+            </CategoryCardHeaderStyled>
 
-      <CategoryCardContainerStyled>
-        <CategoryCardStyled>
-          <CategoryCardHeaderStyled>
-            <HeadingQuaternary>Electronics</HeadingQuaternary>
-          </CategoryCardHeaderStyled>
+            <CategoryCardBodyStyled>
+              <Small>
+                <Button
+                  rest={{
+                    type: 'button',
+                    onClick: () => categoryPath('electronics'),
+                  }}
+                >
+                  Choose
+                </Button>
+              </Small>
+            </CategoryCardBodyStyled>
+          </CategoryCardStyled>
 
-          <CategoryCardBodyStyled>
-            <Small>Hello!</Small>
-          </CategoryCardBodyStyled>
-        </CategoryCardStyled>
+          <CategoryCardStyled>
+            <CategoryCardHeaderStyled>
+              <HeadingQuaternary>Women Clothing</HeadingQuaternary>
+            </CategoryCardHeaderStyled>
 
-        <CategoryCardStyled>
-          <CategoryCardHeaderStyled>
-            <HeadingQuaternary>Women Clothing</HeadingQuaternary>
-          </CategoryCardHeaderStyled>
+            <CategoryCardBodyStyled>
+              <Small>
+                <Button
+                  rest={{
+                    type: 'button',
+                    onClick: () => categoryPath('women clothing'),
+                  }}
+                >
+                  Choose
+                </Button>
+              </Small>
+            </CategoryCardBodyStyled>
+          </CategoryCardStyled>
 
-          <CategoryCardBodyStyled>
-            <Small>Hello!</Small>
-          </CategoryCardBodyStyled>
-        </CategoryCardStyled>
+          <CategoryCardStyled>
+            <CategoryCardHeaderStyled>
+              <HeadingQuaternary>Jewelery</HeadingQuaternary>
+            </CategoryCardHeaderStyled>
 
-        <CategoryCardStyled>
-          <CategoryCardHeaderStyled>
-            <HeadingQuaternary>Jewelery</HeadingQuaternary>
-          </CategoryCardHeaderStyled>
-
-          <CategoryCardBodyStyled>
-            <Small>Hello!</Small>
-          </CategoryCardBodyStyled>
-        </CategoryCardStyled>
-      </CategoryCardContainerStyled>
-    </CategorySectionStyled>
-  </HomePageSectionsContainerStyled>
-);
+            <CategoryCardBodyStyled>
+              <Small>
+                <Button
+                  rest={{
+                    type: 'button',
+                    onClick: () => categoryPath('jewelery'),
+                  }}
+                >
+                  Choose
+                </Button>
+              </Small>
+            </CategoryCardBodyStyled>
+          </CategoryCardStyled>
+        </CategoryCardContainerStyled>
+      </CategorySectionStyled>
+    </HomePageSectionsContainerStyled>
+  );
+};
 
 export default HomePage;
