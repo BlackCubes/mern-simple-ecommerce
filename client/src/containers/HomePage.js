@@ -6,6 +6,8 @@ import {
   CategoryContentStyled,
   CategoryCardContainerStyled,
   CategoryCardStyled,
+  CategoryCardHeaderStyled,
+  CategoryCardBodyStyled,
   HomePageSectionsContainerStyled,
   HomeSectionStyled,
   HomeImageStyled,
@@ -17,7 +19,12 @@ import {
   FakeStoreImageStyled,
   FakeStoreContent,
 } from '../common/Pages';
-import { HeadingPrimary, HeadingSecondary } from '../common/Typography';
+import {
+  HeadingPrimary,
+  HeadingQuaternary,
+  HeadingSecondary,
+  Small,
+} from '../common/Typography';
 
 const HomePage = () => (
   <HomePageSectionsContainerStyled>
@@ -72,11 +79,35 @@ const HomePage = () => (
       </CategoryContentStyled>
 
       <CategoryCardContainerStyled>
-        <CategoryCardStyled>This is a test</CategoryCardStyled>
+        <CategoryCardStyled>
+          <CategoryCardHeaderStyled>
+            <HeadingQuaternary>Electronics</HeadingQuaternary>
+          </CategoryCardHeaderStyled>
 
-        <CategoryCardStyled>This is another test</CategoryCardStyled>
+          <CategoryCardBodyStyled>
+            <Small>Hello!</Small>
+          </CategoryCardBodyStyled>
+        </CategoryCardStyled>
 
-        <CategoryCardStyled>This is a third test</CategoryCardStyled>
+        <CategoryCardStyled>
+          <CategoryCardHeaderStyled>
+            <HeadingQuaternary>Women Clothing</HeadingQuaternary>
+          </CategoryCardHeaderStyled>
+
+          <CategoryCardBodyStyled>
+            <Small>Hello!</Small>
+          </CategoryCardBodyStyled>
+        </CategoryCardStyled>
+
+        <CategoryCardStyled>
+          <CategoryCardHeaderStyled>
+            <HeadingQuaternary>Jewelery</HeadingQuaternary>
+          </CategoryCardHeaderStyled>
+
+          <CategoryCardBodyStyled>
+            <Small>Hello!</Small>
+          </CategoryCardBodyStyled>
+        </CategoryCardStyled>
       </CategoryCardContainerStyled>
     </CategorySectionStyled>
   </HomePageSectionsContainerStyled>
