@@ -123,3 +123,13 @@ export const CategoryCardStyled = styled.div`
   width: 30rem;
   text-align: center;
 `;
+
+export const CategoryCardHeaderStyled = styled.div`
+  margin-bottom: 2.5rem;
+  padding: 4rem 0;
+`;
+
+export const CategoryCardBodyStyled = styled.div`
+  margin-bottom: 4rem;
+  padding: 0 10%;
+`;
