@@ -30,18 +30,18 @@ const ProductProvider = ({ children }) => {
       const data = await getProductsAPI();
       const selectedHomeCategories = {
         electronics: [],
-        'women clothing': [],
-        jewelery: [],
+        womenClothing: [],
+        jeweleries: [],
       };
 
       if (data) {
         selectedHomeCategories.electronics = data.filter(
           (val) => val.category === 'electronics'
         );
-        selectedHomeCategories['women clothing'] = data.filter(
+        selectedHomeCategories.womenClothing = data.filter(
           (val) => val.category === 'women clothing'
         );
-        selectedHomeCategories.jewelery = data.filter(
+        selectedHomeCategories.jeweleries = data.filter(
           (val) => val.category === 'jewelery'
         );
       }
