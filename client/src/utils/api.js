@@ -3,7 +3,7 @@ import axios from 'axios';
 // Fake Store API
 export const getProductsAPI = async () => {
   try {
-    const apiUrl = 'https://fakestoreapi.com/products';
+    const apiUrl = 'https://fakestoreapi.herokuapp.com/products';
     const res = await axios.get(apiUrl);
     if (res.status === 200) return res.data;
   } catch (err) {
@@ -13,7 +13,7 @@ export const getProductsAPI = async () => {
 
 export const getProductAPI = async (id) => {
   try {
-    const apiUrl = `https://fakestoreapi.com/products/${id}`;
+    const apiUrl = `https://fakestoreapi.herokuapp.com/products/${id}`;
     const res = await axios.get(apiUrl);
     if (res.status === 200) return res.data;
   } catch (err) {
@@ -23,7 +23,7 @@ export const getProductAPI = async (id) => {
 
 export const getCategoriesAPI = async () => {
   try {
-    const apiUrl = 'https://fakestoreapi.com/products/categories';
+    const apiUrl = 'https://fakestoreapi.herokuapp.com/products/categories';
     const res = await axios.get(apiUrl);
     if (res.status === 200) return res.data;
   } catch (err) {
@@ -33,7 +33,7 @@ export const getCategoriesAPI = async () => {
 
 export const getCategoryAPI = async (category) => {
   try {
-    const apiUrl = `https://fakestoreapi.com/products/category/${category}`;
+    const apiUrl = `https://fakestoreapi.herokuapp.com/products/category/${category}`;
     const res = await axios.get(apiUrl);
     if (res.status === 200) return res.data;
   } catch (err) {
