@@ -23,6 +23,29 @@ const ProductProvider = ({ children }) => {
   const [reviews, setReviews] = useState([]);
   const [everyReviews, setEveryReviews] = useState(null);
   const [apiReviewErr, setApiReviewErr] = useState(null);
+  const [homeCategories, setHomeCategories] = useState(null);
+
+  const getHomeCategories = async () => {
+    try {
+      const data = await getProductsAPI();
+      const selectedHomeCategories = {};
+
+      if (data) {
+        data.forEach((val) => {
+          if (val.category === 'electronics')
+            selectedHomeCategories[val.category] = [].push(val).slice(0, 4);
+          if (val.category === 'women clothing')
+            selectedHomeCategories[val.category] = [].push(val).slice(0, 4);
+          if (val.category === 'jewelery')
+            selectedHomeCategories[val.category] = [].push(val).slice(0, 4);
+        });
+
+        setHomeCategories(selectedHomeCategories);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const getProducts = async () => {
     try {
@@ -138,6 +161,7 @@ const ProductProvider = ({ children }) => {
   return (
     <ProductContext.Provider
       value={{
+        homeCategories,
         products,
         product,
         categories,
@@ -145,6 +169,7 @@ const ProductProvider = ({ children }) => {
         reviews,
         deleteReview,
         everyReviews,
+        getHomeCategories,
         getProduct,
         getProducts,
         getCategory,
