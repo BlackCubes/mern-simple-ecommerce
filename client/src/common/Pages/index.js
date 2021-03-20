@@ -59,6 +59,7 @@ import {
   FakeStoreImageStyled,
   FakeStoreContent,
   CategorySectionStyled,
+  CategoryContentStyled,
   CategoryCardContainerStyled,
   CategoryCardStyled,
 } from './HomeStyled';
@@ -126,6 +127,7 @@ export {
   CartCardRemoveStyled,
   CartCardPriceStyled,
   CategorySectionStyled,
+  CategoryContentStyled,
   CategoryCardContainerStyled,
   CategoryCardStyled,
   CheckoutStyled,
