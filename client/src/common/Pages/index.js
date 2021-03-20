@@ -65,6 +65,7 @@ import {
   CategoryCardHeaderStyled,
   CategoryCardBodyStyled,
   CategoryCardBodyContentStyled,
+  CategoryCardButtonStyled,
 } from './HomeStyled';
 import {
   ProductDetailsContainerStyled,
@@ -136,6 +137,7 @@ export {
   CategoryCardHeaderStyled,
   CategoryCardBodyStyled,
   CategoryCardBodyContentStyled,
+  CategoryCardButtonStyled,
   CheckoutStyled,
   CheckoutPrimaryStyled,
   CheckoutPageHeaderStyled,
