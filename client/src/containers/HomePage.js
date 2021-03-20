@@ -52,7 +52,7 @@ const HomePage = () => (
 
         <FakeStoreContent>
           <HeadingSecondary>
-            With the power of the Fake Store API, you can own of of your
+            With the power of the Fake Store API, you can own one of your
             favorite products: electronics, jewelery, clothing and more
           </HeadingSecondary>
         </FakeStoreContent>
