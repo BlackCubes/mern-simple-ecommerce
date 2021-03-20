@@ -43,11 +43,20 @@ const HomePage = () => {
   }, []);
 
   useEffect(() => {
-    if (Object.prototype.hasOwnProperty.call(homeCategories, 'electronics'))
+    if (
+      homeCategories &&
+      Object.prototype.hasOwnProperty.call(homeCategories, 'electronics')
+    )
       setElectronics(homeCategories.electronics);
-    if (Object.prototype.hasOwnProperty.call(homeCategories, 'women clothing'))
+    if (
+      homeCategories &&
+      Object.prototype.hasOwnProperty.call(homeCategories, 'women clothing')
+    )
       setWomenClothing(homeCategories['women clothing']);
-    if (Object.prototype.hasOwnProperty.call(homeCategories, 'jewelery'))
+    if (
+      homeCategories &&
+      Object.prototype.hasOwnProperty.call(homeCategories, 'jewelery')
+    )
       setJeweleries(homeCategories.jewelery);
   }, [homeCategories]);
 
