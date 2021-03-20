@@ -133,6 +133,7 @@ export const CategoryCardHeaderStyled = styled.div`
   background-color: ${(props) => props.theme.colors.black_gray};
 
   & h4 {
+    color: ${(props) => props.theme.colors.white};
     text-transform: uppercase;
   }
 `;
