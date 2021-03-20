@@ -140,5 +140,6 @@ export const CategoryCardBodyStyled = styled.div`
 `;
 
 export const CategoryCardBodyContentStyled = styled.div`
-  margin-bottom: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 `;
