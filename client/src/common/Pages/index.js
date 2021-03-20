@@ -58,6 +58,9 @@ import {
   FakeStoreSplitColorStyled,
   FakeStoreImageStyled,
   FakeStoreContent,
+  CategorySectionStyled,
+  CategoryCardContainerStyled,
+  CategoryCardStyled,
 } from './HomeStyled';
 import {
   ProductDetailsContainerStyled,
@@ -122,6 +125,9 @@ export {
   CartCardRaiseLowerStyled,
   CartCardRemoveStyled,
   CartCardPriceStyled,
+  CategorySectionStyled,
+  CategoryCardContainerStyled,
+  CategoryCardStyled,
   CheckoutStyled,
   CheckoutPrimaryStyled,
   CheckoutPageHeaderStyled,
