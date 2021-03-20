@@ -35,15 +35,15 @@ const ProductProvider = ({ children }) => {
       };
 
       if (data) {
-        selectedHomeCategories.electronics = data.filter(
-          (val) => val.category === 'electronics'
-        );
-        selectedHomeCategories.womenClothing = data.filter(
-          (val) => val.category === 'women clothing'
-        );
-        selectedHomeCategories.jeweleries = data.filter(
-          (val) => val.category === 'jewelery'
-        );
+        selectedHomeCategories.electronics = data
+          .filter((val) => val.category === 'electronics')
+          .slice(0, 4);
+        selectedHomeCategories.womenClothing = data
+          .filter((val) => val.category === 'women clothing')
+          .slice(0, 4);
+        selectedHomeCategories.jeweleries = data
+          .filter((val) => val.category === 'jewelery')
+          .slice(0, 4);
       }
 
       setHomeCategories(selectedHomeCategories);
