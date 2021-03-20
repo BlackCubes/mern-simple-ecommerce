@@ -28,7 +28,11 @@ const ProductProvider = ({ children }) => {
   const getHomeCategories = async () => {
     try {
       const data = await getProductsAPI();
-      const selectedHomeCategories = {};
+      const selectedHomeCategories = {
+        electronics: [],
+        'women clothing': [],
+        jewelery: [],
+      };
 
       if (data) {
         selectedHomeCategories.electronics = data.filter(
@@ -40,9 +44,9 @@ const ProductProvider = ({ children }) => {
         selectedHomeCategories.jewelery = data.filter(
           (val) => val.category === 'jewelery'
         );
-
-        setHomeCategories(selectedHomeCategories);
       }
+
+      setHomeCategories(selectedHomeCategories);
     } catch (err) {
       console.log(err);
     }
