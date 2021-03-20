@@ -138,3 +138,7 @@ export const CategoryCardBodyStyled = styled.div`
   margin-bottom: 4rem;
   padding: 0 10%;
 `;
+
+export const CategoryCardBodyContentStyled = styled.div`
+  margin-bottom: 1rem;
+`;
