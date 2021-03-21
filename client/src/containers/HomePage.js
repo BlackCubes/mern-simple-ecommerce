@@ -79,7 +79,7 @@ const HomePage = () => {
           <FakeStoreContent>
             <HeadingSecondary>
               With the power of the Fake Store API, you can own one of your
-              favorite products: electronics, jewelery, clothing and more
+              favorite products and show what you have become
             </HeadingSecondary>
           </FakeStoreContent>
         </FakeStoreContainerStyled>
