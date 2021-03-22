@@ -1,11 +1,26 @@
 import axios from 'axios';
 
+// This function is used when the Fake Store API server is down
+// and the other server needs to be used for the img path
+const newImgPaths = (data) =>
+  data.map((val) => {
+    const splitString = val.image.split('/');
+    const endingImgPath = splitString[splitString.length - 1];
+    return `https://fakestoreapi.herokuapp.com/img/${endingImgPath}`;
+  });
+
 // Fake Store API
 export const getProductsAPI = async () => {
   try {
     const apiUrl = 'https://fakestoreapi.herokuapp.com/products';
     const res = await axios.get(apiUrl);
-    if (res.status === 200) return res.data;
+    if (res.status === 200) {
+      res.data.forEach((val, ind) => {
+        val.image = newImgPaths(res.data)[ind];
+      });
+      console.log(res.data);
+      return res.data;
+    }
   } catch (err) {
     console.log(err);
   }
