@@ -4,6 +4,10 @@ export const SidebarStyled = styled.div`
   width: 20%;
   padding-left: 4rem;
   padding-right: 2rem;
+
+  @media ${(props) => props.theme.responsive.below_1199} {
+    padding-left: 1rem;
+  }
 `;
 
 export const SidebarContainerStyled = styled.div`
