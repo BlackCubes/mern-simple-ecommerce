@@ -31,7 +31,7 @@ export const SidebarFacetStyled = styled.div`
   border-bottom: 1px solid #000;
 
   @media ${(props) => props.theme.responsive.below_1199} {
-    padding-left: 1rem;
+    padding: 2rem 0 2rem 1rem;
   }
 `;
 
