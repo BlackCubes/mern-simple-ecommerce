@@ -19,11 +19,20 @@ export const SidebarContentStyled = styled.div`
   top: 1.5rem;
   padding-left: 2rem;
   padding-right: 2rem;
+
+  @media ${(props) => props.theme.responsive.below_1199} {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
 `;
 
 export const SidebarFacetStyled = styled.div`
   padding: 2rem 0 2rem 2rem;
   border-bottom: 1px solid #000;
+
+  @media ${(props) => props.theme.responsive.below_1199} {
+    padding-left: 1rem;
+  }
 `;
 
 export const SidebarFacetLegendStyled = styled.div`
