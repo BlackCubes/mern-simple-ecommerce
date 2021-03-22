@@ -18,7 +18,6 @@ export const getProductsAPI = async () => {
       res.data.forEach((val, ind) => {
         val.image = newImgPaths(res.data)[ind];
       });
-      console.log(res.data);
       return res.data;
     }
   } catch (err) {
