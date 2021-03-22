@@ -51,7 +51,12 @@ export const getCategoryAPI = async (category) => {
   try {
     const apiUrl = `https://fakestoreapi.herokuapp.com/products/category/${category}`;
     const res = await axios.get(apiUrl);
-    if (res.status === 200) return res.data;
+    if (res.status === 200) {
+      res.data.forEach((val) => {
+        val.image = newImgPath(val);
+      });
+      return res.data;
+    }
   } catch (err) {
     console.log(err);
   }
