@@ -9,6 +9,11 @@ export const ProductsStyled = styled.div`
 export const ProductsContainerStyled = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    display: block;
+    justify-content: normal;
+  }
 `;
 
 export const ProductsCardStyled = styled.div`
