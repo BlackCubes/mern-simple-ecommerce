@@ -37,20 +37,20 @@ export default {
     */
 
     // Responsive Range: [1199px - 900px]
-    below_1199: '@media only screen and (max-width: 74.9375em)',
+    below_1199: 'only screen and (max-width: 74.9375em)',
     // Responsive Range: [899px - 600px]
-    below_899: '@media only screen and (max-width: 56.1875em)',
+    below_899: 'only screen and (max-width: 56.1875em)',
     // Responsive Range: [599px - 480px]
-    below_599: '@media only screen and (max-width: 37.4375em)',
+    below_599: 'only screen and (max-width: 37.4375em)',
     // Responsive Range: [479px - 380px]
-    below_479: '@media only screen and (max-width: 29.9375em)',
+    below_479: 'only screen and (max-width: 29.9375em)',
     // Responsive Range: [379px - 0]
-    below_379: '@media only screen and (max-width: 23.6875em)',
+    below_379: 'only screen and (max-width: 23.6875em)',
     // Responsive Range: [1199px - 992px] and portrait
     between_1199_992:
-      '@media only screen and (max-width: 74.9375em) and (min-width: 62em) and (orientation: portrait)',
+      'only screen and (max-width: 74.9375em) and (min-width: 62em) and (orientation: portrait)',
     // Responsive Range: [991px - 768px] and portrait
     between_991_768:
-      '@media only screen and (max-width: 61.9375em) and (min-width: 48em) and (orientation: portrait)',
+      'only screen and (max-width: 61.9375em) and (min-width: 48em) and (orientation: portrait)',
   },
 };
