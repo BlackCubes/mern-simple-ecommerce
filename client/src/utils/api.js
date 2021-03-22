@@ -9,6 +9,12 @@ const newImgPaths = (data) =>
     return `https://fakestoreapi.herokuapp.com/img/${endingImgPath}`;
   });
 
+const newImgPath = (data) => {
+  const splitString = data.image.split('/');
+  const endingImgPath = splitString[splitString.length - 1];
+  return `https://fakestoreapi.herokuapp.com/img/${endingImgPath}`;
+};
+
 // Fake Store API
 export const getProductsAPI = async () => {
   try {
@@ -29,7 +35,10 @@ export const getProductAPI = async (id) => {
   try {
     const apiUrl = `https://fakestoreapi.herokuapp.com/products/${id}`;
     const res = await axios.get(apiUrl);
-    if (res.status === 200) return res.data;
+    if (res.status === 200) {
+      res.data.image = newImgPath(res.data);
+      return res.data;
+    }
   } catch (err) {
     console.log(err);
   }
