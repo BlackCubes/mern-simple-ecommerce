@@ -80,9 +80,17 @@ export const SidebarFacetListItemStyled = styled.li`
     @media ${(props) => props.theme.responsive.below_899} {
       margin: 0.25rem;
       padding: 0.2rem 0.5rem;
+      border-top: 0.1rem solid rgba(255, 30, 94, 0.47);
+      border-bottom: 0.1rem solid rgba(255, 30, 94, 0.47);
       border-radius: 1rem;
       line-height: normal;
       transition: all 0.1s;
+
+      &:hover {
+        border-top: 0.1rem solid rgba(255, 30, 94, 0.17);
+        border-bottom: 0.1rem solid rgba(255, 30, 94, 0.17);
+        border-radius: 2rem;
+      }
     }
   }
 `;
