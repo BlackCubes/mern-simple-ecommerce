@@ -49,6 +49,11 @@ const ButtonStyled = styled.button`
         text-decoration: underline;
       `};
   }
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    font-size: 1.45rem;
+    padding: 1.4rem;
+  }
 `;
 
 const Button = ({ children, rest }) => (
