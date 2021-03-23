@@ -4,6 +4,10 @@ export const ProductsStyled = styled.div`
   width: 75%;
   padding-left: 2rem;
   padding-right: 2rem;
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    width: 100%;
+  }
 `;
 
 export const ProductsContainerStyled = styled.div`
