@@ -95,5 +95,10 @@ export const ProductsCardRatingStyled = styled.div`
   & svg {
     width: 2rem;
     height: 2rem;
+
+    @media ${(props) => props.theme.responsive.below_899} {
+      width: 1.9rem;
+      height: 1.9rem;
+    }
   }
 `;
