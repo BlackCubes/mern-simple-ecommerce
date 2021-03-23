@@ -32,6 +32,10 @@ export const ProductsCardImageStyled = styled.div`
   padding-right: 2rem;
   vertical-align: top;
 
+  @media ${(props) => props.theme.responsive.below_899} {
+    padding-right: 1.5rem;
+  }
+
   & a {
     display: block;
   }
