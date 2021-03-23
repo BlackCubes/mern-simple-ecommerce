@@ -49,6 +49,11 @@ export const ProductsCardInfoStyled = styled.div`
   padding-left: 2rem;
   padding-right: 2rem;
   vertical-align: top;
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 `;
 
 export const ProductsCardInfoTitleStyled = styled.div`
