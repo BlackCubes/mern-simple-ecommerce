@@ -78,6 +78,7 @@ export const SidebarFacetListItemStyled = styled.li`
 
   & a {
     @media ${(props) => props.theme.responsive.below_899} {
+      color: rgba(80, 103, 193, 0.6);
       margin: 0.25rem;
       padding: 0.2rem 0.5rem;
       border-top: 0.1rem solid rgba(255, 30, 94, 0.47);
