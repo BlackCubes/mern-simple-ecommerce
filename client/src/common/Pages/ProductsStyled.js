@@ -58,6 +58,11 @@ export const ProductsCardInfoStyled = styled.div`
     padding-left: 1rem;
     padding-right: 1rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_599} {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
 `;
 
 export const ProductsCardInfoTitleStyled = styled.div`
@@ -80,6 +85,10 @@ export const ProductsCardPriceCartStyled = styled.div`
   display: inline-block;
   width: 40%;
   padding-left: 2rem;
+
+  @media ${(props) => props.theme.responsive.below_599} {
+    padding-left: 0.8rem;
+  }
 `;
 
 export const ProductsCardPriceStyled = styled.div`
