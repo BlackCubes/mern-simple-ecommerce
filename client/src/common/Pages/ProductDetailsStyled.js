@@ -167,6 +167,10 @@ export const ProductDetailsReviewUserStyled = styled.div`
     font-size: 1.5rem;
     color: ${(props) => props.theme.colors.lime_green};
     opacity: 0.8;
+
+    @media ${(props) => props.theme.responsive.below_899} {
+      font-size: 1.4rem;
+    }
   }
 `;
 
