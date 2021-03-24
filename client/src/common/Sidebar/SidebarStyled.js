@@ -5,6 +5,12 @@ export const SidebarStyled = styled.div`
   padding-left: 4rem;
   padding-right: 2rem;
 
+  &.category-sidebar {
+    @media ${(props) => props.theme.responsive.below_899} {
+      display: none;
+    }
+  }
+
   @media ${(props) => props.theme.responsive.below_1199} {
     padding-left: 1rem;
   }
