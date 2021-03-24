@@ -9,6 +9,10 @@ const HeadingQuaternaryStyled = styled.h4`
   @media ${(props) => props.theme.responsive.below_899} {
     font-size: 1.7rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_599} {
+    font-size: 1.65rem;
+  }
 `;
 
 const HeadingQuaternary = ({ children }) => (
