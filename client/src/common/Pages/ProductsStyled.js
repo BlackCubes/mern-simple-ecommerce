@@ -24,6 +24,10 @@ export const ProductsCardStyled = styled.div`
   min-height: 23.5rem;
   padding-top: 3rem;
   padding-bottom: 3rem;
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    padding-bottom: 4rem;
+  }
 `;
 
 export const ProductsCardImageStyled = styled.div`
@@ -53,6 +57,7 @@ export const ProductsCardRightColumnStyled = styled.div`
 
   @media ${(props) => props.theme.responsive.below_479} {
     width: 100%;
+    margin-top: 2rem;
   }
 `;
 
@@ -94,6 +99,7 @@ export const ProductsCardInfoShippingBuyStyled = styled.div`
   margin-bottom: 1rem;
 
   @media ${(props) => props.theme.responsive.below_479} {
+    margin-bottom: 0;
     text-align: center;
   }
 `;
@@ -102,6 +108,7 @@ export const ProductsCardInfoShippingOptionStyled = styled.div`
   margin-top: 1rem;
 
   @media ${(props) => props.theme.responsive.below_479} {
+    margin-top: 0;
     text-align: center;
   }
 `;
@@ -118,6 +125,7 @@ export const ProductsCardPriceCartStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_479} {
     display: block;
     width: 100%;
+    margin-top: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;
     text-align: center;
@@ -133,6 +141,11 @@ export const ProductsCardPriceStyled = styled.div`
 export const ProductsCardCartBtnStyled = styled.div`
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
 `;
 
 export const ProductsCardRatingStyled = styled.div`
