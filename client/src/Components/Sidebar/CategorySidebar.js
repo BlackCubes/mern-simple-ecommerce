@@ -37,7 +37,7 @@ const CategorySidebar = () => {
   }, [category]);
 
   return (
-    <SidebarStyled>
+    <SidebarStyled className="category-sidebar">
       <SidebarContainerStyled>
         <CategorySidebarStyled>
           <CategorySidebarHeaderStyled>
