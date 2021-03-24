@@ -36,6 +36,11 @@ export const ProductsCardImageStyled = styled.div`
     padding-right: 1.5rem;
   }
 
+  @media ${(props) => props.theme.responsive.below_479} {
+    width: 100%;
+    padding-right: 0;
+  }
+
   & a {
     display: block;
   }
@@ -45,6 +50,10 @@ export const ProductsCardRightColumnStyled = styled.div`
   display: inline-block;
   width: 84%;
   vertical-align: top;
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    width: 100%;
+  }
 `;
 
 export const ProductsCardInfoStyled = styled.div`
@@ -63,10 +72,18 @@ export const ProductsCardInfoStyled = styled.div`
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    width: 100%;
+  }
 `;
 
 export const ProductsCardInfoTitleStyled = styled.div`
   margin-bottom: 1rem;
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    text-align: center;
+  }
 `;
 
 export const ProductsCardInfoShippingStyled = styled.div`
@@ -75,10 +92,18 @@ export const ProductsCardInfoShippingStyled = styled.div`
 
 export const ProductsCardInfoShippingBuyStyled = styled.div`
   margin-bottom: 1rem;
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    text-align: center;
+  }
 `;
 
 export const ProductsCardInfoShippingOptionStyled = styled.div`
   margin-top: 1rem;
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    text-align: center;
+  }
 `;
 
 export const ProductsCardPriceCartStyled = styled.div`
@@ -88,6 +113,14 @@ export const ProductsCardPriceCartStyled = styled.div`
 
   @media ${(props) => props.theme.responsive.below_599} {
     padding-left: 0.8rem;
+  }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    display: block;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
   }
 `;
 
