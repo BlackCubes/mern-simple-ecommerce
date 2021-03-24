@@ -9,6 +9,10 @@ export const ProductDetailsContainerStyled = styled.div`
 
 export const ProductDetailsStyled = styled.div`
   width: 75%;
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    width: 100%;
+  }
 `;
 
 export const ProductDetailsHeaderStyled = styled.div`
