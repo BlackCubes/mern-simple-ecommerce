@@ -169,5 +169,10 @@ export const ProductsCardRatingStyled = styled.div`
       width: 1.8rem;
       height: 1.8rem;
     }
+
+    @media ${(props) => props.theme.responsive.below_379} {
+      width: 1.7rem;
+      height: 1.7rem;
+    }
   }
 `;
