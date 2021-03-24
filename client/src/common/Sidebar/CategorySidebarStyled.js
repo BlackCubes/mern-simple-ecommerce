@@ -3,6 +3,11 @@ import styled from 'styled-components';
 export const CategorySidebarStyled = styled.div`
   padding-left: 1rem;
   padding-right: 2rem;
+
+  @media ${(props) => props.theme.responsive.below_1199} {
+    padding-left: 0;
+    padding-right: 0;
+  }
 `;
 
 export const CategorySidebarHeaderStyled = styled.div`
