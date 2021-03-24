@@ -62,6 +62,10 @@ const ButtonStyled = styled.button`
   @media ${(props) => props.theme.responsive.below_479} {
     font-size: 1.35rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    font-size: 1.3rem;
+  }
 `;
 
 const Button = ({ children, rest }) => (
