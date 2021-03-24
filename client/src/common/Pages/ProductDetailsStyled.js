@@ -57,6 +57,11 @@ export const ProductDetailsPriceShippingCartStyled = styled.div`
   width: 35%;
   padding-left: 2rem;
   padding-right: 2rem;
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    padding-left: 0;
+    padding-right: 0;
+  }
 `;
 
 export const ProductDetailsPriceShippingCartRowStyled = styled.div`
@@ -148,6 +153,13 @@ export const ProductDetailsReviewRightColStyled = styled.div`
 
 export const ProductDetailsReviewRatingStyled = styled.div`
   margin-bottom: 1.5rem;
+
+  & svg {
+    @media ${(props) => props.theme.responsive.below_899} {
+      width: 1.9rem;
+      height: 1.9rem;
+    }
+  }
 `;
 
 export const ProductDetailsReviewUserStyled = styled.div`
