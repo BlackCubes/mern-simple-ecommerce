@@ -6,6 +6,14 @@ export const RatingsStyled = styled.div`
 
   &.ratings-static {
     justify-content: left;
+
+    @media ${(props) => props.theme.responsive.below_479} {
+      justify-content: space-evenly;
+    }
+  }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    justify-content: space-evenly;
   }
 `;
 
