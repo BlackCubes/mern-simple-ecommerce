@@ -29,6 +29,10 @@ const SmallStyled = styled.small`
   @media ${(props) => props.theme.responsive.below_479} {
     font-size: 1.1rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    font-size: 1rem;
+  }
 `;
 
 const Small = ({ children, tagType, colorType, sizetype }) => (
