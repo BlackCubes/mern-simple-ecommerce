@@ -43,6 +43,10 @@ export const ProductDetailsInfoImageStyled = styled.div`
   width: 40rem;
   margin-left: auto;
   margin-right: auto;
+
+  @media ${(props) => props.theme.responsive.below_1199} {
+    width: 100%;
+  }
 `;
 
 export const ProductDetailsPriceShippingCartStyled = styled.div`
