@@ -27,6 +27,10 @@ export const ModalContainerStyled = styled.div`
   margin-right: auto;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+
+  @media ${(props) => props.theme.responsive.below_1199} {
+    width: 100%;
+  }
 `;
 
 export const ModalStyled = styled.div`
@@ -35,6 +39,10 @@ export const ModalStyled = styled.div`
   margin: 6rem auto;
   padding: 4rem;
   background-color: ${(props) => props.theme.colors.white};
+
+  @media ${(props) => props.theme.responsive.below_1199} {
+    width: 60%;
+  }
 `;
 
 // export const ModalContainerStyled = styled.div`
