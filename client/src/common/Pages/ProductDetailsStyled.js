@@ -171,10 +171,19 @@ export const ProductDetailsReviewListStyled = styled.div`
   justify-content: space-between;
   padding-top: 2rem;
   padding-bottom: 2rem;
+
+  @media ${(props) => props.theme.responsive.below_599} {
+    flex-direction: column;
+    justify-content: normal;
+  }
 `;
 
 export const ProductDetailsReviewLeftColStyled = styled.div`
   float: left;
+
+  @media ${(props) => props.theme.responsive.below_599} {
+    float: none;
+  }
 `;
 
 export const ProductDetailsReviewRightColStyled = styled.div`
@@ -184,6 +193,11 @@ export const ProductDetailsReviewRightColStyled = styled.div`
     @media ${(props) => props.theme.responsive.below_899} {
       padding: 0;
     }
+  }
+
+  @media ${(props) => props.theme.responsive.below_599} {
+    float: none;
+    margin-top: 1.5rem;
   }
 `;
 
