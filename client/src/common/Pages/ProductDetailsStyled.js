@@ -111,6 +111,10 @@ export const ProductDetailsDescriptionBodyStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_899} {
     width: 90%;
   }
+
+  @media ${(props) => props.theme.responsive.below_599} {
+    width: 95%;
+  }
 `;
 
 export const ProductDetailsReviewsStyled = styled.div`
@@ -145,6 +149,10 @@ export const ProductDetailsReviewsBodyStyled = styled.div`
 
   @media ${(props) => props.theme.responsive.below_899} {
     width: 90%;
+  }
+
+  @media ${(props) => props.theme.responsive.below_599} {
+    width: 95%;
   }
 `;
 
