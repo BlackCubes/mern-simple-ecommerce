@@ -305,7 +305,7 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
                           </ProductDetailsReviewLeftColStyled>
 
                           {checkAuth() ? (
-                            <ProductDetailsReviewRightColStyled className="product-details__review-delete-btn">
+                            <ProductDetailsReviewRightColStyled>
                               <Button
                                 rest={{
                                   type: 'button',
