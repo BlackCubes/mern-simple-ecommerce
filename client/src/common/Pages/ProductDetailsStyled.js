@@ -167,6 +167,12 @@ export const ProductDetailsReviewLeftColStyled = styled.div`
 
 export const ProductDetailsReviewRightColStyled = styled.div`
   float: right;
+
+  & .product-details__review-delete-btn {
+    @media ${(props) => props.theme.responsive.below_899} {
+      padding: 0;
+    }
+  }
 `;
 
 export const ProductDetailsReviewRatingStyled = styled.div`
