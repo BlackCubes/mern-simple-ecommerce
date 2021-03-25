@@ -45,7 +45,7 @@ export const ModalStyled = styled.div`
   }
 
   @media ${(props) => props.theme.responsive.below_899} {
-    width: 90%;
+    width: 80%;
   }
 `;
 
