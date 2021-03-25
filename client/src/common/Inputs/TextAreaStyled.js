@@ -45,4 +45,9 @@ export default styled.textarea`
   &.error + span {
     color: ${(props) => props.theme.colors.red};
   }
+
+  @media ${(props) => props.theme.responsive.below_599} {
+    height: 15rem;
+    padding: 1.3rem;
+  }
 `;
