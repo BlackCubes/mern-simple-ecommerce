@@ -13,11 +13,26 @@ export const ProductDetailsStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_899} {
     width: 100%;
   }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    margin-top: 1rem;
+  }
 `;
 
 export const ProductDetailsHeaderStyled = styled.div`
   width: 100%;
   margin-bottom: 2rem;
+
+  & .ratings-static {
+    @media ${(props) => props.theme.responsive.below_479} {
+      justify-content: center;
+    }
+  }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    margin-bottom: 0;
+    text-align: center;
+  }
 `;
 
 export const ProductDetailsHeaderTitleStyled = styled.div`
@@ -29,6 +44,11 @@ export const ProductDetailsHeaderDataStyled = styled.div`
 
   & small:nth-child(2) {
     text-transform: capitalize;
+  }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    margin-bottom: 0.5rem;
+    padding-top: 0.5rem;
   }
 `;
 
