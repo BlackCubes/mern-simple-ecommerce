@@ -43,6 +43,10 @@ export const ModalStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_1199} {
     width: 60%;
   }
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    width: 90%;
+  }
 `;
 
 // export const ModalContainerStyled = styled.div`
