@@ -5,6 +5,10 @@ import styled from 'styled-components';
 const HeadingTertiaryStyled = styled.h3`
   font-size: 2.5rem;
   font-weight: ${({ fontweighttype }) => fontweighttype || 400};
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    font-size: 2.3rem;
+  }
 `;
 
 const HeadingTertiary = ({ children, fontweighttype }) => (
