@@ -9,6 +9,10 @@ const HeadingSecondaryStyled = styled.h2`
   @media ${(props) => props.theme.responsive.below_899} {
     font-size: 2.7rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_599} {
+    font-size: 2.5rem;
+  }
 `;
 
 const HeadingSecondary = ({ children }) => (
