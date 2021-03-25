@@ -30,7 +30,6 @@ export const ProductDetailsHeaderStyled = styled.div`
   }
 
   @media ${(props) => props.theme.responsive.below_479} {
-    margin-bottom: 0;
     text-align: center;
   }
 `;
