@@ -65,6 +65,10 @@ export const ProductDetailsInfoStyled = styled.div`
   width: 65%;
   padding-left: 2rem;
   padding-right: 2rem;
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    width: 95%;
+  }
 `;
 
 export const ProductDetailsInfoImageStyled = styled.div`
@@ -85,6 +89,11 @@ export const ProductDetailsPriceShippingCartStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_899} {
     padding-left: 0;
     padding-right: 0;
+  }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    width: 90%;
+    text-align: center;
   }
 `;
 
