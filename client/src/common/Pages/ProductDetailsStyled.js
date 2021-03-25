@@ -54,6 +54,11 @@ export const ProductDetailsHeaderDataStyled = styled.div`
 export const ProductDetailsBottomContainerStyled = styled.div`
   display: flex;
   margin-bottom: 6.5rem;
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const ProductDetailsInfoStyled = styled.div`
