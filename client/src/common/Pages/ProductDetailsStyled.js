@@ -132,6 +132,10 @@ export const ProductDetailsReviewsHeaderStyled = styled.div`
   & h4 {
     font-weight: 400;
   }
+
+  @media ${(props) => props.theme.responsive.below_599} {
+    padding-bottom: 1rem;
+  }
 `;
 
 export const ProductDetailsReviewsBodyStyled = styled.div`
