@@ -102,6 +102,10 @@ export const ProductDetailsDescriptionBodyStyled = styled.div`
   width: 75%;
   margin-left: auto;
   margin-right: auto;
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    width: 90%;
+  }
 `;
 
 export const ProductDetailsReviewsStyled = styled.div`
@@ -124,6 +128,10 @@ export const ProductDetailsReviewsBodyStyled = styled.div`
   width: 75%;
   margin-left: auto;
   margin-right: auto;
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    width: 90%;
+  }
 `;
 
 export const ProductDetailsReviewsAddStyled = styled.div`
