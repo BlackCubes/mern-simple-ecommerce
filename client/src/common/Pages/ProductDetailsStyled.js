@@ -86,6 +86,11 @@ export const ProductDetailsShippingOptionStyled = styled.div`
 export const ProductDetailsDescriptionStyled = styled.div`
   padding-left: 2rem;
   padding-right: 2rem;
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 `;
 
 export const ProductDetailsDescriptionHeaderStyled = styled.div`
@@ -112,6 +117,11 @@ export const ProductDetailsReviewsStyled = styled.div`
   margin-top: 2rem;
   padding-left: 2rem;
   padding-right: 2rem;
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 `;
 
 export const ProductDetailsReviewsHeaderStyled = styled.div`
