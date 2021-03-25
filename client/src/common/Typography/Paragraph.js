@@ -21,6 +21,10 @@ const ParagraphStyled = styled.p`
   @media ${(props) => props.theme.responsive.below_899} {
     font-size: 1.55rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_599} {
+    font-size: 1.5rem;
+  }
 `;
 
 const Paragraph = ({ children, tagtype, sizetype, texttransformtype }) => (
