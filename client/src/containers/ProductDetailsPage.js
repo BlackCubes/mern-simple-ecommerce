@@ -317,6 +317,8 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
                                   colortype: 'transparent',
                                   hovercolortype: 'moderate_blue_dark',
                                   nonbtn: true,
+                                  className:
+                                    'product-details__review-delete-btn',
                                 }}
                               >
                                 Delete Review
