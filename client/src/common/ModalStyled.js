@@ -50,6 +50,7 @@ export const ModalStyled = styled.div`
 
   @media ${(props) => props.theme.responsive.below_599} {
     width: 90%;
+    padding: 3rem;
   }
 `;
 
