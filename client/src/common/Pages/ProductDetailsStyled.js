@@ -93,6 +93,7 @@ export const ProductDetailsPriceShippingCartStyled = styled.div`
 
   @media ${(props) => props.theme.responsive.below_479} {
     width: 90%;
+    margin-top: 2rem;
     text-align: center;
   }
 `;
@@ -100,6 +101,11 @@ export const ProductDetailsPriceShippingCartStyled = styled.div`
 export const ProductDetailsPriceShippingCartRowStyled = styled.div`
   margin-top: 2.4rem;
   padding-top: 2.4rem;
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+  }
 `;
 
 export const ProductDetailsPriceStyled = styled.div`
