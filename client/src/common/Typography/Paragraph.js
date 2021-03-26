@@ -27,7 +27,7 @@ const ParagraphStyled = styled.p`
   }
 
   @media ${(props) => props.theme.responsive.below_479} {
-    font-size: 1.45rem;
+    font-size: 1.4rem;
   }
 `;
 
