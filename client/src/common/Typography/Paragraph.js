@@ -30,7 +30,7 @@ const ParagraphStyled = styled.p`
     font-size: 1.4rem;
   }
 
-  @media ${(props) => props.theme.responsive.below_479} {
+  @media ${(props) => props.theme.responsive.below_379} {
     font-size: 1.3rem;
   }
 `;
