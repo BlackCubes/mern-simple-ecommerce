@@ -64,6 +64,10 @@ export const ProductDetailsBottomContainerStyled = styled.div`
     flex-direction: column;
     align-items: center;
   }
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    margin-bottom: 3rem;
+  }
 `;
 
 export const ProductDetailsInfoStyled = styled.div`
@@ -73,6 +77,11 @@ export const ProductDetailsInfoStyled = styled.div`
 
   @media ${(props) => props.theme.responsive.below_479} {
     width: 95%;
+  }
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 `;
 
@@ -135,6 +144,11 @@ export const ProductDetailsDescriptionStyled = styled.div`
     padding-left: 1rem;
     padding-right: 1rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    padding-left: 0;
+    padding-right: 0;
+  }
 `;
 
 export const ProductDetailsDescriptionHeaderStyled = styled.div`
@@ -144,6 +158,11 @@ export const ProductDetailsDescriptionHeaderStyled = styled.div`
 
   & h4 {
     font-weight: 400;
+  }
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 `;
 
@@ -170,6 +189,11 @@ export const ProductDetailsReviewsStyled = styled.div`
     padding-left: 1rem;
     padding-right: 1rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    padding-left: 0;
+    padding-right: 0;
+  }
 `;
 
 export const ProductDetailsReviewsHeaderStyled = styled.div`
@@ -183,6 +207,11 @@ export const ProductDetailsReviewsHeaderStyled = styled.div`
 
   @media ${(props) => props.theme.responsive.below_599} {
     padding-bottom: 1rem;
+  }
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    padding-top: 1rem;
+    padding-bottom: 0;
   }
 `;
 
