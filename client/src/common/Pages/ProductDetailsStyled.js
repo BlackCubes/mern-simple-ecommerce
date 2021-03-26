@@ -256,6 +256,10 @@ export const ProductDetailsReviewRightColStyled = styled.div`
     float: none;
     margin-top: 1.5rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    margin-top: 1rem;
+  }
 `;
 
 export const ProductDetailsReviewRatingStyled = styled.div`
@@ -271,6 +275,10 @@ export const ProductDetailsReviewRatingStyled = styled.div`
       width: 1.8rem;
       height: 1.8rem;
     }
+  }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    margin-bottom: 0.5rem;
   }
 `;
 
@@ -296,4 +304,8 @@ export const ProductDetailsReviewUserStyled = styled.div`
 
 export const ProductDetailsReviewDescriptionStyled = styled.div`
   margin-top: 2rem;
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    margin-top: 1rem;
+  }
 `;
