@@ -46,4 +46,8 @@ export default styled.input`
   @media ${(props) => props.theme.responsive.below_599} {
     padding: 1.3rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    padding: 1rem;
+  }
 `;
