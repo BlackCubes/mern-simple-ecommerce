@@ -6,4 +6,8 @@ export default styled.span`
   margin-top: 0.5rem;
   text-align: left;
   transition: all 0.3s;
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    font-size: 0.75rem;
+  }
 `;
