@@ -36,6 +36,11 @@ export const ModalContainerStyled = styled.div`
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    padding-left: 0;
+    padding-right: 0;
+  }
 `;
 
 export const ModalStyled = styled.div`
@@ -62,10 +67,18 @@ export const ModalStyled = styled.div`
     width: 95%;
     padding: 1.3rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    padding: 1rem;
+  }
 `;
 
 export const ModalHeaderStyled = styled.div`
   margin-bottom: 1rem;
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    padding-left: 0.75rem;
+  }
 `;
 
 export const ModalBodyStyled = styled.div`
