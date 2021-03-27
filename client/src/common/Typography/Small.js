@@ -22,7 +22,7 @@ const SmallStyled = styled.small`
     font-size: 1.2rem;
   }
 
-  @media ${(props) => props.theme.responsive_599} {
+  @media ${(props) => props.theme.responsive.below_599} {
     font-size: 1.15rem;
   }
 
