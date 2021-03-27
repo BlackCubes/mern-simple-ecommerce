@@ -15,4 +15,9 @@ export default styled.svg.attrs({
     width: 2rem;
     height: 2rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
 `;
