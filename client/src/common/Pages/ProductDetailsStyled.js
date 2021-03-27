@@ -333,6 +333,10 @@ export const ProductDetailsReviewUserStyled = styled.div`
     @media ${(props) => props.theme.responsive.below_479} {
       font-size: 1.2rem;
     }
+
+    @media ${(props) => props.theme.responsive.below_379} {
+      font-size: 1.1rem;
+    }
   }
 `;
 
