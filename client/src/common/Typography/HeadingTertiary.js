@@ -17,6 +17,10 @@ const HeadingTertiaryStyled = styled.h3`
   @media ${(props) => props.theme.responsive.below_479} {
     font-size: 1.7rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    font-size: 1.5rem;
+  }
 `;
 
 const HeadingTertiary = ({ children, fontweighttype }) => (
