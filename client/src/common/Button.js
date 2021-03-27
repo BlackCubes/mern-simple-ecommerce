@@ -65,6 +65,7 @@ const ButtonStyled = styled.button`
 
   @media ${(props) => props.theme.responsive.below_379} {
     font-size: 1.3rem;
+    padding: 1rem;
   }
 `;
 
