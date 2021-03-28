@@ -155,6 +155,12 @@ export const CheckoutShippingOptionsListItemStyled = styled.div`
   margin-top: 2rem;
   padding-right: 0.4rem;
 
+  & small {
+    @media ${(props) => props.theme.responsive.below_379} {
+      font-size: 0.9rem;
+    }
+  }
+
   @media ${(props) => props.theme.responsive.below_899} {
     padding-right: 4rem;
   }
