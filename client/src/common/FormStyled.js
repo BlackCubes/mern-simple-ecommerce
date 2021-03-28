@@ -42,6 +42,9 @@ export const FormGroupStyled = styled.div(
         width: 'calc(100% / 3)',
       },
     },
+    '@media only screen and (max-width: 29.9375em)': {
+      margin: '1rem 0',
+    },
   },
   ({ addlstyle }) => addlstyle
 );
