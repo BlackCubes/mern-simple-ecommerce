@@ -370,7 +370,7 @@ export const CheckoutOrderSummarySubtotalStyled = styled.div`
     }
 
     &:not(:last-child) {
-      @media ${(props) => props.theme.responsive.below_479} {
+      @media ${(props) => props.theme.responsive.below_899} {
         margin-right: 0.5rem;
       }
     }
