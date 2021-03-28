@@ -21,6 +21,10 @@ export const CheckoutPrimaryStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_899} {
     width: 57%;
   }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    width: 50%;
+  }
 `;
 
 export const CheckoutPageHeaderStyled = styled.div`
@@ -28,6 +32,10 @@ export const CheckoutPageHeaderStyled = styled.div`
 
   & h2 {
     line-height: 3.3rem;
+  }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    padding-left: 1rem;
   }
 `;
 
@@ -39,6 +47,10 @@ export const CheckoutShippingCardStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_899} {
     padding: 0;
   }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    margin: 3rem 0.5rem;
+  }
 `;
 
 export const CheckoutShippingCardHeaderStyled = styled.div`
@@ -46,6 +58,10 @@ export const CheckoutShippingCardHeaderStyled = styled.div`
 
   & h4 {
     font-weight: 600;
+  }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    text-align: center;
   }
 `;
 
@@ -58,6 +74,14 @@ export const CheckoutShippingInfoSavedStyled = styled.div`
 
   & p {
     font-size: 1.4rem;
+
+    @media ${(props) => props.theme.responsive.below_479} {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    text-align: center;
   }
 `;
 
@@ -125,6 +149,11 @@ export const CheckoutCardColStyled = styled.div`
 
   @media ${(props) => props.theme.responsive.below_899} {
     width: 100%;
+  }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 `;
 
