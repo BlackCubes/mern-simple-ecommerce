@@ -245,6 +245,10 @@ export const CheckoutOrderStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_479} {
     padding: 2rem 0.5rem 0;
   }
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    padding: 2rem 0.75rem 0;
+  }
 `;
 
 export const CheckoutOrderHeaderStyled = styled.div`
