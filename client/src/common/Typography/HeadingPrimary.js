@@ -19,6 +19,10 @@ const HeadingPrimaryStyled = styled.h1`
   @media ${(props) => props.theme.responsive.below_479} {
     font-size: 3rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    font-size: 2.7rem;
+  }
 `;
 
 const HeadingPrimary = ({ children, fontweight, textcolor }) => (
