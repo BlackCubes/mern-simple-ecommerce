@@ -398,7 +398,7 @@ const CheckoutPage = ({ FormContainerComponent }) => {
 
         <CheckoutShippingCardStyled>
           <CheckoutCardRowStyled>
-            <CheckoutCardColStyled className="checkout-submit-btn">
+            <CheckoutCardColStyled>
               <Button
                 rest={{
                   type: 'button',
