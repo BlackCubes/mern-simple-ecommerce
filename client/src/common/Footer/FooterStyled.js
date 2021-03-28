@@ -60,6 +60,10 @@ export const FooterFollowItemStyled = styled.li`
       color: inherit;
       text-decoration: none;
     }
+
+    @media ${(props) => props.theme.responsive.below_479} {
+      padding: 0.4rem;
+    }
   }
 
   & svg {
