@@ -22,6 +22,10 @@ export const FooterFollowHeaderStyled = styled.div`
   font-size: 1.6rem;
   text-transform: uppercase;
   padding-bottom: 1rem;
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    font-size: 1.5rem;
+  }
 `;
 
 export const FooterFollowNavigationStyled = styled.div`
@@ -54,6 +58,12 @@ export const FooterFollowItemStyled = styled.li`
     font-size: 3.2rem;
     width: 3.1rem;
     height: 3.1rem;
+
+    @media ${(props) => props.theme.responsive.below_899} {
+      font-size: 2.7rem;
+      width: 2.6rem;
+      height: 2.6rem;
+    }
   }
 `;
 
@@ -75,6 +85,12 @@ export const FooterCopyrightContentStyled = styled.div`
   padding: 1.5rem 0;
   line-height: 2;
   text-align: center;
+
+  & small {
+    @media ${(props) => props.theme.responsive.below_899} {
+      font-size: 0.8rem;
+    }
+  }
 
   & a {
     color: ${(props) => props.theme.colors.white};
