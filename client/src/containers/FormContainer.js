@@ -86,6 +86,7 @@ const FormContainer = ({
     fieldInputProperties({
       type: prop.type,
       name: prop.name,
+      groupClassName: prop.groupClassName,
       id: prop.id,
       errors: errors,
       values: values,
@@ -141,7 +142,11 @@ const FormContainer = ({
       {inputProperties.map((prop, key) => {
         const ind = key;
         return (
-          <FormGroupStyled key={ind} addlstyle={prop.addlstyle}>
+          <FormGroupStyled
+            key={ind}
+            className={prop.groupClassName}
+            addlstyle={prop.addlstyle}
+          >
             <Inputs inputprop={prop} error={inputErrors[key]} />
           </FormGroupStyled>
         );
