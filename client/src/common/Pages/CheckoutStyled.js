@@ -207,10 +207,6 @@ export const CheckoutSecondaryStyled = styled.div`
 export const CheckoutOrderStyled = styled.div`
   padding: 0.5rem 1.5rem 0;
 
-  @media ${(props) => props.theme.responsive.below_599} {
-    padding: 1.5rem 1.5rem 0;
-  }
-
   @media ${(props) => props.theme.responsive.below_479} {
     padding: 2rem 1.5rem 0;
   }
