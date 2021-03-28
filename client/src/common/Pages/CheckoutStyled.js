@@ -189,6 +189,10 @@ export const CheckoutSecondaryStyled = styled.div`
     padding-left: 0;
     padding-right: 0;
   }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    width: 50%;
+  }
 `;
 
 export const CheckoutOrderStyled = styled.div`
@@ -196,6 +200,10 @@ export const CheckoutOrderStyled = styled.div`
 
   @media ${(props) => props.theme.responsive.below_599} {
     padding: 1.5rem 1.5rem 0;
+  }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    padding: 5rem 1.5rem 0;
   }
 `;
 
@@ -224,6 +232,10 @@ export const CheckoutOrderSummaryShippingStyled = styled.div`
   & p:not(:first-child) {
     @media ${(props) => props.theme.responsive.below_599} {
       font-size: 1.3rem;
+    }
+
+    @media ${(props) => props.theme.responsive.below_479} {
+      font-size: 1.2rem;
     }
   }
 
@@ -287,6 +299,11 @@ export const CheckoutOrderSummaryItemListImgStyled = styled.div`
     margin-left: auto;
     margin-right: auto;
     padding-right: 0;
+  }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    width: 4rem;
+    height: 4.8rem;
   }
 `;
 
