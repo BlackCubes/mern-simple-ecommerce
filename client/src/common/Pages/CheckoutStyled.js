@@ -164,6 +164,7 @@ export const CheckoutCardColStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_479} {
     padding-left: 1rem;
     padding-right: 1rem;
+    text-align: center;
   }
 `;
 
