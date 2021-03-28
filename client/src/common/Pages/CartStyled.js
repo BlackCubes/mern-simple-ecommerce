@@ -230,7 +230,7 @@ export const CartCardRaiseLowerStyled = styled.div`
     }
 
     @media ${(props) => props.theme.responsive.below_479} {
-      width: 30%;
+      width: 40%;
       padding: 1rem;
     }
   }
