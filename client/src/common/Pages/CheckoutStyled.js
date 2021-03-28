@@ -46,6 +46,11 @@ export const CheckoutPageHeaderStyled = styled.div`
     min-width: 24rem;
     padding-left: 1rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    min-width: 19rem;
+    padding-left: 0.5rem;
+  }
 `;
 
 export const CheckoutShippingCardStyled = styled.div`
@@ -87,6 +92,10 @@ export const CheckoutShippingInfoSavedStyled = styled.div`
     @media ${(props) => props.theme.responsive.below_479} {
       font-size: 1.2rem;
     }
+
+    @media ${(props) => props.theme.responsive.below_379} {
+      font-size: 1rem;
+    }
   }
 
   @media ${(props) => props.theme.responsive.below_479} {
@@ -108,6 +117,10 @@ export const CheckoutShippingInfoAddStyled = styled.div`
   & button {
     @media ${(props) => props.theme.responsive.below_599} {
       padding: 0;
+    }
+
+    @media ${(props) => props.theme.responsive.below_379} {
+      font-size: 1.1rem;
     }
   }
 
