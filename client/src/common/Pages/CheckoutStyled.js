@@ -241,6 +241,10 @@ export const CheckoutOrderStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_479} {
     padding: 2rem 1.5rem 0;
   }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    padding: 2rem 0.5rem 0;
+  }
 `;
 
 export const CheckoutOrderHeaderStyled = styled.div`
@@ -273,6 +277,10 @@ export const CheckoutOrderSummaryShippingStyled = styled.div`
     @media ${(props) => props.theme.responsive.below_479} {
       font-size: 1.2rem;
     }
+
+    @media ${(props) => props.theme.responsive.below_379} {
+      font-size: 1rem;
+    }
   }
 
   @media ${(props) => props.theme.responsive.below_899} {
@@ -297,6 +305,10 @@ export const CheckoutOrderSummaryItemListStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_479} {
     margin-top: 1.5rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    margin-top: 1.3rem;
+  }
 `;
 
 export const CheckoutOrderSummaryItemListAvailableStyled = styled.div`
@@ -305,6 +317,10 @@ export const CheckoutOrderSummaryItemListAvailableStyled = styled.div`
 
   @media ${(props) => props.theme.responsive.below_899} {
     text-align: center;
+  }
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    padding-bottom: 0;
   }
 `;
 
@@ -331,6 +347,10 @@ export const CheckoutOrderSummaryItemListCellStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_479} {
     margin-top: 0.7rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    margin-top: 0.5rem;
+  }
 `;
 
 export const CheckoutOrderSummaryItemListImgStyled = styled.div`
@@ -348,6 +368,11 @@ export const CheckoutOrderSummaryItemListImgStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_479} {
     width: 4rem;
     height: 4.8rem;
+  }
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    width: 3rem;
+    height: 3.8rem;
   }
 `;
 
@@ -388,6 +413,10 @@ export const CheckoutHRStyled = styled.hr`
   @media ${(props) => props.theme.responsive.below_899} {
     margin: 1rem 0;
   }
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    margin: 0.5rem 0;
+  }
 `;
 
 export const CheckoutOrderSummarySubtotalStyled = styled.div`
@@ -402,6 +431,10 @@ export const CheckoutOrderSummarySubtotalStyled = styled.div`
 
     @media ${(props) => props.theme.responsive.below_599} {
       font-size: 1rem;
+    }
+
+    @media ${(props) => props.theme.responsive.below_379} {
+      font-size: 0.9rem;
     }
 
     &:not(:last-child) {
