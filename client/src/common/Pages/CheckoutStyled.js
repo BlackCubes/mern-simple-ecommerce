@@ -34,6 +34,10 @@ export const CheckoutPageHeaderStyled = styled.div`
     line-height: 3.3rem;
   }
 
+  @media ${(props) => props.theme.responsive.below_899} {
+    min-width: 35rem;
+  }
+
   @media ${(props) => props.theme.responsive.below_599} {
     min-width: 35rem;
   }
