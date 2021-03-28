@@ -8,6 +8,10 @@ export const CartStyled = styled.div`
 
 export const CartLeftContainerStyled = styled.div`
   width: 75%;
+
+  @media ${(props) => props.theme.responsive.below_1199} {
+    width: 65%;
+  }
 `;
 
 export const CartRightContainerStyled = styled.div`
