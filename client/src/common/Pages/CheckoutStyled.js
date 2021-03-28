@@ -175,6 +175,12 @@ export const CheckoutOrderSummaryShippingStyled = styled.div`
   float: left;
   margin: 1rem 0;
 
+  & p:not(:first-child) {
+    @media ${(props) => props.theme.responsive.below_599} {
+      font-size: 1.3rem;
+    }
+  }
+
   @media ${(props) => props.theme.responsive.below_899} {
     float: none;
     text-align: center;
