@@ -120,6 +120,10 @@ export const CheckoutCreditCardStyled = styled.div`
     transform: translateX(-5.5rem);
   }
 
+  @media ${(props) => props.theme.responsive.below_599} {
+    transform: translateX(-4rem);
+  }
+
   @media ${(props) => props.theme.responsive.below_479} {
     transform: translateX(-2.5rem);
   }
