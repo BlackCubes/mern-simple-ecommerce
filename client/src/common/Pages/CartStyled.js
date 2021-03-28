@@ -25,7 +25,7 @@ export const CartLeftContainerStyled = styled.div`
     width: 65%;
   }
 
-  @media ${(props) => props.theme.responsive.belo_899} {
+  @media ${(props) => props.theme.responsive.below_899} {
     width: 55%;
   }
 
