@@ -164,6 +164,10 @@ export const CartCardRaiseLowerStyled = styled.div`
 
 export const CartCardRemoveStyled = styled.div`
   margin-top: 1rem;
+
+  & button {
+    padding: 1.3rem;
+  }
 `;
 
 export const CartCardPriceStyled = styled.div`
