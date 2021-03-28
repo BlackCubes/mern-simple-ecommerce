@@ -12,6 +12,10 @@ export const CartStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_479} {
     padding-left: 1rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    padding-left: 0;
+  }
 `;
 
 export const CartLeftContainerStyled = styled.div`
@@ -58,6 +62,10 @@ export const CartCardStyled = styled.div`
 
   @media ${(props) => props.theme.responsive.below_479} {
     padding: 1rem;
+  }
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    padding: 0.5rem;
   }
 `;
 
