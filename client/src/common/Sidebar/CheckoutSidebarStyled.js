@@ -8,6 +8,10 @@ export const CheckoutSidebarStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_899} {
     padding: 2.4rem 2.4rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    padding: 2.4rem 2.2rem;
+  }
 `;
 
 export const CheckoutSidebarHeaderStyled = styled.div`
