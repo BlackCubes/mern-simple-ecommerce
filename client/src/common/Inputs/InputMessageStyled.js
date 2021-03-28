@@ -20,6 +20,6 @@ export default styled.span`
   }
 
   @media ${(props) => props.theme.responsive.below_379} {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
   }
 `;
