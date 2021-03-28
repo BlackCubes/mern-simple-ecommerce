@@ -4,6 +4,10 @@ export const CheckoutStyled = styled.div`
   width: 100rem;
   margin: 0 auto;
   padding: 1.5rem;
+
+  @media ${(props) => props.theme.responsive.below_1199} {
+    width: 100%;
+  }
 `;
 
 export const CheckoutPrimaryStyled = styled.div`
