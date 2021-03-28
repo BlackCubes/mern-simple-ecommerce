@@ -4,6 +4,10 @@ export const CartStyled = styled.div`
   display: flex;
   width: 100%;
   padding-left: 4rem;
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    padding-left: 2rem;
+  }
 `;
 
 export const CartLeftContainerStyled = styled.div`
@@ -11,6 +15,10 @@ export const CartLeftContainerStyled = styled.div`
 
   @media ${(props) => props.theme.responsive.below_1199} {
     width: 65%;
+  }
+
+  @media ${(props) => props.theme.responsive.belo_899} {
+    width: 55%;
   }
 `;
 
@@ -27,6 +35,10 @@ export const CartCardStyled = styled.div`
   display: flex;
   margin-bottom: 2.4rem;
   padding: 2.4rem;
+
+  @media ${(props) => props.theme.responsive.belo_899} {
+    flex-direction: column;
+  }
 `;
 
 export const CartCardDetailsStyled = styled.div`
@@ -35,6 +47,10 @@ export const CartCardDetailsStyled = styled.div`
 
   @media ${(props) => props.theme.responsive.below_1199} {
     width: 37%;
+  }
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    width: 100%;
   }
 `;
 
@@ -48,6 +64,10 @@ export const CartCardDetailsImageStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_1199} {
     width: 3rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    width: 7rem;
+  }
 `;
 
 export const CartCardDetailsTitleStyled = styled.div`
@@ -60,6 +80,10 @@ export const CartCardDetailsTitleStyled = styled.div`
     padding-left: 1rem;
     padding-right: 1rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    width: calc(100% - 7rem);
+  }
 `;
 
 export const CartCardShippingStyled = styled.div`
@@ -68,14 +92,31 @@ export const CartCardShippingStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_1199} {
     width: 20%;
   }
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 `;
 
 export const CartCardShippingTypeStyled = styled.div`
   margin-bottom: 1rem;
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    margin-bottom: 0;
+  }
 `;
 
 export const CartCardShippingInfoStyled = styled.div`
   margin-left: 0.5rem;
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    margin-left: 0;
+  }
 `;
 
 export const CartCardActionStyled = styled.div`
@@ -85,6 +126,11 @@ export const CartCardActionStyled = styled.div`
     width: 30%;
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    width: 100%;
+    margin-top: 1.5rem;
   }
 `;
 
@@ -119,5 +165,12 @@ export const CartCardPriceStyled = styled.div`
 
   @media ${(props) => props.theme.responsive.below_1199} {
     width: 14%;
+  }
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 `;
