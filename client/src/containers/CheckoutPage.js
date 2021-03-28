@@ -98,6 +98,7 @@ const addressFormFields = [
   {
     type: 'text',
     name: 'city',
+    groupClassName: 'tri-field-1',
     id: 'city',
     placeholder: 'City',
     message: "Let's go!",
@@ -111,6 +112,7 @@ const addressFormFields = [
   {
     type: 'text',
     name: 'state',
+    groupClassName: 'tri-field-2',
     id: 'state',
     placeholder: 'State',
     message: "Let's go!",
@@ -124,6 +126,7 @@ const addressFormFields = [
   {
     type: 'tel',
     name: 'zipcode',
+    groupClassName: 'tri-field-3',
     id: 'zipcode',
     placeholder: 'ZIP Code',
     message: "Let's go!",
