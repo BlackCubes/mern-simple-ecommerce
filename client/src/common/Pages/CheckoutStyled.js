@@ -115,6 +115,10 @@ export const CheckoutCreditCardStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_479} {
     transform: translateX(-2.5rem);
   }
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    transform: translateX(-2rem);
+  }
 `;
 
 export const CheckoutShippingInfoAddStyled = styled.div`
