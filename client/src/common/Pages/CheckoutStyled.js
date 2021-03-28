@@ -119,8 +119,10 @@ export const CheckoutShippingInfoAddStyled = styled.div`
       padding: 0;
     }
 
-    @media ${(props) => props.theme.responsive.below_379} {
-      font-size: 1.1rem;
+    & span {
+      @media ${(props) => props.theme.responsive.below_379} {
+        font-size: 1.1rem;
+      }
     }
   }
 
