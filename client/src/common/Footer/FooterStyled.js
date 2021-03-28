@@ -26,6 +26,10 @@ export const FooterFollowHeaderStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_899} {
     font-size: 1.5rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_599} {
+    font-size: 1.4rem;
+  }
 `;
 
 export const FooterFollowNavigationStyled = styled.div`
@@ -63,6 +67,12 @@ export const FooterFollowItemStyled = styled.li`
       font-size: 2.7rem;
       width: 2.6rem;
       height: 2.6rem;
+    }
+
+    @media ${(props) => props.theme.responsive.below_599} {
+      font-size: 2.2rem;
+      width: 2.1rem;
+      height: 2.1rem;
     }
   }
 `;
