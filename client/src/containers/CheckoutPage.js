@@ -381,7 +381,10 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                     <Paragraph>No Credit Card</Paragraph>
                   ) : (
                     <CheckoutCreditCardStyled>
-                      <CreditCard transformscaletype={0.6}>
+                      <CreditCard
+                        className="user-card"
+                        transformscaletype={0.6}
+                      >
                         <Card
                           number={formatCreditCardNumOutput(creditCard.number)}
                           name={creditCard.fullname}
