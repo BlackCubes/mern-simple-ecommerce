@@ -35,6 +35,7 @@ export const CheckoutPageHeaderStyled = styled.div`
   }
 
   @media ${(props) => props.theme.responsive.below_479} {
+    width: 24rem;
     padding-left: 1rem;
   }
 `;
@@ -203,7 +204,7 @@ export const CheckoutOrderStyled = styled.div`
   }
 
   @media ${(props) => props.theme.responsive.below_479} {
-    padding: 5rem 1.5rem 0;
+    padding: 2rem 1.5rem 0;
   }
 `;
 
