@@ -14,7 +14,7 @@ export const FormGroupStyled = styled.div(
         width: 'calc(100% / 2.5)',
       },
       '@media only screen and (max-width: 29.9375em)': {
-        width: 'calc(100% / 2.8)',
+        width: 'calc(100% / 2.3)',
       },
     },
     '&.tri-field-2': {
@@ -30,7 +30,7 @@ export const FormGroupStyled = styled.div(
         width: 'calc(100% / 3)',
       },
       '@media only screen and (max-width: 29.9375em)': {
-        width: 'calc(100% / 2.7)',
+        width: 'calc(100% / 3.5)',
       },
     },
   },
