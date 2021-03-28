@@ -342,6 +342,14 @@ export const CheckoutOrderSummaryItemListCellStyled = styled.div`
     }
   }
 
+  & button {
+    & span {
+      @media ${(props) => props.theme.responsive.below_379} {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
   @media ${(props) => props.theme.responsive.below_899} {
     text-align: center;
   }
