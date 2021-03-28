@@ -4,6 +4,10 @@ export const CheckoutSidebarStyled = styled.div`
   position: sticky;
   top: 0;
   padding: 2.4rem 4rem;
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    padding: 2.4rem 2.4rem;
+  }
 `;
 
 export const CheckoutSidebarHeaderStyled = styled.div`
