@@ -116,6 +116,10 @@ export const CheckoutCreditCardStyled = styled.div`
     }
   }
 
+  @media ${(props) => props.theme.responsive.below_899} {
+    transform: translateX(-5.5rem);
+  }
+
   @media ${(props) => props.theme.responsive.below_479} {
     transform: translateX(-2.5rem);
   }
