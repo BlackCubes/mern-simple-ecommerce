@@ -137,6 +137,10 @@ export const CheckoutOrderStyled = styled.div`
 export const CheckoutOrderHeaderStyled = styled.div`
   padding-top: 1rem;
   margin-bottom: 1rem;
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    text-align: center;
+  }
 `;
 
 export const CheckoutOrderSummaryStyled = styled.div`
@@ -151,6 +155,11 @@ export const CheckoutOrderSummaryListStyled = styled.div`
 export const CheckoutOrderSummaryShippingStyled = styled.div`
   float: left;
   margin: 1rem 0;
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    float: none;
+    text-align: center;
+  }
 `;
 
 export const CheckoutOrderSummaryItemListStyled = styled.div`
@@ -195,8 +204,10 @@ export const CheckoutOrderSummaryItemListImgStyled = styled.div`
   padding-right: 0.8rem;
 
   @media ${(props) => props.theme.responsive.below_899} {
+    height: 5.8rem;
     margin-left: auto;
     margin-right: auto;
+    padding-right: 0;
   }
 `;
 
