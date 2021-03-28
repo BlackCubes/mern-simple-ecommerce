@@ -15,6 +15,10 @@ export default styled.span`
     font-size: 0.85rem;
   }
 
+  @media ${(props) => props.theme.responsive.below_479} {
+    font-size: 0.8rem;
+  }
+
   @media ${(props) => props.theme.responsive.below_379} {
     font-size: 0.75rem;
   }
