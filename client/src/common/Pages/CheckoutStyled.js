@@ -283,7 +283,9 @@ export const CheckoutOrderSummarySubtotalStyled = styled.div`
   padding-bottom: 0.5rem;
 
   & small {
-    font-size: 1.1rem;
+    @media ${(props) => props.theme.responsive.below_899} {
+      font-size: 1.1rem;
+    }
   }
 `;
 
