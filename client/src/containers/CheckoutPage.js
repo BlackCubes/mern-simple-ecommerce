@@ -128,7 +128,7 @@ const addressFormFields = [
     name: 'zipcode',
     groupClassName: 'tri-field-3',
     id: 'zipcode',
-    placeholder: 'ZIP Code',
+    placeholder: 'ZIP',
     message: "Let's go!",
     addlstyle: {
       width: 'calc(100% / 4)',
