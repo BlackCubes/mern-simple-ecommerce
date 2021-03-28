@@ -403,7 +403,7 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                 rest={{
                   type: 'button',
                   onClick: onFinalSubmission,
-                  className: 'checkoutSubmitBtn',
+                  className: 'checkout-submit-btn',
                 }}
               >
                 Place Your Order
