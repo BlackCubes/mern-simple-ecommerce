@@ -219,6 +219,7 @@ export const CheckoutOrderSummaryItemListCellBigStyled = styled(
 
   @media ${(props) => props.theme.responsive.below_899} {
     padding-right: 0;
+    text-align: center;
   }
 `;
 
