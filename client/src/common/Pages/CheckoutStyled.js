@@ -218,6 +218,8 @@ export const CheckoutOrderSummaryItemListCellBigStyled = styled(
   }
 
   @media ${(props) => props.theme.responsive.below_899} {
+    margin-left: auto;
+    margin-right: auto;
     padding-right: 0;
     text-align: center;
   }
