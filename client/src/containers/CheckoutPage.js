@@ -487,7 +487,7 @@ const CheckoutPage = ({ FormContainerComponent }) => {
                           nonbtn: true,
                         }}
                       >
-                        Remove
+                        <span>Remove</span>
                       </Button>
                     </CheckoutOrderSummaryItemListCellStyled>
                   </CheckoutOrderSummaryItemListStyled>
