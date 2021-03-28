@@ -51,6 +51,10 @@ export const NavbarLogoStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_599} {
     width: 6rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    width: 4rem;
+  }
 `;
 
 export const NavbarMenuHolderStyled = styled.div`
@@ -97,6 +101,14 @@ export const NavbarMenuListItemStyled = styled.li`
       font-size: 1.6rem;
       padding: 0.7rem;
     }
+
+    @media ${(props) => props.theme.responsive.below_479} {
+      font-size: 1.3rem;
+    }
+  }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    margin-right: 0;
   }
 `;
 
@@ -112,6 +124,11 @@ export const NavbarCartImageStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_599} {
     width: 2.7rem;
     height: 2.7rem;
+  }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    width: 2.3rem;
+    height: 2.3rem;
   }
 `;
 
@@ -141,5 +158,10 @@ export const NavbarCartQuantityStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_599} {
     width: 1.6rem;
     height: 1.6rem;
+  }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    width: 1.4rem;
+    height: 1.4rem;
   }
 `;
