@@ -7,6 +7,10 @@ const HeadingPrimaryStyled = styled.h1`
   font-weight: ${(props) => props.fontweight || '400'};
   color: ${(props) =>
     props.textcolor ? props.theme.colors[props.textcolor] : 'inherit'};
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    font-size: 3.5rem;
+  }
 `;
 
 const HeadingPrimary = ({ children, fontweight, textcolor }) => (
