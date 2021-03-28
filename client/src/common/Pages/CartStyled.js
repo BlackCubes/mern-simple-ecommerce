@@ -28,6 +28,10 @@ export const CartCardStyled = styled.div`
 export const CartCardDetailsStyled = styled.div`
   display: flex;
   width: 42%;
+
+  @media ${(props) => props.theme.responsive.below_1199} {
+    width: 37%;
+  }
 `;
 
 export const CartCardDetailsImageStyled = styled.div`
@@ -36,16 +40,30 @@ export const CartCardDetailsImageStyled = styled.div`
   & > a {
     display: block;
   }
+
+  @media ${(props) => props.theme.responsive.below_1199} {
+    width: 3rem;
+  }
 `;
 
 export const CartCardDetailsTitleStyled = styled.div`
   width: calc(100% - 10rem);
   padding-left: 3rem;
   padding-right: 3rem;
+
+  @media ${(props) => props.theme.responsive.below_1199} {
+    width: calc(100% - 3rem);
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 `;
 
 export const CartCardShippingStyled = styled.div`
   width: 13%;
+
+  @media ${(props) => props.theme.responsive.below_1199} {
+    width: 20%;
+  }
 `;
 
 export const CartCardShippingTypeStyled = styled.div`
@@ -58,6 +76,12 @@ export const CartCardShippingInfoStyled = styled.div`
 
 export const CartCardActionStyled = styled.div`
   width: 20%;
+
+  @media ${(props) => props.theme.responsive.below_1199} {
+    width: 30%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 `;
 
 export const CartCardQuantityStyled = styled.div`
@@ -88,4 +112,8 @@ export const CartCardRemoveStyled = styled.div`
 export const CartCardPriceStyled = styled.div`
   width: 17%;
   text-align: right;
+
+  @media ${(props) => props.theme.responsive.below_1199} {
+    width: 14%;
+  }
 `;
