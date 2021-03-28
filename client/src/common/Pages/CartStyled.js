@@ -8,6 +8,10 @@ export const CartStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_899} {
     padding-left: 2rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    padding-left: 1rem;
+  }
 `;
 
 export const CartLeftContainerStyled = styled.div`
@@ -24,6 +28,10 @@ export const CartLeftContainerStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_599} {
     width: 52%;
   }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    width: 50%;
+  }
 `;
 
 export const CartRightContainerStyled = styled.div`
@@ -33,6 +41,10 @@ export const CartRightContainerStyled = styled.div`
 export const CartTitlePageStyled = styled.div`
   margin-top: 2.5rem;
   margin-bottom: 1.6rem;
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    text-align: center;
+  }
 `;
 
 export const CartCardStyled = styled.div`
@@ -42,6 +54,10 @@ export const CartCardStyled = styled.div`
 
   @media ${(props) => props.theme.responsive.belo_899} {
     flex-direction: column;
+  }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    padding: 1rem;
   }
 `;
 
@@ -55,6 +71,10 @@ export const CartCardDetailsStyled = styled.div`
 
   @media ${(props) => props.theme.responsive.below_899} {
     width: 100%;
+  }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    flex-direction: column;
   }
 `;
 
@@ -76,6 +96,12 @@ export const CartCardDetailsImageStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_599} {
     width: 5rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
 
 export const CartCardDetailsTitleStyled = styled.div`
@@ -96,6 +122,12 @@ export const CartCardDetailsTitleStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_599} {
     width: calc(100% - 5rem);
   }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    width: 100%;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
 `;
 
 export const CartCardShippingStyled = styled.div`
@@ -113,6 +145,10 @@ export const CartCardShippingStyled = styled.div`
     padding-left: 1rem;
     padding-right: 1rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    flex-direction: column;
+  }
 `;
 
 export const CartCardShippingTypeStyled = styled.div`
@@ -120,6 +156,10 @@ export const CartCardShippingTypeStyled = styled.div`
 
   @media ${(props) => props.theme.responsive.below_899} {
     margin-bottom: 0;
+  }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    text-align: center;
   }
 `;
 
@@ -132,6 +172,10 @@ export const CartCardShippingInfoStyled = styled.div`
 
   @media ${(props) => props.theme.responsive.below_599} {
     text-align: right;
+  }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    text-align: center;
   }
 `;
 
@@ -147,6 +191,10 @@ export const CartCardActionStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_899} {
     width: 100%;
     margin-top: 1.5rem;
+  }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    margin-top: 1rem;
   }
 `;
 
@@ -179,6 +227,11 @@ export const CartCardRaiseLowerStyled = styled.div`
     @media ${(props) => props.theme.responsive.below_899} {
       width: 30%;
       padding: 1.3rem;
+    }
+
+    @media ${(props) => props.theme.responsive.below_479} {
+      width: 30%;
+      padding: 1rem;
     }
   }
 `;
