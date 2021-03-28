@@ -71,6 +71,16 @@ export const CheckoutShippingInfoAddStyled = styled.div`
   & span {
     font-size: 1.3rem !important;
   }
+
+  & button {
+    @media ${(props) => props.theme.responsive.below_599} {
+      padding: 0;
+    }
+  }
+
+  @media ${(props) => props.theme.responsive.below_599} {
+    margin-bottom: 1rem;
+  }
 `;
 
 export const CheckoutShippingOptionsStyled = styled.div`
@@ -128,10 +138,19 @@ export const CheckoutSecondaryStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_899} {
     width: 43%;
   }
+
+  @media ${(props) => props.theme.responsive.below_599} {
+    padding-left: 0;
+    padding-right: 0;
+  }
 `;
 
 export const CheckoutOrderStyled = styled.div`
   padding: 0.5rem 1.5rem 0;
+
+  @media ${(props) => props.theme.responsive.below_599} {
+    padding: 1.5rem 1.5rem 0;
+  }
 `;
 
 export const CheckoutOrderHeaderStyled = styled.div`
@@ -170,6 +189,10 @@ export const CheckoutOrderSummaryItemListStyled = styled.div`
     display: flex;
     flex-direction: column;
   }
+
+  @media ${(props) => props.theme.responsive.below_599} {
+    margin-top: 1rem;
+  }
 `;
 
 export const CheckoutOrderSummaryItemListAvailableStyled = styled.div`
@@ -195,6 +218,10 @@ export const CheckoutOrderSummaryItemListCellStyled = styled.div`
 
   @media ${(props) => props.theme.responsive.below_899} {
     text-align: center;
+  }
+
+  @media ${(props) => props.theme.responsive.below_599} {
+    margin-top: 0.5rem;
   }
 `;
 
