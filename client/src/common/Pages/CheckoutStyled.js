@@ -257,6 +257,10 @@ export const CheckoutOrderSummaryItemListStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_599} {
     margin-top: 1rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    margin-top: 1.5rem;
+  }
 `;
 
 export const CheckoutOrderSummaryItemListAvailableStyled = styled.div`
@@ -286,6 +290,10 @@ export const CheckoutOrderSummaryItemListCellStyled = styled.div`
 
   @media ${(props) => props.theme.responsive.below_599} {
     margin-top: 0.5rem;
+  }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    margin-top: 0.7rem;
   }
 `;
 
