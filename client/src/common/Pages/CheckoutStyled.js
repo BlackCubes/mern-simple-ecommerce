@@ -85,6 +85,10 @@ export const CheckoutShippingOptionsListItemStyled = styled.div`
   position: relative;
   margin-top: 2rem;
   padding-right: 0.4rem;
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    padding-right: 4rem;
+  }
 `;
 
 export const CheckoutShippingOptionsListPriceStyled = styled.div`
