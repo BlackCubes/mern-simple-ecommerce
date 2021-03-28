@@ -106,7 +106,7 @@ export const CheckoutShippingInfoSavedStyled = styled.div`
 export const CheckoutCreditCardStyled = styled.div`
   transform: translateX(-4rem);
 
-  &.user-card {
+  & .user-card {
     @media ${(props) => props.theme.responsive.below_479} {
       transform: scale(0.5);
     }
