@@ -15,6 +15,10 @@ export const SidebarStyled = styled.div`
     @media ${(props) => props.theme.responsive.below_1199} {
       width: 35%;
     }
+
+    @media ${(props) => props.theme.responsive.below_899} {
+      width: 45%;
+    }
   }
 
   @media ${(props) => props.theme.responsive.below_1199} {
