@@ -109,6 +109,12 @@ export const CheckoutShippingInfoAddStyled = styled.div`
 
 export const CheckoutShippingOptionsStyled = styled.div`
   margin: 1rem 0 2rem;
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
+  }
 `;
 
 export const CheckoutShippingOptionsHeaderStyled = styled.div`
@@ -122,6 +128,10 @@ export const CheckoutShippingOptionsListItemStyled = styled.div`
 
   @media ${(props) => props.theme.responsive.below_899} {
     padding-right: 4rem;
+  }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    padding-right: 0;
   }
 `;
 
