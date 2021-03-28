@@ -105,6 +105,16 @@ export const CheckoutShippingInfoSavedStyled = styled.div`
 
 export const CheckoutCreditCardStyled = styled.div`
   transform: translateX(-4rem);
+
+  &.user-card {
+    @media ${(props) => props.theme.responsive.below_479} {
+      transform: scale(0.5);
+    }
+  }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    transform: translateX(-2.5rem);
+  }
 `;
 
 export const CheckoutShippingInfoAddStyled = styled.div`
