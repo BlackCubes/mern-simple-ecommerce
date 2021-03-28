@@ -157,7 +157,7 @@ export const CheckoutCardColStyled = styled.div`
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 
-  &.final-checkout-submit-btn {
+  &.final-checkout-submit-btn button {
     @media ${(props) => props.theme.responsive.below_479} {
       font-size: 1.2rem;
     }
