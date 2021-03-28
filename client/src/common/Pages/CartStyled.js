@@ -153,6 +153,13 @@ export const CartCardRaiseLowerStyled = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
+
+  & button {
+    @media ${(props) => props.theme.responsive.below_899} {
+      width: 30%;
+      padding: 1.3rem;
+    }
+  }
 `;
 
 export const CartCardRemoveStyled = styled.div`
