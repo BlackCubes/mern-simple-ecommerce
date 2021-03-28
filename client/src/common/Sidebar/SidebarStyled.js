@@ -11,6 +11,12 @@ export const SidebarStyled = styled.div`
     }
   }
 
+  &.checkout-sidebar {
+    @media ${(props) => props.theme.responsive.below_1199} {
+      width: 35%;
+    }
+  }
+
   @media ${(props) => props.theme.responsive.below_1199} {
     padding-left: 1rem;
   }
