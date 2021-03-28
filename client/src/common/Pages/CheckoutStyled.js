@@ -286,6 +286,10 @@ export const CheckoutOrderSummarySubtotalStyled = styled.div`
     @media ${(props) => props.theme.responsive.below_899} {
       font-size: 1.1rem;
     }
+
+    @media ${(props) => props.theme.responsive.below_599} {
+      font-size: 1rem;
+    }
   }
 `;
 
