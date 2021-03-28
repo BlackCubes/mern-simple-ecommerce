@@ -43,6 +43,10 @@ export const NavbarLogoStyled = styled.div`
   & a {
     display: block;
   }
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    width: 6.5rem;
+  }
 `;
 
 export const NavbarMenuHolderStyled = styled.div`
@@ -79,6 +83,11 @@ export const NavbarMenuListItemStyled = styled.li`
     &:hover {
       text-decoration: none;
     }
+
+    @media ${(props) => props.theme.responsive.below_899} {
+      font-size: 1.7rem;
+      padding: 1rem;
+    }
   }
 `;
 
@@ -109,4 +118,9 @@ export const NavbarCartQuantityStyled = styled.div`
   align-items: center;
   top: -0.5rem;
   left: 1.9rem;
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    width: 1.7rem;
+    height: 1.7rem;
+  }
 `;
