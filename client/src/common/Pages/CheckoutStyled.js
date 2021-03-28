@@ -139,6 +139,11 @@ export const CheckoutShippingOptionsStyled = styled.div`
     padding-right: 1rem;
     text-align: center;
   }
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
 `;
 
 export const CheckoutShippingOptionsHeaderStyled = styled.div`
