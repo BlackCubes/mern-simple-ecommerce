@@ -254,6 +254,10 @@ export const CheckoutOrderSummarySubtotalStyled = styled.div`
   display: flex;
   justify-content: space-between;
   padding-bottom: 0.5rem;
+
+  & small {
+    font-size: 1.1rem;
+  }
 `;
 
 export const CheckoutOrderSummaryTotalStyled = styled.div`
