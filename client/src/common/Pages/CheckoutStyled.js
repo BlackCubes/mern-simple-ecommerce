@@ -121,7 +121,7 @@ export const CheckoutShippingInfoAddStyled = styled.div`
 
     & span {
       @media ${(props) => props.theme.responsive.below_379} {
-        font-size: 1.1rem;
+        font-size: 1.1rem !important;
       }
     }
   }
