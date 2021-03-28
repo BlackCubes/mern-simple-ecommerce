@@ -174,6 +174,10 @@ export const CheckoutOrderSummaryItemListCellStyled = styled.div`
 
   &:last-child {
     text-align: right;
+
+    @media ${(props) => props.theme.responsive.below_899} {
+      text-align: center;
+    }
   }
 
   @media ${(props) => props.theme.responsive.below_899} {
