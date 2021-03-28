@@ -398,12 +398,11 @@ const CheckoutPage = ({ FormContainerComponent }) => {
 
         <CheckoutShippingCardStyled>
           <CheckoutCardRowStyled>
-            <CheckoutCardColStyled>
+            <CheckoutCardColStyled className="checkout-submit-btn">
               <Button
                 rest={{
                   type: 'button',
                   onClick: onFinalSubmission,
-                  className: 'checkout-submit-btn',
                 }}
               >
                 Place Your Order
