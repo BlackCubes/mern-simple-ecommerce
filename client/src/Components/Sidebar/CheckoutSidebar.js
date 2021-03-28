@@ -25,7 +25,7 @@ const CheckoutSidebar = () => {
   const handleClick = () => history.push('/checkout');
 
   return (
-    <SidebarStyled>
+    <SidebarStyled className="sidebar--checkout">
       <SidebarContainerStyled>
         <CheckoutSidebarStyled>
           <CheckoutSidebarHeaderStyled>
