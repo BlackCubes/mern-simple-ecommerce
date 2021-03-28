@@ -179,6 +179,7 @@ export const NavbarCartQuantityStyled = styled.div`
   }
 
   @media ${(props) => props.theme.responsive.below_379} {
+    font-size: 0.9rem;
     width: 1.1rem;
     height: 1.1rem;
     left: 1.4rem;
