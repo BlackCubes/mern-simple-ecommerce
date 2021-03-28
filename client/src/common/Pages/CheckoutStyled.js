@@ -196,6 +196,11 @@ export const CheckoutCardColStyled = styled.div`
     @media ${(props) => props.theme.responsive.below_479} {
       font-size: 1.2rem;
     }
+
+    @media ${(props) => props.theme.responsive.below_379} {
+      font-size: 1rem;
+      padding: 1rem 0.5rem;
+    }
   }
 
   @media ${(props) => props.theme.responsive.below_899} {
