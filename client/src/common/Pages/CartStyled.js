@@ -56,7 +56,7 @@ export const CartCardStyled = styled.div`
   margin-bottom: 2.4rem;
   padding: 2.4rem;
 
-  @media ${(props) => props.theme.responsive.belo_899} {
+  @media ${(props) => props.theme.responsive.below_899} {
     flex-direction: column;
   }
 
