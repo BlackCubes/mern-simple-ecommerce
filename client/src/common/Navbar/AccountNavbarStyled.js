@@ -36,10 +36,10 @@ export const AccountNavbarLogoImgStyled = styled.div`
   }
 
   @media ${(props) => props.theme.responsive.below_479} {
-    width: 16rem;
+    width: 15rem;
   }
 
   @media ${(props) => props.theme.responsive.below_379} {
-    width: 14rem;
+    width: 13rem;
   }
 `;
