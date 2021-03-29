@@ -24,6 +24,10 @@ export const AccountNavbarStyled = styled.header`
   @media ${(props) => props.theme.responsive.below_479} {
     height: 9.5rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    height: 8.5rem;
+  }
 `;
 
 export const AccountNavbarLogoStyled = styled.div`
