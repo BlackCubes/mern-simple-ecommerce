@@ -50,4 +50,8 @@ export default styled.div`
   @media ${(props) => props.theme.responsive.below_599} {
     font-size: 1.4rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    font-size: 1.3rem;
+  }
 `;
