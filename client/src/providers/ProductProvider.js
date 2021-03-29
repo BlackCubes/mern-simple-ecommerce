@@ -97,7 +97,7 @@ const ProductProvider = ({ children }) => {
     try {
       const apiData = await getReviewsAPI(productId);
       if (apiData.status === 'success') setReviews(apiData.data);
-      if (apiData.status === ('fail' || 'error'))
+      if (apiData.status === 'fail' || apiData.status === 'error')
         throw new Error(apiData.message);
     } catch (err) {
       setApiReviewErr(err.message);
