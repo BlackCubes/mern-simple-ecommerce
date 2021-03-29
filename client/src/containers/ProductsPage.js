@@ -50,6 +50,10 @@ const ProductsPage = () => {
   const { category } = useParams();
 
   useEffect(() => {
+    document.title = 'Errez Shop | Products';
+  }, []);
+
+  useEffect(() => {
     if (category) {
       getCategory(category);
       newCrumbs = [
