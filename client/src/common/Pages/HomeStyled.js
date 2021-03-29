@@ -49,6 +49,10 @@ export const HomeContentStyled = styled.div`
     margin-top: 5rem;
     padding-bottom: 3rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_599} {
+    width: 95%;
+  }
 `;
 
 export const FakeStoreSectionStyled = styled.section`
@@ -93,6 +97,10 @@ export const FakeStoreSplitColorStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_899} {
     transform: translateX(-160%);
   }
+
+  @media ${(props) => props.theme.responsive.below_599} {
+    transform: translateX(-180%);
+  }
 `;
 
 export const FakeStoreImageStyled = styled.div`
@@ -126,6 +134,11 @@ export const FakeStoreContent = styled.div`
   @media ${(props) => props.theme.responsive.below_899} {
     width: 95%;
     padding-right: 2rem;
+  }
+
+  @media ${(props) => props.theme.responsive.below_599} {
+    padding-left: 7rem;
+    padding-right: 1rem;
   }
 `;
 
@@ -173,6 +186,10 @@ export const CategoryCardContainerStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_899} {
     flex-direction: column;
     padding: 4rem 0;
+  }
+
+  @media ${(props) => props.theme.responsive.below_599} {
+    padding: 2rem 0;
   }
 `;
 
