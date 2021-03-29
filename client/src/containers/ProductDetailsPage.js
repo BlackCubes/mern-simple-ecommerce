@@ -124,7 +124,7 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
 
   useEffect(() => {
     document.title = product
-      ? `Errez Shop | Products: ${product.name}`
+      ? `Errez Shop | Products: ${product.title}`
       : 'Errez Shop | Products';
   }, [product]);
 
