@@ -101,7 +101,9 @@ export const getReviewsAPI = async (productId) => {
       return { status, data: data.data };
     }
   } catch (err) {
-    return err.response.data;
+    return err.message !== 'Network Error'
+      ? err.response.data
+      : { status: 'error', message: err.message };
   }
 };
 
