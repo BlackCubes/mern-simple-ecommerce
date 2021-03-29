@@ -54,4 +54,10 @@ export default styled.div`
   @media ${(props) => props.theme.responsive.below_479} {
     font-size: 1.3rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    min-width: 90%;
+    padding: 1rem;
+    font-size: 1rem;
+  }
 `;
