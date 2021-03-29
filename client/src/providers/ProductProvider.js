@@ -159,7 +159,7 @@ const ProductProvider = ({ children }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setApiReviewErr(null);
-    }, 5000);
+    }, 50000);
     return () => clearTimeout(timer);
   }, [apiReviewErr]);
 

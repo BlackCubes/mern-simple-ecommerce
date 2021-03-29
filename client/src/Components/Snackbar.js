@@ -9,7 +9,7 @@ const Snackbar = ({ children, color }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsActive(false);
-    }, 5000);
+    }, 50000);
     return () => clearTimeout(timer);
   }, []);
 

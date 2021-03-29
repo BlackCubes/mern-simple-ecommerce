@@ -49,7 +49,7 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setApiAuthErr(null);
-    }, 5000);
+    }, 50000);
     return () => clearTimeout(timer);
   }, [apiAuthErr]);
 
