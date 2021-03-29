@@ -59,6 +59,8 @@ const GlobalStyles = createGlobalStyle`
   }
 
   #root {
+    display: flex;
+    flex-direction: column;
     position: relative;
     min-height: 100vh;
   }
