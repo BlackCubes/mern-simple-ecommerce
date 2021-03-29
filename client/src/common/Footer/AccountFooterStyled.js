@@ -8,7 +8,7 @@ export const AccountFooterStyled = styled.footer`
   background-color: ${(props) => props.theme.colors.black_gray};
   bottom: 0;
 
-  @media ${(props) => props.theme.responsive.below_899} {
+  @media ${(props) => props.theme.responsive.below_1199} {
     height: 12rem;
   }
 `;
