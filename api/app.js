@@ -8,6 +8,7 @@ const useragent = require('express-useragent');
 const cookieParser = require('cookie-parser');
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
+const compression = require('compression');
 
 const { AppError } = require('./utils');
 const { globalErrorHandler } = require('./controllers');
@@ -35,7 +36,7 @@ if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
 
 // Express-Rate-Limit --  limit requests from some API
 const limiter = rateLimit({
-  max: 20,
+  max: 100,
   windowMs: 60 * 60 * 1000,
   message: {
     status: 'fail',
@@ -61,6 +62,9 @@ app.use(xss());
 
 // HPP -- prevent parameter pollution
 // nothing yet
+
+// Compression
+app.use(compression());
 
 // Routes
 app.use('/api/v1/products', productRouter);
