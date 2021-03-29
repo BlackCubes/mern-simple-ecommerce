@@ -4,6 +4,10 @@ export const FormStyled = styled.form`
   width: 45rem;
   margin-left: auto;
   margin-right: auto;
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    width: 35rem;
+  }
 `;
 
 export const FormGroupStyled = styled.div(
