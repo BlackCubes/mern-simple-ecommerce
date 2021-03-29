@@ -5,6 +5,7 @@ export const AccountFooterStyled = styled.footer`
   font-family: inherit;
   width: 100%;
   /* height: 16rem; */
+  margin-top: auto;
   background-color: ${(props) => props.theme.colors.black_gray};
   bottom: 0;
 
