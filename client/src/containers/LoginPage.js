@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -40,6 +40,10 @@ const LoginPage = ({ FormContainerComponent }) => {
   if (checkAuth()) history.push('/products');
 
   const onSubmission = (data) => login(data);
+
+  useEffect(() => {
+    document.title = 'Errez Shop | Login';
+  }, []);
 
   return (
     <>
