@@ -234,6 +234,10 @@ const CheckoutPage = ({ FormContainerComponent }) => {
   };
 
   useEffect(() => {
+    document.title = 'Errez Shop | Checkout';
+  }, []);
+
+  useEffect(() => {
     calcOrder(cart);
   }, [cart]);
 
