@@ -39,6 +39,8 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
+    display: flex;
+    flex-direction: column;
     font-family: 'Poppins', 'Open Sans', 'Roboto', 'Lato', sans-serif;
     font-weight: 400;
     line-height: 1.5;
