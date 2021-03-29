@@ -67,6 +67,9 @@ app.use(xss());
 app.use(compression());
 
 // Routes
+app.get('/', (req, res) => {
+  res.send('Hello! Welcome to the Errez Shop API.');
+});
 app.use('/api/v1/products', productRouter);
 app.use('/api/v1/reviews', reviewRouter);
 app.use('/api/v1/users', userRouter);
