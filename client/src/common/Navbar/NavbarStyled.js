@@ -33,6 +33,10 @@ export const NavbarContainerStyled = styled.div`
   min-height: 11rem;
   margin-left: auto;
   margin-right: auto;
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    min-height: 100%;
+  }
 `;
 
 export const NavbarLogoStyled = styled.div`
@@ -69,6 +73,10 @@ export const NavbarMenuHolderStyled = styled.div`
   float: right;
   height: 11rem;
   max-width: 80%;
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    height: 9.5rem;
+  }
 `;
 
 export const NavbarMenuStyled = styled.nav`
