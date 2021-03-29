@@ -55,7 +55,7 @@ export default styled.div`
     font-size: 1.3rem;
   }
 
-  @media ${(props) => props.theme.responsive.below_479} {
+  @media ${(props) => props.theme.responsive.below_379} {
     min-width: 90%;
     padding: 1rem;
     font-size: 1rem;
