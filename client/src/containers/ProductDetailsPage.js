@@ -123,6 +123,12 @@ const ProductDetailsPage = ({ FormContainerComponent }) => {
   }, [id]);
 
   useEffect(() => {
+    document.title = product
+      ? `Errez Shop | Products: ${product.name}`
+      : 'Errez Shop | Products';
+  }, [product]);
+
+  useEffect(() => {
     if (product || id)
       newCrumbs = product
         ? [
