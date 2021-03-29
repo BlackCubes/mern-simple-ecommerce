@@ -31,6 +31,10 @@ export const AccountFooterCreatedTitleStyled = styled.div`
     @media ${(props) => props.theme.responsive.below_899} {
       font-size: 1.2rem;
     }
+
+    @media ${(props) => props.theme.responsive.below_479} {
+      font-size: 1.1rem;
+    }
   }
 
   & span {
@@ -40,6 +44,10 @@ export const AccountFooterCreatedTitleStyled = styled.div`
 
     @media ${(props) => props.theme.responsive.below_899} {
       font-size: 1.4rem;
+    }
+
+    @media ${(props) => props.theme.responsive.below_479} {
+      font-size: 1.3rem;
     }
   }
 `;
@@ -68,5 +76,9 @@ export const AccountFooterCreatedItemStyled = styled.li`
 
   @media ${(props) => props.theme.responsive.below_899} {
     font-size: 1.1rem;
+  }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    font-size: 1rem;
   }
 `;
