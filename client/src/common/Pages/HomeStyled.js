@@ -25,6 +25,10 @@ export const HomeSectionStyled = styled.section`
   @media ${(props) => props.theme.responsive.below_479} {
     min-height: calc(100vh - 9.5rem);
   }
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    min-height: calc(100vh - 7.5rem);
+  }
 `;
 
 export const HomeImageStyled = styled.div`
@@ -35,6 +39,10 @@ export const HomeImageStyled = styled.div`
 
   @media ${(props) => props.theme.responsive.below_1199} {
     width: 85%;
+  }
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    width: 90%;
   }
 `;
 
@@ -140,6 +148,10 @@ export const FakeStoreContent = styled.div`
     font-weight: 300;
     letter-spacing: 0.3rem;
     line-height: 2;
+
+    @media ${(props) => props.theme.responsive.below_379} {
+      letter-spacing: 0;
+    }
   }
 
   @media ${(props) => props.theme.responsive.below_1199} {
@@ -183,6 +195,10 @@ export const CategoryContentStyled = styled.div`
     font-weight: 300;
     letter-spacing: 0.3rem;
     line-height: 2;
+
+    @media ${(props) => props.theme.responsive.below_379} {
+      letter-spacing: 0;
+    }
   }
 
   @media ${(props) => props.theme.responsive.below_1199} {
@@ -239,6 +255,11 @@ export const CategoryCardStyled = styled.div`
 
   @media ${(props) => props.theme.responsive.below_479} {
     width: 26rem;
+  }
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    width: 95%;
+    margin: 2rem auto;
   }
 `;
 
