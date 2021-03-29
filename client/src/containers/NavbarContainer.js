@@ -6,7 +6,9 @@ import { AccountNavbar, Navbar } from '../Components/Navbar';
 const NavbarContainer = () => {
   const location = useLocation();
 
-  return location.pathname === ('/login' || '/checkout') ? (
+  return location.pathname === '/login' ? (
+    <AccountNavbar />
+  ) : location.pathname === '/checkout' ? (
     <AccountNavbar />
   ) : (
     <Navbar />
