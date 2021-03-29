@@ -45,5 +45,8 @@
     "start:prod": "SET NODE_ENV=production&&nodemon server.js"
   },
   "author": "Elias Gutierrez",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "node": "14.x"
+  }
 }
