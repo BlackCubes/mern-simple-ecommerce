@@ -67,6 +67,6 @@ export const AccountFooterCreatedItemStyled = styled.li`
   }
 
   @media ${(props) => props.theme.responsive.below_899} {
-    font-size: 1.1.rem;
+    font-size: 1.1rem;
   }
 `;
