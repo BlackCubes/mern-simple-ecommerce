@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const AccountFooterStyled = styled.footer`
-  position: absolute;
+  /* position: absolute; */
   font-family: inherit;
   width: 100%;
   /* height: 16rem; */
