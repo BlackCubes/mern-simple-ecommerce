@@ -12,6 +12,10 @@ export const FormStyled = styled.form`
   @media ${(props) => props.theme.responsive.below_479} {
     width: 25rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    width: 20rem;
+  }
 `;
 
 export const FormGroupStyled = styled.div(
