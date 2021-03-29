@@ -174,7 +174,7 @@ export const FakeStoreContent = styled.div`
     margin-left: auto;
     margin-right: auto;
     padding-left: 0;
-    padding-rigt: 0;
+    padding-right: 0;
   }
 `;
 
