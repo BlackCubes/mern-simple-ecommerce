@@ -27,10 +27,20 @@ export const AccountFooterCreatedTitleStyled = styled.div`
   color: #546c84;
   padding-bottom: 1rem;
 
+  & p {
+    @media ${(props) => props.theme.responsive.below_899} {
+      font-size: 1.2rem;
+    }
+  }
+
   & span {
     font-size: 1.5rem;
     color: #0067aa;
     text-transform: uppercase;
+
+    @media ${(props) => props.theme.responsive.below_899} {
+      font-size: 1.4rem;
+    }
   }
 `;
 
