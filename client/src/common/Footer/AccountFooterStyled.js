@@ -38,7 +38,7 @@ export const AccountFooterCreatedTitleStyled = styled.div`
     }
 
     @media ${(props) => props.theme.responsive.below_379} {
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
   }
 
@@ -56,7 +56,7 @@ export const AccountFooterCreatedTitleStyled = styled.div`
     }
 
     @media ${(props) => props.theme.responsive.below_379} {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
   }
 `;
@@ -92,6 +92,6 @@ export const AccountFooterCreatedItemStyled = styled.li`
   }
 
   @media ${(props) => props.theme.responsive.below_379} {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 `;
