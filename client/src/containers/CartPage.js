@@ -40,6 +40,10 @@ const CartPage = () => {
   const { calcOrder } = useCheckoutContext();
 
   useEffect(() => {
+    document.title = 'Errez Shop | Your Cart';
+  }, []);
+
+  useEffect(() => {
     calcOrder(cart);
   }, [cart]);
 
