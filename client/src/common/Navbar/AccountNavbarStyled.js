@@ -20,6 +20,10 @@ export const AccountNavbarStyled = styled.header`
     );
     z-index: 1;
   }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    height: 9.5rem;
+  }
 `;
 
 export const AccountNavbarLogoStyled = styled.div`
