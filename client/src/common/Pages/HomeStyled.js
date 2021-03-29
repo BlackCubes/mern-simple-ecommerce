@@ -67,6 +67,10 @@ export const FakeStoreContainerStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_1199} {
     width: 100%;
   }
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    padding: 5rem 0;
+  }
 `;
 
 export const FakeStoreSplitHolderStyled = styled.div`
@@ -85,12 +89,20 @@ export const FakeStoreSplitColorStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_1199} {
     transform: translateX(-114%);
   }
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    transform: translateX(-160%);
+  }
 `;
 
 export const FakeStoreImageStyled = styled.div`
   position: relative;
   float: left;
   width: 55rem;
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    width: 70%;
+  }
 `;
 
 export const FakeStoreContent = styled.div`
@@ -109,6 +121,11 @@ export const FakeStoreContent = styled.div`
 
   @media ${(props) => props.theme.responsive.below_1199} {
     padding-bottom: 3rem;
+  }
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    width: 95%;
+    padding-right: 2rem;
   }
 `;
 
@@ -134,6 +151,10 @@ export const CategoryContentStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_1199} {
     width: 90%;
   }
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    margin-top: 8rem;
+  }
 `;
 
 export const CategoryCardContainerStyled = styled.div`
@@ -148,6 +169,11 @@ export const CategoryCardContainerStyled = styled.div`
     justify-content: space-evenly;
     width: 100%;
   }
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    flex-direction: column;
+    padding: 4rem 0;
+  }
 `;
 
 export const CategoryCardStyled = styled.div`
@@ -158,6 +184,11 @@ export const CategoryCardStyled = styled.div`
 
   @media ${(props) => props.theme.responsive.below_1199} {
     width: 25rem;
+  }
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    width: 35rem;
+    margin: 5rem auto;
   }
 `;
 
