@@ -34,4 +34,8 @@ export const AccountNavbarLogoImgStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_899} {
     width: 18rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    width: 16rem;
+  }
 `;
