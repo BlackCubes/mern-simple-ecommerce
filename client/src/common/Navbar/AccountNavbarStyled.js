@@ -30,4 +30,8 @@ export const AccountNavbarLogoStyled = styled.div`
 
 export const AccountNavbarLogoImgStyled = styled.div`
   width: 20rem;
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    width: 18rem;
+  }
 `;
