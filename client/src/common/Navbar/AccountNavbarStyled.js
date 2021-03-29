@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const AccountNavbarStyled = styled.header`
+  position: relative;
   width: 100%;
   height: 11rem;
   background: ${(props) => props.theme.colors.black_gray};
