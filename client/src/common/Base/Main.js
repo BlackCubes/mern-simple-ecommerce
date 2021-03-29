@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 const MainStyled = styled.main`
   margin-top: 6rem;
-  padding-bottom: 6rem;
 `;
 
 const Main = ({ children }) => <MainStyled>{children}</MainStyled>;
