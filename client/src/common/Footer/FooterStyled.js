@@ -106,7 +106,7 @@ export const FooterCopyrightStyled = styled.div`
   width: 90%;
   margin-left: auto;
   margin-right: auto;
-  padding: 1.5rem 0 3.5rem;
+  padding: 1.5rem 0 0;
 `;
 
 export const FooterCopyrightContentStyled = styled.div`
