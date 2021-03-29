@@ -28,6 +28,10 @@ export const HomeImageStyled = styled.div`
   margin-left: auto;
   margin-right: auto;
   padding-top: 3rem;
+
+  @media ${(props) => props.theme.responsive.below_1199} {
+    width: 85%;
+  }
 `;
 
 export const HomeContentStyled = styled.div`
@@ -38,6 +42,12 @@ export const HomeContentStyled = styled.div`
 
   & h1 {
     letter-spacing: 0.3rem;
+  }
+
+  @media ${(props) => props.theme.responsive.below_1199} {
+    width: 90%;
+    margin-top: 5rem;
+    padding-bottom: 3rem;
   }
 `;
 
@@ -53,6 +63,10 @@ export const FakeStoreContainerStyled = styled.div`
   margin-left: auto;
   margin-right: auto;
   padding: 10.5rem 0;
+
+  @media ${(props) => props.theme.responsive.below_1199} {
+    width: 100%;
+  }
 `;
 
 export const FakeStoreSplitHolderStyled = styled.div`
@@ -67,6 +81,10 @@ export const FakeStoreSplitColorStyled = styled.div`
   top: 0;
   left: 40.5rem;
   transform: translateX(-104%);
+
+  @media ${(props) => props.theme.responsive.below_1199} {
+    transform: translateX(-114%);
+  }
 `;
 
 export const FakeStoreImageStyled = styled.div`
@@ -88,6 +106,10 @@ export const FakeStoreContent = styled.div`
     letter-spacing: 0.3rem;
     line-height: 2;
   }
+
+  @media ${(props) => props.theme.responsive.below_1199} {
+    padding-bottom: 3rem;
+  }
 `;
 
 export const CategorySectionStyled = styled.section`
@@ -108,6 +130,10 @@ export const CategoryContentStyled = styled.div`
     letter-spacing: 0.3rem;
     line-height: 2;
   }
+
+  @media ${(props) => props.theme.responsive.below_1199} {
+    width: 90%;
+  }
 `;
 
 export const CategoryCardContainerStyled = styled.div`
@@ -117,6 +143,11 @@ export const CategoryCardContainerStyled = styled.div`
   margin-left: auto;
   margin-right: auto;
   padding: 10.5rem 0;
+
+  @media ${(props) => props.theme.responsive.below_1199} {
+    justify-content: space-evenly;
+    width: 100%;
+  }
 `;
 
 export const CategoryCardStyled = styled.div`
@@ -124,6 +155,10 @@ export const CategoryCardStyled = styled.div`
   background-color: ${(props) => props.theme.colors.moderate_blue};
   background-image: linear-gradient(7deg, #505cc1, #ff1e5e);
   text-align: center;
+
+  @media ${(props) => props.theme.responsive.below_1199} {
+    width: 25rem;
+  }
 `;
 
 export const CategoryCardHeaderStyled = styled.div`
