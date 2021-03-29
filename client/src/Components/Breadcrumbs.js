@@ -14,7 +14,6 @@ import { Small } from '../common/Typography';
 import { breadcrumbsRoutes } from '../utils';
 
 const Breadcrumbs = ({ newCrumbs }) => {
-  // if (crumbs.length < 1) return null;
   const crumbs = breadcrumbsRoutes.concat(newCrumbs);
 
   return (
