@@ -21,6 +21,10 @@ export const HomeSectionStyled = styled.section`
   min-height: calc(100vh - 11rem);
   background-color: ${(props) => props.theme.colors.black_gray};
   text-align: center;
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    min-height: calc(100vh - 9.5rem);
+  }
 `;
 
 export const HomeImageStyled = styled.div`
@@ -79,6 +83,10 @@ export const FakeStoreContainerStyled = styled.div`
 
 export const FakeStoreSplitHolderStyled = styled.div`
   float: none;
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    display: none;
+  }
 `;
 
 export const FakeStoreSplitColorStyled = styled.div`
@@ -111,6 +119,13 @@ export const FakeStoreImageStyled = styled.div`
   @media ${(props) => props.theme.responsive.below_899} {
     width: 70%;
   }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    float: none;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
 
 export const FakeStoreContent = styled.div`
@@ -140,6 +155,15 @@ export const FakeStoreContent = styled.div`
     padding-left: 7rem;
     padding-right: 1rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    float: none;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-rigt: 0;
+  }
 `;
 
 export const CategorySectionStyled = styled.section`
@@ -167,6 +191,11 @@ export const CategoryContentStyled = styled.div`
 
   @media ${(props) => props.theme.responsive.below_899} {
     margin-top: 8rem;
+  }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    width: 85%;
+    margin-top: 5rem;
   }
 `;
 
@@ -207,6 +236,10 @@ export const CategoryCardStyled = styled.div`
     width: 35rem;
     margin: 5rem auto;
   }
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    width: 26rem;
+  }
 `;
 
 export const CategoryCardHeaderStyled = styled.div`
@@ -225,6 +258,10 @@ export const CategoryCardBodyStyled = styled.div`
   height: 33rem;
   margin-bottom: 4rem;
   padding: 0 10%;
+
+  @media ${(props) => props.theme.responsive.below_479} {
+    height: 31rem;
+  }
 `;
 
 export const CategoryCardBodyContentStyled = styled.div`
