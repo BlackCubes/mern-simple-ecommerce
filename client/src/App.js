@@ -1,7 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-// import logo from './logo.svg';
-// import './App.css';
 import 'react-credit-cards/es/styles-compiled.css';
 
 import { Main } from './common/Base';
