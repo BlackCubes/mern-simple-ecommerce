@@ -74,7 +74,9 @@ export const loginAPI = async (data, headers) => {
     });
     if (res.status === 200) return res.data;
   } catch (err) {
-    return err.response.data;
+    return err.message !== 'Network Error'
+      ? err.response.data
+      : { status: 'error', message: err.message };
   }
 };
 
@@ -88,7 +90,9 @@ export const logoutAPI = async (headers) => {
     });
     if (res.status === 200) return { status: 'success' };
   } catch (err) {
-    return err.response.data;
+    return err.message !== 'Network Error'
+      ? err.response.data
+      : { status: 'error', message: err.message };
   }
 };
 
@@ -121,7 +125,9 @@ export const postReviewAPI = async (productId, inputData, headers) => {
       return { status, data: data.data };
     }
   } catch (err) {
-    return err.response.data;
+    return err.message !== 'Network Error'
+      ? err.response.data
+      : { status: 'error', message: err.message };
   }
 };
 
@@ -147,7 +153,9 @@ export const getEveryReviewsAPI = async () => {
       return { status, data: removeDuplicates };
     }
   } catch (err) {
-    return err.response.data;
+    return err.message !== 'Network Error'
+      ? err.response.data
+      : { status: 'error', message: err.message };
   }
 };
 
@@ -163,6 +171,8 @@ export const deleteReviewAPI = async (reviewId, verifyPassword, headers) => {
 
     if (res.status === 204) return { status: 'success' };
   } catch (err) {
-    return err.response.data;
+    return err.message !== 'Network Error'
+      ? err.response.data
+      : { status: 'error', message: err.message };
   }
 };
