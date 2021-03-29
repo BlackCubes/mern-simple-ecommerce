@@ -65,4 +65,8 @@ export const AccountFooterCreatedItemStyled = styled.li`
     content: ' | ';
     margin: 0 0.8rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    font-size: 1.1.rem;
+  }
 `;
