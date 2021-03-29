@@ -24,6 +24,10 @@ export const NavbarStyled = styled.header`
   @media ${(props) => props.theme.responsive.below_479} {
     height: 9.5rem;
   }
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    height: 7.5rem;
+  }
 `;
 
 export const NavbarContainerStyled = styled.div`
@@ -76,6 +80,10 @@ export const NavbarMenuHolderStyled = styled.div`
 
   @media ${(props) => props.theme.responsive.below_479} {
     height: 9.5rem;
+  }
+
+  @media ${(props) => props.theme.responsive.below_379} {
+    height: 7.5rem;
   }
 `;
 
