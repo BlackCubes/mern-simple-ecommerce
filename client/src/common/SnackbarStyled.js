@@ -42,4 +42,8 @@ export default styled.div`
     visibility: visible;
     animation: ${fadeIn} 0.5s, ${fadeOut} 0.5s 4.5s;
   }
+
+  @media ${(props) => props.theme.responsive.below_899} {
+    font-size: 1.5rem;
+  }
 `;
