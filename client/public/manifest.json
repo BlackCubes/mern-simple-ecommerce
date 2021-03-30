@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Errez Shop",
+  "name": "Create React App SampleErrez Shop | Using MERN Stack & Fake Store API To Bring Power To The User",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#ff1e5e",
   "background_color": "#ffffff"
 }
