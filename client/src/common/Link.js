@@ -21,11 +21,37 @@ const LinkStyled = styled(RouterLink)`
   }
 `;
 
-const Link = ({ children, href, rest }) => (
-  <LinkStyled to={href} {...rest}>
-    {children}
-  </LinkStyled>
-);
+const ExternalLinkStyled = styled.a`
+  color: ${(props) =>
+    props.colortype
+      ? props.theme.colors[props.colortype]
+      : props.theme.colors.moderate_blue_2};
+  text-decoration: none;
+  background-color: transparent;
+
+  &:hover {
+    color: ${(props) =>
+      props.hovercolortype
+        ? props.theme.colors[props.hovercolortype]
+        : props.theme.colors.moderate_blue_dark};
+    text-decoration: underline;
+    outline: 0;
+  }
+`;
+
+const Link = ({ children, href, rest }) => {
+  const externalLinkTest = /^https?:\/\//.test(href);
+
+  return externalLinkTest ? (
+    <ExternalLinkStyled href={href} {...rest}>
+      {children}
+    </ExternalLinkStyled>
+  ) : (
+    <LinkStyled to={href} {...rest}>
+      {children}
+    </LinkStyled>
+  );
+};
 
 Link.propTypes = {
   children: PropTypes.node.isRequired,
