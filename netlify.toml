@@ -1,7 +1,5 @@
 [build]
   base = "client"
-  Command = "npm run lambda-build"
-  Functions = "lambda"
 
 [[redirects]]
   from = "/*"
