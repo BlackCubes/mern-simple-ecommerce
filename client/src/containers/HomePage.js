@@ -71,7 +71,7 @@ const HomePage = () => {
           <FakeStoreImageStyled>
             <Image
               rest={{
-                src: 'https://fakestoreapi.herokuapp.com/icons/intro.svg',
+                src: 'https://fakestoreapi.com/icons/intro.svg',
                 alt: 'Fake Store API',
               }}
             />
