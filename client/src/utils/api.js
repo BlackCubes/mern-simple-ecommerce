@@ -2,21 +2,21 @@ import axios from 'axios';
 
 // This function is used when the Fake Store API server is down
 // and the other server needs to be used for the img path
-const newImgPath = (data) => {
-  const splitString = data.image.split('/');
-  const endingImgPath = splitString[splitString.length - 1];
-  return `https://fakestoreapi.herokuapp.com/img/${endingImgPath}`;
-};
+// const newImgPath = (data) => {
+//   const splitString = data.image.split('/');
+//   const endingImgPath = splitString[splitString.length - 1];
+//   return `https://fakestoreapi.com/img/${endingImgPath}`;
+// };
 
 // Fake Store API
 export const getProductsAPI = async () => {
   try {
-    const apiUrl = 'https://fakestoreapi.herokuapp.com/products';
+    const apiUrl = 'https://fakestoreapi.com/products';
     const res = await axios.get(apiUrl);
     if (res.status === 200) {
-      res.data.forEach((val) => {
-        val.image = newImgPath(val);
-      });
+      // res.data.forEach((val) => {
+      //   val.image = newImgPath(val);
+      // });
       return res.data;
     }
   } catch (err) {
@@ -26,10 +26,10 @@ export const getProductsAPI = async () => {
 
 export const getProductAPI = async (id) => {
   try {
-    const apiUrl = `https://fakestoreapi.herokuapp.com/products/${id}`;
+    const apiUrl = `https://fakestoreapi.com/products/${id}`;
     const res = await axios.get(apiUrl);
     if (res.status === 200) {
-      res.data.image = newImgPath(res.data);
+      // res.data.image = newImgPath(res.data);
       return res.data;
     }
   } catch (err) {
@@ -39,7 +39,7 @@ export const getProductAPI = async (id) => {
 
 export const getCategoriesAPI = async () => {
   try {
-    const apiUrl = 'https://fakestoreapi.herokuapp.com/products/categories';
+    const apiUrl = 'https://fakestoreapi.com/products/categories';
     const res = await axios.get(apiUrl);
     if (res.status === 200) return res.data;
   } catch (err) {
@@ -49,12 +49,12 @@ export const getCategoriesAPI = async () => {
 
 export const getCategoryAPI = async (category) => {
   try {
-    const apiUrl = `https://fakestoreapi.herokuapp.com/products/category/${category}`;
+    const apiUrl = `https://fakestoreapi.com/products/category/${category}`;
     const res = await axios.get(apiUrl);
     if (res.status === 200) {
-      res.data.forEach((val) => {
-        val.image = newImgPath(val);
-      });
+      // res.data.forEach((val) => {
+      //   val.image = newImgPath(val);
+      // });
       return res.data;
     }
   } catch (err) {
